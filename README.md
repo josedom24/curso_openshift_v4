@@ -32,8 +32,7 @@
 	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
 	* Trabajando con bases de datos en OpenShift
 	* Despliegue de Wordpress en OpenShift
-	* Despliegue de Wordpress con un template en OpenShift
-	
+		
 5. OpenShift como PaaS
 	* Despliegue de aplicaciones a partir de Dockerfile
 	* Despliegue de aplicaciones usando source2image
@@ -44,6 +43,8 @@
 	* Operaciones avanzadas con la utilidad de línea de comandos oc
 	
 7. Aspectos avanzados de OpenShidt
+	* Despliegue de aplicaciones con plantillas 
+	* Despliegue de aplicaciones con Helm
 	* Autoescalado: Escalado automático en OpenShift
 	* IC/DC
 	* Integración con web IDE
