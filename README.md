@@ -19,6 +19,7 @@
 	* Introducción a kubernetes
 	* Despliegues de aplicaciones en Kubernetes
 	* Recursos que nos ofrece Openshift
+	* Introducción a la consola web
 	* Ejecución de Pod en OpenShift
 	* Tolerancia a fallos,escalabilidad, balanceo de carga
 	* Actualizaciones continúas/Rollback y enrutamiento
