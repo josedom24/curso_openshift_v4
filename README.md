@@ -1,22 +1,29 @@
 # Curso OpenShift v4
 
-1. Introducción a los contenedores
+1. Introducción a OpenShift
 	* Implantación de aplicaciones web en contenedores
 	* Contenedores de aplicación: Docker, Podman
 	* Orquestadores de contenedores: Kubernetes
-	* OpenShift
+	* OpenShift. Ventajas y beneficios
+	* Arquitectura de OpenShift v4
+	* Plataformas para trabajar con OpenShift v4
 
-2. Introducción a OpenShift v4
-	* Arquitectura y componentes
-    * Ventajas y beneficios
-	* OpenShift Online
-		* Developer sandbox
-		* Managed services
-		* Self-managed
-	* Métodos de instalación
+2. Trabajando con OpenShift
+	* Distribución de la comunicad: okd.
+	* Instalación en local con crc.
+	* Trabajo online con OpenShift: Developer Sandbox
+	* Instlación el CLI de OpenShift: oc
+	* Configuranción cd oc para crc
+	* Configuración de oc para el Developer Sandbox
 
-3. OpenShift como distribución de Kubernetes
+3. Poryectos en OpenShift
+	* Creación de proyectos
+	* Ver y modificar las características de un proyecto
+	* eliminar un proyecto.
+
+4. OpenShift como distribución de Kubernetes
 	* Introducción a kubernetes
+	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 	* Despliegues de aplicaciones en Kubernetes
 	* Recursos que nos ofrece Openshift
 	* Introducción a la consola web
