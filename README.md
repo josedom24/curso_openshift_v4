@@ -59,7 +59,7 @@
 	* Configuración de oc para crc
 	* Visión general de la consola web
 
-3. Deployment us DeploymentConfig
+3. Deployment us DeploymentConfig us Serverless Deployment 
 4. ImageStreams
 5. Builds
 6. Despliegue de aplicaciones en OpenShift

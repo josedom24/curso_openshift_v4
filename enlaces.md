@@ -13,3 +13,7 @@ https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-usin
 * https://github.com/openshift/training
 * https://github.com/openshift-instruqt
 * https://www.densify.com/openshift-tutorial/openshift-serverless/
+
+## Serverless
+
+* https://mikecalizo.medium.com/abstract-5df79c952a05
