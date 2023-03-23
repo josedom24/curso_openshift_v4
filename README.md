@@ -1,6 +1,8 @@
-# Curso OpenShift v4
+# Cursos OpenShift v4
 
-1. Introducción a OpenShift
+## Curso 1: Aprende Kubernetes con OpenShift v4
+
+1. Introducción a OpenShift v4
 	* Implantación de aplicaciones web en contenedores
 	* Contenedores de aplicación: Docker, Podman
 	* Orquestadores de contenedores: Kubernetes
@@ -9,52 +11,87 @@
 	* Plataformas para trabajar con OpenShift v4
 
 2. Trabajando con OpenShift
-	* Distribución de la comunicad: okd.
-	* Instalación en local con crc.
 	* Trabajo online con OpenShift: Developer Sandbox
-	* Instlación el CLI de OpenShift: oc
-	* Configuranción cd oc para crc
+	* Instalación el CLI de OpenShift: oc
 	* Configuración de oc para el Developer Sandbox
-
-3. Poryectos en OpenShift
-	* Creación de proyectos
-	* Ver y modificar las características de un proyecto
-	* eliminar un proyecto.
+	* Visión general de la consola web
 
 4. OpenShift como distribución de Kubernetes
 	* Introducción a kubernetes
-	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
-	* Despliegues de aplicaciones en Kubernetes
-	* Recursos que nos ofrece Openshift
-	* Introducción a la consola web
 	* Ejecución de Pod en OpenShift
-	* Tolerancia a fallos,escalabilidad, balanceo de carga
-	* Actualizaciones continúas/Rollback y enrutamiento
-	* Accediendo a las aplicaciones
-	* Persistencia de información
+	* Tolerancia a fallos, escalabilidad, balanceo de carga
+	* Desplegando aplicaciones: Deployment
+	* Actualizaciones continúas/Rollback
+	* Accediendo a las aplicaciones: services, ingress
+	* Nuevo recurso de OpenShift para el acceso a las aplicaciones: Routes
 
-4. Despliegue de aplicaciones en OpenShift
-	* Despliegue de aplicaciones Python en OpenShift
-	* Despliegue de aplicaciones PHP en OpenShift
-	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
-	* Trabajando con bases de datos en OpenShift
-	* Despliegue de Wordpress en OpenShift
-		
-5. OpenShift como PaaS
-	* Despliegue de aplicaciones a partir de Dockerfile
-	* Despliegue de aplicaciones usando source2image
+5. Despliegues parametrizados
+	* Variables de entorno
+    * ConfigMaps
+    * Secrets
+    * Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB
 
-6. Introducción a la utilidad de línea de comandos oc
-	* Instalación de oc
-	* Despliegue de una aplicación con la utilidad de línea de comandos oc
-	* Operaciones avanzadas con la utilidad de línea de comandos oc
+6. Almacenamiento en OpenShift
+	* Consideraciones sobre el almacenamiento
+	* Volúmenes en Kubernetes
+	* Aprovisionamiento de volúmenes
+	* Solicitud de volúmenes
+	* Uso de volúmenes
+
+7. Ejemplo final: Citas
+	* Despliegues de citas-backend
+	* Despliegue de citas-frontend
+	* Despliegue de la base de datos mariadb
+	* Actualización de la aplicación citas-backend
 	
-7. Aspectos avanzados de OpenShidt
-	* Despliegue de aplicaciones con plantillas 
-	* Despliegue de aplicaciones con Helm
+
+## Curso 2: Openshift b4 como PaaS
+
+1. Introducción a OpenShift v4
+	* Cloud Computing
+	* PaaS: Plataforma como servicio
+	* OpenShift como PaaS
+	* Introducción a las estrategias de despliegues en OpsenShift v4
+
+2. Trabajando con OpenShift
+	* Distribución de la comunidad: okd
+	* Instalación en local con crc
+	* Configuración de oc para crc
+	* Visión general de la consola web
+
+3. Deployment us DeploymentConfig
+4. ImageStreams
+5. Builds
+6. Despliegue de aplicaciones en OpenShift
+	* Despliegue de aplicaciones desde imágenes
+	* Despliegue de aplicaciones desde código fuente
+	* Despliegue de aplicaciones desde Dockerfile
+	* Despliegue de aplicaciones desde el catálogo
+	* Despliegue de aplicaciones desde un pipeline
+
+7. Plantillas
+
+	* Características de las plantillas
+	* Crear objetos desde una plantilla en modo comando
+	* Crear objetos desde una plantilla en modo WEB
+
+8. Aspectos avanzados de OpenShift ????
+	
 	* Autoescalado: Escalado automático en OpenShift
 	* IC/DC
 	* Integración con web IDE
 	* ...
 		
 
+
+
+3. Proyectos en OpenShift
+	* Creación de proyectos
+	* Ver y modificar las características de un proyecto
+	* Eliminar un proyecto.
+
+
+* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
+	* Despliegues de aplicaciones en Kubernetes
+	* Recursos que nos ofrece Openshift
+	
