@@ -22,6 +22,7 @@
 	* Tolerancia a fallos, escalabilidad, balanceo de carga
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
+	* Autoescalado: Escalado automático en OpenShift
 	* Accediendo a las aplicaciones: services, ingress
 	* Nuevo recurso de OpenShift para el acceso a las aplicaciones: Routes
 
@@ -58,8 +59,10 @@
 	* Instalación en local con crc
 	* Configuración de oc para crc
 	* Visión general de la consola web
+	* Proyectos en OpenShift
 
-3. Deployment us DeploymentConfig us Serverless Deployment 
+3. Deployment us DeploymentConfig
+	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 4. ImageStreams
 5. Builds
 6. Despliegue de aplicaciones en OpenShift
@@ -77,7 +80,7 @@
 
 8. Aspectos avanzados de OpenShift ????
 	
-	* Autoescalado: Escalado automático en OpenShift
+	* Serverless Deployment 
 	* IC/DC
 	* Integración con web IDE
 	* ...
@@ -85,13 +88,6 @@
 
 
 
-3. Proyectos en OpenShift
-	* Creación de proyectos
-	* Ver y modificar las características de un proyecto
-	* Eliminar un proyecto.
 
 
-* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
-	* Despliegues de aplicaciones en Kubernetes
-	* Recursos que nos ofrece Openshift
 	
