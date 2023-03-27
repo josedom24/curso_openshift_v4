@@ -39,14 +39,19 @@
 	* Solicitud de volúmenes
 	* Uso de volúmenes
 
-7. Ejemplo final: Citas
+7. Deployment us DeploymentConfig
+	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
+
+
+
+8. Ejemplo final: Citas
 	* Despliegues de citas-backend
 	* Despliegue de citas-frontend
 	* Despliegue de la base de datos mariadb
 	* Actualización de la aplicación citas-backend
 	
 
-## Curso 2: Openshift b4 como PaaS
+## Curso 2: Openshift v4 como PaaS
 
 1. Introducción a OpenShift v4
 	* Cloud Computing
@@ -61,24 +66,23 @@
 	* Visión general de la consola web
 	* Proyectos en OpenShift
 
-3. Deployment us DeploymentConfig
-	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
-4. ImageStreams
-5. Builds
-6. Despliegue de aplicaciones en OpenShift
+3. Despliegue de aplicaciones en OpenShift
 	* Despliegue de aplicaciones desde imágenes
 	* Despliegue de aplicaciones desde código fuente
 	* Despliegue de aplicaciones desde Dockerfile
 	* Despliegue de aplicaciones desde el catálogo
 	* Despliegue de aplicaciones desde un pipeline
 
-7. Plantillas
+4. ImageStreams
+5. Builds
+
+6. Plantillas
 
 	* Características de las plantillas
 	* Crear objetos desde una plantilla en modo comando
 	* Crear objetos desde una plantilla en modo WEB
 
-8. Aspectos avanzados de OpenShift ????
+7. Aspectos avanzados de OpenShift ????
 	
 	* Serverless Deployment 
 	* IC/DC
