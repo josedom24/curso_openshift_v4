@@ -74,10 +74,23 @@
 	* Despliegue de aplicaciones desde código fuente
 	* Despliegue de aplicaciones desde Dockerfile
 	* Despliegue de aplicaciones desde el catálogo
-	* Despliegue de aplicaciones desde un pipeline
 
 4. ImageStreams
+	* Introducción a los ImageStreams
+	* Creación de ImageStreams
+	* Gestión de etiquetas en un ImageStreams
+	* Gestión de ImageStreams desde la consola web
+	* Actualización de ImageStreams
+
 5. Builds
+	* Introducción a los BuildsConfig
+	* Creación de un nuevo build
+	* Ciclo de vida de los builds: iniciar, cancelar, parar, borrar, ...
+	* Build desde un repositorio git
+	* Build desde un Dockerfile
+	* Build desde sistema de ficheros local
+	* Actualización automática de build
+	
 
 6. Plantillas
 
@@ -85,10 +98,10 @@
 	* Crear objetos desde una plantilla en modo comando
 	* Crear objetos desde una plantilla en modo WEB
 
-7. Aspectos avanzados de OpenShift ????
+7. Aspectos avanzados de OpenShift 
 	
 	* Serverless Deployment 
-	* IC/DC
+	* IC/DC: Despliegue de aplicaciones desde un pipeline
 	* Integración con web IDE
 	* ...
 		
