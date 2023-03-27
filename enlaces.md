@@ -12,8 +12,22 @@ https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-usin
 * https://www.udemy.com/course/openshift-4-desde-cero
 * https://github.com/openshift/training
 * https://github.com/openshift-instruqt
-* https://www.densify.com/openshift-tutorial/openshift-serverless/
+* https://www.tutorialworks.com/openshift-ingress/
+
 
 ## Serverless
 
 * https://mikecalizo.medium.com/abstract-5df79c952a05
+* https://www.densify.com/openshift-tutorial/openshift-serverless/
+
+## ImageStream
+
+* https://www.densify.com/openshift-tutorial/openshift-serverless/
+
+## Otros
+
+* 4 Ways to do a Dockerfile Build in OpenShift (https://www.tutorialworks.com/openshift-dockerfile/?utm_medium=sidebar)
+
+## CI/DC
+
+* https://www.tutorialworks.com/openshift-jenkins-docker-pipeline/
