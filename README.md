@@ -40,11 +40,11 @@
 	* Solicitud de volúmenes
 	* Uso de volúmenes
 
-7. Deployment us DeploymentConfigs
-	* Diferencias entre lso Deployments y los DeploymentConfigs
-	* Definición de un DeploymentConfigs
-	* Gestioanndo depliegues con el recurso DeploymentConfigs
-	* Actualizaciones continúas/Rollback con DeploymentConfigs
+7. Deployment us DeploymentConfig
+	* Diferencias entre lso Deployments y los DeploymentConfig
+	* Definición de un DeploymentConfig
+	* Gestioanndo depliegues con el recurso DeploymentConfig
+	* Actualizaciones continúas/Rollback con DeploymentConfig
 	* Trigger de tipo Config Change. Cambiando la configuración.
 
 8. Ejemplo final: Citas
