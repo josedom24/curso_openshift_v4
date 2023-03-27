@@ -18,6 +18,7 @@
 
 4. OpenShift como distribución de Kubernetes
 	* Introducción a kubernetes
+	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 	* Ejecución de Pod en OpenShift
 	* Tolerancia a fallos, escalabilidad, balanceo de carga
 	* Desplegando aplicaciones: Deployment
@@ -39,10 +40,12 @@
 	* Solicitud de volúmenes
 	* Uso de volúmenes
 
-7. Deployment us DeploymentConfig
-	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
-
-
+7. Deployment us DeploymentConfigs
+	* Diferencias entre lso Deployments y los DeploymentConfigs
+	* Definición de un DeploymentConfigs
+	* Gestioanndo depliegues con el recurso DeploymentConfigs
+	* Actualizaciones continúas/Rollback con DeploymentConfigs
+	* Trigger de tipo Config Change. Cambiando la configuración.
 
 8. Ejemplo final: Citas
 	* Despliegues de citas-backend
