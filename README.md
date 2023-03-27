@@ -100,6 +100,7 @@
 
 7. Aspectos avanzados de OpenShift 
 	
+	* Despliegues de aplicaciones usando Helm
 	* Serverless Deployment 
 	* IC/DC: Despliegue de aplicaciones desde un pipeline
 	* Integración con web IDE
