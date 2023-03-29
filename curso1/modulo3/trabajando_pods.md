@@ -44,8 +44,8 @@ Ahora para crear el Pod a partir del fichero yaml, podemos usar dos subcomandos:
 
 * `create`: **Configuración imperativa de objetos**, creamos el objeto (en nuestro caso el pod) pero si necesitamos modificarlo tendremos que eliminarlo y volver a crearlo después de modificar el fichero de definición.
 
-    oc create -f pod.yaml
+        oc create -f pod.yaml
 
 * `apply`: **Configuración declarativa de objetos**, el fichero indica el estado del recurso que queremos tener. Al aplicar los cambios, se realizarán todas las acciones necesarias para llegar al estado indicado. Por ejemplo, si no existe el objeto se creará, pero si existe el objeto, se modificará.
 
-    oc apply -f pod.yaml
+        oc apply -f pod.yaml
