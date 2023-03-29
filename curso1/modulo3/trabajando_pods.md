@@ -31,7 +31,7 @@ Veamos cada uno de los parámetros que hemos definido:
 * `metadata`: Información que nos permite identificar unívocamente el recurso:
     * `name`: Nombre del pod.
     * `namespace`: Proyecto donde se va a crear el recurso. Si no se indica este parámetro se creará en el proyecto activo.
-    * `labels`: Las [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) nos permiten etiquetar los recursos de Kubernetes (por ejemplo un pod) con información del tipo clave/valor.
+    * `labels`: Las [Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) nos permiten etiquetar los recursos de OpenShift (por ejemplo un pod) con información del tipo clave/valor.
 * `spec`: Definimos las características del recurso. En el caso de un Pod indicamos los contenedores que van a formar el Pod (sección `containers`), en este caso sólo uno.
     * `image`: La imagen desde la que se va a crear el contenedor
     * `name`: Nombre del contenedor.
@@ -49,3 +49,66 @@ Ahora para crear el Pod a partir del fichero yaml, podemos usar dos subcomandos:
 * `apply`: **Configuración declarativa de objetos**, el fichero indica el estado del recurso que queremos tener. Al aplicar los cambios, se realizarán todas las acciones necesarias para llegar al estado indicado. Por ejemplo, si no existe el objeto se creará, pero si existe el objeto, se modificará.
 
         oc apply -f pod.yaml
+
+## Otras operaciones con Pods
+
+Podemos ver el estado en el que se encuentra y si está o no listo:
+
+    oc get pods
+
+**Nota:** Sería equivalente usar po, pod o pods.
+
+Si queremos ver más información sobre los Pods, como por ejemplo, saber en qué nodo del cluster se está ejecutando:
+
+    oc get pod -o wide
+
+Para obtener información más detallada del Pod:
+
+    oc describe pod pod-nginx
+
+Podríamos editar el Pod y ver todos los atributos que definen el objeto, la mayoría de ellos con valores asignados automáticamente por el propio OpenShift y podremos actualizar ciertos valores:
+
+    oc edit pod pod-nginx
+
+Normalmente no se interactúa directamente con el Pod a través de una shell, pero sí se obtienen directamente los logs al igual que se hace
+en docker:
+
+    oc logs pod-nginx
+
+En el caso poco habitual de que queramos ejecutar alguna orden adicional en el Pod, podemos utilizar el comando `exec`, por ejemplo,
+en el caso particular de que queremos abrir una shell de forma interactiva:
+
+    oc exec -it pod-nginx -- /bin/bash
+
+Otra manera de acceder al pod:
+
+    oc rsh pod-nginx
+
+Podemos acceder a la aplicación, redirigiendo un puerto de localhost al puerto de la aplicación:
+
+    oc port-forward pod-nginx 8080:80
+
+Y accedemos al servidor web en la url http://localhost:8080.
+
+**NOTA**: Esta no es la forma con la que accedemos a las aplicaciones en OpenShift. Para el acceso a las aplicaciones usaremos un recurso llamado Service. Con la anterior instrucción lo que estamos haciendo es una redirección desde localhost el puerto 8080 al puerto 80 del Pod y es útil para pequeñas pruebas de funcionamiento, nunca para acceso real a un servicio.
+
+Para obtener las etiquetas de los Pods que hemos creado:
+
+    oc get pods --show-labels
+
+Las etiquetas las hemos definido en la sección metadata del fichero yaml, pero también podemos añadirlos a los Pods ya creados:
+
+    oc label pods pod-nginx service=web --overwrite=true
+
+Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en el clúster puede haber cientos o miles de objetos). Por ejemplo para visualizar los Pods que tienen una etiqueta con un determinado valor:
+
+    oc get pods -l service=web
+
+También podemos visualizar los valores de las etiquetas como una nueva
+columna:
+
+    oc get pods -Lservice
+
+Y por último, eliminamos el Pod mediante:
+
+    oc delete pod pod-nginx
