@@ -20,6 +20,7 @@
 	* [Contenedores en OpenShift: Pod](modulo3/pod.md)
 	* [Trabajando con Pods](modulo3/trabajando_pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/trabajando_pods_web.md)
+	* [Ejemplo: Pod multicontenedor]()
 	* Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
@@ -39,6 +40,7 @@
 	* Aprovisionamiento de volúmenes
 	* Solicitud de volúmenes
 	* Uso de volúmenes
+	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
 6. Ejemplo final: Citas
 	* Despliegues de citas-backend
