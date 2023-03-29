@@ -91,7 +91,7 @@ Vamos a realizar los siguientes pasos:
 
         oc exec pod-multicontenedor -c contenedor1 -- /bin/cat /app/index.html
 
-    En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar en que contenedor vamos a ejecutar la instrucción.
+    En esta ocasión hay que indicar el contenedor (opción `-c`) para indicar donde vamos a ejecutar la instrucción.
 
 4. Para mostrar el contenido del fichero `index.html` en el segundo contenedor, ejecutamos:
 
