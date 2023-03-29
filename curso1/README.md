@@ -14,30 +14,33 @@
 	* Configuración de oc para el Developer Sandbox
 	* Visión general de la consola web
 
-4. OpenShift como distribución de Kubernetes
+3. OpenShift como distribución de Kubernetes
 	* Introducción a kubernetes
-	* Ejecución de Pod en OpenShift
-	* Tolerancia a fallos, escalabilidad, balanceo de carga
+	* Recursos que nos ofrece Openshift
+	* [Contenedores en OpenShift: Pod](modulo3/pod.md)
+	* [Trabajando con Pods](modulo3/trabajando_pods.md)
+	* Trabajando con Pods desde la consola web
+	* Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
 	* Autoescalado: Escalado automático en OpenShift
 	* Accediendo a las aplicaciones: services, ingress
 	* Nuevo recurso de OpenShift para el acceso a las aplicaciones: Routes
 
-5. Despliegues parametrizados
+4. Despliegues parametrizados
 	* Variables de entorno
     * ConfigMaps
     * Secrets
     * Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB
 
-6. Almacenamiento en OpenShift
+5. Almacenamiento en OpenShift
 	* Consideraciones sobre el almacenamiento
 	* Volúmenes en Kubernetes
 	* Aprovisionamiento de volúmenes
 	* Solicitud de volúmenes
 	* Uso de volúmenes
 
-7. Ejemplo final: Citas
+6. Ejemplo final: Citas
 	* Despliegues de citas-backend
 	* Despliegue de citas-frontend
 	* Despliegue de la base de datos mariadb
