@@ -113,5 +113,5 @@ Vamos a realizar los siguientes pasos:
     
 7. Por último borramos el pod:
 
-    oc delete -f pod-multicontenedor.yaml
+      oc delete -f pod-multicontenedor.yaml
 
