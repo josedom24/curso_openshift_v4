@@ -19,7 +19,7 @@
 	* Recursos que nos ofrece Openshift
 	* [Contenedores en OpenShift: Pod](modulo3/pod.md)
 	* [Trabajando con Pods](modulo3/trabajando_pods.md)
-	* Trabajando con Pods desde la consola web
+	* [Trabajando con Pods desde la consola web](modulo3/trabajando_pods_web.md)
 	* Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
