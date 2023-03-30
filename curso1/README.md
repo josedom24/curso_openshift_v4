@@ -9,7 +9,7 @@
 	* Plataformas para trabajar con OpenShift v4
 
 2. Trabajando con OpenShift
-	* Trabajo online con OpenShift: Developer Sandbox
+	* RedHat OpenShift Dedicated: Developer Sandbox
 	* Instalación el CLI de OpenShift: oc
 	* Configuración de oc para el Developer Sandbox
 	* Visión general de la consola web
