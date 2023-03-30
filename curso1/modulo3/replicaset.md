@@ -44,6 +44,10 @@ Si queremos obtener información detallada del recurso ReplicaSet que hemos crea
 
     oc describe rs replicaset-nginx
 
+### Política de seguridad del pod
+
+HAY QUE TERMINARLO!!!!!!
+
 ## Tolerancia a fallos
 
 Y ahora comenzamos con las funcionalidades llamativas de Kubernetes. ¿Qué pasaría si borro uno de los Pods que se han creado? Inmediatamente se creará uno nuevo para que siempre estén ejecutándose los Pods deseados, en este caso 2:
