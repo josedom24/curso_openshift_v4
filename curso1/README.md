@@ -24,7 +24,7 @@
 	* [Trabajando con ReplicaSets desde la consola web](modulo3/replicaset_web.md)
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
 	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
-	* Trabajando con Deplotment desde la consola web
+	* [Trabajando con Deployment desde la consola web](deployment_web.md)
 
 4. Acceso a las aplicaciones 
 
