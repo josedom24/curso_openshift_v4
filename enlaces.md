@@ -31,3 +31,9 @@ https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-usin
 ## CI/DC
 
 * https://www.tutorialworks.com/openshift-jenkins-docker-pipeline/
+
+
+## Pod security standars
+
+* https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html
+* https://github.com/redhat-openshift-ecosystem/community-operators-prod/discussions/1417

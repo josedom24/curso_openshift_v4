@@ -7,11 +7,21 @@ spec:
   selector:
     matchLabels:
       app: nginx
+      service: web
   template:
     metadata:
       labels:
         app: nginx
+        service: web
     spec:
       containers:
         - image: bitnami/nginx
           name: contenedor-nginx
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+              - ALL

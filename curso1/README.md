@@ -17,8 +17,8 @@
 3. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes](modulo3/aplicaciones.md)
 	* [Recursos que nos ofrece Openshift](modulo3/recursos.md)
-	* [Trabajando con Pods](modulo3/trabajando_pods.md)
-	* [Trabajando con Pods desde la consola web](modulo3/trabajando_pods_web.md)
+	* [Trabajando con Pods](modulo3/pods.md)
+	* [Trabajando con Pods desde la consola web](modulo3/pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
 	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet](modulo3/replicaset.md)
 	* Trabajando con ReplicaSet desde la consola web
