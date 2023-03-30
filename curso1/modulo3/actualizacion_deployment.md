@@ -156,3 +156,5 @@ REVISION  CHANGE-CAUSE
 3         Tercer despliegue. Desplegamos versión 3
 4         Segundo despliegue. Desplegamos versión 2
 ```
+
+Finalmente, podemos acceder de nuevo con un port-forward y comprobamos que hemos vuelto a la versión 2.
