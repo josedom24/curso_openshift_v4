@@ -15,13 +15,12 @@
 	* Visión general de la consola web
 
 3. OpenShift como distribución de Kubernetes
-	* Introducción a kubernetes
-	* Recursos que nos ofrece Openshift
-	* [Contenedores en OpenShift: Pod](modulo3/pod.md)
+	* Despliegues de aplicaciones en Kubernetes
+	* [Recursos que nos ofrece Openshift](recursos.md)
 	* [Trabajando con Pods](modulo3/trabajando_pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/trabajando_pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
-	* Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
+	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
 	* Autoescalado: Escalado automático en OpenShift
