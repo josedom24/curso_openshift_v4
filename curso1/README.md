@@ -24,6 +24,7 @@
 	* Trabajando con ReplicaSet desde la consola web
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
+	* Trabajando con Deplotment desde la consola web
 
 4. Acceso a las aplicaciones 
 
