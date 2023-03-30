@@ -1,5 +1,15 @@
 # Trabajando con Pods
 
+## Ejecución de Pods en OpenShift
+
+Como veremos a continuación, para la ejecución de un Pod en OpenShift o Kubernetes, es necesario indicar las imágenes desde la que se van a crear los contenedores. OpenShift configura por defecto una política de seguridad que sólo nos permite ejecutar contenedores no privilegiados, es decir, donde no se ejecuten procesos o acciones por el usuario con privilegio `root` (por ejmplo, no utilizan puertos no privilegiados, puertos menores a 1024). 
+
+Por esta razón, la mayoría de las imágenes que encontramos en el registro Docker Hub no funcionarán en OpenShift. Es por ello que es necesario usar imágenes de contenedores no privilegiados, por ejemplo creadas con imágenes constructoras (images builder) del propio OpenShift. En nuestro caso, en estos primeros ejemplos, vamos a usar imágenes generadas por la empresa Bitnami, que ya están preparadas para su ejecución en OpenShift.
+
+Por último, indicar que al estar usando **OpenShift Online Developer Sandbox** está política de seguridad no la podemos cambiar, ya que no accedemos como usuario administrador. Sin embargo, si tenemos a nuestra disposición un clúster de OpenShift v4 administrador por nosotros, podemos cambiar esta política ejecutando con el usuario administrador la instrucción:
+
+    oc adm policy add-scc-to-user anyuid -z <Nombre del Proyecto>
+
 ## Creación de Pods
 
 De forma **imperativa** podríamos crear un Pod, ejecutando:
