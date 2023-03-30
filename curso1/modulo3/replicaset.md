@@ -46,7 +46,38 @@ Si queremos obtener información detallada del recurso ReplicaSet que hemos crea
 
 ### Política de seguridad del pod
 
-HAY QUE TERMINARLO!!!!!!
+Al crear el RepicaSet no da un warning, de este estilo: 
+
+```
+Warning: would violate PodSecurity "restricted:v1.24": allowPrivilegeEscalation != false (container "httpd" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container "httpd" must set securityContext.capabilities.drop=["ALL"]), runAsNonRoot != true (pod or container "httpd" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container "httpd" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
+```
+
+Este warning indica que el contenedor "contenedor-nginx" no cumple con algunas de las restricciones de seguridad establecidas en la política de seguridad.
+
+Las restricciones que se indican en el warning son:
+
+* `allowPrivilegeEscalation != false`: Este parámetro debe ser false, lo que impide que el contenedor pueda obtener más privilegios de los que se le han asignado.
+* `unrestricted capabilities`: Esto significa que el contenedor debe establecer `securityContext.capabilities.drop=["ALL"]` para eliminar todas las capacidades adicionales del contenedor que no son necesarias.
+* `runAsNonRoot != true`: Este parámetro debe ser true para garantizar que el contenedor se ejecute como un usuario no privilegiado.
+* `seccompProfile`: Esto significa que el pod o el contenedor deben establecer `securityContext.seccompProfile.type en "RuntimeDefault"` o `"Localhost"` para garantizar que la política de seguridad de seccomp esté configurada adecuadamente.
+
+Para resolver este warning, debe actualizar la definición del pod o del contenedor para cumplir con estas restricciones de seguridad. 
+
+```yaml
+    spec:
+      containers:
+        - image: bitnami/nginx
+          name: contenedor-nginx
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+              - ALL
+```
+
 
 ## Tolerancia a fallos
 
