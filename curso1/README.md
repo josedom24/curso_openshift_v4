@@ -23,7 +23,7 @@
 	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet](modulo3/replicaset.md)
 	* [Trabajando con ReplicaSets desde la consola web](modulo3/replicaset_web.md)
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
-	* Actualizaciones continúas/Rollback
+	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
 	* Trabajando con Deplotment desde la consola web
 
 4. Acceso a las aplicaciones 
