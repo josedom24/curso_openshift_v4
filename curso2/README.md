@@ -32,7 +32,7 @@
 
 8. Aspectos avanzados de OpenShift ????
 	
-	* Autoescalado
+	* * Autoescalado: Escalado automático en OpenShift
 	* Serverless Deployment 
 	* IC/DC
 	* Integración con web IDE

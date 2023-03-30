@@ -1,0 +1,25 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  strategy:
+    type: Rolling
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: contenedor-nginx
+          image: docker.io/bitnami/nginx
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      restartPolicy: Always

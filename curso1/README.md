@@ -15,7 +15,7 @@
 	* Visión general de la consola web
 
 3. OpenShift como distribución de Kubernetes
-	* Despliegues de aplicaciones en Kubernetes
+	* [Despliegues de aplicaciones en Kubernetes](modulo3/aplicaciones.md)
 	* [Recursos que nos ofrece Openshift](modulo3/recursos.md)
 	* [Trabajando con Pods](modulo3/trabajando_pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/trabajando_pods_web.md)
@@ -23,17 +23,24 @@
 	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
-	* Autoescalado: Escalado automático en OpenShift
+
+4. Acceso a las aplicaciones 
+
+	* Services. Tipos de Services
+	* Describiendo Services
+	* Gestionando los Services
+	* Servicio DNS en Kubernetes
+	* Ingress Controller
 	* Accediendo a las aplicaciones: services, ingress
 	* Nuevo recurso de OpenShift para el acceso a las aplicaciones: Routes
 
-4. Despliegues parametrizados
+5. Despliegues parametrizados
 	* Variables de entorno
     * ConfigMaps
     * Secrets
     * Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB
 
-5. Almacenamiento en OpenShift
+6. Almacenamiento en OpenShift
 	* Consideraciones sobre el almacenamiento
 	* Volúmenes en Kubernetes
 	* Aprovisionamiento de volúmenes
@@ -41,7 +48,7 @@
 	* Uso de volúmenes
 	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
-6. Ejemplo final: Citas
+7. Ejemplo final: Citas
 	* Despliegues de citas-backend
 	* Despliegue de citas-frontend
 	* Despliegue de la base de datos mariadb
