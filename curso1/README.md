@@ -20,7 +20,8 @@
 	* [Trabajando con Pods](modulo3/trabajando_pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/trabajando_pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
-	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet
+	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet](modulo3/replicaset.md)
+	* Trabajando con ReplicaSet desde la consola web
 	* Desplegando aplicaciones: Deployment
 	* Actualizaciones continúas/Rollback
 
