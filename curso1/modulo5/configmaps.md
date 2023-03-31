@@ -38,7 +38,7 @@ creados, podemos utilizar:
 
 Y para ver los detalles del mismo:
 
-    oc describe cm mariadb
+    oc describe cm mysql
 
 Si queremos crear un fichero yaml para declarar el objeto ConfigMap, podemos ejecutar:
 
@@ -48,6 +48,7 @@ Si queremos crear un fichero yaml para declarar el objeto ConfigMap, podemos eje
                               --from-literal=basededatos=test \
                               - o yaml --dry-run=client > configmap.yaml
 
+Con la opción `--dry-run=client`, oc va a simular la creación del recurso, pero no se llega a ejecutar, sin embargo con la opción `-o yaml` generamos el fichero yaml con la definición del recurso. 
   
 Una vez que creado el ConfigMap se puede crear un despliegue donde las
 variables de entorno se inicializan con los valores guardados en
@@ -59,10 +60,9 @@ podemos encontrar en el fichero
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql2
+  name: mysql-configmap
   labels:
-    app: mysql
-    type: database
+    app: mysql2
 spec:
   replicas: 1
   selector:
@@ -72,11 +72,10 @@ spec:
     metadata:
       labels:
         app: mysql2
-        type: database
     spec:
       containers:
         - name: contenedor-mysql
-          image: registry.redhat.io/rhscl/mysql-57-rhel7
+          image: bitnami/mysql
           ports:
             - containerPort: 3306
               name: db-port
@@ -117,14 +116,14 @@ Creamos el despliegue, comprobamos que las variables se han creado y accedemos a
 
     oc apply -f mysql-deployment-configmap.yaml
 
-    oc exec -it deplo/mysql2 -- env
+    oc exec -it deploy/mysql-configmap -- env
     ...
     MYSQL_ROOT_PASSWORD=my-password
     MYSQL_USER=usuario
     MYSQL_PASSWORD=password-user
     MYSQL_DATABASE=test
 
-    oc exec -it deployment.apps/mysql2 -- bash -c "mysql -u usuario -p -h 127.0.0.1"
+    oc exec -it deployment.apps/mysql-configmap -- bash -c "mysql -u usuario -p -h 127.0.0.1"
     Enter password: 
     ...
     mysql> show databases;
@@ -132,6 +131,7 @@ Creamos el despliegue, comprobamos que las variables se han creado y accedemos a
     | Database           |
     +--------------------+
     | information_schema |
+    | performance_schema |
     | test               |
     +--------------------+
 

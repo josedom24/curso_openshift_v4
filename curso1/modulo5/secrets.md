@@ -20,7 +20,6 @@ Podemos obtener información de los Secret que hemos creado con las instruccione
 
     oc get secret
     oc describe secret mysql
-    oc describe secret mysql
     ...
 
     Type:  Opaque
@@ -44,10 +43,9 @@ fichero `mysql-deployment-secret.yaml`:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql3
+  name: mysql-secret
   labels:
     app: mysql3
-    type: database
 spec:
   replicas: 1
   selector:
@@ -57,11 +55,10 @@ spec:
     metadata:
       labels:
         app: mysql3
-        type: database
     spec:
       containers:
         - name: contenedor-mysql
-          image:  registry.redhat.io/rhscl/mysql-57-rhel7
+          image:  bitnami/mysql
           ports:
             - containerPort: 3306
               name: db-port

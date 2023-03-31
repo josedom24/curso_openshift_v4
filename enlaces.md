@@ -31,9 +31,13 @@ https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-usin
 ## CI/DC
 
 * https://www.tutorialworks.com/openshift-jenkins-docker-pipeline/
-
+* https://www.redhat.com/sysadmin/wordpress-developer-openshift
 
 ## Pod security standars
 
 * https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html
 * https://github.com/redhat-openshift-ecosystem/community-operators-prod/discussions/1417
+
+## Helm
+
+* https://www.itsfullofstars.de/2021/05/add-a-new-helm-repository-to-openshift-4/
