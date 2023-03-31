@@ -44,6 +44,24 @@ La manera más sencilla de crear un recurso Route en OpenShift es ejecutando:
 
     oc expose service/test-web
 
+También podemos definir el recurso en un fichero `route.yaml`, para crearlo a continuación con `oc apply`:
+
+```yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: test-web
+  namespace: josedom24-dev
+  labels:
+    app: test-web
+spec:
+  to:
+    kind: Service
+    name: test-web
+  port:
+    targetPort: http
+```
+
 Ahora podemos ver los objetos routes que tenemos creados, ejecutando:
 
     oc get routes
