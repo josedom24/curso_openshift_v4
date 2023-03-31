@@ -38,8 +38,8 @@
 
 5. Despliegues parametrizados
 	* [Variables de entorno](modulo5/variables_entorno.md)
-    * [ConfigMaps](configmaps.md)
-    * [Secrets](secrets.md)
+    * [ConfigMaps](modulo5/configmaps.md)
+    * [Secrets](modulo5/secrets.md)
 	* Gestionando las variables de entorno, los ConfigMap y los Secret desde la consola web
     * Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB
 	* Agrupación de aplicaciones
