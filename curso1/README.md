@@ -30,12 +30,10 @@
 4. Acceso a las aplicaciones 
 
 	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones](modulo4/recursos.md)
-	* Describiendo Services
-	* Gestionando los Services
+	* [Trabajando con Services](modulo4/services.md)
+	* Accediendo a las aplicaciones: ingress y routes
 	* Servicio DNS en Kubernetes
-	* Ingress Controller
-	* Accediendo a las aplicaciones: services, ingress
-	* Nuevo recurso de OpenShift para el acceso a las aplicaciones: Routes
+	* Accediendo a las aplicaciones desde la consola web
 
 5. Despliegues parametrizados
 	* Variables de entorno
