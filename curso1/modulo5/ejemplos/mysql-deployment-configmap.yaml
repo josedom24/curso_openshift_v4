@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql2
+  labels:
+    app: mysql
+    type: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql2
+  template:
+    metadata:
+      labels:
+        app: mysql2
+        type: database
+    spec:
+      containers:
+        - name: contenedor-mysql
+          image: registry.redhat.io/rhscl/mysql-57-rhel7
+          ports:
+            - containerPort: 3306
+              name: db-port
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql
+                  key: root_password
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql
+                  key: mysql_usuario
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql
+                  key: mysql_password
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql
+                  key: basededatos
+            

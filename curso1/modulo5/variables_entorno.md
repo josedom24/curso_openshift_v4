@@ -20,7 +20,7 @@ inicializar las variables de entorno necesarias.
 ## Configuración de aplicaciones usando variables de entorno
 
 Vamos a hacer un despliegue de un servidor de base de datos
-mysql. Vamos a usar la imagen `quay.io/centos7/mysql-80-centos7` para que funcione de manera adecuada en OpenShift, aunque se siguen utilizando las mismas variables que hemos estudiado anteriormente. Utilizaremos el fichero `mysql-deployment-env.yaml`:
+mysql. Vamos a usar la imagen `registry.redhat.io/rhscl/mysql-57-rhel7` para que funcione de manera adecuada en OpenShift, aunque se siguen utilizando las mismas variables que hemos estudiado anteriormente (Para [más información](https://docs.openshift.com/online/pro/using_images/db_images/mysql.html)). Utilizaremos el fichero `mysql-deployment-env.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
         - name: contenedor-mysql
-          image:  quay.io/centos7/mysql-80-centos7
+          image:  registry.redhat.io/rhscl/mysql-57-rhel7
           ports:
             - containerPort: 3306
               name: db-port
@@ -68,14 +68,14 @@ datos con esa contraseña del root:
 
   Comprobamos que se ha creado una variable del entorno en el contenedor:
 
-    oc exec -it pod/mysql-5b59c7545d-f9l4v -- env
+    oc exec -it deployment.apps/mysql -- env
     ...
     MYSQL_ROOT_PASSWORD=my-password
 
 Y finalmente realizamos un acceso a la base de datos:
     
-    oc exec -it deployment.apps/mysql -- mysql -u root -p -h 127.0.0.1
+    oc exec -it deployment.apps/mysql -- bash -c "mysql -u root -p -h 127.0.0.1"
     Enter password:
     ...
-    MariaDB [(none)]>
+    mysql>
 

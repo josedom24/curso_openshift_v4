@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: contenedor-mysql
-          image:  quay.io/centos7/mysql-80-centos7
+          image:  registry.redhat.io/rhscl/mysql-57-rhel7
           ports:
             - containerPort: 3306
               name: db-port
