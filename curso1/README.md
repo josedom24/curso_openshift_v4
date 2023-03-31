@@ -40,7 +40,7 @@
 	* [Variables de entorno](modulo5/variables_entorno.md)
     * [ConfigMaps](modulo5/configmaps.md)
     * [Secrets](modulo5/secrets.md)
-	* Gestionando las variables de entorno, los ConfigMap y los Secret desde la consola web
+	* [Gestionando las variables de entorno, los ConfigMap y los Secret desde la consola web](modulo5/web.md)
     * Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB
 	* Agrupación de aplicaciones
 
