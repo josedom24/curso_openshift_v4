@@ -13,7 +13,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: test-web
-  namespace: josedom24-dev
   labels:
     app: test-web
 spec:

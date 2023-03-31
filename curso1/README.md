@@ -40,7 +40,9 @@
 	* Variables de entorno
     * ConfigMaps
     * Secrets
+	* Gestionando las variables de entorno, los ConfigMap y los Secret desde la consola web
     * Ejemplo completo: Despliegue y acceso a Wordpress + MariaDB
+	* Agrupación de aplicaciones
 
 6. Almacenamiento en OpenShift
 	* Consideraciones sobre el almacenamiento

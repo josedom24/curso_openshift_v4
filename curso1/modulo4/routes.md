@@ -51,7 +51,6 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: test-web
-  namespace: josedom24-dev
   labels:
     app: test-web
 spec:
