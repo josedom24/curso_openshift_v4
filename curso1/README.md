@@ -32,7 +32,7 @@
 	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones](modulo4/recursos.md)
 	* [Trabajando con Services](modulo4/services.md)
 	* [Accediendo a las aplicaciones: ingress y routes](modulo4/routes.md)
-	* Servicio DNS en Kubernetes
+	* [Servicio DNS en Kubernetes](modulo4/dns.md)
 	* Accediendo a las aplicaciones desde la consola web
 
 5. Despliegues parametrizados
