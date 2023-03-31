@@ -13,10 +13,11 @@
 	* Instalación el CLI de OpenShift: oc
 	* Configuración de oc para el Developer Sandbox
 	* Visión general de la consola web
+	* Visión general del proyecto de trabajo
 
 3. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes](modulo3/aplicaciones.md)
-	* [Recursos que nos ofrece Openshift](modulo3/recursos.md)
+	* [Recursos que nos ofrece Openshift para desplegar aplicaciones](modulo3/recursos.md)
 	* [Trabajando con Pods](modulo3/pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
@@ -28,13 +29,11 @@
 
 4. Acceso a las aplicaciones 
 
-	* Services. Tipos de Services
-	* Describiendo Services
-	* Gestionando los Services
-	* Servicio DNS en Kubernetes
-	* Ingress Controller
-	* Accediendo a las aplicaciones: services, ingress
-	* Nuevo recurso de OpenShift para el acceso a las aplicaciones: Routes
+	* Recursos que nos ofrece Openshift para acceder a las aplicaciones
+	* Trabajando con Servicios
+	* Servicio DNS en OpenShift
+	* Trabajando con ingress y routes
+	* Accediendo a las aplicaciones desde la consola web
 
 5. Despliegues parametrizados
 	* Variables de entorno
