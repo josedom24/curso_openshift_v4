@@ -72,7 +72,7 @@ datos con esa contraseña del root:
     ...
     MYSQL_ROOT_PASSWORD=my-password
 
-t FINALMENTE REALIZAMOS UN ACCESO A LA BASE DE DATOS
+Y finalmente realizamos un acceso a la base de datos:
     
     oc exec -it deployment.apps/mysql -- mysql -u root -p -h 127.0.0.1
     Enter password:
