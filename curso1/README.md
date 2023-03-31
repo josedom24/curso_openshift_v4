@@ -34,7 +34,7 @@
 	* [Trabajando con Services](modulo4/services.md)
 	* [Accediendo a las aplicaciones: ingress y routes](modulo4/routes.md)
 	* [Servicio DNS en Kubernetes](modulo4/dns.md)
-	* Accediendo a las aplicaciones desde la consola web
+	* [Gestionando los recursos de acceso desde la consola web](modulo4/acceso_web.md)
 
 5. Despliegues parametrizados
 	* Variables de entorno
