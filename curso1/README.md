@@ -37,7 +37,7 @@
 	* [Gestionando los recursos de acceso desde la consola web](modulo4/acceso_web.md)
 
 5. Despliegues parametrizados
-	* Variables de entorno
+	* [Variables de entorno](variables_entorno.md)
     * ConfigMaps
     * Secrets
 	* Gestionando las variables de entorno, los ConfigMap y los Secret desde la consola web
