@@ -20,7 +20,7 @@ inicializar las variables de entorno necesarias.
 ## Configuración de aplicaciones usando variables de entorno
 
 Vamos a hacer un despliegue de un servidor de base de datos
-mysql. Vamos a usar la imagen `quay.io/centos7/mysql-80-centos7` para que funcione de manera adecuada en OpenShift, aunque se siguen utilizando las mismas variables que hemos estudiado anteriormente. Utilizaremos el fichero `mysql-deployment-env.yaml:
+mysql. Vamos a usar la imagen `quay.io/centos7/mysql-80-centos7` para que funcione de manera adecuada en OpenShift, aunque se siguen utilizando las mismas variables que hemos estudiado anteriormente. Utilizaremos el fichero `mysql-deployment-env.yaml`:
 
 ```yaml
 apiVersion: apps/v1
