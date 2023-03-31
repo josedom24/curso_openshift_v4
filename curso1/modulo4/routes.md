@@ -84,7 +84,7 @@ Podemos ver la URL que nos han asignado para el acceso (`Requested Host`), el se
 
 El formato de la URL que se ha generado es:
 
-    <nombre_despliegue>.<nombre_namespace>.<url de acceso al clúster de openshift>
+    <nombre_despliegue>-<nombre_namespace>-<url de acceso al clúster de openshift>
 
 Podemos usar la URL para acceder a la aplicación:
 
