@@ -1,14 +1,12 @@
 # Trabajando con Services
 
-Suponemos que tenemos desplegado la aplicacion `test-web` del capítulo anterior.
+Suponemos que tenemos desplegado la aplicacion `test-web` del capítulo anterior. Tenemos dos Pods ofreciendo el servidor web nginx, a los que queremos acceder desde el exterior y que se balancee la carga entre ellos.
 
-Tenemos dos Pods ofreciendo el servidor web nginx, a los que queremos acceder desde el exterior y que se balancee la carga entre ellos.
-
-Aunque podríamos crear un recurso Service desde la línea de comandos:
+Podríamos crear un recurso Service desde la línea de comandos:
 
     oc expose deployment/test-web 
 
-Normalmente lo que hacemos es describir las características del Service en un fichero yaml `service.yaml`:
+También podemos describir las características del Service en un fichero yaml `service.yaml`:
 
 ```yaml
 kind: Service
