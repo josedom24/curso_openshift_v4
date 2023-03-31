@@ -48,7 +48,7 @@ Recuerda que si usamos `oc get all` también se mostrarán los Services.
 Antes de acceder a la aplicación podemos ver la información más detallada del Service que acabamos de crear:
 
     oc describe service/test-web
-    Name:                     test-web
+    Name:              test-web
     ...
     Selector:          app=test-web
     Type:              ClusterIP
