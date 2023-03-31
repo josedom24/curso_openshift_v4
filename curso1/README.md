@@ -31,7 +31,7 @@
 
 	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones](modulo4/recursos.md)
 	* [Trabajando con Services](modulo4/services.md)
-	* Accediendo a las aplicaciones: ingress y routes
+	* [Accediendo a las aplicaciones: ingress y routes](routes.md)
 	* Servicio DNS en Kubernetes
 	* Accediendo a las aplicaciones desde la consola web
 
