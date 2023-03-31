@@ -30,7 +30,7 @@ En la definción hemos inciado los siguientes parámetros:
 * `pathType`: No es importante, nos permite indicar cómo se van a trabajar con las URL. 
 * `backend`: Indicamos el Service al que vamos a acceder. En este caso indicamos el nombre del Service (`service/name`) y el puerto del Service (`service/port/number`).
 
-Y Poderíamos crear el recurso, ejecutando:
+Y podríamos crear el recurso, ejecutando:
 
     oc apply -f ingress.yaml
 
@@ -81,6 +81,10 @@ Y obtener información de la ruta creada con el comando:
     Endpoints:	10.128.43.128:8080, 10.128.51.189:8080
 
 Podemos ver la URL que nos han asignado para el acceso (`Requested Host`), el servicio con el que esta conectado (`Service`) y cómo está balanceado la carga entre los pods seleccionados por el servicio (`Endpoints`).
+
+El formato de la URL que se ha generado es:
+
+    <nombre_despliegue>.<nombre_namespace>.<url de acceso al clúster de openshift>
 
 Podemos usar la URL para acceder a la aplicación:
 
