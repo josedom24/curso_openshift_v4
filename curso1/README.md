@@ -29,7 +29,7 @@
 
 4. Acceso a las aplicaciones 
 
-	* Services. Tipos de Services
+	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones](modulo4/recursos.md)
 	* Describiendo Services
 	* Gestionando los Services
 	* Servicio DNS en Kubernetes
