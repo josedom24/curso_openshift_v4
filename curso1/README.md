@@ -26,13 +26,14 @@
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
 	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
 	* [Trabajando con Deployment desde la consola web](modulo3/deployment_web.md)
+	* Otras cargas de trabajo
 
 4. Acceso a las aplicaciones 
 
-	* Recursos que nos ofrece Openshift para acceder a las aplicaciones
-	* Trabajando con Servicios
-	* Servicio DNS en OpenShift
-	* Trabajando con ingress y routes
+	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones](modulo4/recursos.md)
+	* [Trabajando con Services](modulo4/services.md)
+	* [Accediendo a las aplicaciones: ingress y routes](modulo4/routes.md)
+	* [Servicio DNS en Kubernetes](modulo4/dns.md)
 	* Accediendo a las aplicaciones desde la consola web
 
 5. Despliegues parametrizados
