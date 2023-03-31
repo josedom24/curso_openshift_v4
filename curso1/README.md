@@ -25,6 +25,7 @@
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
 	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
 	* [Trabajando con Deployment desde la consola web](modulo3/deployment_web.md)
+	* Otras cargas de trabajo
 
 4. Acceso a las aplicaciones 
 
