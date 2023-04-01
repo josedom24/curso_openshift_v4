@@ -71,5 +71,31 @@ Si creamos un nuevo fichero en el directorio `/dir` del primer contenedor, se es
 
 Si borramos el pod se eliminará lo guardado en el directorio `/data`, sin embargo el fichero creado en el directorio `/dir` no se eliminará del directorio `/tmp/datos` del host. Sin embargo, al crear de nuevo el pod es muy probable que se cree en otro worker del clúster por lo que el directorio`/dir` de los contenedores estará vacío.
 
+Finalmente podemos obtener información de los volúmenes que tenemos en un pod ejecutando:
 
-
+    oc describe pod/my-pod
+    ...
+    Containers:
+      writer-container:
+    ...
+        Mounts:
+          /data from shared-data (rw)
+          /dir from host-data (rw)
+          /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-l2dzt (ro)
+      reader-container:
+    ...
+        Mounts:
+          /data from shared-data (rw)
+          /dir from host-data (rw)
+          /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-l2dzt (ro)
+    ...
+    Volumes:
+      shared-data:
+        Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+        Medium:     
+        SizeLimit:  <unset>
+      host-data:
+        Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+        Medium:     
+        SizeLimit:  <unset>
+    ...
