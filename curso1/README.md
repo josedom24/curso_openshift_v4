@@ -48,7 +48,7 @@
 	* [Introducción al almacenamiento](modulo6/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo6/almacenamiento_sandbox.md)
 	* [Volúmenes dentro de un pod](modulo6/volumen_pod.md)
-	* Aprovisionamiento dinámico de volúmenes
+	* [Aprovisionamiento dinámico de volúmenes](modulo6/volumen_dinamico.md)
 	* Gestionando el almacenamiento desde la consola web
 	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
