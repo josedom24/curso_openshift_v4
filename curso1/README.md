@@ -45,7 +45,7 @@
 	* [Agrupación de aplicaciones](modulo5/agrupamiento.md)
 
 6. Almacenamiento en OpenShift
-	* Consideraciones sobre el almacenamiento
+	* [Introducción al almacenamiento](modulo6/almacenamiento.md)
 	* Volúmenes en Kubernetes
 	* Aprovisionamiento de volúmenes
 	* Solicitud de volúmenes
