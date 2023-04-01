@@ -12,6 +12,7 @@
 	* Configuración de oc para crc
 	* Visión general de la consola web
 	* Proyectos en OpenShift
+	* Almacenamiento en crc
 
 3. Deployment us DeploymentConfig
 	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores

@@ -21,10 +21,10 @@ OpenShift soporta varios tipos de almacenamiento que nos ofrecen distintas carac
 
 ## Tipos de almacenamiento
 
-Según la fuente de almacenamiento utilizada tendremos dos tipos de almacenamiento:
+Según como usemos el almacenamiento en el contenedor, tendremos dos tipos:
 
-* **Filesystem**: El almacenamiento es tipo sistema de fichero, con lo que podremos montar un directorio compartido. Por ejemplo: nfs, Azure File, HostPath, ...
-* **Block**: El almacenamiento se comparte con un dispositivo de bloque. El contenedor verá el almacenamiento como un nuevo disco. Por ejemplo: AWS EBS, OpenStack Cinder, iSCSI, ...
+* **Filesystem**: El almacenamiento es tipo sistema de fichero, con lo que podremos montar un directorio compartido.
+* **Block**: El almacenamiento se comparte con un dispositivo de bloque. El contenedor verá el almacenamiento como un nuevo disco. 
 
 ## Modos de acceso
 
