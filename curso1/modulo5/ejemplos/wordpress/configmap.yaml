@@ -1,8 +1,7 @@
 apiVersion: v1
-data:
-  bd_dbname: wordpress
-  bd_user: user_wordpress
 kind: ConfigMap
 metadata:
-  creationTimestamp: null
-  name: bd-datos
+  name: wordpress-cm
+data:
+  bd_name: wordpress
+  bd_user: user_wordpress

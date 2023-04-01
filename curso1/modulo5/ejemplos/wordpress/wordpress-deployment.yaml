@@ -28,18 +28,19 @@ spec:
           env:
             - name: WORDPRESS_DATABASE_HOST
               value: mysql
+            - name: WORDPRESS_DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-cm
+                  key: bd_name
             - name: WORDPRESS_DATABASE_USER
               valueFrom:
                 configMapKeyRef:
-                  name: bd-datos
+                  name: wordpress-cm
                   key: bd_user
             - name: WORDPRESS_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: bd-passwords
+                  name: wordpress-secret
                   key: bd_password
-            - name: WORDPRESS_DATABASE_NAME
-              valueFrom:
-                configMapKeyRef:
-                  name: bd-datos
-                  key: bd_dbname
+            

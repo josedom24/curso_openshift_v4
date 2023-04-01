@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: contenedor-mysql
-          image: registry.redhat.io/rhscl/mysql-57-rhel7
+          image: bitnami/mysql
           ports:
             - containerPort: 3306
               name: db-port
@@ -26,20 +26,20 @@ spec:
             - name: MYSQL_USER
               valueFrom:
                 configMapKeyRef:
-                  name: bd-datos
+                  name: wordpress-cm
                   key: bd_user
             - name: MYSQL_DATABASE
               valueFrom:
                 configMapKeyRef:
-                  name: bd-datos
-                  key: bd_dbname
+                  name: wordpress-cm
+                  key: bd_name
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: bd-passwords
+                  name: wordpress-secret
                   key: bd_password
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: bd-passwords
+                  name: wordpress-secret
                   key: bd_rootpassword
