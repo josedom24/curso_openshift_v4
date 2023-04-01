@@ -46,7 +46,7 @@
 
 6. Almacenamiento en OpenShift
 	* [Introducción al almacenamiento](modulo6/almacenamiento.md)
-	* [Aprovisionamiento de volúmenes](modulo6/aprovinamiento.md)
+	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo6/almacenamiento_sandbox.md)
 	* Solicitud de volúmenes
 	* Uso de volúmenes
 	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
