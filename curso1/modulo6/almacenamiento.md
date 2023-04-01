@@ -44,7 +44,7 @@ Las políticas de reciclaje de volúmenes también dependen del backend y son:
 |Azure Disk|	✓ | - |	- |
 |Cinder |	✓ |	- |	-|
 |Fibre Channel | ✓ | ✓ | - |
-|GCP PersistentDisk |	✓ |	✓ |	- |
+|GCP PersistentDisk |	✓ |	- |	- |
 |GCP Filestore |	✓ |	✓ |	✓ |
 |HostPath |	✓ |	- |	- |
 |iSCSI |	✓ |	✓ |	- |
