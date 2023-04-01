@@ -12,9 +12,14 @@ Otra forma de acceder a los DEployments sería en la vista de **Administrator**,
 
 En este caso obtenemos la lista de Deployments, y en el botón final (con tres puntos) tenemos las acciones que podemos realizar sobre un Deployment en particular.
 
-En esta pantalla también tenemos un botón **Create Deployment** que nos permite la creación de un nuevo Deployment:
+En esta pantalla también tenemos un botón **Create Deployment** que nos permite la creación de un nuevo Deployment desde un fichero YAML:
 
 ![deploy3](img/deploy3.png)
+
+O la creación de un Deployment desde un formulario:
+
+![deploy35](img/deploy35.png)
+
 
 **Nota**: También podemos ejecutar un fichero yaml desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
 
