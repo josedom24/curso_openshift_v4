@@ -8,7 +8,7 @@ es necesario usar un mecanismo que nos permita guardar la información con la qu
 2. Si usamos volúmenes, y tenemos varios Pods que están ofreciendo un servicio y se están ejecutando en nodos distintos del clúster, estos Pods tendrán la información compartida y por tanto todos podrán leer y escribir la misma información.
 3. También podemos usar los volúmenes dentro de un Pod, para que los contenedores que forman parte de él puedan compartir información.
 
-## Tipos de volúmenes 
+## Fuente de almacenamiento 
 
 OpenShift soporta varios tipos de almacenamiento que nos ofrecen distintas características:
 
@@ -18,6 +18,13 @@ OpenShift soporta varios tipos de almacenamiento que nos ofrecen distintas carac
     * hostPath: Monta un directorio del host en el Pod (usado excepcionalmente, pero es el que nosotros vamos a usar con minikube).
     * ...
 * Habituales en despliegues "on premises": iscsi, nfs, ...
+
+## Tipos de almacenamiento
+
+Según la fuente de almacenamiento utilizada tendremos dos tipos de almacenamiento:
+
+* **Filesystem**: El almacenamiento es tipo sistema de fichero, con lo que podremos montar un directorio compartido. Por ejemplo: nfs, Azure File, HostPath, ...
+* **Block**: El almacenamiento se comparte con un dispositivo de bloque. El contenedor verá el almacenamiento como un nuevo disco. Por ejemplo: AWS EBS, OpenStack Cinder, iSCSI, ...
 
 ## Modos de acceso
 
@@ -53,6 +60,16 @@ Las políticas de reciclaje de volúmenes también dependen del backend y son:
 |OpenStack Manila | - | - | ✓ |
 |Red Hat OpenShift Data Foundation | ✓ | - | ✓ |
 |VMware vSphere | ✓ | - | ✓ |
+
+## Recursos de openshift para trabajar con almacenamiento
+
+* Un **PersistentVolumen (PV)** es un objeto que representa los volúmenes disponibles en el cluster. En él se van a definir los detalles del backend de almacenamiento que vamos a utilizar, el tamaño disponible, los modos de acceso, las políticas de reciclaje, etc.
+* Cuando necesitamos usar almacenamiento en nuestro despliegue crearemos un recurso **PersistentVolumenClaim (PVC)**, donde se solicita el tamaño de almacenamiento que necesitamos, modos de acceso, ...
+
+## Tipos de aprovisionamiento
+
+* **Aprovisionamiento estático**: En este caso, es el administrador del cluster el responsable de ir definiendo los distintos volúmenes disponibles en el cluster creando manualmente los distintos recursos **PersistentVolumen (PV)**. Cuando un desarrollador necesita usar almacenamiento lo solicitará, creando un objeto **PersistentVolumenClaim (PVC)**. Si existe un PV que cumpla los requisitos solicitados en el PVC, el PV se asociará con el PVC (estado **bound**).
+* **Aprovisionamiento dinámico**: El administrador del clúster es el responsable de configurar distintos "aprovisionadores" de almacenamiento que se definen en los objetos **StorageClass**. En este caso, cuando un desarrollador necesita almacenamiento para su aplicación, hace una petición de almacenamiento creando un recurso **PersistentVolumenClaim (PVC)** y de forma dinámica se crea el recurso **PersistentVolume** que representa el volumen y se asocia con esa petición. 
 
 
 

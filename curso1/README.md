@@ -46,8 +46,7 @@
 
 6. Almacenamiento en OpenShift
 	* [Introducción al almacenamiento](modulo6/almacenamiento.md)
-	* Volúmenes en Kubernetes
-	* Aprovisionamiento de volúmenes
+	* [Aprovisionamiento de volúmenes](modulo6/aprovinamiento.md)
 	* Solicitud de volúmenes
 	* Uso de volúmenes
 	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
