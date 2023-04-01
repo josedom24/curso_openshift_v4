@@ -91,7 +91,15 @@ Y ahora comenzamos con las funcionalidades llamativas de Kubernetes. ¿Qué pasa
 Para escalar el número de pods:
 
     oc scale rs replicaset-nginx --replicas=5
-    oc get pods
+    oc get pods -o wide
+    NAME                     READY   STATUS    RESTARTS   AGE   IP              NODE                           NOMINATED NODE   READINESS GATES
+    replicaset-nginx-5bkd2   1/1     Running   0          67s   10.128.52.27    ip-10-0-243-92.ec2.internal    <none>           <none>
+    replicaset-nginx-8z7qk   1/1     Running   0          13s   10.128.15.91    ip-10-0-178-128.ec2.internal   <none>           <none>
+    replicaset-nginx-ltkvp   1/1     Running   0          13s   10.128.17.131   ip-10-0-136-61.ec2.internal    <none>           <none>
+    replicaset-nginx-pnh6r   1/1     Running   0          67s   10.128.21.59    ip-10-0-129-235.ec2.internal   <none>           <none>
+    replicaset-nginx-wpkfj   1/1     Running   0          13s   10.128.29.97    ip-10-0-153-158.ec2.internal   <none>           <none>
+
+Podemos comprobar como los cinco pods se están ejecutando en 5 nodos distintos del clúster.
 
 Otra forma de hacerlo sería cambiando el parámetro `replicas` de fichero yaml, y volviendo a ejecutar:
 
