@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: writer-container
+    image: busybox
+    volumeMounts:
+    - name: shared-data
+      mountPath: /data
+    - name: host-data
+      mountPath: /dir
+    command: ["sh", "-c", "echo 'Hello, world!' > /data/my-file.txt && sleep 3600"]
+  - name: reader-container
+    image: busybox
+    volumeMounts:
+    - name: shared-data
+      mountPath: /data
+    - name: host-data
+      mountPath: /dir
+    command: ["/bin/sh", "-c", "cat /data/my-file.txt; sleep 3600"]
+    args: ["-w"]
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+  - name: host-data
+    host-path:
+      path: /tmp/datos

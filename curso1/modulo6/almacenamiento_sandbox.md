@@ -22,5 +22,5 @@ Como hemos indicado anteriormente al usar RedHat OpenShift Dedicated Developer S
 
     Podemos observar que la configuración de los recursos Storage Class tiene los siguientes parámetros:
 
-    * Política de reciclaje `Delete`, es decir cuando el volumen se deje de usar se borrará.
+    * Política de reciclaje `Delete`, es decir cuando el volumen se desasocie de su solicitud, se borrará.
     * Modo de asociación `WaitForFirstConsumer`, es decir no se crea el objeto **PersistentVolumen (PV)** hasta que no se utilice el volumen por el contenedor.

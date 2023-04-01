@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: bitnami/nginx
+        name: contendor-nginx
+        ports:
+        - name: http
+          containerPort: 8080
+        volumeMounts:
+        - name: my-volumen
+          mountPath: /app
+        securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+              - ALL
+      volumes:
+      - name: my-volumen
+        persistentVolumeClaim:
+          claimName: my-pvc
