@@ -41,8 +41,8 @@
     * [ConfigMaps](modulo5/configmaps.md)
     * [Secrets](modulo5/secrets.md)
 	* [Gestionando las variables de entorno, los ConfigMap y los Secret desde la consola web](modulo5/web.md)
-    * Ejemplo completo: Despliegue y acceso a Wordpress + D
-	* Agrupación de aplicaciones
+    * [Ejemplo completo: Despliegue y acceso a Wordpress + MySql](modulo5/wordpress.md)
+	* [Agrupación de aplicaciones](modulo5/agrupamiento.md)
 
 6. Almacenamiento en OpenShift
 	* Consideraciones sobre el almacenamiento
@@ -55,6 +55,6 @@
 7. Ejemplo final: Citas
 	* Despliegues de citas-backend
 	* Despliegue de citas-frontend
-	* Despliegue de la base de datos D
+	* Despliegue de la base de datos mariadb
 	* Actualización de la aplicación citas-backend
 	

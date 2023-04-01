@@ -52,7 +52,7 @@ Utilizamos el fichero de despliegue `mysql-deployment.yaml`:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-env
+  name: mysql
   labels:
     app: wordpress
     type: database
@@ -213,7 +213,7 @@ Finalmente visualizamos todos los recursos que hemos creado:
 
     oc get all
     NAME                             READY   STATUS    RESTARTS   AGE
-    pod/mysql-env-547989d679-2ws9s   1/1     Running   0          90s
+    pod/mysql-547989d679-2ws9s       1/1     Running   0          90s
     pod/wordpress-64bfd486d5-75l7v   1/1     Running   0          62s
 
     NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                               AGE
@@ -222,11 +222,11 @@ Finalmente visualizamos todos los recursos que hemos creado:
     service/wordpress           ClusterIP   172.30.187.161   <none>        8080/TCP,443/TCP                      51s
 
     NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
-    deployment.apps/mysql-env   1/1     1            1           90s
+    deployment.apps/mysql       1/1     1            1           90s
     deployment.apps/wordpress   1/1     1            1           62s
 
     NAME                                   DESIRED   CURRENT   READY   AGE
-    replicaset.apps/mysql-env-547989d679   1         1         1       90s
+    replicaset.apps/mysql-547989d679        1         1         1       90s
     replicaset.apps/wordpress-64bfd486d5   1         1         1       62s
 
     NAME                                 HOST/PORT                                                           PATH   SERVICES    PORT           TERMINATION   WILDCARD

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-env
+  name: mysql
   labels:
     app: wordpress
     type: database
