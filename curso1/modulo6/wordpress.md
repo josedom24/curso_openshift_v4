@@ -176,7 +176,6 @@ Creamos los recursos necesarios:
     oc apply -f wordpress-deployment.yaml
     oc apply -f wordpress-service.yaml
     oc expose service/wordpress
-```
 
 Acedemos a la aplicación, y usando el usuario y la contraseña por defecto (`user` y `bitnami`) creamos un nuevo post en el blog:
 
