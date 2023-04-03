@@ -145,6 +145,4 @@ Es decir, el segundo pod se va a quedar en estado **ContainerCreating** porque l
 En este caso, los volúmenes que crea de forma dinámica el StorageClass tiene como política de reciclaje el valor de `Delete`. Esto significa que cuando eliminemos la solicitud, el objeto PersistentVolumeClaim, también se borrará el volumen, el objeto PersistentVolume.
 
     oc delete deploy/nginx
-    oc delete service/nginx
-    oc delete route/nginx
     oc delete persistentvolumeclaim/my-pvc
