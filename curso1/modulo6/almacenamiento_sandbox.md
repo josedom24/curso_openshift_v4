@@ -9,7 +9,7 @@ Como hemos indicado anteriormente al usar RedHat OpenShift Dedicated Developer S
 
     Por la tanto, usaremos **aprovisionamiento dinámico** para obtener almacenamiento.
 
-* Por otro lado hay que tener en cuenta que la plataforma RedHat OpenShift Dedicated Developer Sandbox está mostrada sobre una infraestructura cloud en el proveedor Amazon Web Service (AWS) por loo tanto el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**. Y tendremos a nuestra disposición 4 recursos **StorageClass** que de forma dinámica nos proporcionarán este tipo de volúmenes:
+* Por otro lado hay que tener en cuenta que la plataforma RedHat OpenShift Dedicated Developer Sandbox está mostrada sobre una infraestructura cloud en el proveedor Amazon Web Service (AWS) por lo tanto el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**. Y tendremos a nuestra disposición 4 recursos **StorageClass** que de forma dinámica nos proporcionarán este tipo de volúmenes:
 
         oc get storageclass
         NAME            PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE

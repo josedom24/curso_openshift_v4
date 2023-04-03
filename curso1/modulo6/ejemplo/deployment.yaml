@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-nginx
+  name: nginx
   labels:
     app: nginx
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - image: bitnami/nginx
-        name: contendor-nginx
+        name: contenedor-nginx
         ports:
         - name: http
           containerPort: 8080
