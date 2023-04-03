@@ -50,6 +50,7 @@
 	* [Volúmenes dentro de un pod](modulo6/volumen_pod.md)
 	* [Aprovisionamiento dinámico de volúmenes](modulo6/volumen_dinamico.md)
 	* [Gestionando el almacenamiento desde la consola web](modulo6/volumen_web.md)
+	* [Instantáneas de volúmenes](modulo6/snapshot.md)
 	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
 7. Ejemplo final: Citas
