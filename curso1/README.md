@@ -26,7 +26,6 @@
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
 	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
 	* [Trabajando con Deployment desde la consola web](modulo3/deployment_web.md)
-	* Otras cargas de trabajo
 
 4. Acceso a las aplicaciones 
 
@@ -53,7 +52,13 @@
 	* [Instantáneas de volúmenes](modulo6/snapshot.md)
 	* [Ejemplo completo: Haciendo persistente la aplicación Wordpress](modulo6/wordpress.md)
 
-7. Ejemplo final: Citas
+7. Otras cargas de trabajo
+	* StatefulSet
+	* DaemonSet
+	* Jobs 
+	* HPA
+
+8. Ejemplo final: Citas
 	* Despliegues de citas-backend
 	* Despliegue de citas-frontend
 	* Despliegue de la base de datos mariadb
