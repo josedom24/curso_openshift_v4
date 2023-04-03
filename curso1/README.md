@@ -51,7 +51,7 @@
 	* [Aprovisionamiento dinámico de volúmenes](modulo6/volumen_dinamico.md)
 	* [Gestionando el almacenamiento desde la consola web](modulo6/volumen_web.md)
 	* [Instantáneas de volúmenes](modulo6/snapshot.md)
-	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
+	* [Ejemplo completo: Haciendo persistente la aplicación Wordpress](modulo6/wordpress.md)
 
 7. Ejemplo final: Citas
 	* Despliegues de citas-backend
