@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: logging
+spec:
+ selector:
+    matchLabels:
+       app: logging-app
+ template:
+   metadata:
+     labels:
+       app: logging-app
+   spec:
+     containers:
+       - name: webserver
+         image: bitnami/nginx
+         ports:
+         - containerPort: 8080
+
