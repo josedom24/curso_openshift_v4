@@ -41,3 +41,8 @@ https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-usin
 ## Helm
 
 * https://www.itsfullofstars.de/2021/05/add-a-new-helm-repository-to-openshift-4/
+
+
+## Ejemplo en java
+
+* https://github.com/redhat-developer-demos/spring-petclinic y https://medium.com/@aadithyaks/redhat-openshift-horizontal-pod-autoscaler-hpa-feature-what-why-how-all-answered-81ec14c4c0c3
