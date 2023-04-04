@@ -121,36 +121,54 @@ Volvemos a crear el recurso StatefulSet y comprobamos que los hostnames y los no
 
 Comprobamos que se han creado volúmenes para los pods:
 
-kubectl get pv,pvc
+    oc get pvc
 
-Escribimos en los documentroot y accedemos al servidor:
+Creamos el fichero `index.html` en el directorio que hemos montado (directorio *DocumentRoot* del servidor web):
 
-for i in 0 1; do kubectl exec "web-$i" -- sh -c 'echo "$(hostname)" > /usr/share/nginx/html/index.html'; done
-for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; done
-web-0
-web-1
+    for i in 0 1; do oc exec "web-$i" -- sh -c 'echo "$(hostname)" > /app/index.html'; done
+    for i in 0 1; do oc exec -i -t "web-$i" -- sh -c 'cat  /app/index.html'; done
+    web-0
+    web-1
 
-Volvemos a eliminar los pods, y comprobamos que la información es persistente al estar guardadas en los volúmenes:
+    Volvemos a eliminar los pods, y comprobamos que la información es persistente al estar guardadas en los volúmenes:
 
-kubectl delete pod -l app=nginx
-for i in 0 1; do kubectl exec -i -t "web-$i" -- sh -c 'curl http://localhost/'; done
+    oc delete pod -l app=nginx
+    oc apply -f statefulset.yaml
+    for i in 0 1; do oc exec -i -t "web-$i" -- sh -c 'cat  /app/index.html'; done
 
 ## Escalar statefulset
 
-Escalamos a más o menos pods:
+Para escalar el despliegue:
 
-kubectl scale sts web --replicas=5
+    oc scale sts web --replicas=5
 
 Comprobamos los pods y los volúmenes:
 
-kubectl get pod,pv,pvc
+    oc get pod,pvc
 
 Si reducimos el número de pods los volúmenes no se eliminan.
 
+## Gestión de StatefulSet desde la consola web
+
+Para gestionar los objetos **StatefulSet** desde la consola web, escogemos la vista **Admionistrator** y la opción **Workloads -> StatefulSets**:
+
+![st](img/statefulset1.png)
+
+En esa pantalla además tenemos la opción de crear un nuevo recurso con el botón **Create StatefulSet**. Si escogemos un objeto determinado obtendremos la descripción del mismo:
+
+![st](img/statefulset2.png)
+
+También podemos gestionar los objetos **PersistentVolumeClaim** que se han creado para cada uno de los pods, en la sección **Storage - > PersistentVolumeClaim**:
+
+![st](img/statefulset3.png)
+
+## Borrado del escenario
+
 Para terminar eliminamos el statefulset y el service:
 
-kubectl delete -f .
+    oc delete -f statefulset.yaml
+    oc delete -f service.yaml
 
 Para borrar los volúmenes:
 
-kubectl delete --all pv,pvc
+    oc delete --all pvc
