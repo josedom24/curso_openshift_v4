@@ -55,7 +55,7 @@
 7. Otros recursos para manejar nuestras aplicaciones
 	* [Otros recursos para manejar nuestras aplicaciones](modulo7/introduccion.md)
 	* [StatefulSet](modulo7/statefulset.md)
-	* DaemonSet
+	* [DaemonSet](modulo7/daemonset.md)
 	* Jobs 
 	* HPA
 
