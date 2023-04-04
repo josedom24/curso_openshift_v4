@@ -56,8 +56,8 @@
 	* [Otros recursos para manejar nuestras aplicaciones](modulo7/introduccion.md)
 	* [StatefulSet](modulo7/statefulset.md)
 	* [DaemonSet](modulo7/daemonset.md)
-	* Jobs 
-	* HPA
+	* [Jobs y CronJobs](modulo7/jobs.md)
+	* [Horizontal Pod AutoScaler]()
 
 8. Ejemplo final: Citas
 	* Despliegues de citas-backend
