@@ -52,7 +52,8 @@
 	* [Instantáneas de volúmenes](modulo6/snapshot.md)
 	* [Ejemplo completo: Haciendo persistente la aplicación Wordpress](modulo6/wordpress.md)
 
-7. Otras cargas de trabajo
+7. Otros recursos para manejar nuestras aplicaciones
+	* [Otros recursos para manejar nuestras aplicaciones](modulo7/introduccion.md)
 	* StatefulSet
 	* DaemonSet
 	* Jobs 
