@@ -127,3 +127,7 @@ Y vemos los nuevos pods que se han creado:
 Y si accedemos a la página web y vamos refrescando, observamos como se balancea la carga entre los distintos pods:  
 
 ![citas](img/citas.gif)
+
+Si accedemos a la Topología de la consola web, después de realizar una agrupación de los dos despliegues, obtenemos:
+
+![citas](img/citas3.png)
