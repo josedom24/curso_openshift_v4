@@ -61,7 +61,7 @@
 
 8. Ejemplo final: Citas
 	* [Despliegue de aplicación citas en OpenShift v4](modulo8/citas.md)
-	* Despliegues de citas-backend
+	* [Despliegues de citas-backend](modulo8/backend.md)
 	* Despliegue de citas-frontend
 	* Despliegue de la base de datos mysql
 	* Actualización de la aplicación citas-backend
