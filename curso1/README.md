@@ -64,5 +64,5 @@
 	* [Despliegues de citas-backend](modulo8/backend.md)
 	* [Despliegue de citas-frontend](modulo8/frontend.md)
 	* [Despliegue de la base de datos mysql](modulo8/mysql.md)
-	* Actualización de la aplicación citas-backend
+	* [Actualización de la aplicación citas-backend](modulo8/backend_v2.md)
 	
