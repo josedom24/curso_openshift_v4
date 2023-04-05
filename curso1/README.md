@@ -63,6 +63,6 @@
 	* [Despliegue de aplicación citas en OpenShift v4](modulo8/citas.md)
 	* [Despliegues de citas-backend](modulo8/backend.md)
 	* [Despliegue de citas-frontend](modulo8/frontend.md)
-	* Despliegue de la base de datos mysql
+	* [Despliegue de la base de datos mysql](modulo8/mysql.md)
 	* Actualización de la aplicación citas-backend
 	

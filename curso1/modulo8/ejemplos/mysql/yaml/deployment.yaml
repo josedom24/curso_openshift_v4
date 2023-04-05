@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: citas
+    type: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: citas
+      type: database
+  template:
+    metadata:
+      labels:
+        app: citas
+        type: database
+    spec:
+      containers:
+        - name: contenedor-mysql
+          image: bitnami/mysql
+          ports:
+            - containerPort: 3306
+              name: db-port
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: bd-datos
+                  key: bd_user
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: bd-datos
+                  key: bd_dbname
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: bd-passwords
+                  key: bd_password
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: bd-passwords
+                  key: bd_rootpassword
+          volumeMounts:
+            - name: mysql-vol
+              mountPath: /bitnami/mysql/data
+      volumes:
+        - name: mysql-vol
+          persistentVolumeClaim:
+            claimName: mysql-pvc
