@@ -60,8 +60,9 @@
 	* [Horizontal Pod AutoScaler]()
 
 8. Ejemplo final: Citas
+	* [Despliegue de aplicación citas en OpenShift v4](modulo8/citas.md)
 	* Despliegues de citas-backend
 	* Despliegue de citas-frontend
-	* Despliegue de la base de datos mariadb
+	* Despliegue de la base de datos mysql
 	* Actualización de la aplicación citas-backend
 	
