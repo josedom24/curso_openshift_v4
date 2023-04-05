@@ -57,7 +57,9 @@
 	* [StatefulSet](modulo7/statefulset.md)
 	* [DaemonSet](modulo7/daemonset.md)
 	* [Jobs y CronJobs](modulo7/jobs.md)
-	* [Horizontal Pod AutoScaler]()
+	* Horizontal Pod AutoScaler
+	* PodDisruptionBudgets
+
 
 8. Ejemplo final: Citas
 	* [Despliegue de aplicación citas en OpenShift v4](modulo8/citas.md)
