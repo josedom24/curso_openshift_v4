@@ -1,0 +1,26 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: citasweb
+  labels:
+    app: citasweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: citasweb
+  template:
+    metadata:
+      labels:
+        app: citasweb
+    spec:
+      containers:
+        - name: contenedor-citasweb
+          image: josedom24/citas-frontend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+          env:
+            - name: CITAS_SERVER
+              value: citas:10000

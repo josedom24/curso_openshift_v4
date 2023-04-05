@@ -151,3 +151,7 @@ Como puedes observar nos da cuatro informaciones: la cita, el autor, el identifi
 Para terminar, y como hemos indicado vamos a eliminar la ruta de acceso a este microservicio:
 
     oc delete route/citas
+
+Si accedemos a la Topología en la consola web, vemos los recursos que hemos creado:
+
+![citas](img/citas1.png)

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: citasweb
+  name: citasweb
+spec:
+  ports:
+  - name: 5000-tcp
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: citasweb
+  sessionAffinity: None
+  type: ClusterIP
