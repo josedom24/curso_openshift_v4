@@ -29,4 +29,4 @@
 
 ## Arquitectura de OpenShift v4
 
-![openshift](img/openshif.png)
+![openshift](img/openshift.png)
