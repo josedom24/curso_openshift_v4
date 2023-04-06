@@ -1,9 +1,8 @@
 # Curso 1: Aprende Kubernetes con OpenShift v4
 
 1. Introducción a OpenShift v4
-	* Implantación de aplicaciones web en contenedores
-	* Contenedores de aplicación: Docker, Podman
-	* Orquestadores de contenedores: Kubernetes
+	* [Implantación de aplicaciones web en contenedores](modulo1/contenedores.md)
+	
 	* OpenShift. Ventajas y beneficios
 	* Arquitectura de OpenShift v4
 	* Plataformas para trabajar con OpenShift v4
