@@ -2,14 +2,12 @@
 
 1. Introducción a OpenShift v4
 	* [Implantación de aplicaciones web en contenedores](modulo1/contenedores.md)
-	
-	* OpenShift. Ventajas y beneficios
-	* Arquitectura de OpenShift v4
+	* [Introducción a OpenShift v4](modulo1/openshift.md)
 	* Plataformas para trabajar con OpenShift v4
 
-2. Trabajando con OpenShift
-	* RedHat OpenShift Dedicated: Developer Sandbox
-	* Instalación el CLI de OpenShift: oc
+2. RedHat OpenShift Dedicated Developer Sandbox
+	* RedHat OpenShift Dedicated Developer Sandbox
+	* Instalación del CLI de OpenShift: oc
 	* Configuración de oc para el Developer Sandbox
 	* Visión general de la consola web
 	* Visión general del proyecto de trabajo
