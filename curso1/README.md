@@ -57,7 +57,7 @@
 	* [StatefulSet](modulo7/statefulset.md)
 	* [DaemonSet](modulo7/daemonset.md)
 	* [Jobs y CronJobs](modulo7/jobs.md)
-	* Horizontal Pod AutoScaler
+	* [Horizontal Pod AutoScaler](modulo7/hpa.md)
 	* PodDisruptionBudgets
 
 
