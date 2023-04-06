@@ -1,0 +1,15 @@
+# Plataformas
+
+    OKD (Origin Community Distribution): OKD es la versión impulsada por la comunidad de OpenShift que está disponible de forma gratuita y es totalmente de código abierto. Es adecuado para organizaciones que tienen un equipo de desarrolladores y personal de TI capacitados que pueden administrar la instalación, configuración y mantenimiento de la plataforma. OKD proporciona una plataforma flexible para construir, implementar y administrar aplicaciones en contenedores en las instalaciones o en la nube.
+
+    CRC (CodeReady Containers): CRC es una versión ligera y portátil de OpenShift que se puede ejecutar en una computadora portátil o de escritorio. Es útil para desarrolladores que desean probar o desarrollar aplicaciones en OpenShift en un entorno local antes de implementar en producción. CRC incluye un conjunto de herramientas para desarrollar y depurar aplicaciones en contenedores.
+
+    OpenShift Dedicated: OpenShift Dedicated es una versión completamente administrada de OpenShift que se ejecuta en la nube pública o privada. Está diseñado para organizaciones que desean una plataforma de aplicaciones en contenedores sin preocuparse por la administración de la infraestructura subyacente. OpenShift Dedicated proporciona alta disponibilidad, escalabilidad y seguridad para las aplicaciones en contenedores en un entorno de nube pública o privada.
+
+
+
+        Cloud Services Editions: Esta opción permite a los usuarios implementar y administrar OpenShift en la nube pública, en una infraestructura administrada y escalable. Los proveedores de la nube, como AWS, Microsoft Azure, o Google Cloud Platform, ofrecen una experiencia optimizada para el usuario, que permite implementar rápidamente aplicaciones en contenedores y aprovechar la escalabilidad y la disponibilidad de la nube pública.
+
+    Self-Managed Editions: Esta opción permite a los usuarios implementar OpenShift en su propia infraestructura, ya sea en sus propios centros de datos o en la nube privada. Los usuarios tienen un control total sobre la infraestructura y los recursos subyacentes, lo que les permite personalizar y adaptar OpenShift a sus necesidades específicas. Esta opción es adecuada para organizaciones que tienen un equipo de operaciones y de TI experimentados que pueden administrar la infraestructura y el software.
+
+    Dedicated: Esta opción es una combinación de las dos opciones anteriores, que ofrece una infraestructura dedicada y completamente administrada por Red Hat. Los usuarios pueden elegir entre una nube pública o privada, y Red Hat se encarga de la administración y el mantenimiento de la infraestructura y del software. Esta opción es adecuada para organizaciones que desean la seguridad y la escalabilidad de una infraestructura dedicada, sin tener que preocuparse por la administración de la misma.
