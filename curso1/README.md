@@ -3,7 +3,7 @@
 1. Introducción a OpenShift v4
 	* [Implantación de aplicaciones web en contenedores](modulo1/contenedores.md)
 	* [Introducción a OpenShift v4](modulo1/openshift.md)
-	* Plataformas para trabajar con OpenShift v4
+	* [Plataformas para trabajar con OpenShift v4](modulo1/plataformas.md)
 
 2. RedHat OpenShift Dedicated Developer Sandbox
 	* RedHat OpenShift Dedicated Developer Sandbox
