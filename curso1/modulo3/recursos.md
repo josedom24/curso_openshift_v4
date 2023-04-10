@@ -14,7 +14,7 @@ Un aspecto muy importante que hay que ir asumiendo es que los Pods son **efímer
 
 ## ReplicaSet
 
-[ReplicaSet](https://kubernetes.io/es/docs/concepts/workloads/controllers/replicaset/) es un recurso de Kubernetes que asegura que siempre se ejecuta un número de réplicas concreto de un Pod determinado. Por lo tanto, nos garantiza que un conjunto de Pods siempre están funcionando y disponibles.
+**ReplicaSet** es un recurso de Kubernetes que asegura que siempre se ejecuta un número de réplicas concreto de un Pod determinado. Por lo tanto, nos garantiza que un conjunto de Pods siempre están funcionando y disponibles.
 
 Un recurso ReplicaSet controla un conjunto de Pods y es el responsable de que estos Pods siempre estén ejecutándose (**Tolerancia a fallos**) y de aumentar o disminuir las réplicas de dicho Pod (**Escalabilidad dinámica**). Estas réplicas de los Pods se ejecutarán en nodos distintos del clúster.
 
@@ -22,7 +22,7 @@ El ReplicaSet va a hacer todo lo posible para que el conjunto    de Pods que con
 
 ## Deployment
 
-El despliegue o Deployment es la unidad de más alto nivel que podemos gestionar en OpenShift.
+El despliegue o **Deployment** es la unidad de más alto nivel que podemos gestionar en OpenShift.
 
 ¿Qué ocurre cuando creamos un nuevo recurso Deployment?
 
