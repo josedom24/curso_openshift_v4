@@ -42,7 +42,7 @@ Algunas de las opciones que tenemos disponibles en esta vista son:
 * **Serverless**: Nos proporciona la posibilidad de gestionar las aplicaciones que hemos desplegado como Serverless. Serverless significa sin servidor, y nos permite desplegar aplicaciones sin tener que crear una infraestrucutra propia, por lo que el pago se realiza por el uso de la aplicación.
 * **Networking**: Nos permite la gestión de todos los recursos de la API que nos permiten el acceso a las aplicaciones: Service, Routes,...
 * **Storage**: Nos da acceso a la gestión de los recursos realacionados con ela almacenamiento: PersistentVolumeClaim, PersitentVolume,...
-* * **Build**: En esta opción accedemos a los recursos Builds que hemos creado y que nos permiten la construcción automática de imágenes. Nos ofrece más opciones que en la vista Developer.
+* **Build**: En esta opción accedemos a los recursos Builds que hemos creado y que nos permiten la construcción automática de imágenes. Nos ofrece más opciones que en la vista Developer.
 * **Pipelines**: Nos permite acceder a los flujos de IC/DC que hemos definido. Nos ofrece más opciones que en la vista Developer.
 * **User Management**: Gestión de los usuarios del clúster. 
 * **Administration**: Configuración general del clúster.
