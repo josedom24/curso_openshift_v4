@@ -1,4 +1,4 @@
-# Recursos que nos ofrece Openshift
+# Recursos que nos ofrece Openshift para desplegar aplicaciones
 
 ## Pods
 
@@ -22,7 +22,7 @@ El ReplicaSet va a hacer todo lo posible para que el conjunto    de Pods que con
 
 ## Deployment
 
-El despliegue o [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) es la unidad de más alto nivel que podemos gestionar en Kubernetes.
+El despliegue o Deployment es la unidad de más alto nivel que podemos gestionar en OpenShift.
 
 ¿Qué ocurre cuando creamos un nuevo recurso Deployment?
 
@@ -38,4 +38,9 @@ Por la manera de trabajar de un Deployment, podemos indicar las funciones que no
 * Actualizaciones continuas
 * Despliegues automáticos
 * Rollback a versiones anteriores
+
+## Otros recursos para el despliegue de aplicaciones
+
+* OpenShift nos permite desplegar aplicaciones con dos recursos propios: **DeploymentConfig** y **Deployment Serverless**. Estos recursos no lo estudiaremos en este curso.
+* Además para desplegar aplicaciones que requieren de otras características veremos más adelante el uso de recursos como el **StatefulSet**, **DaemonSet**, **Job**,...
 
