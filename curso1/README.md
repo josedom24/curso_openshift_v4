@@ -1,20 +1,20 @@
 # Curso 1: Aprende Kubernetes con OpenShift v4
 
 1. Introducción a OpenShift v4
-	* [Implantación de aplicaciones web en contenedores](modulo1/contenedores.md)
-	* [Introducción a OpenShift v4](modulo1/openshift.md)
-	* [Plataformas para trabajar con OpenShift v4](modulo1/plataformas.md)
+	* [Implantación de aplicaciones web en contenedores (P)](modulo1/contenedores.md)
+	* [Introducción a OpenShift v4 (P)](modulo1/openshift.md)
+	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
 
 2. RedHat OpenShift Dedicated Developer Sandbox
-	* [RedHat OpenShift Dedicated Developer Sandbox](modulo2/sandbox.md)
+	* [RedHat OpenShift Dedicated Developer Sandbox (P)](modulo2/sandbox.md)
 	* [Visión general de la consola web](modulo2/consola.md)
 	* [Visión general del proyecto de trabajo](modulo2/proyecto.md)
 	* [Instalación del CLI de OpenShift: oc](modulo2/oc.md)
 	* [Configuración de oc para el Developer Sandbox](modulo2/oclogin.md)
 
 3. OpenShift como distribución de Kubernetes
-	* [Despliegues de aplicaciones en Kubernetes](modulo3/aplicaciones.md)
-	* [Recursos que nos ofrece Openshift para desplegar aplicaciones](modulo3/recursos.md)
+	* [Despliegues de aplicaciones en Kubernetes (P)](modulo3/aplicaciones.md)
+	* [Recursos que nos ofrece Openshift para desplegar aplicaciones (P)](modulo3/recursos.md)
 	* [Trabajando con Pods](modulo3/pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
@@ -26,7 +26,7 @@
 
 4. Acceso a las aplicaciones 
 
-	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones](modulo4/recursos.md)
+	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones (P)](modulo4/recursos.md)
 	* [Trabajando con Services](modulo4/services.md)
 	* [Accediendo a las aplicaciones: ingress y routes](modulo4/routes.md)
 	* [Servicio DNS en Kubernetes](modulo4/dns.md)
@@ -41,7 +41,7 @@
 	* [Agrupación de aplicaciones](modulo5/agrupamiento.md)
 
 6. Almacenamiento en OpenShift
-	* [Introducción al almacenamiento](modulo6/almacenamiento.md)
+	* [Introducción al almacenamiento (P)](modulo6/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo6/almacenamiento_sandbox.md)
 	* [Volúmenes dentro de un pod](modulo6/volumen_pod.md)
 	* [Aprovisionamiento dinámico de volúmenes](modulo6/volumen_dinamico.md)
@@ -50,7 +50,7 @@
 	* [Ejemplo completo: Haciendo persistente la aplicación Wordpress](modulo6/wordpress.md)
 
 7. Otros recursos para manejar nuestras aplicaciones
-	* [Otros recursos para manejar nuestras aplicaciones](modulo7/introduccion.md)
+	* [Otros recursos para manejar nuestras aplicaciones (P)](modulo7/introduccion.md)
 	* [StatefulSet](modulo7/statefulset.md)
 	* [DaemonSet](modulo7/daemonset.md)
 	* [Jobs y CronJobs](modulo7/jobs.md)
