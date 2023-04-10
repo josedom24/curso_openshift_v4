@@ -12,7 +12,7 @@ Copiamos la instrucción de login:
 
 Y la ejecutamos:
 
-    oc login --token=sha256~... --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443
+    oc login --token=sha256~xxxxxxxxxxxxx... --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443
 
     Logged into "https://api.sandbox-m3.1530.p1.openshiftapps.com:6443" as "josedom24" using the token provided.
 
