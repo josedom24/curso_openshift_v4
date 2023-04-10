@@ -1,6 +1,6 @@
 # Plataformas para trabajar con OpenShift v4
 
-## Platasformas comerciales
+## Plataformas comerciales
 
 * **Cloud Services Editions**: Esta opción permite a los usuarios implementar y administrar OpenShift en la nube pública, en una infraestructura administrada y escalable. Los proveedores disponibles son: **AWS, Microsoft Azure, o IBM**.
 
