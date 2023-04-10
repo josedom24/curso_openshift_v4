@@ -11,6 +11,8 @@
     * [Self-Managed Editions](https://www.redhat.com/en/technologies/cloud-computing/openshift#self-managed)
 
 * **Dedicated**: Esta opción es una combinación de las dos opciones anteriores, que ofrece una infraestructura dedicada y completamente administrada por Red Hat. Los usuarios pueden elegir entre una nube pública o privada, y Red Hat se encarga de la administración y el mantenimiento de la infraestructura y del software.
+
+    * [Dedicated](https://www.redhat.com/en/technologies/cloud-computing/openshift/dedicated)
     
 ## Probar OpenShift v4
 
