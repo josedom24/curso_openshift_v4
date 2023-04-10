@@ -1,6 +1,6 @@
 # Despliegues de aplicaciones en Kubernetes
 
-Vamos a resumir brevemente, con la ayuda de un par de imágenes, la forma que tiene Openshift (y Kubernetes) de hacer despliegues de aplicaciones y lo compararemos con un despliegue "tradicional".
+Vamos a resumir brevemente, con la ayuda de un par de imágenes, la forma que tiene OpenShift (y Kubernetes) de hacer despliegues de aplicaciones y lo compararemos con un despliegue "tradicional".
 
 Aunque un despliegue real tiene muchos más elementos que los que vamos a exponer a continuación, con idea de simplificarlo todo y entrarnos en la diferencia de los elementos que intervienen, supondremos una aplicación "tradicional" de dos capas, en las que una serie de equipos son los que están expuestos a Internet y los que pueden ejecutar una parte del código de la aplicación a través de servidores web (a los que de forma genérica denominaremos "front-end"), mientras que otra serie de equipos ejecutan otra parte de código y gestionan el almacenamiento y las bases de datos (a los que llamaremos de forma genérica "back-end").
 

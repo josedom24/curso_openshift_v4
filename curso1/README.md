@@ -14,7 +14,7 @@
 
 3. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes (P)](modulo3/aplicaciones.md)
-	* [Recursos que nos ofrece Openshift para desplegar aplicaciones (P)](modulo3/recursos.md)
+	* [Recursos que nos ofrece OpenShift para desplegar aplicaciones (P)](modulo3/recursos.md)
 	* [Trabajando con Pods](modulo3/pods.md)
 	* [Trabajando con Pods desde la consola web](modulo3/pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
@@ -26,7 +26,7 @@
 
 4. Acceso a las aplicaciones 
 
-	* [Recursos que nos ofrece Openshift para el acceso a las aplicaciones (P)](modulo4/recursos.md)
+	* [Recursos que nos ofrece OpenShift para el acceso a las aplicaciones (P)](modulo4/recursos.md)
 	* [Trabajando con Services](modulo4/services.md)
 	* [Accediendo a las aplicaciones: ingress y routes](modulo4/routes.md)
 	* [Servicio DNS en Kubernetes](modulo4/dns.md)

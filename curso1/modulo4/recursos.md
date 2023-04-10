@@ -1,4 +1,4 @@
-# Recursos que nos ofrece Openshift para el acceso a las aplicaciones
+# Recursos que nos ofrece OpenShift para el acceso a las aplicaciones
 
 ## Services
 

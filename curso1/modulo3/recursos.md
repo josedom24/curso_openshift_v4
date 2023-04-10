@@ -1,4 +1,4 @@
-# Recursos que nos ofrece Openshift para desplegar aplicaciones
+# Recursos que nos ofrece OpenShift para desplegar aplicaciones
 
 ## Pods
 
