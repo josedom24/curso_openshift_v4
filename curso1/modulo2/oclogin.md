@@ -1,18 +1,18 @@
 # Configuración de oc para el Developer Sandbox
 
-Una vez que tenemos instalado la herramienta `oc`, el siguiente paso el realizar el login en nuestro clúster. En el caso de RedHat OpenShift Dedicated Developer Sandbox, la autentficación se hace por medio de un token.
+Una vez que tenemos instalado la herramienta `oc`, el siguiente paso el realizar el login en nuestro clúster. En el caso de RedHat OpenShift Dedicated Developer Sandbox, la autentificación se hace por medio de un token.
 
-Para obtener este token accedemos al menú que aprece al pulsar sobre nuestro nomber de usuario (parte superior derecha), eligiendo la opción **Copy login command**:
+Para obtener este token accedemos al menú que aparece al pulsar sobre nuestro nombre de usuario (parte superior derecha), eligiendo la opción **Copy login command**:
 
-imagen1
+![oc](img/oclogin1.png)
 
 Copiamos la instrucción de login:
 
-imagen2
+![oc](img/oclogin2.png)
 
 Y la ejecutamos:
 
-    oc login --token=sha256~UDgHaWXrosaNOAJEFxjhqZMPgH8ksbREvd8LZ_7mFYw --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443
+    oc login --token=sha256~... --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443
 
     Logged into "https://api.sandbox-m3.1530.p1.openshiftapps.com:6443" as "josedom24" using the token provided.
 

@@ -36,7 +36,7 @@ Otros programas similares;
 
 ## Orquestadores de contenedores
 
-Un **Orquestador de contendores** es un programa que gestiona los contenedores que se ejecutan en un clúster de servidores. Nos ofrece muchas características: actualizaciones automáticas, balanceo de carga, tolerancia a fallos, escalabilidad, ...
+Un **Orquestador de contenedores** es un programa que gestiona los contenedores que se ejecutan en un clúster de servidores. Nos ofrece muchas características: actualizaciones automáticas, balanceo de carga, tolerancia a fallos, escalabilidad, ...
 
 Actualmente, el más usado: **Kubernetes**.
 
