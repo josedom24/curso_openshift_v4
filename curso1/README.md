@@ -7,7 +7,7 @@
 
 2. RedHat OpenShift Dedicated Developer Sandbox
 	* [RedHat OpenShift Dedicated Developer Sandbox](modulo2/sandbox.md)
-	* Visión general de la consola web
+	* [Visión general de la consola web](modulo2/consola.md)
 	* Visión general del proyecto de trabajo
 	* [Instalación del CLI de OpenShift: oc](modulo2/oc.md)
 	* [Configuración de oc para el Developer Sandbox](modulo2/oclogin.md)
