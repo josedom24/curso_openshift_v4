@@ -12,4 +12,5 @@ La versión **Developer Sandbox** de **OpenShift Dedicated** nos permite probar 
 * La plataforma está implementada sobre un clúster de instancias de AWS. En este caso, cuando trabajemos con el almacenamiento tendremos a nuestra disposición los medios de almacenamiento que ofrece el proovedor: AWS Elastic Block Store (EBS).
 * Al usar un usario sin privilegios, no tendremos acceso algunos recursos: la gestión de proyectos, los nodos del clúster, los volúmenes de almacenamiento,...
 
+[Acceso a RedHat OpenShift Dedicated Developer Sandbox](https://developers.redhat.com/developer-sandbox)
 
