@@ -7,10 +7,10 @@
 
 2. RedHat OpenShift Dedicated Developer Sandbox
 	* [RedHat OpenShift Dedicated Developer Sandbox](modulo2/sandbox.md)
-	* Instalación del CLI de OpenShift: oc
-	* Configuración de oc para el Developer Sandbox
 	* Visión general de la consola web
 	* Visión general del proyecto de trabajo
+	* [Instalación del CLI de OpenShift: oc](modulo2/oc.md)
+	* Configuración de oc para el Developer Sandbox
 
 3. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes](modulo3/aplicaciones.md)
