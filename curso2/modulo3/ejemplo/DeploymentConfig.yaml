@@ -23,3 +23,14 @@ spec:
             - containerPort: 8080
               protocol: TCP
       restartPolicy: Always
+  triggers:
+    - type: ConfigChange
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+        - contenedor-nginx
+        from:
+          kind: ImageStreamTag
+          name: nginx:latest
+      
