@@ -13,17 +13,20 @@
 	* Visión general de la consola web
 	* Proyectos en OpenShift
 	* Almacenamiento en crc
-
 3. Deployment us DeploymentConfig
+	* Características de DeployConfig
+	
 	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
-4. ImageStreams
-5. Builds
-6. Despliegue de aplicaciones en OpenShift
+
+4. Despliegue de aplicaciones en OpenShift
 	* Despliegue de aplicaciones desde imágenes
 	* Despliegue de aplicaciones desde código fuente
 	* Despliegue de aplicaciones desde Dockerfile
 	* Despliegue de aplicaciones desde el catálogo
 	* Despliegue de aplicaciones desde un pipeline
+
+5. ImageStreams
+6. Builds
 
 7. Plantillas
 
@@ -33,7 +36,6 @@
 
 8. Aspectos avanzados de OpenShift ????
 	
-	* * Autoescalado: Escalado automático en OpenShift
 	* Serverless Deployment 
 	* IC/DC
 	* Integración con web IDE
