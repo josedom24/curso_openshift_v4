@@ -20,6 +20,7 @@ Los principales métodos de implementar una aplicación son:
 * **Source-to-Image (s2i)**: Construir de forma automática una nueva imagen a parir de una aplicación que tengamos guardada en un repositorio git. A partir de la imagen que genera de forma automática se despliega la aplicación. 
 * Construir una nueva imagen generada a partir de un fichero **Dockerfile**, y desplegar la aplicación desde esa imagen construida.
 * Desplegar aplicaciones a partir de plantillas.
+* Desplegar aplicaciones desde un pipeline de IC/DC.
 
 ## Otros recursos de OpenShift involucrados en el despliegue de aplicaciones
 
