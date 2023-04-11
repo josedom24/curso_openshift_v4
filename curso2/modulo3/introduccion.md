@@ -24,7 +24,7 @@ Los principales métodos de implementar una aplicación son:
 
 ## Otros recursos de OpenShift involucrados en el despliegue de aplicaciones
 
-Los métodos de despliegue anteriores se pueden usar en OpenShift desde la **consola web** o usando la herramienta de línea de comando **oc** (`oc new-app ...`). Al crea un aplicación con algunos de estos métodos podemos indicar si queremos usar los distintos recursos de despliegues que hemos visto anteriormente: **Deployment**, **DeploymentConfig** o **Deployment Serverless**. Desde la versión 4.5 por defecto se crea un recurso **Deployment**.
+Los métodos de despliegue anteriores se pueden usar en OpenShift desde la **consola web** o usando la herramienta de línea de comando **oc** (`oc new-app ...`). Al crea un aplicación con algunos de estos métodos podemos indicar si queremos usar los distintos recursos de despliegues que hemos visto anteriormente: **Deployment**, **DeploymentConfig** o **Deployment Serverless**. Si creamos un despliegue con la herramienta de línea de comando `oc`, por defecto se crea un recurso **Deployment**. Si creamos un despliegue con la consola web, por defecto se crea un recurso **Deployment Serverless**
 
 En la creación de aplicaciones además, se usan otros recursos de OpenShift:
 
