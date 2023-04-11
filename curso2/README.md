@@ -4,8 +4,7 @@
 	* Cloud Computing
 	* PaaS: Plataforma como servicio
 	* OpenShift como PaaS
-	* Introducción a las estrategias de despliegues en OpsenShift v4
-
+	* 
 2. Trabajando con OpenShift
 	* Distribución de la comunidad: okd
 	* Instalación en local con crc
@@ -13,17 +12,20 @@
 	* Visión general de la consola web
 	* Proyectos en OpenShift
 	* Almacenamiento en crc
-3. Deployment us DeploymentConfig
-	* Características de DeployConfig
-	
-	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 
-4. Despliegue de aplicaciones en OpenShift
+3. Despliegue de aplicaciones en OpenShift
+	* [Introducción al despliegue de aplicaciones en OpenShift](modulo3/introduccion.md)
 	* Despliegue de aplicaciones desde imágenes
 	* Despliegue de aplicaciones desde código fuente
 	* Despliegue de aplicaciones desde Dockerfile
 	* Despliegue de aplicaciones desde el catálogo
 	* Despliegue de aplicaciones desde un pipeline
+
+3. Deployment us DeploymentConfig
+	* Características de DeployConfig
+	
+	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
+
 
 5. ImageStreams
 6. Builds
