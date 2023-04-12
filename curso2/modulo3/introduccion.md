@@ -24,7 +24,7 @@ Los principales métodos de implementar una aplicación son:
 
 ## Otros recursos de OpenShift involucrados en el despliegue de aplicaciones
 
-Los métodos de despliegue anteriores se pueden usar en OpenShift desde la **consola web** o usando la herramienta de línea de comando **oc** (`oc new-app ...`). Al crea un aplicación con algunos de estos métodos podemos indicar si queremos usar los distintos recursos de despliegues que hemos visto anteriormente: **Deployment**, **DeploymentConfig** o **Deployment Serverless**. Si creamos un despliegue con la herramienta de línea de comando `oc`, por defecto se crea un recurso **Deployment**. Si creamos un despliegue con la consola web, por defecto se crea un recurso **Deployment Serverless**
+Los métodos de despliegue anteriores se pueden usar en OpenShift desde la **consola web** o usando la herramienta de línea de comando **oc** (`oc new-app ...`). Al crea un aplicación con algunos de estos métodos podemos indicar si queremos usar los distintos recursos de despliegues que hemos visto anteriormente: **Deployment**, **DeploymentConfig** o **Deployment Serverless**. Si creamos un despliegue con la herramienta de línea de comando `oc`, por defecto se crea un recurso **Deployment**. Si creamos un despliegue con la consola web, podemos configurar el recurso que se crea por defecto.
 
 En la creación de aplicaciones además, se usan otros recursos de OpenShift:
 
@@ -37,4 +37,5 @@ En la creación de aplicaciones además, se usan otros recursos de OpenShift:
     * **Gestión centralizada de las imágenes**: Nos permite controlar y auditar el uso de imágenes de contenedores , independientemente del registro donde se localice la imagen real. Los registros puedes externos o interno al clúster de OpenShift.
 
 * **BuildConfig**: Cuando el método de despliegue conlleva la construcción automática de una imagen (s2i o Dockerfile), este recurso se utiliza para configurar el proceso de construcción de la imagen (build).
+* **Build**: Cada vez que se hace una construcción automática de una imagen con la configuración del recurso **BuildConfig**, se creará un recurso del tipo **Build**. La construcción se realizará en un pod cuyo nombre tendrá la palabra *build*.
 
