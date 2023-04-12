@@ -47,7 +47,7 @@ users:
 
 Donde vemos que se ha creado un contexto, donde se gurda el servidor al que nos conectamos (`cluster`), el namespace o proyecto que estamos usando (`namespace`) y el usuario (`user`). Como hemos indicado el usuario utiliza el token para autentificarse sobre el clúster.
 
-Esta operación habrá que repetirla cada vez que trabajemos con el clúster ya que el token tiene una caducidad y va cambiando con el tiempo.
+Esta operación habrá que repetirla cada vez que el token se caduque.
 
 Como hemos indicado anteriormente el proyecto que estamos usando se corresponde con un recurso `namespace` que nos permite agrupar todos nuestros recursos. Con el usuario que usamos tenemos acceso a nuestro proyecto, pero no podemos acceder a los recurso `namespaces` que están definido en el clúster:
 
