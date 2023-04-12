@@ -16,7 +16,7 @@
 3. Despliegue de aplicaciones en OpenShift
 	* [Introducción al despliegue de aplicaciones en OpenShift](modulo3/introduccion.md)
 	* [Despliegue de aplicaciones desde imágenes](modulo3/imagen.md)
-	* Despliegue de aplicaciones desde código fuente
+	* [Despliegue de aplicaciones desde código fuente](modulo3/codigo.md	)
 	* Despliegue de aplicaciones desde Dockerfile
 	* Despliegue de aplicaciones desde el catálogo
 	* Despliegue de aplicaciones desde un pipeline
