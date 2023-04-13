@@ -32,6 +32,7 @@ https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-usin
 
 * https://www.tutorialworks.com/openshift-jenkins-docker-pipeline/
 * https://www.redhat.com/sysadmin/wordpress-developer-openshift
+* https://github.com/josgonza-rh/openshift-s2i-php
 
 ## Pod security standars
 
