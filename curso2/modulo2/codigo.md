@@ -65,29 +65,29 @@ Si añadimos un fichero `index.php` a nuestro repositorio:
 Y ahora creamos la aplicación sin indicar la **Builder Image**:
 
     oc new-app https://github.com/josedom24/osv4_html.git --name=app3
---> Found image b34c3d8 (5 months old) in image stream "openshift/php" under tag "8.0-ubi8" for "php"
+    --> Found image b34c3d8 (5 months old) in image stream "openshift/php" under tag "8.0-ubi8" for "php"
 
-    Apache 2.4 with PHP 8.0 
-    ----------------------- 
-    PHP 8.0 available as container is a base platform for building and running various PHP 8.0 applications and frameworks. PHP is an HTML-embedded scripting language. PHP attempts to make it easy for developers to write dynamically generated web pages. PHP also offers built-in database integration for several commercial and non-commercial database management systems, so writing a database-enabled webpage with PHP is fairly simple. The most common use of PHP coding is probably as a replacement for CGI scripts.
+        Apache 2.4 with PHP 8.0 
+        ----------------------- 
+        PHP 8.0 available as container is a base platform for building and running various PHP 8.0 applications and frameworks. PHP is an HTML-embedded scripting language. PHP attempts to make it easy for developers to write dynamically generated web pages. PHP also offers built-in database integration for several commercial and non-commercial database management systems, so writing a database-enabled webpage with PHP is fairly simple. The most common use of PHP coding is probably as a replacement for CGI scripts.
 
-    Tags: builder, php, php80, php-80
+        Tags: builder, php, php80, php-80
 
-    * The source repository appears to match: php
-    * A source build using source code from https://github.com/josedom24/osv4_html.git will be created
-      * The resulting image will be pushed to image stream tag "app3:latest"
-      * Use 'oc start-build' to trigger a new build
+        * The source repository appears to match: php
+        * A source build using source code from https://github.com/josedom24/osv4_html.git will be created
+          * The resulting image will be pushed to image stream tag "app3:latest"
+          * Use 'oc start-build' to trigger a new build
 
---> Creating resources ...
-    imagestream.image.openshift.io "app3" created
-    buildconfig.build.openshift.io "app3" created
-    deployment.apps "app3" created
-    service "app3" created
---> Success
-    Build scheduled, use 'oc logs -f buildconfig/app3' to track its progress.
-    Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
-     'oc expose service/app3' 
-    Run 'oc status' to view your app.
+    --> Creating resources ...
+        imagestream.image.openshift.io "app3" created
+        buildconfig.build.openshift.io "app3" created
+        deployment.apps "app3" created
+        service "app3" created
+    --> Success
+        Build scheduled, use 'oc logs -f buildconfig/app3' to track its progress.
+        Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
+         'oc expose service/app3' 
+        Run 'oc status' to view your app.
 
 Comprobamos que ha detectado que la aplicación está escrita en PHP, y nos ha seleccionado la **Builder Image** `php:8.0-ubi8`.
 
