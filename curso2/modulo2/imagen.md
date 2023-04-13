@@ -1,4 +1,4 @@
-# Despliegue de aplicaciones desde imágenes
+# Despliegue de aplicaciones desde imágenes con oc
 
 El esquema para ver los recursos que se crean en OpenShift al realizar un despliegue desde una imagen es el siguiente:
 

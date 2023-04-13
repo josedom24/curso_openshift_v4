@@ -4,16 +4,18 @@
 	* Cloud Computing
 	* PaaS: Plataforma como servicio
 	* OpenShift como PaaS
-	* 
+	* RedHat OpenShift Dedicated Developer Sandbox
 
-
-3. Despliegue de aplicaciones en OpenShift
-	* [Introducción al despliegue de aplicaciones en OpenShift](modulo3/introduccion.md)
-	* [Despliegue de aplicaciones desde imágenes](modulo3/imagen.md)
-	* [Despliegue de aplicaciones desde código fuente](modulo3/codigo.md	)
-	* [Despliegue de aplicaciones desde Dockerfile](modulo3/dockerfile.md)
-	* Despliegue de aplicaciones desde el catálogo
-	* Despliegue de aplicaciones desde un pipeline
+2. Despliegue de aplicaciones en OpenShift
+	* [Introducción al despliegue de aplicaciones en OpenShift](modulo2/introduccion.md)
+	* [Despliegue de aplicaciones desde imágenes con oc](modulo2/imagen.md)
+	* Despliegue de aplicaciones desde imágenes desde la consola web
+	* [Despliegue de aplicaciones desde código fuente con oc](modulo2/codigo.md	)
+	* Despliegue de aplicaciones desde código fuente desde la consola web
+	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo2/dockerfile.md)
+	* Despliegue de aplicaciones desde Dockerfile desde la consola web
+	* Despliegue de aplicaciones desde el catálogo con oc
+	* Despliegue de aplicaciones desde el catálogo desde la consola web
 
 3. Deployment us DeploymentConfig
 	* Características de DeployConfig
