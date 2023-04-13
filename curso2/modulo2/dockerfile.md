@@ -26,5 +26,11 @@ Si queremos que la construcción se vuelva a realizar usando el mecanismos de s2
 
 Y volverá a usar el mecanismo anterior.
 
-## Segundo ejemplo: Despliegue de aplicación web python
+## Segundo ejemplo: Despliegue de aplicación web python Temperaturas
+
+    oc new-app https://github.com/josedom24/osv4_python.git --name=app1
+
+    oc new-app https://github.com/josedom24/osv4_python.git --name=app2 --env PROVINCIA=cadiz
+
+
 
