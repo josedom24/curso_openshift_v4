@@ -20,7 +20,7 @@
 3. Deployment us DeploymentConfig
 	* Características de DeployConfig
 	
-	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
+	
 
 
 5. ImageStreams
@@ -48,6 +48,7 @@
 	* ...
 		
 2. Trabajando con OpenShift en local
+	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 	* Distribución de la comunidad: okd
 	* Instalación en local con crc
 	* Configuración de oc para crc
