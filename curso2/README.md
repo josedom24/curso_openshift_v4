@@ -19,15 +19,35 @@
 
 3. Deployment us DeploymentConfig
 	* Características de DeployConfig
+	* Creación de un DeployConfig al crear una aplicación
+	* Definición de un recurso DeploymentConfig
+	* Ciclo de vida de un DeploymentConfig
+	* Actualización de un DeploymentConfig (*rollout* y *rollback*)
+	* Trabajando con DeploymentConfig desde la consola web
+	* Triggers
 	
-	
 
+4. ImageStreams
+	* Introducción al recurso ImageStream
+	* ImageStream a imágenes del registro interno
+	* Creación de ImageStream al crear una nueva aplicación
+	* Creación de ImageStream a una imagen externa
+	* Creación de ImageStream desde un YAML
+	* Gestión de ImageString desde la consola web
+	* Gestión de las etiqueta en un ImageStream
+	* Actualización automática de ImageStream
 
-5. ImageStreams
-6. Builds
+5. Builds: Construcción automática de imágenes
+	* Introducción a la construcción automática de imágenes (build)
+	* El recurso BuildConfig
+	* Creación del recurso BuildConfig con new-build desde el código fuente
+	* Ciclo de vida del recurso BuildConfig
+	* Creación del recurso BuildConfig desde un fichero Dockerfile
+	* Creación del recurso BuildConfig desde un directorio local
+	* Gestión de builds desde la consola web
+	* Actualización automática de un build
 
-
-4. Ejemplos de despliegues de aplicaciones web
+6. Ejemplos de despliegues de aplicaciones web
 
 	* Despliegue de aplicaciones Python en OpenShift: guestbook
 	* Aplicación python guestbook con con almacenamiento persistente
@@ -47,7 +67,7 @@
 	* Integración con web IDE
 	* ...
 		
-2. Trabajando con OpenShift en local
+9. Trabajando con OpenShift en local
 	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 	* Distribución de la comunidad: okd
 	* Instalación en local con crc
