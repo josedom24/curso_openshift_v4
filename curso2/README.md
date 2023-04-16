@@ -30,11 +30,12 @@
 	* Características de DeployConfig
 	* [Creación de un DeployConfig al crear una aplicación](modulo4/newdc.md)
 	* [Definición de un recurso DeploymentConfig](modulo4/deploymentconfig.md)
-	* Ciclo de vida de un DeploymentConfig
 	* Actualización de un DeploymentConfig (*rollout* y *rollback*)
 	* Trabajando con DeploymentConfig desde la consola web
 	* Triggers
-	
+	* Estrategias de despliegues (https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html)
+	* Estrategias de despliegues basadas en rutas (https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html)
+
 
 5. ImageStreams
 	* Introducción al recurso ImageStream

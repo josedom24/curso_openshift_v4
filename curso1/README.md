@@ -22,10 +22,7 @@
 	* [Trabajando con ReplicaSets desde la consola web](modulo3/replicaset_web.md)
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
 	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
-	* Estrategias de despliegues (https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html)
-	* Estrategias de despliegues basadas en rutas (https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html)
-	* [Trabajando con Deployment desde la consola web](modulo3/deployment_web.md)
-
+	
 4. Acceso a las aplicaciones 
 
 	* [Recursos que nos ofrece OpenShift para el acceso a las aplicaciones (P)](modulo4/recursos.md)
@@ -57,9 +54,7 @@
 	* [DaemonSet](modulo7/daemonset.md)
 	* [Jobs y CronJobs](modulo7/jobs.md)
 	* [Horizontal Pod AutoScaler](modulo7/hpa.md)
-	* PodDisruptionBudgets
-
-
+		
 8. Ejemplo final: Citas
 	* [Despliegue de aplicación citas en OpenShift v4 (P)](modulo8/citas.md)
 	* [Despliegues de citas-backend](modulo8/backend.md)
