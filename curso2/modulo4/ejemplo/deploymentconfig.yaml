@@ -1,27 +1,29 @@
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
-  name: nginx
+  name: test-web2
   labels:
-    app: nginx
+    app: test-web
 spec:
   strategy:
     type: Rolling
   replicas: 1
   revisionHistoryLimit: 10
   selector:
-    app: nginx
+    app: test-web
   template:
     metadata:
       labels:
-        app: nginx
+        app: test-web
     spec:
       containers:
-        - name: contenedor-nginx
-          image: docker.io/bitnami/nginx
+        - name: test-web
+          image: josedom24/test_web@sha256:99db6f7fdcd6aa338d80b5cd926dff8bae50062c49f82c79a3d67d048efb13a4
           ports:
-            - containerPort: 8080
-              protocol: TCP
+          - containerPort: 8443
+            protocol: TCP
+          - containerPort: 8080
+            protocol: TCP
       restartPolicy: Always
   triggers:
     - type: ConfigChange
@@ -29,8 +31,8 @@ spec:
       imageChangeParams:
         automatic: true
         containerNames:
-        - contenedor-nginx
+        - contenedor-test-web
         from:
           kind: ImageStreamTag
-          name: nginx:latest
+          name: test-web:v1
       

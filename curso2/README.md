@@ -29,7 +29,7 @@
 4. Deployment us DeploymentConfig
 	* Características de DeployConfig
 	* [Creación de un DeployConfig al crear una aplicación](modulo4/newdc.md)
-	* Definición de un recurso DeploymentConfig
+	* [Definición de un recurso DeploymentConfig](modulo4/deploymentconfig.md)
 	* Ciclo de vida de un DeploymentConfig
 	* Actualización de un DeploymentConfig (*rollout* y *rollback*)
 	* Trabajando con DeploymentConfig desde la consola web
