@@ -26,18 +26,7 @@
 	* Despliegue de aplicaciones desde el catálogo con oc (Base de datos??? Hay que explicar antes el catalogo y el uso de template)
 	* Despliegue de aplicaciones desde el catálogo desde la consola web
 
-4. Deployment us DeploymentConfig
-	* Características de DeployConfig
-	* [Creación de un DeployConfig al crear una aplicación](modulo4/newdc.md)
-	* [Definición de un recurso DeploymentConfig](modulo4/deploymentconfig.md)
-	* Actualización de un DeploymentConfig (*rollout* y *rollback*)
-	* Trabajando con DeploymentConfig desde la consola web
-	* Triggers
-	* Estrategias de despliegues (https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html)
-	* Estrategias de despliegues basadas en rutas (https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html)
-
-
-5. ImageStreams
+4. ImageStreams
 	* Introducción al recurso ImageStream
 	* ImageStream a imágenes del registro interno
 	* Creación de ImageStream al crear una nueva aplicación
@@ -47,7 +36,7 @@
 	* Gestión de las etiqueta en un ImageStream
 	* Actualización automática de ImageStream
 
-6. Builds: Construcción automática de imágenes
+5. Builds: Construcción automática de imágenes
 	* Introducción a la construcción automática de imágenes (build)
 	* El recurso BuildConfig
 	* Creación del recurso BuildConfig con new-build desde el código fuente
@@ -56,6 +45,19 @@
 	* Creación del recurso BuildConfig desde un directorio local
 	* Gestión de builds desde la consola web
 	* Actualización automática de un build
+
+6. Deployment us DeploymentConfig
+	* Características de DeployConfig
+	* [Creación de un DeployConfig al crear una aplicación](modulo6/newdc.md)
+	* [Definición de un recurso DeploymentConfig](modulo6/deploymentconfig.md)
+	* Actualización de un DeploymentConfig (*rollout* y *rollback*)
+	* Trabajando con DeploymentConfig desde la consola web
+	* Triggers
+	* Estrategias de despliegues (https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html)
+	* Estrategias de despliegues basadas en rutas (https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html)
+
+
+
 
 7. Ejemplos de despliegues de aplicaciones web
 
