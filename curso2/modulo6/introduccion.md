@@ -38,3 +38,5 @@ Para ayudarnos a elegir que recurso usar, veamos algunas características de cad
 6. Los recursos **Deployment** no utiliza un **pod de deploy**, por lo que pueden tener varios **ReplicaSet** activos, sin embargo los **DeploymentConfig**, pueden tener como máximo un **pod de deploy** en ejecución, por lo que sólo dos **ReplicationController** pueden estar activos al mismo tiempo. Esto se traduce que los **Deployment** pueden hacer despliegue más rápidos.
 7. En los objetos **DeploymentConfig**, no se puede hacer un escalado parcial, es decir escalar un despliegue que se está ejecutando. Sin embargo, los **Deployment** si permiten esta característica.
 8. Usando objetos **Deployment** podemos pausar el despliegue, sin embargo, en los **DeploymentConfig**, al no poder para el **pod de deploy**, no se pueden pausar los despliegues.
+
+Por último, recordar que desde la versión 4.5 de OpenShift, al desplegar una aplicación usando el comando `oc new-app` se utilizará el recurso **Deployment** por defecto. Si queremos usar un recurso **DeploymentConfig** habrá que indicarlo explícitamente.
