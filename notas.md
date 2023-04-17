@@ -64,3 +64,8 @@ When using image tags, if the image registry were to change the code that the ta
 
 There are third-party admission controllers that mutate Pods (and pod templates) when they are created, so that the running workload is defined based on an image digest rather than a tag. That might be useful if you want to make sure that all your workload is running the same code no matter what tag changes happen at the registry.
 Default image pull policy
+
+
+## Ejecutar cualquier imagen en crc
+
+https://www.returngis.net/2023/01/hoy-empiezo-con-openshift/
