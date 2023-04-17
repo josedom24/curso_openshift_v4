@@ -1,0 +1,38 @@
+<mxfile host="app.diagrams.net" modified="2023-04-17T09:55:00.159Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0" etag="S_Q90TskG2mE6l7PdVmF" version="21.1.5" type="device">
+  <diagram name="Página-1" id="AvLUnw90TaFhlQHaY8LK">
+    <mxGraphModel dx="880" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4d2zQpIDs25eRN6ht3no-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="4d2zQpIDs25eRN6ht3no-1" target="4d2zQpIDs25eRN6ht3no-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4d2zQpIDs25eRN6ht3no-1" value="&lt;div&gt;&lt;b&gt;Imágenes&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;(registro Interno o Externo)&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="30" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4d2zQpIDs25eRN6ht3no-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="4d2zQpIDs25eRN6ht3no-2" target="UGCbJAfQarozqtcSAT-0-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4d2zQpIDs25eRN6ht3no-2" value="&lt;div&gt;&lt;b&gt;oc new-app&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;(source, Dockerfile,...)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Importar&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="230" y="170" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4d2zQpIDs25eRN6ht3no-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="4d2zQpIDs25eRN6ht3no-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="200" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4d2zQpIDs25eRN6ht3no-6" value="&lt;div&gt;&lt;b&gt;Deployment&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;ReplicaSet&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;PODS&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="670" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4d2zQpIDs25eRN6ht3no-10" value="&lt;div align=&quot;left&quot;&gt;&lt;font size=&quot;1&quot;&gt;&lt;b style=&quot;font-size: 22px;&quot;&gt;ImageStream&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="30" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UGCbJAfQarozqtcSAT-0-1" value="&lt;b&gt;ImageStream&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="460" y="170" width="140" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

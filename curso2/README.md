@@ -27,7 +27,7 @@
 	* Despliegue de aplicaciones desde el catálogo desde la consola web
 
 4. ImageStreams
-	* Introducción al recurso ImageStream
+	* [Introducción al recurso ImageStream](modulo4/introduccion.md)
 	* ImageStream a imágenes del registro interno
 	* Creación de ImageStream al crear una nueva aplicación
 	* Creación de ImageStream a una imagen externa
