@@ -69,3 +69,13 @@ Default image pull policy
 ## Ejecutar cualquier imagen en crc
 
 https://www.returngis.net/2023/01/hoy-empiezo-con-openshift/
+
+Mejor esto:
+
+La instrucción oc adm policy add-scc-to-user anyuid -z default agrega el SCC (Security Context Constraint) llamado anyuid al ServiceAccount predeterminado (default) en tu proyecto actual de OpenShift.
+
+El SCC anyuid permite a los contenedores en el pod ejecutarse con privilegios y, por lo tanto, puede ser una violación de seguridad. Si bien a veces es necesario para ciertas aplicaciones que requieren acceso a recursos del sistema, en general, no se recomienda utilizar SCC anyuid debido a los riesgos de seguridad que conlleva.
+
+Es importante tener en cuenta que antes de agregar un SCC a un ServiceAccount, debes asegurarte de que sea necesario para la aplicación y que se hayan tomado todas las medidas de seguridad necesarias para proteger tu clúster.
+
+Si necesitas agregar el SCC anyuid a un ServiceAccount, asegúrate de que comprendes los riesgos y de que has implementado las medidas de seguridad necesarias para proteger tu clúster. Por ejemplo, asegúrate de que los contenedores en el pod no tengan acceso a recursos críticos o no estén conectados a la red sin restricciones. Además, es importante limitar el acceso de los usuarios y aplicaciones a los recursos críticos y asegurarse de que se sigan las mejores prácticas de seguridad en todo momento.

@@ -7,13 +7,13 @@
 	* Plataformas para trabajar con OpenShift v4
 
 2. Trabajando con OpenShift en local
-	* IMPORTANTE: Configurar permisos para poder ejecutar algunos contenedores
 	* Distribución de la comunidad: okd
 	* Instalación en local con crc
 	* Configuración de oc para crc
 	* Visión general de la consola web
 	* Proyectos en OpenShift
 	* Almacenamiento en crc
+	* [Ejecución de pods privilegiados](modulo2/pods_privilegiados.md)
 
 3. Despliegue de aplicaciones en OpenShift
 	* [Introducción al despliegue de aplicaciones en OpenShift](modulo3/introduccion.md)
