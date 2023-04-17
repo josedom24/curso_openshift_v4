@@ -47,7 +47,7 @@
 	* Actualización automática de un build
 
 6. Deployment us DeploymentConfig
-	* Características de DeployConfig
+	* [Características del recurso DeploymentConfig](modulo6/introduccion.md)
 	* [Creación de un DeployConfig al crear una aplicación](modulo6/newdc.md)
 	* [Definición de un recurso DeploymentConfig](modulo6/deploymentconfig.md)
 	* Actualización de un DeploymentConfig (*rollout* y *rollback*)

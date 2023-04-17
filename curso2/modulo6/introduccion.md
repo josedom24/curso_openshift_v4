@@ -1,34 +1,40 @@
+# Características del recurso DeploymentConfig
 
+Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan la funcionalidad de desplegar una aplicación. Son dos métodos similares pero diferentes para la gestión detallada de aplicaciones.
 
+* Estos recursos describen **el estado deseado de una aplicación** y lo usamos como plantillas de pod.
+* Los objetos **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los pods de la aplicación. Para ello se utiliza un pod-deploy**, responsable de la creación de los pods.
 
-En OpenShift, el recurso DeploymentConfig es un objeto de Kubernetes personalizado que permite la implementación y el despliegue de aplicaciones de forma automática y controlada. Algunas de las características más importantes de DeploymentConfig son:
+    ![dc](img/deploymentconfig.png)
 
-    Control de versiones de aplicaciones: DeploymentConfig permite a los usuarios mantener diferentes versiones de una aplicación y controlar su ciclo de vida.
+* Los objetos **Deployment** utilizan recursos **ReplicSets** para el control de los pods.
 
-    Rollbacks automáticos: DeploymentConfig monitoriza el estado de una aplicación durante su implementación y, en caso de fallo, revierte automáticamente la implementación a la versión anterior.
+    ![deploy](img/deployment.png)
 
-    Escalabilidad automática: DeploymentConfig puede ajustar automáticamente el número de réplicas de una aplicación para satisfacer la demanda del usuario.
+## Características del recurso DeploymentConfig
 
-    Actualizaciones automatizadas: DeploymentConfig facilita la actualización de una aplicación, permitiendo que los usuarios realicen cambios en una nueva versión y luego desplegándola de forma automática y controlada.
+1. Un objeto **DeploymentConfig** es una plantilla para ejecutar aplicaciones.
+2. Podemos actualizar los despliegues con ul uso **triggers** (disparadores).
+3. Además de las estrategias de despliegue que poseen los **Deployment** (Rolling Update y Recreate), podemos crear **estrategias personalizadas**.
+4. Podemos usar *ganchos* (**lifecycle hooks**) para ejecutar comportamientos personalizados a lo largo del ciclo de vida del despliegue.
+5. **Versionado de la aplicación** para permitir la reversión manual o automática en caso de fallo de despliegue.
+6. **Escalado** manual de la replicación y autoescalado.
 
-    Integración con sistemas de CI/CD: DeploymentConfig se integra fácilmente con herramientas de integración continua y entrega continua, lo que permite a los usuarios automatizar completamente el ciclo de vida de una aplicación.
+Cuando se crea un objeto **DeploymentConfig**, se crea un **ReplicationController** que representa la plantilla de pod. Un pod de despliegue (**pod deploy**) es el responsable de crear los nuevos pods.
 
-    Soporte para despliegues en diferentes entornos: DeploymentConfig permite a los usuarios implementar una aplicación en diferentes entornos, como producción, pruebas y desarrollo, y controlar su configuración de forma independiente.
+Si se actualiza un despliegue, se creará otro **ReplicationController**, que por medio de otro pod de despliegue eliminará los pods antiguos y creará los nuevos. El objeto **ReplicationController** antiguo se conserva para permitir la vuelta a la versión anterior de la aplicación.
 
-En resumen, DeploymentConfig es un recurso importante en OpenShift que permite la implementación y el despliegue de aplicaciones de forma controlada y automatizada, lo que facilita la gestión del ciclo de vida de la aplicación y mejora la eficiencia del equipo de desarrollo.
+## Comparación de los objetos Deployment y DeploymentConfig
 
+La recomendación es usar objetos **Deployment**, a menos que necesite una función o un comportamiento específicos proporcionados por los objetos **DeploymentConfig**.
 
+Para ayudarnos a elegir que recurso usar, veamos algunas características de cada uno de ellos:
 
-En OpenShift, tanto el recurso Deployment como DeploymentConfig se utilizan para desplegar aplicaciones, pero hay algunas diferencias importantes entre ellos. Algunas de las diferencias clave son:
-
-    Arquitectura subyacente: Deployment es un objeto de Kubernetes nativo que se utiliza para implementar aplicaciones, mientras que DeploymentConfig es un objeto personalizado de OpenShift que se utiliza específicamente para implementar aplicaciones en la plataforma OpenShift.
-
-    Flexibilidad de implementación: Deployment es más flexible y se puede utilizar para implementar aplicaciones en cualquier clúster de Kubernetes, mientras que DeploymentConfig está diseñado específicamente para trabajar con OpenShift y aprovechar sus características exclusivas, como el enrutamiento de aplicaciones y la integración con sistemas de CI/CD.
-
-    Control de versiones de aplicaciones: DeploymentConfig permite a los usuarios controlar el ciclo de vida de las aplicaciones y mantener diferentes versiones de la misma, mientras que Deployment solo permite la implementación de una única versión de la aplicación.
-
-    Configuración del despliegue: DeploymentConfig proporciona opciones avanzadas para la configuración del despliegue, como estrategias de implementación, monitoreo del estado de la aplicación y configuración de la red, que no están disponibles en Deployment.
-
-    Integración con sistemas de CI/CD: DeploymentConfig se integra fácilmente con herramientas de integración continua y entrega continua, lo que permite a los usuarios automatizar completamente el ciclo de vida de una aplicación. Por otro lado, Deployment es más adecuado para implementaciones manuales.
-
-En resumen, Deployment y DeploymentConfig son objetos de Kubernetes que se utilizan para desplegar aplicaciones, pero hay algunas diferencias importantes en términos de arquitectura, flexibilidad de implementación, control de versiones de aplicaciones, configuración del despliegue e integración con sistemas de CI/CD. La elección del recurso a utilizar dependerá de las necesidades específicas de la aplicación y del entorno en el que se va a implementar.
+1. El **diseño** de los dos recursos es distintos: los objetos **DeploymentConfig** prefieren la **consistencia**, mientras que los objetos **Deployments** toman la **disponibilidad** por encima de la consistencia.
+2. Los **DeploymentConfig** permiten volver automáticamente a la última versión operativa en caso de fallo.
+3. Los objetos **Deployment** de forma implícita desencadenan un nuevo despliegue si hay un cambio en la configuración del recurso. Sin embargo, los objetos **DeploymentConfig**, pueden tener otras causas para desencadenar un despliegue de forma automática, por ejemplo, la modificación de la imagen.
+4. Los **DeploymentConfig** tiene la posibilidad de ejecutar ciertos procesos en su ciclo de vida con los **lifecycle hooks**.
+5. Los **DeploymentConfig** tiene la posibilidad de configurar estrategias personalizadas de despliegues.
+6. Los recursos **Deployment** no utiliza un **pod de deploy**, por lo que pueden tener varios **ReplicaSet** activos, sin embargo los **DeploymentConfig**, pueden tener como máximo un **pod de deploy** en ejecución, por lo que sólo dos **ReplicationController** pueden estar activos al mismo tiempo. Esto se traduce que los **Deployment** pueden hacer despliegue más rápidos.
+7. En los objetos **DeploymentConfig**, no se puede hacer un escalado parcial, es decir escalar un despliegue que se está ejecutando. Sin embargo, los **Deployment** si permiten esta característica.
+8. Usando objetos **Deployment** podemos pausar el despliegue, sin embargo, en los **DeploymentConfig**, al no poder para el **pod de deploy**, no se pueden pausar los despliegues.
