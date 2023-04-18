@@ -19,3 +19,6 @@ A partir, de ejemplo vemos algunas ventajas de usar **ImageStream**:
 3. Podemos actualizar las imágenes de forma automática.
 4. Si la imagen de origen cambia, la etiqueta de flujo de imagen sigue apuntando a una versión buena conocida de la imagen, asegurando que su aplicación no se rompa inesperadamente.
 5. Podemos gestionar el acceso a las imágenes de forma sencilla.
+6. Podemos crear nuevas aplicaciones o construir imágenes a partir de **ImageStream**. Cuando la imagen cambia, esto puede desencadenar un nuevo despliegue o una nueva construcción.
+
+En este módulo vamos a trabajar en nuestra instalación local crc, con el usuario administrador, para que tengamos acceso a las imágenes del registro interno (`oc get images`) y nos ayuda a entender el funcionamiento de los recursos que vamos a estudiar.
