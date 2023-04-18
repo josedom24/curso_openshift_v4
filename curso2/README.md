@@ -35,7 +35,7 @@
 	* Actualización automática de ImageStream
 
 5. Builds: Construcción automática de imágenes
-	* Introducción a la construcción automática de imágenes (build)
+	* [Introducción a la construcción automática de imágenes (build)](modulo5/build.md)
 	* El recurso BuildConfig
 	* Creación del recurso BuildConfig con new-build desde el código fuente
 	* Ciclo de vida del recurso BuildConfig
