@@ -29,7 +29,7 @@
 4. ImageStreams
 	* [Introducción al recurso ImageStream](modulo4/introduccion.md)
 	* [ImageStream a imágenes del registro interno](modulo4/registro_interno.md)
-	* Creación de ImageStream 
+	* [Creación de ImageStream](modulo4/crear_is.md)
 	* Definición de un recurso ImageStream
 	* Gestión de ImageString desde la consola web
 	* Gestión de las etiqueta en un ImageStream
