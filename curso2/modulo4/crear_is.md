@@ -1,6 +1,6 @@
 # Creación de ImageStream
 
-Tenemos dos maneras de crear recursos **ImageStream**:
+Tenemos tres maneras de crear recursos **ImageStream**:
 
 ## Creación de ImageStream con new-app
 
@@ -131,3 +131,29 @@ Para terminar, podríamos usar este **ImageStream** para desplegar una nueva apl
 
     oc new-app web4:2.4.57 --name apache1
 
+## Creación de ImageStream con fichero YAML
+
+La definición de un objeto **ImAgeStream** es muy sencilla, Por ejemplo podemos tener guardada la definición en el fichero `is.yaml`:
+
+```
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: citas
+spec:
+  tags:
+  - name: "1.0"
+    from:
+      kind: DockerImage
+      name: josedom24/citas-backend:v1
+```
+
+Y simplemente lo creamos, ejecutando:
+
+    oc apply -f is.yaml
+
+    oc get is
+    NAME    IMAGE REPOSITORY                                                      TAGS                   UPDATED
+    citas   default-route-openshift-image-registry.apps-crc.testing/nginx/citas   1.0                    30 seconds ago
+    web3    default-route-openshift-image-registry.apps-crc.testing/nginx/web3    latest                 51 minutes ago
+    web4    default-route-openshift-image-registry.apps-crc.testing/nginx/web4    2.4.56,2.4.57,latest   21 minutes ago
