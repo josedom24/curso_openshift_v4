@@ -56,6 +56,52 @@ Y posteriormente creamos la aplicación con el comando:
 
 OpenShift examina el repositorio y según los ficheros que tengamos es capaz de determinar con que lenguaje está escrito y te sugiere un **Builder Image** .
 
+dotnet
+	
+
+project.json, *.csproj
+
+jee
+	
+
+pom.xml
+
+nodejs
+	
+
+app.json, package.json
+
+perl
+	
+
+cpanfile, index.pl
+
+php
+	
+
+composer.json, index.php
+
+python
+	
+
+requirements.txt, setup.py
+
+ruby
+	
+
+Gemfile, Rakefile, config.ru
+
+scala
+	
+
+build.sbt
+
+golang
+	
+
+Godeps, main.go
+
+
 Si añadimos un fichero `index.php` a nuestro repositorio:
 
     git add index.php 

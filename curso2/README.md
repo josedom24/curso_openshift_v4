@@ -36,8 +36,7 @@
 
 5. Builds: Construcción automática de imágenes
 	* [Introducción a la construcción automática de imágenes (build)](modulo5/build.md)
-	* El recurso BuildConfig
-	* Creación del recurso BuildConfig con new-build desde el código fuente
+	* Creación y definición del recurso BuildConfig
 	* Ciclo de vida del recurso BuildConfig
 	* Creación del recurso BuildConfig desde un fichero Dockerfile
 	* Creación del recurso BuildConfig desde un directorio local
