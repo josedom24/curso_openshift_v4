@@ -38,7 +38,7 @@
 	* [Introducción a la construcción automática de imágenes (build)](modulo5/build.md)
 	* [Construcción de imágenes con estrategia Source-to-image (S2I) + repositorio Git](modulo5/s2i.md)
 	* [Construcción de imágenes con estrategia Docker + repositorio Git](modulo5/docker.md)
-	* Definición del objeto BuildConfig
+	* [Definición del objeto BuildConfig](modulo5/buildconfig.md)
 	* Ciclo de vida de las builds
 	* Construcción de imágenes con estrategia Source-to-image (S2I)+ directorio local
 	* Construcción de imágenes con estrategia Docker + Dockerfile en línea
