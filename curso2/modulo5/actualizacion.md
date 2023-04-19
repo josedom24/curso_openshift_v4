@@ -1,6 +1,6 @@
-# Ciclo de vida de los builds
+# Actualización manual de un build
 
-En este apartado vamos a aprender los comandos que nos permiten gestionar los procesos de construcción a partir de un objeto **BuildConfig**. Para ello vamos a crear un **BuildCondif** usando la estrategia Docker y los ficheros necesarios se encuentra en el repositorio [https://github.com/josedom24/osv4_python](https://github.com/josedom24/osv4_python).
+En este apartado vamos a aprender los comandos que nos permiten gestionar los procesos de construcción a partir de un objeto **BuildConfig**. Para ello vamos a crear un **BuildConfig** usando la estrategia Docker y los ficheros necesarios se encuentra en el repositorio [https://github.com/josedom24/osv4_python](https://github.com/josedom24/osv4_python).
 
 La aplicación muestra los municipios de una provincia, el nombre de la provincia se indica en la variable de entorno `PROVINCIA`. El fichero `Dockerfile` crea esta variable con una valor determinado.
 
