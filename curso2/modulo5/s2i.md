@@ -133,3 +133,6 @@ Comprobamos que se ha creado otro objeto **BuildCondif** y que se ha empezado a 
 
 Una vez finalizado, creamos la ruta de este despliegue y accedemos a la aplicación:
 
+![app1](img/app1-v2-1.png)
+
+![app1](img/app1-v2-2.png)
