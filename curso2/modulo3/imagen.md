@@ -69,7 +69,7 @@ También podemos ver los recursos que hemos creado, ejecutando:
 Veamos algunos aspectos con detalle:
 
 1. Vemos que se han creado dos despliegues, dos recursos ReplicaSet: En realidad, en el proceso interno de creación del despliegue se crea un ReplicaSet pero no tiene indicada la imagen, por eso falla y a continuación se vuelve a crear otro que ya si funciona y crea el pod.
-2. Vemos como se ha creado un recurso ImageStream que apunta a la iamgen que hemos indicado. Podemos ver los detalles de este recurso ejecutando:
+2. Vemos como se ha creado un recurso ImageStream que apunta a la imagen que hemos indicado. Podemos ver los detalles de este recurso ejecutando:
 
         oc describe is test-web
 

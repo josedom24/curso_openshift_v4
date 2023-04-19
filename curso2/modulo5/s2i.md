@@ -101,7 +101,7 @@ Y acceder a la aplicación:
 
 ![app1](img/app1-2.png)
 
-## Construcción de la imagen indicando una versión de la imágen constructora
+## Construcción de la imagen indicando una versión de la imagen constructora
 
 En el ejercicio anterior, al no indicar la imagen constructora, OpenShift detectó el lenguaje de programación de la aplicación guardada en el repositorio y nos ofreció una imagen constructora, en este caso una imagen PHP.
 

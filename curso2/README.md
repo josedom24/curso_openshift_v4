@@ -21,7 +21,7 @@
 	* Despliegue de aplicaciones desde imágenes desde la consola web
 	* [Despliegue de aplicaciones desde código fuente con oc](modulo3/codigo.md	)
 	* Despliegue de aplicaciones desde código fuente desde la consola web
-	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo3/dockerfile.md)
+	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo3/docker.md)
 	* Despliegue de aplicaciones desde Dockerfile desde la consola web
 	* Despliegue de aplicaciones desde el catálogo con oc (Base de datos??? Hay que explicar antes el catalogo y el uso de template)
 	* Despliegue de aplicaciones desde el catálogo desde la consola web
@@ -37,8 +37,9 @@
 5. Builds: Construcción automática de imágenes
 	* [Introducción a la construcción automática de imágenes (build)](modulo5/build.md)
 	* [Construcción de imágenes con estrategia Source-to-image (S2I) + repositorio Git](modulo5/s2i.md)
-	* Construcción de imágenes con estrategia Docker + repositorio Git
+	* [Construcción de imágenes con estrategia Docker + repositorio Git](modulo5/docker.md)
 	* Definición del objeto BuildConfig
+	* Ciclo de vida de las builds
 	* Construcción de imágenes con estrategia Source-to-image (S2I)+ directorio local
 	* Construcción de imágenes con estrategia Docker + Dockerfile en línea
 	* Gestión de builds desde la consola web
