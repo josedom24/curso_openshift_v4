@@ -1,10 +1,10 @@
-# Creación y definición del recurso BuildConfig
+# Construcción de imágenes con estrategia Source-to-image (S2I)
 
 Los ejercicios de este módulo lo vamos a ejecutar en RedHat OpenShift Dedicated Developer Sandbox con nuestro usuario sin privilegios. Se puede realizar en nuestra instalación local con crc, pero el proceso de build requiere más recursos de computación y he tenido algunos problemas de conexión con el clúster.
 
 En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Source-to-image (S2I)** y como fuente de entrada donde esta nuestra código un **repositorio en GitHub**. 
 
-En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto unos de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardara en el registro interno y se apuntara con un objeto **ImageStream**. En posteriores capítulos utilizaremos lel comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
+En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto unos de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se apuntara con un objeto **ImageStream**. En posteriores capítulos utilizaremos lel comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
 
 ## Despliegue de la aplicación con la estrategia Source-to-image
 
@@ -59,6 +59,9 @@ Además, se ha comenzado el proceso de creación de la imagen, y para ello se ha
     NAME           READY   STATUS    RESTARTS   AGE
     app1-1-build   1/1     Running   0          12s
 
+Si quieres ver la tareas que se están ejecutando en el proceso de construcción, ejecuta:
+
+    oc logs -f bc/app1
 
 Una vez terminada la construcción:
 
@@ -72,7 +75,7 @@ Podemos comprobar que se ha creado el objeto **ImageStram** apuntando a la nueva
     NAME   IMAGE REPOSITORY                                                                                      TAGS     UPDATED
     app1   default-route-openshift-image-registry.apps.sandbox-m3.1530.p1.openshiftapps.com/josedom24-dev/app1   latest   51 seconds ago
 
-Y se ha creado el objeto **Deployment** responsable de la creación de los pods de la aplicación, que se construyen a partir de la iamgen construida:
+Y se ha creado el objeto **Deployment** responsable de la creación de los pods de la aplicación, que se construyen a partir de la imagen construida:
 
     oc get deploy,rs,pod
     NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
@@ -91,9 +94,42 @@ Podemos ver como cuando el pod constructor (**app1-1-build**) termina de constru
 Por último podemos crear el objeto **Route**:
 
     oc expose service app1
-    route.route.openshift.io/app1 exposed
 
 Y acceder a la aplicación:
 
-![app1](img/app1.png)
+![app1](img/app1-1.png)
+
+![app1](img/app1-2.png)
+
+## Construcción de la imagen indicando una versión de la imágen constructora
+
+En el ejercicio anterior, al no indicar la imagen constructora, OpenShift detectó el lenguaje de programación de la aplicación guardada en el repositorio y nos ofreció una imagen constructora, en este caso una imagen PHP.
+
+Sin embargo, es posible que indiquemos una imagen constructora explícitamente al desplegar la aplicación. Podemos buscar en el catálago, cuantas versión de la imagen PHP tenemos a nuestra disposición:
+
+    oc new-app -S php
+    ...
+    Image streams (oc new-app --image-stream=<image-stream> [--code=<source>])
+    -----
+    php
+      Project: openshift
+      Tags:    7.3-ubi7, 7.4-ubi8, 8.0-ubi8, 8.0-ubi9, latest
+
+Además, en la ejecución de la aplicación nos hemos dado cuenta que la aplicación espera leer una variable de entrono que se llama `INFORMACION`. Para indicar una versión determinada de la imagen PHP y además crear la variable de entorno en el despliegue, podemos ejecutar la siguiente instrucción:
+
+    oc new-app php:7.4-ubi8~https://github.com/josedom24/osv4_php --name=app1-v2 -e INFORMACION="Versión 2"
+
+Comprobamos que se ha creado otro objeto **BuildCondif** y que se ha empezado a realizar un nuevo build:
+
+    oc get bc
+    NAME      TYPE     FROM   LATEST
+    app1      Source   Git    1
+    app1-v2   Source   Git    1
+
+    oc get build
+    NAME        TYPE     FROM          STATUS     STARTED          DURATION
+    app1-1      Source   Git@155b5ef   Complete   12 minutes ago   59s
+    app1-v2-1   Source   Git@155b5ef   Running    42 seconds ago   
+
+Una vez finalizado, creamos la ruta de este despliegue y accedemos a la aplicación:
 

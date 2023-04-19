@@ -36,10 +36,11 @@
 
 5. Builds: Construcción automática de imágenes
 	* [Introducción a la construcción automática de imágenes (build)](modulo5/build.md)
-	* Creación y definición del recurso BuildConfig
-	* Ciclo de vida del recurso BuildConfig
-	* BuildConfig desde un fichero Dockerfile en línea
-	* BuildConfig desde un directorio local
+	* [Construcción de imágenes con estrategia Source-to-image (S2I) + repositorio Git](modulo5/s2i.md)
+	* Construcción de imágenes con estrategia Docker + repositorio Git
+	* Definición del objeto BuildConfig
+	* Construcción de imágenes con estrategia Source-to-image (S2I)+ directorio local
+	* Construcción de imágenes con estrategia Docker + Dockerfile en línea
 	* Gestión de builds desde la consola web
 	* Actualización automática de un build
 
