@@ -54,6 +54,11 @@ Otra manera de crear recursos **ImageStream** es usando el comando `import-image
 
 Es necesario poner la opción `--confirm` cuando creamos por primera ver una objeto **ImageStream**.
 
+Otra forma de hacerlo sería creando antes un nuevo objeto **ImageStream** y luego importando la imagen:
+
+    oc create is web4
+    oc import-image web4:latest --from=docker.io/bitnami/apache
+
 En este caso hemos creado el **ImageStream** `web4:latest`:
 
     oc describe is web4
