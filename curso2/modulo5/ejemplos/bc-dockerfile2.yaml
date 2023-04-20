@@ -1,0 +1,34 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: app8
+  name: app8
+spec:
+  failedBuildsHistoryLimit: 5
+  output:
+    to:
+      kind: ImageStreamTag
+      name: imagen-app8:latest
+  runPolicy: Serial
+  source:
+    type: Git
+    git:
+      uri: https://github.com/josedom24/osv4_python                    
+    dockerfile: |
+      FROM bitnami/python:3.7
+      WORKDIR /app
+      COPY app /app
+      RUN pip install --upgrade pip
+      RUN pip3 install --no-cache-dir -r requirements.txt
+      ENV PROVINCIA=cadiz
+      EXPOSE 8000
+      CMD [ "python3", "app.py"]
+  strategy:
+    dockerStrategy:
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - type: ConfigChange
+  - imageChange: {}
+    type: ImageChange

@@ -18,7 +18,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: app1:latest
+      name: imagen-app3:latest
   runPolicy: Serial
   source:
     git:
@@ -42,7 +42,7 @@ Veamos los distintos parámetros:
 
 * `failedBuildsHistoryLimit`: Especifica la cantidad máxima de builds fallidos que se pueden mantener en el historial de builds de la aplicación.
 * `successfulBuildsHistoryLimit`: Especifica la cantidad máxima de builds que se han ejecutado de manera correcta que se pueden mantener en el historial de builds de la aplicación.
-* `runPolicy`: Como podemos indicar varias fuentes de entrada, este parámetro indica la menera de construirlos. Por defecto el valor es `Serial` indicando que se deben construir de manera consecutiva. En otros escenarios es posible hacer construcciones en paralelo (`Parallel`).
+* `runPolicy`: Como podemos indicar varias fuentes de entrada, este parámetro indica la manera de construirlos. Por defecto el valor es `Serial` indicando que se deben construir de manera consecutiva. En otros escenarios es posible hacer construcciones en paralelo (`Parallel`).
 * `output`: Me permite indicar donde se guardará la imagen construida. En este caso, se creará un recurso **ImageStream** (campo `kind`) y el nombre y etiqueta asignada (`name`).
 * `source`: Indica la fuente de información donde se toman los ficheros. En este caso es un repositorio Git (`type`), indicando la dirección `git.uri`.
 * `strategy`: Nos define la estrategia de construcción. Indicamos la imagen constructora (`from`): indicamos el tipo (`kind`), el nombre (`name`) y el proyecto donde se encuentra (`namespace`). También indicamos el tipo de estrategia, con el parámetro `type`.
@@ -60,12 +60,26 @@ Y comprobamos que se ha comenzando una construcción:
 
     oc get build
     NAME        TYPE     FROM          STATUS     STARTED             DURATION
-    app3-1      Source   Git@4c4e84f   Running    9 seconds ago       
+    app3-1   Source   Git              New (InvalidOutputReference)
+
+Vemos que la construcción ha dado un fallo: `InvalidOutputReference`. Esto es debido a que la **ImageStream** que habíamos configurado de salida: `imagen-app3`no existe. Para crear el objeto **ImageStream** ejecutamos
+
+    oc create is imagen-app3
+
+Una vez que la hemos creado, comprobamos que el build ya puede seguir ejecutándose:
+
+    oc get build
+    NAME        TYPE     FROM          STATUS     STARTED             DURATION
+    app3-1   Source   Git@4c4e84f      Running    6 seconds ago
 
 Si queremos ver las características de los recursos que hemos creado, podemos ejecutar:
 
     oc describe bc app3
     oc describe build app3-1
+
+Cuando finalice la construcción de la image, podríamos desplegarla ejecutando:
+
+    oc new-app imagen-app3 --name=app3
 
 ## Definición de los objetos BuildConfig definidos en los ejercicios anteriores
 

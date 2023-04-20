@@ -2,26 +2,23 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   labels:
-    app: app3
-  name: app3
+    app: app7
+  name: app7
 spec:
   failedBuildsHistoryLimit: 5
   output:
     to:
       kind: ImageStreamTag
-      name: imagen-app3:latest
+      name: imagen-app7:latest
   runPolicy: Serial
   source:
-    git:
-      uri: https://github.com/josedom24/osv4_php
-    type: Git
+    dockerfile: |
+      FROM centos:centos7
+      CMD echo 'Hola, estas probando un dockerfile inline' && exec sleep infinity
+    type: dockerfile
   strategy:
-    sourceStrategy:
-      from:
-        kind: ImageStreamTag
-        name: php:latest
-        namespace: openshift
-    type: Source
+    dockerStrategy:
+    type: Docker
   successfulBuildsHistoryLimit: 5
   triggers:
   - type: ConfigChange

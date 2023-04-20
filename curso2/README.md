@@ -41,7 +41,7 @@
 	* [Definición del objeto BuildConfig](modulo5/buildconfig.md)
 	* [Actualización manual de un build](modulo5/actualizacion.md)
 	* [Construcción de imágenes desde ficheros locales](modulo5/binary.md)
-	* Construcción de imágenes con estrategia Docker + Dockerfile en línea
+	* [Construcción de imágenes con Dockerfile en línea](modulo5/dockerfile_inline.md)
 	* Gestión de builds desde la consola web
 	* Actualización automática de un build por trigger ImageChange
 	* Actualización automática de un build por triggers webhook
