@@ -62,7 +62,7 @@ Y comprobamos que se ha comenzando una construcción:
     NAME        TYPE     FROM          STATUS     STARTED             DURATION
     app3-1   Source   Git              New (InvalidOutputReference)
 
-Vemos que la construcción ha dado un fallo: `InvalidOutputReference`. Esto es debido a que la **ImageStream** que habíamos configurado de salida: `imagen-app3`no existe. Para crear el objeto **ImageStream** ejecutamos
+Vemos que la construcción ha dado un fallo: `InvalidOutputReference`. Esto es debido a que la **ImageStream** que habíamos configurado de salida: `imagen-app3`no existe. Para crear el objeto **ImageStream** ejecutamos:
 
     oc create is imagen-app3
 
