@@ -47,3 +47,33 @@ Cuando se ha subido la imagen ya vemos que se le ha asignado otro id:
 
 **Y esperamos los 15 minutos...**
 
+Y podemos comprobar que el **ImageStream** se ha actualizado:
+
+oc describe is imagen-prueba
+    ...
+    latest
+      updates automatically from registry docker.io/josedom24/imagen-prueba:latest
+
+      * docker.io/josedom24/imagen-prueba@sha256:20ed24d87a2f66eab7ddae859fe43ad101bea5b28b2101947e1468f24c52470d
+          39 seconds ago
+        docker.io/josedom24/imagen-prueba@sha256:9577a5de1c8e4590c3e538207f3edb74968e3d119e435cceeeef9853528ab761
+          15 minutes ago
+
+Y que se ha actualizado el despliegue:
+
+    oc get deploy,rs,pod
+    NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+    deployment.apps/app-prueba   1/1     1            1           14m
+
+    NAME                                    DESIRED   CURRENT   READY   AGE
+    replicaset.apps/app-prueba-57896bf5     0         0         0       14m
+    replicaset.apps/app-prueba-59f8bd66f7   0         0         0       14m
+    replicaset.apps/app-prueba-5c8494ffc7   1         1         1       60s
+
+    NAME                              READY   STATUS    RESTARTS   AGE
+    pod/app-prueba-5c8494ffc7-nk7ft   1/1     Running   0          60s
+
+Y por tanto tenemos desplegado la nueva versión de la imagen:
+
+    oc logs deploy/app-prueba
+    Hola, esta es la versión 2 de la imagen
