@@ -31,7 +31,7 @@
 	* [ImageStream a imágenes del registro interno](modulo4/registro_interno.md)
 	* [Creación de ImageStream](modulo4/crear_is.md)
 	* Gestión de ImageStream desde la consola web
-	* Gestión de las etiqueta en un ImageStream
+	* [Gestión de las etiquetas en un ImageStream](modulo4/etiquetas.md)
 	* Actualización automática de ImageStream
 
 5. Builds: Construcción automática de imágenes
