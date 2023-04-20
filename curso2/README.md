@@ -40,7 +40,7 @@
 	* [Construcción de imágenes con estrategia Docker + repositorio Git](modulo5/docker.md)
 	* [Definición del objeto BuildConfig](modulo5/buildconfig.md)
 	* [Actualización manual de un build](modulo5/actualizacion.md)
-	* Construcción de imágenes con estrategia Source-to-image (S2I)+ directorio local
+	* [Construcción de imágenes desde ficheros locales](modulo5/binary.md)
 	* Construcción de imágenes con estrategia Docker + Dockerfile en línea
 	* Gestión de builds desde la consola web
 	* Actualización automática de un build por trigger ImageChange
