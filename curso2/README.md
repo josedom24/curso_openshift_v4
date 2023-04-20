@@ -32,7 +32,7 @@
 	* [Creación de ImageStream](modulo4/crear_is.md)
 	* Gestión de ImageStream desde la consola web
 	* [Gestión de las etiquetas en un ImageStream](modulo4/etiquetas.md)
-	* Actualización automática de ImageStream
+	* [Actualización automática de ImageStream](modulo4/update.md)
 
 5. Builds: Construcción automática de imágenes
 	* [Introducción a la construcción automática de imágenes (build)](modulo5/build.md)
