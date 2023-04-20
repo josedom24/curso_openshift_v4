@@ -39,7 +39,7 @@ spec:
 
 Creamos el objeto **BuildConfig**, creando en primer lugar la ^ImageStream** que hemos indicado como salida:
 
-    oc reate is imagen-app7
+    oc create is imagen-app7
     oc apply -f bc-dockerfile1.yaml 
 
     oc get bc
@@ -53,10 +53,10 @@ Creamos el objeto **BuildConfig**, creando en primer lugar la ^ImageStream** que
 
 Una vez creada la nueva imagen, podemos desplegarla y comprobar la salida del pod que se ha creado:
 
-        oc new-app imagen-app7 --name=app7
+    oc new-app imagen-app7 --name=app7
 
-        oc logs deploy/app7
-        Hola, estas probando un dockerfile inline
+    oc logs deploy/app7
+    Hola, estas probando un dockerfile inline
 
 ## Ejemplo 2: BuildConfig con un Dockerfile sustituido
 
