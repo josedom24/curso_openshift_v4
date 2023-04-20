@@ -79,3 +79,16 @@ El SCC anyuid permite a los contenedores en el pod ejecutarse con privilegios y,
 Es importante tener en cuenta que antes de agregar un SCC a un ServiceAccount, debes asegurarte de que sea necesario para la aplicación y que se hayan tomado todas las medidas de seguridad necesarias para proteger tu clúster.
 
 Si necesitas agregar el SCC anyuid a un ServiceAccount, asegúrate de que comprendes los riesgos y de que has implementado las medidas de seguridad necesarias para proteger tu clúster. Por ejemplo, asegúrate de que los contenedores en el pod no tengan acceso a recursos críticos o no estén conectados a la red sin restricciones. Además, es importante limitar el acceso de los usuarios y aplicaciones a los recursos críticos y asegurarse de que se sigan las mejores prácticas de seguridad en todo momento.
+
+## Anuncio
+
+
+More compute for free!
+
+We have given everyone more computing resources for their sandbox! So you will now see you have more to work with, all free.
+
+    From 7 Gigs to 14Gigs of RAM for regular workloads plus additional 10Gigs of RAM for short lived workloads like builds and jobs.
+    From 15Gigs of storage to 40Gi of Storage
+
+
+Build something extraordinary!
