@@ -43,8 +43,8 @@
 	* [Construcción de imágenes desde ficheros locales](modulo5/binary.md)
 	* [Construcción de imágenes con Dockerfile en línea](modulo5/dockerfile_inline.md)
 	* Gestión de builds desde la consola web
-	* [Actualización automática de un build por trigger ImageChange](modulo5/imagechange.md)
-	* Actualización automática de un build por triggers webhook
+	* [Actualización automática de un build](modulo5/imagechange.md)
+	* [Actualización automática de un build por triggers webhook](modulo5/webhook.md)
 
 6. Deployment us DeploymentConfig
 	* [Características del recurso DeploymentConfig](modulo6/introduccion.md)
