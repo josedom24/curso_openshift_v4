@@ -54,10 +54,7 @@
 	* [Rollback de un DeploymentConfig](modulo6/rollback.md)
 	* Trabajando con DeploymentConfig desde la consola web
 	* [Estrategias de despliegues](modulo6/estretegias.md)
-	* Estrategias de despliegues basadas en rutas (https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html)
-
-
-
+	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
 7. Ejemplos de despliegues de aplicaciones web
 
