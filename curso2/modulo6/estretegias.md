@@ -13,7 +13,7 @@ En este tipo de estrategia utiliza una implementación gradual y en cascada para
     oc import-image is_example:v2 --from=quay.io/openshifttest/deployment-example:v2
     oc tag is_example:v1 is_example:latest
 
-    oc new-app quay.io/openshifttest/deployment-example:latest --as-deployment-config=true --name=example
+    oc new-app is_example:latest --as-deployment-config=true --name=example
 
 Ahora nos fijamos en la configuración de la estrategia en la definición del objeto:
 
@@ -62,3 +62,27 @@ Finalmente podemos comprobamos que tenemos desplegada la versión 2:
 En la cosnola web, también podemos ver la transición de los pods. En la vista **Developer**, la opción **Topology**, escogemos el bojeto **DeploymentConfig** y en las acciones elegimos **Start rollout**:
 
 ![example](img/example3.png)
+
+## Estrategia Recreate
+
+En algunas circunstancias, podemos necesitar eliminar todos los pods antiguos y posteriormente crear los nuevos. Este tipo de estrategia se denomina **Recreate**.
+
+Vamos a modificar lel tipo de estrategia en nuestro **DeploymentConfig**:
+
+    oc edit dc example
+
+Y modificamos la sección `strategy` y la dejamos así:
+
+```yaml
+strategy:
+    type: Recreate
+```
+
+Ahora vamos a volver a actualizar el despliegue a la versión 1 (recuerda tener en una terminal ejecutando `watch oc get pods` para ver como se eliminan todos los pods antes de crear los nuevos):
+
+    oc tag -d is_example:latest
+    oc tag is_example:v1 is_example:latest    
+
+## Estrategia custom
+
+A los objetos **DeploymentConfig** se el puede configurar una estrategia personalizada. [Más información](https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html#deployments-custom-strategy_deployment-strategies).
