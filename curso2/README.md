@@ -53,7 +53,6 @@
 	* [Actualización de un DeploymentConfig (rollout)](modulo6/rollout.md)
 	* [Rollback de un DeploymentConfig](modulo6/rollback.md)
 	* Trabajando con DeploymentConfig desde la consola web
-	* Triggers
 	* Estrategias de despliegues (https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html)
 	* Estrategias de despliegues basadas en rutas (https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html)
 
