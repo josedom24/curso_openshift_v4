@@ -50,7 +50,8 @@
 	* [Características del recurso DeploymentConfig](modulo6/introduccion.md)
 	* [Creación de un DeployConfig al crear una aplicación](modulo6/newdc.md)
 	* [Definición de un recurso DeploymentConfig](modulo6/deploymentconfig.md)
-	* Actualización de un DeploymentConfig (*rollout* y *rollback*)
+	* [Actualización de un DeploymentConfig (rollout)](modulo6/rollout.md)
+	* [Rollback de un DeploymentConfig]
 	* Trabajando con DeploymentConfig desde la consola web
 	* Triggers
 	* Estrategias de despliegues (https://docs.openshift.com/container-platform/4.12/applications/deployments/deployment-strategies.html)
