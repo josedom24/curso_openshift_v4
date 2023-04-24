@@ -1,0 +1,4 @@
+NOMBRE=app-ej-php
+PHP_VERSION=7.4-ubi8
+REPOSITORIO_GIT=https://github.com/josedom24/osv4_php
+GITHUB_WEBHOOK_SECRET=dWgirjxm0roybexmJD10D1AWGLHhtOd74xv2G2QR
