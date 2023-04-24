@@ -56,7 +56,7 @@
 	* [Estrategias de despliegues](modulo6/estretegias.md)
 	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
-7. Plantillas: Despliegue rápido de aplicaciones
+7. Plantillas: empaquetando los objetos en OpenShift
 	* Introducción a los Templates
 	* Descripción de un objeto Template
 	* Crear objetos desde un Template
