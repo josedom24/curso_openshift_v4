@@ -64,3 +64,14 @@ Una vez que sabemos como generar lla definición de los objetos que están defin
 
         oc new-app mysql-plantilla -p NOMBRE_APP=new-mysql
 
+## Prueba de funcionamiento
+
+Creamos un **DEployment** a partir del **Template**. Para ello, indicamos sólo dos parámetros:
+
+    oc process mysql-plantilla -p NOMBRE_APP=mysql -p PASSWORD=asdasd | oc apply -f -
+
+A continuación intentamos acceder a la base de datos, ejecutando:
+
+    oc exec -it deploy/mysql -- mysql -u usuario -pasdasd nueva_bd -h localhost
+    ...
+    mysql>
