@@ -26,7 +26,7 @@
 	* [Despliegue de aplicaciones desde el catálogo con oc](modulo3/catalogo.md)
 	* Despliegue de aplicaciones desde el catálogo desde la consola web
 
-4. ImageStreams
+4. ImageStreams: Gestión de imágenes en OpenShift v4
 	* [Introducción al recurso ImageStream](modulo4/introduccion.md)
 	* [ImageStream a imágenes del registro interno](modulo4/registro_interno.md)
 	* [Creación de ImageStream](modulo4/crear_is.md)
@@ -56,18 +56,18 @@
 	* [Estrategias de despliegues](modulo6/estretegias.md)
 	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
-7. Ejemplos de despliegues de aplicaciones web
+7. Plantillas: Despliegue rápido de aplicaciones
+	* Características de las plantillas
+	* Crear objetos desde una plantilla en modo comando
+	* Crear objetos desde una plantilla en modo WEB
 
+8. Ejemplos de despliegues de aplicaciones web
 	* Despliegue de aplicaciones Python en OpenShift: guestbook
 	* Aplicación python guestbook con con almacenamiento persistente
 	* Despliegue de aplicaciones PHP en OpenShift (phpsqlitecms)
 	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
 
-8. Plantillas
 
-	* Características de las plantillas
-	* Crear objetos desde una plantilla en modo comando
-	* Crear objetos desde una plantilla en modo WEB
 
 9. Aspectos avanzados de OpenShift ????
 	
