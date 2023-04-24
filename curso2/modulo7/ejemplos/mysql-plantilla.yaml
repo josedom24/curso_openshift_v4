@@ -1,10 +1,12 @@
 apiVersion: template.openshift.io/v1
 kind: Template
+labels:
+  app: deployment-mysql
 metadata:
   name: mysql-plantilla
   annotations:
     description: "Plantilla para desplegar un deployment de mysql"
-    iconClass: "icon-mysql"
+    iconClass: "icon-mysql-database"
     tags: "database,mysql"
 objects:
 - apiVersion: apps/v1
@@ -61,5 +63,4 @@ parameters:
 - name: DATABASE
   description: Nombre de la base de datos que se va a crear
   value: nueva_bd
-labels:
-  app: deployment-mysql
+

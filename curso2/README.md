@@ -58,7 +58,7 @@
 
 7. Plantillas: empaquetando los objetos en OpenShift
 	* [Introducción a los Templates](modulo7/template.md)
-	* Descripción de un objeto Template
+	* [Descripción de un objeto Template](modulo7/descripcion.md)
 	* Crear objetos desde un Template
 	* Crear objetos desde un Template desde la consola web
 	* Creación de plantillas a partir de objetos existentes
