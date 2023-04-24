@@ -47,7 +47,7 @@
 	* [Actualización automática de un build por trigger webhook](modulo5/webhook.md)
 
 6. Deployment us DeploymentConfig
-	* [Características del recurso DeploymentConfig](modulo6/introduccion.md)
+	* [Características del recurso DeploymentConfig](modulo6/dc.md)
 	* [Creación de un DeployConfig al crear una aplicación](modulo6/newdc.md)
 	* [Definición de un recurso DeploymentConfig](modulo6/deploymentconfig.md)
 	* [Actualización de un DeploymentConfig (rollout)](modulo6/rollout.md)
@@ -57,7 +57,7 @@
 	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
 7. Plantillas: empaquetando los objetos en OpenShift
-	* Introducción a los Templates
+	* [Introducción a los Templates](modulo7/)
 	* Descripción de un objeto Template
 	* Crear objetos desde un Template
 	* Crear objetos desde un Template desde la consola web
@@ -69,8 +69,6 @@
 	* Aplicación python guestbook con con almacenamiento persistente
 	* Despliegue de aplicaciones PHP en OpenShift (phpsqlitecms)
 	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
-
-
 
 9. Aspectos avanzados de OpenShift ????
 	
