@@ -57,9 +57,12 @@
 	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
 7. Plantillas: Despliegue rápido de aplicaciones
-	* Características de las plantillas
-	* Crear objetos desde una plantilla en modo comando
-	* Crear objetos desde una plantilla en modo WEB
+	* Introducción a los Templates
+	* Descripción de un objeto Template
+	* Crear objetos desde un Template
+	* Crear objetos desde un Template desde la consola web
+	* Otro ejemplo de un Template más complejo
+	* Creación de plantillas a partir de objetos existentes
 
 8. Ejemplos de despliegues de aplicaciones web
 	* Despliegue de aplicaciones Python en OpenShift: guestbook
