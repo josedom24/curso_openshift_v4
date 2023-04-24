@@ -61,8 +61,8 @@
 	* Descripción de un objeto Template
 	* Crear objetos desde un Template
 	* Crear objetos desde un Template desde la consola web
-	* Otro ejemplo de un Template más complejo
 	* Creación de plantillas a partir de objetos existentes
+	* Despliegue de una aplicación con plantillas
 
 8. Ejemplos de despliegues de aplicaciones web
 	* Despliegue de aplicaciones Python en OpenShift: guestbook
