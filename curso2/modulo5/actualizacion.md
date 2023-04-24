@@ -82,7 +82,7 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
 
 ¿Qué pasa si modificamos el fichero `Dockerfile`, por ejemplo para cambiar el valor de la variable de entorno? De la misma forma, habrá que construir una nueva imagen, y desplegarla de nuevo.
 
-1. Modifica el fichero `Dockerfile` y cambia el valor de la variable de entorno: `ENC PROVINCIA=cadiz`.
+1. Modifica el fichero `Dockerfile` y cambia el valor de la variable de entorno: `ENV PROVINCIA=cadiz`.
 2. Guardamos los cambios en el repositorio:
 
         git commit -am "Modificaciión Dockerfile"
