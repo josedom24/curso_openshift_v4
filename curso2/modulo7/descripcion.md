@@ -1,6 +1,6 @@
 # Descripción de un objeto Template
 
-Vamos a crear un objeto **Template** desde su definición en un fichero yaml. En este ejmplo vamos a hacer un **Template** muy sencillo, que sólo va a crear un objeto de tipo pod. Nos va a permitir crear pods desde la imagen `bitnami/mysql` y como veremos posteriormente hemos creados varios parámetros para permitir su configuración. Partimos del fichero `mysql-plantilla.yaml` con el siguiente contenido:
+Vamos a crear un objeto **Template** desde su definición en un fichero yaml. En este ejmplo vamos a hacer un **Template** muy sencillo, que sólo va a crear un objeto de tipo pod. Nos va a permitir crear un recurso **Deployment** usando la imagen `bitnami/mysql` y como veremos posteriormente hemos creados varios parámetros para permitir su configuración. Partimos del fichero `mysql-plantilla.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: template.openshift.io/v1

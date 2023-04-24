@@ -1,0 +1,36 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: deployment-mysql
+      type: database
+    name: mysql56
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: mysql
+    template:
+      metadata:
+        labels:
+          app: mysql
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: 8V1K63JD
+          - name: MYSQL_USER
+            value: usuario
+          - name: MYSQL_PASSWORD
+            value: NGUGLWIB
+          - name: MYSQL_DATABASE
+            value: nueva_bd
+          image: bitnami/mysql
+          name: contenedor-mysql
+          ports:
+          - containerPort: 6379
+            protocol: TCP
+kind: List
+metadata: {}

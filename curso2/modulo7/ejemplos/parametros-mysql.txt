@@ -1,0 +1,7 @@
+REPLICAS=3
+NOMBRE_APP=otra_mysql
+NOMBRE_CONTENEDOR=contenedor1
+ROOT_PASSWORD=asdasd1234
+USER=usuario
+PASSWORD=mypassword
+DATABASE=mi_bd
