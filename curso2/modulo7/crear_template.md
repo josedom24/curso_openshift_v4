@@ -66,7 +66,7 @@ Una vez que sabemos como generar lla definición de los objetos que están defin
 
 ## Prueba de funcionamiento
 
-Creamos un **DEployment** a partir del **Template**. Para ello, indicamos sólo dos parámetros:
+Creamos un **Deployment** a partir del **Template**. Para ello, indicamos sólo dos parámetros:
 
     oc process mysql-plantilla -p NOMBRE_APP=mysql -p PASSWORD=asdasd | oc apply -f -
 
