@@ -24,7 +24,7 @@ Para crear un despliegue desde la imagen `josedom24/test_web:v1` que se llame `t
 Como vemos se han creado varios recursos:
 
 1. Ha encontrado una imagen llamada `josedom24/test_web:v1` en Docker Hub.
-2. Ha creado un recurso **ImageStream** que ha llamado igual que la imagen y la ha etiquetado con la misma etiqueta y que referencia a la imagen original.
+2. Ha creado un recurso **ImageStream** que ha llamado igual que la aplicación y la ha etiquetado con la misma etiqueta que tiene la imagen y que referencia a la imagen original.
 3. Ha creado un recurso **Deployment** responsable de desplegar los recursos necesario para ejecutar los pods.
 4. Ha creado un recurso **Service** que nos posibilita el acceso a la aplicación.
 5. No ha creado un recurso **Route** para el acceso por medio de una URL, pero nos ha indicado el comando necesario para crearlo: `oc expose service/test-web`.
