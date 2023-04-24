@@ -33,3 +33,11 @@ En la creación de aplicaciones además, se usan otros recursos de OpenShift:
 * **Build**: Cada vez que se hace una construcción automática de una imagen con la configuración del recurso **BuildConfig**, se creará un recurso del tipo **Build**. La construcción se realizará en un pod cuyo nombre tendrá la palabra *build*.
 
 ## El catálogo de aplicaciones
+
+En OpenShift v4, el **catálogo de aplicaciones** es una colección de software preempaquetado que se puede instalar y utilizar en un clúster de OpenShift. 
+
+Esta formado por varios tipos de elemento, entre los que destacamos:
+
+* **Builder Images**: Son imágenes de contenedor que usamos para crear nuevas imágenes. Tenemos distintos tipos, según el lenguaje de programación que implementan.
+* **Templates**: Plantillas que nos permiten crear un conjunto de objetos relacionados. Suelen definir parámetros para personalizar los despliegues.
+* **Helm Charts**: Helm es un software que nos permite empaquetar aplicaciones completas y gestionar el ciclo completo de despliegue de dicha aplicación. Helm usa un formato de empaquetado llamado **charts**. Un chart es una colección de archivos que describen un conjunto de recursos que nos permite desplegar una aplicación en Kubernetes o en Openshift.
