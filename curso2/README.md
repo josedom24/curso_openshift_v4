@@ -23,7 +23,7 @@
 	* Despliegue de aplicaciones desde código fuente desde la consola web
 	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo3/docker.md)
 	* Despliegue de aplicaciones desde Dockerfile desde la consola web
-	* Despliegue de aplicaciones desde el catálogo con oc (Base de datos??? Hay que explicar antes el catalogo y el uso de template)
+	* [Despliegue de aplicaciones desde el catálogo con oc](modulo3/catalogo.md)
 	* Despliegue de aplicaciones desde el catálogo desde la consola web
 
 4. ImageStreams
