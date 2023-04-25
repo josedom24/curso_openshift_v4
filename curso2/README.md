@@ -24,7 +24,7 @@
 	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo3/docker.md)
 	* [Despliegue de aplicaciones desde Dockerfile desde la consola web](modulo3/docker_web.md)
 	* [Despliegue de aplicaciones desde el catálogo con oc](modulo3/catalogo.md)
-	* Despliegue de aplicaciones desde el catálogo desde la consola web
+	* [Despliegue de aplicaciones desde el catálogo desde la consola web](modulo3/catalogo_web.md)
 
 4. ImageStreams: Gestión de imágenes en OpenShift v4
 	* [Introducción al recurso ImageStream](modulo4/introduccion.md)
