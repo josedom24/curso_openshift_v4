@@ -62,7 +62,7 @@
 	* [Crear objetos desde un Template](modulo7/crear_template.md)
 	* Crear objetos desde un Template desde la consola web
 	* [Creación de plantillas a partir de objetos existentes](modulo7/crear_template2.md)
-	* Despliegue de una aplicación con plantillas
+	* [Despliegue de una aplicación con plantillas](modulo7/php-template.md)
 
 8. Ejemplos de despliegues de aplicaciones web
 	* Despliegue de aplicaciones Python en OpenShift: guestbook
