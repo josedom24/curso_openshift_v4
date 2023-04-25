@@ -51,7 +51,7 @@ En esta página tenemos varias pestañas:
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
 * **Metrics**: Accedemos a los recursos que ha consumido el **build pod** en la construcción de la nueva imagen.
 * **YAML**: donde accedemos a la definición yaml del objeto.
-* **Enverionment**: Donde podemos crear variables de tipo clave=valor que se utilizan en el proceso de construcción.
+* **Environment**: Donde podemos crear variables de entorno de tipo clave=valor que se utilizan en el proceso de construcción.
 * **Logs**: Donde podemos visualizar los logs del proceso de construcción.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.
 

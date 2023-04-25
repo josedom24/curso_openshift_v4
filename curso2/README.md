@@ -52,7 +52,7 @@
 	* [Definición de un recurso DeploymentConfig](modulo6/deploymentconfig.md)
 	* [Actualización de un DeploymentConfig (rollout)](modulo6/rollout.md)
 	* [Rollback de un DeploymentConfig](modulo6/rollback.md)
-	* Trabajando con DeploymentConfig desde la consola web
+	* [Trabajando con DeploymentConfig desde la consola web](modulo6/dc_web.md)
 	* [Estrategias de despliegues](modulo6/estretegias.md)
 	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
