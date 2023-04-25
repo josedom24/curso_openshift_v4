@@ -20,7 +20,7 @@
 	* [Despliegue de aplicaciones desde imágenes con oc](modulo3/imagen.md)
 	* [Despliegue de aplicaciones desde imágenes desde la consola web](modulo3/imagen_web.md)
 	* [Despliegue de aplicaciones desde código fuente con oc](modulo3/codigo.md	)
-	* Despliegue de aplicaciones desde código fuente desde la consola web
+	* [Despliegue de aplicaciones desde código fuente desde la consola web](modulo3/codigo_web.md)
 	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo3/docker.md)
 	* Despliegue de aplicaciones desde Dockerfile desde la consola web
 	* [Despliegue de aplicaciones desde el catálogo con oc](modulo3/catalogo.md)

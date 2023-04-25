@@ -21,15 +21,15 @@ Continuamos con la configuración:
 * Indicamos que se cree un objeto **Route** para acceder a la aplicación por medio de una URL.
 * Pulsamos sobre la opción **Resource type** y elegimos **Deployment**.
 
-Finalmente le damos al botón **Create** para crear el despliegue, y al cano de unos segundo, accedemos al apartado **Topology** y comprobamos que se han creado los distintos recursos:
+Finalmente le damos al botón **Create** para crear el despliegue, esperamos unos segundo y accedemos al apartado **Topology** y comprobamos que se han creado los distintos recursos:
 
 ![imagenweb](img/imagenweb4.png)
 
-Podemos ver que tenemos varias secciones el icono que representa el despliegue:
+Podemos ver que tenemos varias secciones en el icono que representa el despliegue:
 
 1. Representa la aplicación. Es una agrupación de recursos. Si borramos la aplicaciones, se borrarán todos los recursos.
-2. Representa el **Deployment**: En la pabntalla lateral, podemos acceder a algunos de los recursos que se han creado.
-3. Si pulsamos sobre "la flechita" se abrirá una nueva página web con la URL del objero **Route** que nos permitirá el acceso a la aplicación.
+2. Representa el **Deployment**: En la pantalla lateral, podemos acceder a algunos de los recursos que se han creado.
+3. Si pulsamos sobre "la flechita" se abrirá una nueva página web con la URL del objeto **Route** que nos permitirá el acceso a la aplicación.
 
 Si pulsamos sobre los tres puntos verticales del cuadro del **Deployment** o sobre el botón **Actions**, obtendremos un menú con todas las acciones que podemos realizar sobre el objeto:
 
