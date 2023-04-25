@@ -60,7 +60,7 @@
 	* [Introducción a los Templates](modulo7/template.md)
 	* [Descripción de un objeto Template](modulo7/descripcion.md)
 	* [Crear objetos desde un Template](modulo7/crear_template.md)
-	* Crear objetos desde un Template desde la consola web
+	* [Crear objetos desde un Template desde la consola web](modulo7/template_web.md)
 	* [Creación de plantillas a partir de objetos existentes](modulo7/crear_template2.md)
 	* [Despliegue de una aplicación con plantillas](modulo7/php-template.md)
 
