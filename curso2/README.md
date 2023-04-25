@@ -61,7 +61,7 @@
 	* [Descripción de un objeto Template](modulo7/descripcion.md)
 	* [Crear objetos desde un Template](modulo7/crear_template.md)
 	* Crear objetos desde un Template desde la consola web
-	* Creación de plantillas a partir de objetos existentes
+	* [Creación de plantillas a partir de objetos existentes](modulo7/crear_template2.md)
 	* Despliegue de una aplicación con plantillas
 
 8. Ejemplos de despliegues de aplicaciones web
