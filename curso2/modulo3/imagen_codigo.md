@@ -69,7 +69,7 @@ Podríamos pulsar sobre la opción **Edit Import Strategy** para cambiar la **Bu
 
 ## Eliminar la aplicación
 
-Finalemente hemos hecho tres despliegue agrupados en la aplicación `aplicacion1`.
+Finalmente hemos hecho tres despliegue agrupados en la aplicación `aplicacion1`.
 
 ![codigoweb](img/codigoweb12.png)
 
