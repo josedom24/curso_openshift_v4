@@ -24,7 +24,7 @@ Por ejemplo, si nos centramos en el **ImageStream** `httpd`:
 
 Vemos el nombre, la ruta a dicha imagen y las etiquetas que tiene definidas.
 
-Tenemos además los recursos **ImageStreamTags** que representan las etiquetas de un **ImageStream** y son las que verdaderemente apuntan a una imagen, por ejemplo:
+Tenemos además los recursos **ImageStreamTags** que representan las etiquetas de un **ImageStream** y son las que verdaderamente apuntan a una imagen, por ejemplo:
 
     oc get istag httpd:2.4 -n openshift
     NAME        IMAGE REFERENCE                                                                                                                            UPDATED

@@ -6,7 +6,6 @@ Tenemos tres maneras de crear recursos **ImageStream**:
 
 Cada vez que creamos un nuevo despliegue con la instrucción `oc new-app` se crea una objeto **ImageStream** que apunta a la imagen utilizada o construida. Por ejemplo:
 
-    oc new-project nginx
     oc new-app bitnami/nginx --name=web3
     --> Found container image 336e5d1 (16 hours old) from Docker Hub for "bitnami/nginx"
     ...
@@ -98,7 +97,7 @@ Podríamos crear un nuevo tag apuntando a la misma imagen dentro de la **ImageSt
       * docker.io/bitnami/apache@sha256:275637c0d0d82c0f87b2269d1871d6a7ad1e81e8960f5ec23fe599e456618b1a
           1 second ago
 
-Y también podríamos crear un tag a apuntando a otra vessión que corresponde a una imagen diferente:
+Y también podríamos crear un tag a apuntando a otra versión que corresponde a una imagen diferente:
 
     oc import-image web4:2.4.56 --from=docker.io/bitnami/apache:2.4.56
 
@@ -160,5 +159,6 @@ Y simplemente lo creamos, ejecutando:
     oc get is
     NAME    IMAGE REPOSITORY                                                      TAGS                   UPDATED
     citas   default-route-openshift-image-registry.apps-crc.testing/nginx/citas   1.0                    30 seconds ago
+    web2   default-route-openshift-image-registry.apps-crc.testing/httpd/web2     latest                 58 minutes ago
     web3    default-route-openshift-image-registry.apps-crc.testing/nginx/web3    latest                 51 minutes ago
     web4    default-route-openshift-image-registry.apps-crc.testing/nginx/web4    2.4.56,2.4.57,latest   21 minutes ago

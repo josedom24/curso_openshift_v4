@@ -30,7 +30,7 @@
 	* [Introducción al recurso ImageStream](modulo4/introduccion.md)
 	* [ImageStream a imágenes del registro interno](modulo4/registro_interno.md)
 	* [Creación de ImageStream](modulo4/crear_is.md)
-	* Gestión de ImageStream desde la consola web
+	* [Gestión de ImageStream desde la consola web](modulo4/is_web.md)
 	* [Gestión de las etiquetas en un ImageStream](modulo4/etiquetas.md)
 	* [Actualización automática de ImageStream](modulo4/update.md)
 
