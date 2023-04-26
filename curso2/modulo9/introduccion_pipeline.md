@@ -18,7 +18,7 @@ Tekton define una serie de recursos de Kubernetes/OpenShift con el fin de estand
 * `TaskRun`: la ejecución y el resultado de ejecutar una instancia de tarea.
 * `PipelineRun`: la ejecución y el resultado de ejecutar una instancia de pipeline, que incluye un número de TaskRuns.
 
-![tekton](img/tekton-architecture.svg)]
+![tekton](img/tekton-architecture.svg)
 
 En resumen, para crear un Pipeline, se hace lo siguiente:
 
