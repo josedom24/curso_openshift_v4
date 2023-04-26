@@ -2,15 +2,6 @@
 
 **OpenShift Pipelines** es una solución de integración y entrega continuas (CI/CD) nativa de la nube para crear pipelines con Tekton. **Tekton** es un framework CI/CD flexible, nativo de Kubernetes y de código abierto que permite automatizar despliegues en distintas plataformas.
 
-## Tekton CLI 
-
-Vamos a usar una herramienta de línea de comandos llamada `tkn`, puedes seguir las siguientes [instrucciones](https://github.com/tektoncd/cli#installing-tkn) para su instalación. En Linux Debian:
-
-    curl -LO https://github.com/tektoncd/cli/releases/download/v0.30.1/tektoncd-cli-0.30.1_Linux-64bit.deb
-    sudo dpkg -i tektoncd-cli-0.30.1_Linux-64bit.deb
-
-## Conceptos
-
 Tekton define una serie de recursos de Kubernetes/OpenShift con el fin de estandarizar los conceptos de de IC/DC:
 
 * `Task`: un número de pasos reutilizables que realizan una tarea específica (por ejemplo, construir una imagen de contenedor).

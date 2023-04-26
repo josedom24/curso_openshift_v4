@@ -1,4 +1,13 @@
-# Despliegue de una aplicación de ejemplo con pipeline
+# Despliegue de una aplicación con OpenShift Pipeline
+
+## Tekton CLI 
+
+Vamos a usar una herramienta de línea de comandos llamada `tkn`, puedes seguir las siguientes [instrucciones](https://github.com/tektoncd/cli#installing-tkn) para su instalación. En Linux Debian:
+
+    curl -LO https://github.com/tektoncd/cli/releases/download/v0.30.1/tektoncd-cli-0.30.1_Linux-64bit.deb
+    sudo dpkg -i tektoncd-cli-0.30.1_Linux-64bit.deb
+
+## Aplicación de ejemplo
 
 Vamos a desplegar una aplicación muy sencilla de votaciones:
 
