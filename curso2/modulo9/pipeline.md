@@ -114,7 +114,8 @@ spec:
       name: update-deployment
     params:
     - name: deployment
-      value: $(params.deployment-name)
+      value: $(paGestión de OpenShift Pipeline desde la consola web
+rams.deployment-name)
     - name: IMAGE
       value: $(params.IMAGE)
     runAfter:
