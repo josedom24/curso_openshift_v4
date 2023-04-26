@@ -44,7 +44,7 @@
 	* [Construcción de imágenes con Dockerfile en línea](modulo5/dockerfile_inline.md)
 	* [Gestión de builds desde la consola web](modulo5/build_web.md)
 	* [Actualización automática de un build](modulo5/imagechange.md)
-	* [Actualización automática de un build por trigger webhook](modulo5/webhook.md)
+	* [Actualización automática de un build por trigger webhook TERMINAR!!!](modulo5/webhook.md)
 
 6. Deployment us DeploymentConfig
 	* [Características del recurso DeploymentConfig](modulo6/dc.md)
@@ -54,7 +54,7 @@
 	* [Rollback de un DeploymentConfig](modulo6/rollback.md)
 	* [Trabajando con DeploymentConfig desde la consola web](modulo6/dc_web.md)
 	* [Estrategias de despliegues](modulo6/estretegias.md)
-	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
+	* [Estrategias de despliegues basadas en rutas TERMINAR!!!](modulo6/estrategias_rutas.md)
 
 7. Plantillas: empaquetando los objetos en OpenShift
 	* [Introducción a los Templates](modulo7/template.md)
@@ -75,6 +75,7 @@
 	* [Introducción a OpenShift Pipelines](modulo9/introduccion_pipeline.md)
 	* [Despliegue de una aplicación con OpenShift Pipeline](modulo9/pipeline.md)
 	* [Gestión de OpenShift Pipeline desde la consola web](modulo9/pipeline_web.md)
+	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline TERMINAR!!!](modulo9/pipeline_webhook.md)
 	* Serverless Deployment 
 	* Integración con web IDE
 	* Helm
