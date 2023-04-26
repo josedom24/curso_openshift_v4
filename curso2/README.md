@@ -72,8 +72,11 @@
 
 9. Aspectos avanzados de OpenShift ????
 	
+	* [Introducción a OpenShift Pipelines](modulo9/introduccion_pipeline.md)
+	* [Despliegue de una aplicación con OpenShift Pipeline](modulo9/pipeline.md)
+	* [Gestión de OpenShift Pipeline desde la consola web](modulo9/pipeline_web.md)
+
 	* Serverless Deployment 
-	* IC/DC
 	* Integración con web IDE
 	* Helm
 	* ...
