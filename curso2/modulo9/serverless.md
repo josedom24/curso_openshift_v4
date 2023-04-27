@@ -41,7 +41,6 @@ Los productores de eventos crean eventos, y los sumideros de eventos, o consumid
 Serverless Functions nos permite crear e implementar funciones Serverless basadas en eventos como un servicio Knative.
 
 Nos proporciona plantillas para cada lenguaje y framework compatible, como Node.js, Quarkus, Go, ...; y Buildpacks adecuados para cada uno de ellos.
-ellos. 
 
 Cuando el desarrollador crea una función, Serverless Functions crea un proyecto utilizando la plantilla correspondiente. Esta plantilla proporciona los archivos y dependencias necesarios, y un código inicial vacío para una función, listo para añadir lógica de negocio.
 Los desarrolladores sólo tienen que emitir el comando `build` y Serverless Functions utiliza el Buildpack para construir la imagen de ejecución. Una vez creada la imagen de ejecución, OpenShift Serverless se encarga de subir, desplegar y gestionar las funciones como cualquier otra aplicación Serverless.

@@ -77,7 +77,7 @@
 	* [Introducción a OpenShift Serverless](modulo9/serverless.md)
 	* [Ejemplo de Serverless Serving](modulo9/serving.md)
 	* [Ejemplo de Serverless Eventing](modulo9/eventing.md)
-	* Ejemplo de Serverless Function
+	* [Ejemplo de Serverless Function](modulo9/function.md)
 
 10. Ejemplos de despliegues de aplicaciones web
 	* Despliegue de aplicaciones Python en OpenShift: guestbook
