@@ -76,7 +76,7 @@
 
 	* [Introducción a OpenShift Serverless](modulo9/serverless.md)
 	* [Ejemplo de Serverless Serving](modulo9/serving.md)
-	* Ejemplo de Serverless Eventing
+	* [Ejemplo de Serverless Eventing](modulo9/eventing.md)
 	* Ejemplo de Serverless Function
 
 10. Ejemplos de despliegues de aplicaciones web
