@@ -75,8 +75,11 @@
 	* [Introducción a OpenShift Pipelines](modulo9/introduccion_pipeline.md)
 	* [Despliegue de una aplicación con OpenShift Pipeline](modulo9/pipeline.md)
 	* [Gestión de OpenShift Pipeline desde la consola web](modulo9/pipeline_web.md)
-	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline TERMINAR!!!](modulo9/pipeline_webhook.md)
-	* Serverless Deployment 
+	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo9/pipeline_webhook.md)
+	* [Introducción a OpenShift Serverless](modulo9/serverless.md)
+	* Ejemplo de Serverless Serving
+	* Ejemplo de Serverless Eventing
+	* Ejemplo de Serverless Function
 	* Integración con web IDE
 	* Helm
 	* ...
