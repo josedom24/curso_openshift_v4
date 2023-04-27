@@ -63,26 +63,27 @@
 	* [Crear objetos desde un Template desde la consola web](modulo7/template_web.md)
 	* [Creación de plantillas a partir de objetos existentes](modulo7/crear_template2.md)
 	* [Despliegue de una aplicación con plantillas](modulo7/php-template.md)
+	* Uso de Helm en OpenShift
 
-8. Ejemplos de despliegues de aplicaciones web
-	* Despliegue de aplicaciones Python en OpenShift: guestbook
-	* Aplicación python guestbook con con almacenamiento persistente
-	* Despliegue de aplicaciones PHP en OpenShift (phpsqlitecms)
-	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
-
-9. Aspectos avanzados de OpenShift ????
+8. OpenShift Pipelines
 	
-	* [Introducción a OpenShift Pipelines](modulo9/introduccion_pipeline.md)
-	* [Despliegue de una aplicación con OpenShift Pipeline](modulo9/pipeline.md)
-	* [Gestión de OpenShift Pipeline desde la consola web](modulo9/pipeline_web.md)
-	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo9/pipeline_webhook.md)
+	* [Introducción a OpenShift Pipelines](modulo8/introduccion_pipeline.md)
+	* [Despliegue de una aplicación con OpenShift Pipeline](modulo8/pipeline.md)
+	* [Gestión de OpenShift Pipeline desde la consola web](modulo8/pipeline_web.md)
+	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo8/pipeline_webhook.md)
+
+9. OpenShift Serverless
+
 	* [Introducción a OpenShift Serverless](modulo9/serverless.md)
 	* Ejemplo de Serverless Serving
 	* Ejemplo de Serverless Eventing
 	* Ejemplo de Serverless Function
-	* Integración con web IDE
-	* Helm
-	* ...
+
+10. Ejemplos de despliegues de aplicaciones web
+	* Despliegue de aplicaciones Python en OpenShift: guestbook
+	* Aplicación python guestbook con con almacenamiento persistente
+	* Despliegue de aplicaciones PHP en OpenShift (phpsqlitecms)
+	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
 		
 
 
