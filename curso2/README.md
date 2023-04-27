@@ -54,7 +54,7 @@
 	* [Rollback de un DeploymentConfig](modulo6/rollback.md)
 	* [Trabajando con DeploymentConfig desde la consola web](modulo6/dc_web.md)
 	* [Estrategias de despliegues](modulo6/estretegias.md)
-	* [Estrategias de despliegues basadas en rutas TERMINAR!!!](modulo6/estrategias_rutas.md)
+	* [Estrategias de despliegues basadas en rutas](modulo6/estrategias_rutas.md)
 
 7. Plantillas: empaquetando los objetos en OpenShift
 	* [Introducción a los Templates](modulo7/template.md)

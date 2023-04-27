@@ -1,36 +1,72 @@
 # Estrategias de despliegues basadas en rutas
 
-https://docs.openshift.com/container-platform/4.12/applications/deployments/route-based-deployment-strategies.html
+En este tipo de estrategias de despliegues configuramos el objeto **Route** para que enrute el tráfico a distintos pods de distintos servicios.
 
+Con esta funcionalidad podemos implementar una estrategia de despliegue Blue/Green, podemos ofrecer dos versiones de la aplicación: la nueva (la "verde") se pone a prueba y se evalúa, mientras los usuarios siguen usando la versión actual (la "azul"). El cambio entre versiones se va haciendo gradualmente. Si hay algún problema con la nueva versión, es muy fácil volver a la antigua versión.
 
-oc new-app josedom24/citas-backend:v1 --name=exe-a
- 4974  oc new-app josedom24/citas-backend:v2 --name=exe-b
- 4975  oc expose svc/exe-a
- 4976  oc delete route exe-a
- 4977  oc expose svc/exe-a --port=10000
- 4978  oc get route
- 4979  oc set route-backends exe-a exe-a=198 exe-b=2
- 4980  oc set route-backends exe-a exe-a=90 exe-b=10
- 4981  oc set route-backends exe-a --equal
- 4982  oc edit route exe-a
- 4983  oc set route-backends exe-a exe-a=40 --adjust
- 4984  oc set route-backends exe-a exe-a=30 --adjust
- 4985  oc set route-backends exe-a exe-a=20 --adjust
- 4986  oc set route-backends exe-a exe-a=10 --adjust
- 4987  oc set route-backends exe-a exe-a=0 --adjust
- 4988  oc set route-backends exe-a exe-a=100 --adjust
- 4989  oc set route-backends exe-a exe-a=200 --adjust
- 4990  oc set route-backends exe-a exe-a=300 --adjust
- 4991  oc set route-backends exe-a exe-a=256 --adjust
- 4992  oc set route-backends exe-a
- 4993  history
-
-
-
-while true; do curl http://exe-a-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/version; done
-
+Una estrategia alternativa habitual es utilizar versiones A/B que estén activas al mismo tiempo y algunos usuarios utilicen una versión y otros la otra. Esto se puede utilizar para experimentar con cambios en la interfaz de usuario y otras características para obtener comentarios de los usuarios. 
 
 ## Modificación del objeto Route para servir otra aplicación
 
+Este tipo de estrategia trabaja con dos objetos **Deployment**, pero se crea un sólo objeto **Route** que en un primer momento está conectado al **Service** del primer despliegue (versión actual de la aplicación). Vamos a crear dos despliegues y vamos a crear la ruta que apunta al primero de ellos:
+
+    oc new-app josedom24/citas-backend:v1 --name=app-blue
+    oc new-app josedom24/citas-backend:v2 --name=app-green
+
+    oc expose svc/app-blue --port=10000 --name=app
+
+En otro terminal, podemos comprobar la versión de la aplicación a la que estamos accediendo, ejecutando:
+
+    while true; do curl http://app-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/version; done
+
+Si queremos que la ruta nos sirva la nueva aplicación, simplemente tenemos que modificar el **Service** que tiene configurado.
+
+    oc patch route/app -p '{"spec":{"to":{"name":"app-green"}}}'
+
+Vamos a servir la primera versión, para continuar con el ejemplo:
+
+    oc patch route/app -p '{"spec":{"to":{"name":"app-blue"}}}'
+
 ## Despliegue Blue/Green basado en rutas
+
+Ahora podemos configurar la ruta, para que vaya enrutando a los dos **Services** correspondientes a los dos **Deployment**. A cada servicio se le asigna un peso y la proporción de peticiones a cada servicio es el peso asignado dividido por la suma de los pesos.
+
+Por ejemplo si queremos que el 75% de las peticiones siga sirviendo la versión actual y el 25% la nueva versión:
+
+    oc set route-backends app app-blue=75 app-green=25
+
+Obtenemos información de la ruta y lo comprobamos:
+
+    oc get route app
+    NAME   HOST/PORT                                                     PATH   SERVICES                       PORT    TERMINATION   WILDCARD
+    app    app-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com          app-blue(75%),app-green(25%)   10000                 None
+   
+Para que sirvan las dos versiones al 50%, podemos usar cualquiera de esta dos posibilidades:
+
+    oc set route-backends app app-blue=50 app-green=50
+    oc set route-backends app --equal
+
+Y finalmente si sólo queremos servir la nueva versión:
+
+    oc set route-backends app app-blue=0 app-green=100
+
+Los pesos se indican con un número de 0 a 256. Podemos indicar el peso para un servicio y hacer que el otro se ajuste de forma automática:
+
+    oc set route-backends app app-blue=30 --adjust 
+    oc get route app
+    NAME   HOST/PORT                                                     PATH   SERVICES                       PORT    TERMINATION   WILDCARD
+    app    app-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com          app-blue(23%),app-green(76%)   10000                 None
+
+
+También podemos indicar los pesos como porcentajes:
+
+    oc set route-backends app app-blue=25% --adjust 
+
+    oc get route app
+    NAME   HOST/PORT                                                     PATH   SERVICES                       PORT    TERMINATION   WILDCARD
+    app    app-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com          app-blue(25%),app-green(75%)   10000                 None
+
+Los pesos también se pueden modificar de manera muy sencilla desde la consola web editando la definición del objeto **Route**:
+
+![route](img/routes.png)
 
