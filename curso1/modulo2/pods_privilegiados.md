@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - image: nginx
-        name: contendor-nginx
+        name: contenedor-nginx
         ports:
         - name: http
           containerPort: 80
@@ -52,7 +52,7 @@ Ahora creamos un nuevo proyecto y creamos los recursos:
 
     oc new-project nginx
     oc apply -f nginx.yaml
-    Warning: would violate PodSecurity "restricted:v1.24": allowPrivilegeEscalation != false (container "contendor-nginx" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container "contendor-nginx" must set securityContext.capabilities.drop=["ALL"]), runAsNonRoot != true (pod or container "contendor-nginx" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container "contendor-nginx" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
+    Warning: would violate PodSecurity "restricted:v1.24": allowPrivilegeEscalation != false (container "contenedor-nginx" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container "contenedor-nginx" must set securityContext.capabilities.drop=["ALL"]), runAsNonRoot != true (pod or container "contenedor-nginx" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container "contenedor-nginx" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
 
 
 Nos aparece un aviso, de que no estamos cumpliendo las restricciones de seguridad, pero los recursos se han creado. Cuando vemos el estado del pod que hemos creado, nos encontramos:
