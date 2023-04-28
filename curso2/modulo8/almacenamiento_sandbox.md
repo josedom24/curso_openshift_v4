@@ -1,6 +1,6 @@
 # Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox
 
-Como hemos indicado anteriormente al usar RedHat OpenShift Dedicated Developer Sandbox, estamos usando un clúster compartido, multitenant, en que accedemos con un usuario sin privilegios administrativos.
+Al usar RedHat OpenShift Dedicated Developer Sandbox, estamos usando un clúster compartido, multitenant, en que accedemos con un usuario sin privilegios administrativos.
 
 * La primera consecuencia, en relación con el almacenamiento es que no tendremos acceso directo a los recursos **PersistentVolumen (PV)**.
 
