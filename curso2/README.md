@@ -66,7 +66,7 @@
 8. Almacenamiento en OpenShift
 	* [Introducción al almacenamiento en OpenShift](modulo8/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo8/almacenamiento_sandbox.md)
-	* Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms
+	* [Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms](modulo8/phpsqlitecms.md)
 	* [Ejemplo 2: Gestión de almacenamiento desde la línea de comandos: GuestBook](modulo8/guestbook.md)
 	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
