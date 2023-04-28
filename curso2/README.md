@@ -63,25 +63,29 @@
 	* [Despliegue de una aplicación con plantillas](modulo7/php-template.md)
 	* Uso de Helm en OpenShift
 
-8. OpenShift Pipelines
+8. Almacenamiento en OpenShift
+	* Introducción al almacenamiento en OpenShift
+	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo8/almacenamiento_sandbox.md)
+	* Ejemplo 1: Gestión de almacenamiento desde la línea de comandos: guestbook
+	* Ejemplo 2: Gestión de almacenamiento desde la consola web: phpsqlitecms
+	* Ejemplo completo: Haciendo persistente la aplicación Wordpress
+
+9. OpenShift Pipelines
 	
-	* [Introducción a OpenShift Pipelines](modulo8/introduccion_pipeline.md)
-	* [Despliegue de una aplicación con OpenShift Pipeline](modulo8/pipeline.md)
-	* [Gestión de OpenShift Pipeline desde la consola web](modulo8/pipeline_web.md)
-	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo8/pipeline_webhook.md)
+	* [Introducción a OpenShift Pipelines](modulo9/introduccion_pipeline.md)
+	* [Despliegue de una aplicación con OpenShift Pipeline](modulo9/pipeline.md)
+	* [Gestión de OpenShift Pipeline desde la consola web](modulo9/pipeline_web.md)
+	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo9/pipeline_webhook.md)
 
-9. OpenShift Serverless
+10. OpenShift Serverless
 
-	* [Introducción a OpenShift Serverless](modulo9/serverless.md)
-	* [Ejemplo de Serverless Serving](modulo9/serving.md)
-	* [Ejemplo de Serverless Eventing](modulo9/eventing.md)
-	* [Ejemplo de Serverless Function](modulo9/function.md)
+	* [Introducción a OpenShift Serverless](modulo10/serverless.md)
+	* [Ejemplo de Serverless Serving](modulo10/serving.md)
+	* [Ejemplo de Serverless Eventing](modulo10/eventing.md)
+	* [Ejemplo de Serverless Function](modulo10/function.md)
 
-10. Ejemplos de despliegues de aplicaciones web
-	* Despliegue de aplicaciones Python en OpenShift: guestbook
-	* Aplicación python guestbook con con almacenamiento persistente
-	* Despliegue de aplicaciones PHP en OpenShift (phpsqlitecms)
-	* Despliegue de aplicaciones PHP en OpenShift con almacenamiento persistente
+11. Ejemplos de despliegues de aplicaciones web
+	
 		
 
 
