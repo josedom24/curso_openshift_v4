@@ -2,20 +2,20 @@
 
 En este ejemplo, vamos a instalar un CMS PHP llamado **phpSQLiteCMS** que utiliza una base de datos SQLite. Para ello vamos a utilizar el código de la aplicación que se encuentra en el repositorio: `https://github.com/ilosuna/phpsqlitecms`.
 
-Vamos a realizar el despliegue desde la consola web:
+Vamos a realizar el despliegue desde la línea de comandos:
 
-Añadimos una aplicación desde un repositorio Git, indicamos la URL del repositorio:
+    oc new-app php:7.3-ubi7~https://github.com/ilosuna/phpsqlitecms --name=phpsqlitecms
+    oc expose service/phpsqlitecms
+
+Se han creado los recursos:
 
 ![phpsqlitecms](img/phpsqlitecms1.png)
 
-Vamos a crear la nueva imagen usando la versión de PHP `7.3-ubi7`:
+Y podemos acceder a la aplicación:
 
 ![phpsqlitecms](img/phpsqlitecms2.png)
 
-Indicamos el nombre de la aplicación, del despliegue, el puerto y creamos una ruta:
+## Modificación de la aplicación
 
-![phpsqlitecms](img/phpsqlitecms3.png)
+A continuación vamos a entrar en la zona de administración,en la URL `/cms`, y con el usuario y contraseña: `admin` - `admin` vamos a realizar un cambio (por ejemplo el nombre de la página) que se guardará en la base de datos SQLite.
 
-Y finalmente elegimos como tipo de recurso de despliegue el **Deployment**:
-
-![phpsqlitecms](img/phpsqlitecms4.png)
