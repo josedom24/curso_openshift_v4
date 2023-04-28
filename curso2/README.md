@@ -85,6 +85,8 @@
 	* [Ejemplo de Serverless Function](modulo10/function.md)
 
 11. Ejemplos de despliegues de aplicaciones web
+	* Despliegue de aplicación Citas en OpenShift v4
+	* Despliegue de aplicación Parksmap en OpenShift v4
 	
 		
 
