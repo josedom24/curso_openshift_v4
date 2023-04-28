@@ -1,4 +1,4 @@
-# Curso 2: Openshift v4 como PaaS
+# Curso 2: OpenShift v4 como PaaS
 
 1. Introducción a OpenShift v4
 	* Cloud Computing
