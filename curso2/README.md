@@ -6,14 +6,12 @@
 	* OpenShift como PaaS
 	* Plataformas para trabajar con OpenShift v4
 
-2. Trabajando con OpenShift en local
-	* Distribución de la comunidad: okd
-	* Instalación en local con crc
-	* Configuración de oc para crc
-	* Visión general de la consola web
-	* Proyectos en OpenShift
-	* Almacenamiento en crc
-	* [Ejecución de pods privilegiados](modulo2/pods_privilegiados.md)
+2. RedHat OpenShift Dedicated Developer Sandbox
+	* [RedHat OpenShift Dedicated Developer Sandbox (P)](modulo2/sandbox.md)
+	* [Visión general de la consola web](modulo2/consola.md)
+	* [Visión general del proyecto de trabajo](modulo2/proyecto.md)
+	* [Instalación del CLI de OpenShift: oc](modulo2/oc.md)
+	* [Configuración de oc para el Developer Sandbox](modulo2/oclogin.md)
 
 3. Despliegue de aplicaciones en OpenShift
 	* [Introducción al despliegue de aplicaciones en OpenShift](modulo3/introduccion.md)
