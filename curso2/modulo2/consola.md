@@ -6,7 +6,7 @@ Tenemos varias formas de interactuar con nuestro clúster de OpenShift:
 * Usando la **herramienta de línea de comandos oc**, que nos permite gestionar los recursos con un comando desde la terminal. Puede ser mucho más útil a la hora de automatizar operaciones.
 * Accediendo directamente a la **API** que nos proporciona el nodo maestro del clúster. Podríamos hacer peticiones HTTP directamente a la API restful para gestionar los recursos.
 
-En este apartado vamos a ofrecer una vista general de la consola web. La consola web, nos permite trabajar con ella usando dos vistas distnatas: la de Administrador y la de Desarrollador.
+En este apartado vamos a ofrecer una vista general de la consola web. La consola web, nos permite trabajar con ella usando dos vistas distintas: la de Administrador y la de Desarrollador.
 
 ## Consola web: vista Developer
 
