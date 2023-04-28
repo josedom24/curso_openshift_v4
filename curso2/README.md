@@ -64,7 +64,7 @@
 	* Uso de Helm en OpenShift
 
 8. Almacenamiento en OpenShift
-	* Introducción al almacenamiento en OpenShift
+	* [Introducción al almacenamiento en OpenShift](modulo8/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo8/almacenamiento_sandbox.md)
 	* Ejemplo 1: Gestión de almacenamiento desde la línea de comandos: guestbook
 	* Ejemplo 2: Gestión de almacenamiento desde la consola web: phpsqlitecms
