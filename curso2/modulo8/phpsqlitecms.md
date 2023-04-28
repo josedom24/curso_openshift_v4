@@ -19,3 +19,4 @@ Y podemos acceder a la aplicación:
 
 A continuación vamos a entrar en la zona de administración,en la URL `/cms`, y con el usuario y contraseña: `admin` - `admin` vamos a realizar un cambio (por ejemplo el nombre de la página) que se guardará en la base de datos SQLite.
 
+![phpsqlitecms](img/phpsqlitecms3.png)
