@@ -18,7 +18,11 @@ Para obtener una base de datos persistente vamos a crear una aplicación de base
 
 Y creamos el despliegue, ejecutando:
 
-    oc new-app mariadb-persistent -p MYSQL_USER=usuario -p MYSQL_PASSWORD=asdasd -p MYSQL_DATABASE=wordpress -p MYSQL_ROOT_PASSWORD=asdasd -p VOLUME_CAPACITY=5Gi
+    oc new-app mariadb-persistent -p MYSQL_USER=usuario \ 
+                                  -p MYSQL_PASSWORD=asdasd \
+                                  -p MYSQL_DATABASE=wordpress \
+                                  -p MYSQL_ROOT_PASSWORD=asdasd \
+                                  -p VOLUME_CAPACITY=5Gi
 
 Podemos comprobar que se ha creado un objeto **PersistentVolumeClaim** asociado a un **PersistentVolume**:
 

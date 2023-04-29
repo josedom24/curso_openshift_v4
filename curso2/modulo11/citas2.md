@@ -18,7 +18,13 @@ Para hacer el despliegue de la base de datos persistente vamos a usar la plantil
 
 Creamos el despliegue ejecutando:
 
-    oc new-app mysql-persistent -p MYSQL_USER=usuario -p MYSQL_PASSWORD=asdasd -p MYSQL_DATABASE=citas -p MYSQL_ROOT_PASSWORD=asdasd -p VOLUME_CAPACITY=5Gi -l app.kubernetes.io/part-of=citas-app -l app.openshift.io/runtime=mysql-database
+    oc new-app mysql-persistent -p MYSQL_USER=usuario \
+                                -p MYSQL_PASSWORD=asdasd \
+                                -p MYSQL_DATABASE=citas \
+                                -p MYSQL_ROOT_PASSWORD=asdasd \
+                                -p VOLUME_CAPACITY=5Gi \
+                                -l app.kubernetes.io/part-of=citas-app \
+                                -l app.openshift.io/runtime=mysql-database
 
 Y comprobamos los recursos que hemos creado:
 
