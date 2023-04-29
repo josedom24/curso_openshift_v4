@@ -64,5 +64,5 @@ Accedemos a la aplicación y comprobamos que funciona de forma correcta:
 
 ![citas-frontend](img/citas-frontend5.png)
 
-Como hemos desplegado `citas-frontend` en un **deploymentServerless** pasado unos segundos sin acceder a la página veremos que escala a 0. El componente `citas-backend` sigue funcionando continuamente, y podemos tener otros componentes que acceden a él sin problemas.
+Como hemos desplegado `citas-frontend` en un **DeploymentServerless** pasado unos segundos sin acceder a la página veremos que escala a 0. El componente `citas-backend` sigue funcionando continuamente, y podemos tener otros componentes que acceden a él sin problemas.
 
