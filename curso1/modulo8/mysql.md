@@ -172,7 +172,7 @@ Vemos todos los recursos creados hasta ahora:
     persistentvolumeclaim/mysql-pvc   Bound    pvc-c8bd6778-c60e-4411-b595-1f82849379de   5Gi        RWO            gp3            21s
 
 
-A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.csv` donde se encuentran las citas, y el fichero `citas.sql` donde se encuentran las instrucciones para hacer la migración desde el ficheros csv y guardarlo en la tabla que se crea, en el pod de mariadb. Para facilitar el copiado de ficheros vamos a guardar el nombre del pod en una variable de entorno:
+A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del pod en una variable de entorno:
 
     export PODNAME="mysql-5f8c89c98b-czw6k"
 
