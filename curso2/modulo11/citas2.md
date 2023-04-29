@@ -50,3 +50,24 @@ finalmente comprobamos que hemos guardado las citas en la tabla `quotes`:
     ...
 
 ## Actualización de la aplicación citas-backend
+
+Para terminar este ejercicio, vamos a actualizar `citas-backend` a la versión 2. Esta versión conecta con la base de datos mysql, para obtener las citas, por lo que tendremos que configurar las credenciales de acceso a la base de datos utilizando variables de entorno.
+
+Por lo tanto en el despliegue de `citas-backend` vamos a crear las variables de entorno necesarias. Para realizar esta operación, vamos a crear un recurso **ConfigMap** con las variables de entorno que posteriormente cargaremos en el despliegue:
+
+    oc create cm citas-mysql --from-literal=USER_DB=usuario \
+                          --from-literal=PASSWORD_DB=asdasd     \
+                          --from-literal=HOST_DB=mysql 
+
+Y configuramos el objeto **Deployment** `citas-backend` con las variables que hemos creado en el **ConfigMap** con el parámetro `--from`:
+
+    oc set env deploy/citas-backend --from=cm/citas-mysql
+
+Por último actualizamos la etiqueta del **ImageStream** para que `prod` apunte a `v2`:
+
+    oc tag -d citas-backend:prod
+    oc tag citas-backend:v2 citas-backend:prod
+
+Se produce de forma automática la actualización del despliegue y podemos acceder de nuevo a la página web y comprobamos que el servicio que está devolviendo la información de la citas es `citas-backend` **versión 2** y además comprobamos que tenemos más citas (en la tabla hay 16 citas), la versión 1 tenía sólo 6 citas:
+
+![citas-backend](img/citas-backend2.png)
