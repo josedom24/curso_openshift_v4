@@ -16,6 +16,8 @@ Para obtener una base de datos persistente vamos a crear una aplicación de base
     MARIADB_VERSION         Version of MariaDB image to be used (10.3-el7, 10.3-el8, or latest).                          10.3-el8
     VOLUME_CAPACITY         Volume space available for data, e.g. 512Mi, 2Gi.                                             1Gi
 
+Y creamos el despliegue, ejecutando:
+
     oc new-app mariadb-persistent -p MYSQL_USER=usuario -p MYSQL_PASSWORD=asdasd -p MYSQL_DATABASE=wordpress -p MYSQL_ROOT_PASSWORD=asdasd -p VOLUME_CAPACITY=5Gi
 
 Podemos comprobar que se ha creado un objeto **PersistentVolumeClaim** asociado a un **PersistentVolume**:
