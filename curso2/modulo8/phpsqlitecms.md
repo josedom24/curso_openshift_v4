@@ -42,6 +42,23 @@ Indicando el objeto **PersistentVolumenClaim** que hemos creado, y directorio do
 
 ![phpsqlitecms](img/phpsqlitecms6.png)
 
+Se ha actualizado el despliegue, se ha creado un nuevo pod con la nueva versión (el volumen montado en el directorio) y accedemos a la aplicación para comprobar si funciona:
 
+![phpsqlitecms](img/phpsqlitecms7.png)
 
+La aplicación no está funcionando bien. ¿Qué ha pasado?. Al montar el volumen en el directorio `/opt/app-root/src/cms/data`, el contenido anterior, correspondiente a los ficheros de la base de datos se han perdido. Tenemos que copiar en este directorio, en realidad en el volumen, los ficheros necesario, para ello vamos a copiarlos desde el repositorio, para ello:
+
+    git clone https://github.com/ilosuna/phpsqlitecms
+    cd phpsqlitecms/cms
+
+    oc get pods
+    NAME                            READY   STATUS      RESTARTS   AGE
+    phpsqlitecms-1-build            0/1     Completed   0          8m26s
+    phpsqlitecms-687b8ff8cd-sqcdm   1/1     Running     0          6m17s
+
+    oc cp data phpsqlitecms-687b8ff8cd-sqcdm:/opt/app-root/src/cms
+
+Y volvemos a comprobar si está funcionando la aplicación:
+
+![phpsqlitecms](img/phpsqlitecms2.png)
 
