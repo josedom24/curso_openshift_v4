@@ -42,7 +42,11 @@ Indicando el objeto **PersistentVolumenClaim** que hemos creado, y directorio do
 
 ![phpsqlitecms](img/phpsqlitecms6.png)
 
-Se ha actualizado el despliegue, se ha creado un nuevo pod con la nueva versión (el volumen montado en el directorio) y accedemos a la aplicación para comprobar si funciona:
+Se ha actualizado el despliegue, se ha creado un nuevo pod con la nueva versión (el volumen montado en el directorio) y podemos comprobar que el **PersistentVolumenClaim** se ha asociado con un **PersistentVolumen**:
+
+![phpsqlitecms](img/phpsqlitecms12.png)
+
+Accedemos a la aplicación para comprobar si funciona:
 
 ![phpsqlitecms](img/phpsqlitecms7.png)
 
