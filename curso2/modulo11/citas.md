@@ -1,4 +1,4 @@
-
+# Despliegue de aplicación Citas en OpenShift v4 (1ª parte)
 
 La aplicación **Citas** nos muestra citas celebres de distintos autores en una página web. Esta formada por dos microservicios (`citas-backend` y `citas-frontend`) y un servicio de base de datos mysql. La aplicación funciona de la siguiente manera:
 
@@ -60,4 +60,9 @@ Una vez que se han creado los recursos, tenemos el siguiente esquema en la topol
 
 ![citas-frontend](img/citas-frontend4.png)
 
+Accedemos a la aplicación y comprobamos que funciona de forma correcta:
+
+![citas-frontend](img/citas-frontend5.png)
+
+Como hemos desplegado `citas-frontend` en un **deploymentServerless** pasado unos segundos sin acceder a la página veremos que escala a 0. El componente `citas-backend` sigue funcionando continuamente, y podemos tener otros componentes que acceden a él sin problemas.
 

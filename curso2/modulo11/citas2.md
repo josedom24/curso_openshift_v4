@@ -1,0 +1,1 @@
+# Despliegue de aplicación Citas en OpenShift v4 (2ª parte)
