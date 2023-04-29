@@ -24,3 +24,4 @@ spec:
           env:
             - name: CITAS_SERVER
               value: citas:10000
+            

@@ -33,8 +33,9 @@ spec:
           env:
             - name: CITAS_SERVER
               value: citas:10000
+            
 ```
-Nos fijamos que en el despliegue se ha creado una variable de entorno que se debe llamar `CITAS_SERVIDOR`, con el valor del nombre del host para accede a la aplicación `citas-backend` y el puerto que está utilizando. En nuestro caso indicaremos el nombre del recurso Service que hemos creado pra acceder a la aplicación `citas-backend`.
+Nos fijamos que en el despliegue se ha creado una variable de entorno que se debe llamar `CITAS_SERVIDOR`, con el valor del nombre del host para accede a la aplicación `citas-backend` y el puerto que está utilizando. En nuestro caso indicaremos el nombre del recurso Service que hemos creado pra acceder a la aplicación `citas`.
 
 La definición del recurso service, la encontramos en el fichero `service.yaml`:
 
