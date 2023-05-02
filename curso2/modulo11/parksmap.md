@@ -55,12 +55,4 @@ Si queremos hacerlo desde la terminal, ejecutamos:
 
     oc policy add-role-to-user view -z default
 
-## Ejercicios adicionales
 
-1. Utilizando el comando `oc` o desde la consola web, visualiza todos los recursos que se han creado y visualiza los detalles de cada uno de ellos.
-2. Visualiza la definición YAML del pod que se está ejecutando.
-3. Accede a la pestaña de **Metrics** y visualiza la monitorización y las métricas del pod que se está ejecutando.
-4. Visualiza la definición YAML del recurso **Service** que se ha creado. ¿Qué tipo de **Service** se ha creado?
-5. Escala el despliegue para que tenga dos replicas.
-6. Accede a la URL de la aplicación y visualiza los logs del despliegue.
-7. Accede de forma remota al terminal de unos de los pods que se está ejecutando.
