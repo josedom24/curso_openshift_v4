@@ -9,12 +9,12 @@ Como vemos, el proceso es el siguiente:
 1. Tenemos que indicar la URL del repositorio GitHub donde se encuentra la aplicación.
 2. OpenShift examina el contenido del repositorio y si es posible, te sugiere la **Image builder** que podemos usar para construir la nueva imagen. Si no es posible o queremos usar otra, tendremos que indicarla.
 3. Se crea un recuso **BuildConfig** responsable de realizar la construcción. 
-4. La configuración de una construcción se guarda en un recurso **Build**.
+4. La configuración de una construcción en concreto se guarda en un recurso **Build**.
 5. El proceso de construcción se realizará en un **build pod**.
 
 ## Despliegue de una página estática con un servidor apache2
 
-Queremos construir una imagen con un servidor web a parir de un repositorio donde tenemos una página web estática, para ello ejecutaremos:
+Queremos construir una imagen con un servidor web a partir de un repositorio donde tenemos una página web estática, para ello ejecutaremos:
 
     oc new-app https://github.com/josedom24/osv4_html.git --name=app1
     error: No language matched the source repository
@@ -31,7 +31,7 @@ Las **Builder Image** están referenciadas por una **Image Stream**, por ejemplo
       Project: openshift
       Tags:    2.4-el7, 2.4-ubi8, 2.4-ubi9, latest
 
-Obtenemos además las distintas etiquetas que podemos usar, que corresponden a distintas versiones del servidor web. Por lo tanto si queremos generar una imagen con el código de nuestro repositorio usando de base una imagen basada en *httpd*, ejecutamos:
+Obtenemos además las distintas etiquetas que podemos usar, que corresponden a distintas versiones del servidor web. Por lo tanto si queremos generar una imagen con el código de nuestro repositorio usando de base una imagen basada en *httpd* (al no indicar la etiqueta se escogerá la *latest* que apunta a la última versión de la imagen), ejecutamos:
 
     oc new-app httpd~https://github.com/josedom24/osv4_html.git --name=app1
     
@@ -51,11 +51,11 @@ Obtenemos además las distintas etiquetas que podemos usar, que corresponden a d
     
 Como vemos se han creado varios recursos:
 
-1. Un **ImageStream** `app1` que apuntará a la nueva imagen que vamos a generar, y que se utiliza en la definición del despliegue.
+1. Un **ImageStream** `app1` que apuntará a la nueva imagen que vamos a generar, y que se utilizará en la definición del despliegue.
 2. Un **BuildConfig**, que guardará la configuración necesaria para construir la nueva imagen. De forma automática creará un objeto **Build** responsable de crear la imagen. Este proceso se realizará en un **build pod**.
 3. Un recurso **Deployment** responsable de desplegar los recursos necesario para ejecutar los pods.
 4. Un recurso **Service** que nos posibilita el acceso a la aplicación.
-5. No ha creado un recurso **Route** para el acceso por medio de una URL, pero nos ha indicado el comando necesario para crearlo: `oc expose service/app1`.
+5. No ha creado un recurso **Route** para el acceso por medio de una URL, pero nos ha indicado el comando necesario para crearlo.
 
 Podemos comprobar todos los recursos que se han creado, ejecutando:
 
@@ -104,7 +104,7 @@ Y accedemos a la aplicación:
 
 ## Despliegue de una página estática con un servidor nginx
 
-Si queremos crear una aplicación con la página web de nuestro repositorio con una imagen basada en nginx, podemos buscar los recursos **Images Stream** que tenemos en el catálogo:
+Si queremos crear una aplicación con la página web de nuestro repositorio con una imagen basada en *nginx*, podemos buscar los recursos **Images Stream** que tenemos en el catálogo:
 
     oc new-app -S nginx
 
@@ -150,7 +150,7 @@ Y ahora creamos la aplicación sin indicar la **Builder Image**:
          'oc expose service/app3' 
         Run 'oc status' to view your app.
 
-Comprobamos que ha detectado que la aplicación está escrita en PHP, y nos ha seleccionado la **Builder Image** `php:8.0-ubi8`.  Para ello creamos el objeto **Route** y accedemos al fichero `index.php`:
+Comprobamos que ha detectado que la aplicación está escrita en PHP, y nos ha seleccionado la **Builder Image** `php:8.0-ubi8`.  Una vez desplegada la aplicación, creamos el objeto **Route** y accedemos al fichero `index.php`:
 
     oc expose service app3
 

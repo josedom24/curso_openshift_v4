@@ -1,16 +1,16 @@
 # Despliegue de aplicaciones desde el catálogo con oc
 
-En los apartados anteriores hemos usado distintas **Builder Images** para construir nuevas imágenes que queremos desplegar. Las **Builder Images** le encontramos almacenadas en el **catálogo de aplicaciones** ed OpenShift. Además en el catálogo encontramos otros elementos, por ejemplo, los **Templates** que nos permiten crear un conjunto de recursos en OpenShift de manera sencilla.
+En los apartados anteriores hemos usado distintas **Builder Images** para construir nuevas imágenes que queremos desplegar. Las **Builder Images** la encontramos almacenadas en el **catálogo de aplicaciones** de OpenShift. Además, en el catálogo encontramos otros elementos, por ejemplo, los **Templates** que nos permiten crear un conjunto de recursos en OpenShift de manera sencilla.
 
-# Despliegue de Templates en OpenShift
+## Despliegue de Templates en OpenShift
 
-Los **Templates** que nos ofrece OpenShift y que está en el **catálogo de aplicaciones**, lo podemos encontrar en el proyecto `openshift`, para listar los que tenemos a nuestra disposición:
+Los **Templates** que nos ofrece OpenShift y que están guardados en el **catálogo de aplicaciones**, lo podemos encontrar en el proyecto `openshift`, para listar los que tenemos a nuestra disposición:
 
     oc get templates -n openshift
 
-Por ejemplo, vamos a desplegar una base de datos mariadb sin almacenamiento persistente, por lo tanto lo primero que vamos a usar el template `mariadb-ephemeral`.
+Por ejemplo, vamos a desplegar una base de datos mariadb sin almacenamiento persistente, por lo tantom, vamos a usar el template `mariadb-ephemeral`.
 
-Los **Templates** tienen definido una serie de parámetros que podemos utilizar para configurar el despliegue. Al instancias un **Template** algunos parámetros hay que indicarlos de forma obligatoria, y otros, si no se ponen, se inicializan con valores por defecto.
+Los **Templates** tienen definido una serie de parámetros que podemos utilizar para configurar el despliegue. Al instanciar un **Template** algunos parámetros hay que indicarlos de forma obligatoria, y otros, si no se ponen, se inicializan con valores por defecto.
 
 Para ver todas las características de un **Template**, incluso los parámetros podemos ejecutar:
 
@@ -64,7 +64,7 @@ Para crear la aplicación desde el **Template** ejecutamos:
         deploymentconfig.apps.openshift.io "mariadb" created
     ...
 
-como vemos se han creados tres recursos: un **Secret**, un **Service** y un **DeploymentConfig**, con los valores de configuración que hemos indicado:
+como vemos se han creado tres recursos: un **Secret**, un **Service** y un **DeploymentConfig**, con los valores de configuración que hemos indicado:
 
     oc get secret,service,dc,rc,pod
     NAME                              TYPE                                  DATA   AGE

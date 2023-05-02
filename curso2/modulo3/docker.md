@@ -4,7 +4,7 @@ El esquema para ver los recursos que se crean en OpenShift al realizar un despli
 
 ![dockerfile](img/dockerfile.png)
 
-Sigamos trabajando con el mismo repositorio y ahora vamos a suponer que queremos ejecutar nuestra aplicación con otra imagen base: tendríamos que crear un fichero `Dockerfile` para especificar los pasos de creación de la imagen. Para ello, creamos un fichero `Dockerfile` en el repositorio con el siguiente contenido:
+Sigamos trabajando con el mismo repositorio y ahora vamos a suponer que queremos ejecutar nuestra aplicación con otra imagen base y hacer una configuración extra en la creación de la imagen. Tendríamos que crear un fichero `Dockerfile` para especificar los pasos de creación de la imagen. Para ello, creamos un fichero `Dockerfile` en el repositorio con el siguiente contenido:
 
     FROM bitnami/nginx
     WORKDIR /app

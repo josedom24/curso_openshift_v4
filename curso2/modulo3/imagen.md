@@ -25,11 +25,11 @@ Como vemos se han creado varios recursos:
 
 1. Ha encontrado una imagen llamada `josedom24/test_web:v1` en Docker Hub.
 2. Ha creado un recurso **ImageStream** que ha llamado igual que la aplicación y la ha etiquetado con la misma etiqueta que tiene la imagen y que referencia a la imagen original.
-3. Ha creado un recurso **Deployment** responsable de desplegar los recursos necesario para ejecutar los pods.
+3. Ha creado un recurso **Deployment** responsable de desplegar los recursos necesarios para ejecutar los pods.
 4. Ha creado un recurso **Service** que nos posibilita el acceso a la aplicación.
-5. No ha creado un recurso **Route** para el acceso por medio de una URL, pero nos ha indicado el comando necesario para crearlo: `oc expose service/test-web`.
+5. No ha creado un recurso **Route** para el acceso por medio de una URL, pero nos ha indicado el comando necesario para crearlo.
 
-Creamos el recurso Route:
+Creamos el recurso **Route**:
 
     oc expose service/test-web
 
@@ -68,12 +68,12 @@ También podemos ver los recursos que hemos creado, ejecutando:
 
 Veamos algunos aspectos con detalle:
 
-1. Vemos que se han creado dos despliegues, dos recursos ReplicaSet: En realidad, en el proceso interno de creación del despliegue se crea un ReplicaSet pero no tiene indicada la imagen, por eso falla y a continuación se vuelve a crear otro que ya si funciona y crea el pod.
-2. Vemos como se ha creado un recurso ImageStream que apunta a la imagen que hemos indicado. Podemos ver los detalles de este recurso ejecutando:
+1. Vemos que se han creado dos despliegues, dos recursos **ReplicaSet**: En realidad, en el proceso interno de creación del despliegue se crea un **ReplicaSet** pero no tiene indicada la imagen, por eso falla y a continuación se vuelve a crear otro que ya si funciona y crea el pod.
+2. Vemos como se ha creado un recurso **ImageStream** que apunta a la imagen que hemos indicado. Podemos ver los detalles de este recurso ejecutando:
 
         oc describe is test-web
 
-3. El recurso Deployment que se ha creado hace referencia al recurso ImageStream en la definición del contenedor que se ha creado:
+3. El recurso **Deployment** que se ha creado hace referencia al recurso **ImageStream** en la definición del contenedor que se ha creado:
 
         oc describe deploy test-web
         ...
@@ -82,7 +82,7 @@ Veamos algunos aspectos con detalle:
          Image:        josedom24/test_web@sha256:99db6f7fdcd6aa338d80b5cd926dff8bae50062c49f82c79a3d67d048efb13a4
         ...
 
-4. Podemos comprobar que si accedemos a la URL generada por el recurso Route, la aplicación está funcionando:
+4. Podemos comprobar que si accedemos a la URL generada por el recurso **Route**, la aplicación está funcionando:
 
     ![imagen](img/imagen1.png)
 
