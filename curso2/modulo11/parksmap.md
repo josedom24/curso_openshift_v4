@@ -4,9 +4,11 @@ Este ejercicio esta basado y es una adaptación al ejemplo que se muestra en la 
 
 ## Arquitectura de la aplicación
 
+![parksmap](img/app-parksmap.png)
+
 ## Despliegue de Parksmap
 
-Como hemos visto anteriormente, Parksmap es la aplicación frontend que visualizará en un mapa las coordenados de los parques nacionales. Esta aplicación está escrita con el framework de Java **Spring-boot** y vamos a desplegarla usando la imagen `quay.io/openshiftroadshow/parksmap:latest` desde la consola web:
+**Parksmap** es la aplicación frontend que visualizará en un mapa las coordenados de los parques nacionales. Esta aplicación está escrita con el framework de Java **Spring-boot** y vamos a desplegarla usando la imagen `quay.io/openshiftroadshow/parksmap:latest` desde la consola web:
 
 Hemos escogido en la vista **Developer**, la opción **+Add -> Conatiner Images**, e indicamos la imagen y el icono de **spring-boot**:
 
