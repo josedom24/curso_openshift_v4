@@ -19,7 +19,6 @@ Podman version: 4.4.1
 
 crc setup
 
-crc config set consent-telemetry yes
 crc config set cpus 8
 crc config set memory 20480
 crc start
