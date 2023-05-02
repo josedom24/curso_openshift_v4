@@ -87,7 +87,7 @@
 11. Ejemplos de despliegues de aplicaciones web
 	* [Despliegue de aplicación Citas en OpenShift v4 (1ª parte)](modulo11/citas.md)
 	* [Despliegue de aplicación Citas en OpenShift v4 (2ª parte)](modulo11/citas2.md)
-	* [Despliegue de aplicación Parksmap en OpenShift v4 (1ª parte)](modulo11/pasrksmap.md)
+	* [Despliegue de aplicación Parksmap en OpenShift v4 (1ª parte)](modulo11/parksmap.md)
 	
 		
 
