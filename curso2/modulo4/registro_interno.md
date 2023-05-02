@@ -1,6 +1,6 @@
 # ImageStream a imágenes del registro interno
 
-OpenShift posee un registro interno con imágenes precargadas. Como hemos indicado no trabajamos directamente con esas imágenes, sino que tenemos a nuestro disposición el recurso **ImageStream** que apuntan a estas imágenes, y serán las que utilicemos para crear nuevos despliegues o para construir nuevas imágenes.
+OpenShift posee un registro interno con imágenes precargadas. Como hemos indicado no trabajamos directamente con esas imágenes, sino que tenemos a nuestra disposición el recurso **ImageStream** que apunta a estas imágenes, y serán las que utilicemos para crear nuevos despliegues o para construir nuevas imágenes.
 
 Las **ImageStreams** que apuntan a imágenes internas, la podemos encontrar en el catálogo, por ejemple si buscamos por la palabra "httpd", podemos encontrar:
 
@@ -38,7 +38,6 @@ Finalmente indicar que con el comando `oc get images` ejecutado como administrad
     sha256:212f61a91651b44e8beb9635885deaae57c8b15a8a50716dd7cebb9a6457b4be   registry.redhat.io/rhscl/httpd-24-rhel7@sha256:212f61a91651b44e8beb9635885deaae57c8b15a8a50716dd7cebb9a6457b4be
     ...
     
-
 ## Uso de las ImageStream internas
 
 Como hemos indicado, usaremos las **ImageStream** para la creación de nuevas aplicaciones o la construcción de nuevas imágenes. 
@@ -53,8 +52,7 @@ Por ejemplo, podríamos desplegar una nueva aplicación a partir de la **ImageSt
     --> Found image 2ffb964 (2 months old) in image stream "openshift/httpd" under tag "2.4" for "httpd:2.4"
     ...
 
-Una vez que creado el despliegue, podríamos ver la imagen que se está usando para el despliegue:
-
+Una vez creado el despliegue, podríamos ver la imagen que se está usando para el despliegue:
 
     oc describe deploy web1
     Containers:

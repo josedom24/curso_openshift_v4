@@ -2,7 +2,7 @@
 
 Cuando creamos un nuevo **ImageStream** que apunta a una imagen, podemos activar una funcionalidad que periódicamente comprueba si la imagen ha cambiado, y en caso afirmativo, actualiza el **ImageStream** para que apunte a la nueva imagen. Por defecto, el periodo de comprobación es de 15 minutos.
 
-En primer lugar, vamos a crear una imagen docker y la voy a subir a mi cuenta de docker Hub. Para ello vamos a usar el fichero `Dockerfile`:
+En primer lugar, vamos a crear una imagen docker y la voy a subir a mi cuenta de Docker Hub. Para ello vamos a usar el fichero `Dockerfile`:
 
 ```
 FROM centos:centos7

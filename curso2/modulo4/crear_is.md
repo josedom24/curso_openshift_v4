@@ -71,14 +71,13 @@ En este caso hemos creado el **ImageStream** `web4:latest`:
       * docker.io/bitnami/apache@sha256:275637c0d0d82c0f87b2269d1871d6a7ad1e81e8960f5ec23fe599e456618b1a
           About a minute ago
 
-Si miramos los ID de las imaǵenes `bitanmi/apache` en Docker Hub podemos comprobnar que hemos apuntado la versión `latest`. Además vemos que la versión `2.4.57` es la misma imagen:
+Si miramos los ID de las imágenes `bitnami/apache` en Docker Hub podemos comprobar que hemos apuntado la versión `latest`. Además vemos que la versión `2.4.57` es la misma imagen:
 
 ![apache](img/apache_docker.png)
 
 Podríamos crear un nuevo tag apuntando a la misma imagen dentro de la **ImageStream** `web4`:
 
     oc import-image web4:2.4.57 --from=docker.io/bitnami/apache:2.4.57
-
 
     oc describe is web4
     ...
@@ -124,7 +123,6 @@ Y también podríamos crear un tag a apuntando a otra versión que corresponde a
       * docker.io/bitnami/apache@sha256:13f1a1b11c4a661d9689949b107378773ff23c5ac748dd9ce61b69d1c6804108
           2 seconds ago
 
-
 Para ver las imágenes que tenemos en registro interno, ejecutamos:
 
     oc get images|grep apache
@@ -137,7 +135,7 @@ Para terminar, podríamos usar este **ImageStream** para desplegar una nueva apl
 
 ## Creación de ImageStream con fichero YAML
 
-La definición de un objeto **ImAgeStream** es muy sencilla, Por ejemplo podemos tener guardada la definición en el fichero `is.yaml`:
+La definición de un objeto **ImageStream** es muy sencilla. Por ejemplo, podemos tener guardada la definición en el fichero `is.yaml`:
 
 ```
 apiVersion: image.openshift.io/v1

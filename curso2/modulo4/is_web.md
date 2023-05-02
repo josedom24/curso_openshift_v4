@@ -1,6 +1,6 @@
 # Gestión de ImageStream desde la consola web
 
-En primer lugar podemos ver desde la consola web los objetos **ImageStream** que apuntan a las imágenes precargadas en OpenShift. recordemos que se encuentran en el proyecto `openshift`. En la vista **Administrator**, en el apartado **Builds->ImageStream**, escogemos el proyecto **OpenShift** y accedemos:
+En primer lugar podemos ver desde la consola web los objetos **ImageStream** que apuntan a las imágenes precargadas en OpenShift. Recordemos que se encuentran en el proyecto `openshift`. En la vista **Administrator**, en el apartado **Builds->ImageStream**, escogemos el proyecto **OpenShift** y accedemos:
 
 ![is](img/is_web1.png)
 
@@ -22,7 +22,7 @@ Además en esta misma pantalla, podemos ver las etiquetas que tiene el objeto **
 
 ![is](img/is_web4.png)
 
-Finalmente podemos pulsar sobre el botón **Create ImageStream** para crear un nuevo objeto desde su definición yaml_
+Finalmente podemos pulsar sobre el botón **Create ImageStream** para crear un nuevo objeto desde su definición YAML:
 
 ![is](img/is_web5.png)
 
