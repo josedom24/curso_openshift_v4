@@ -47,3 +47,48 @@ Y para buscar información acerca de ese chart:
 
 ## Instalación de un chart helm desde la línea de comandos
 
+oc project default
+oc adm policy add-scc-to-user anyuid -z default
+
+helm install wp bitnami/wordpress --set wordpressBlogName="Curso OpenShiift v4"
+
+W0502 21:19:11.394096   34829 warnings.go:70] would violate PodSecurity "restricted:latest": unrestricted capabilities (container "mariadb" must set securityContext.capabilities.drop=["ALL"]), seccompProfile (pod or container "mariadb" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
+NAME: wp
+LAST DEPLOYED: Tue May  2 21:19:11 2023
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: wordpress
+CHART VERSION: 15.2.41
+APP VERSION: 6.1.1
+
+** Please be patient while the chart is being deployed **
+
+Your WordPress site can be accessed through the following DNS name from within your cluster:
+
+    wp-wordpress.default.svc.cluster.local (port 80)
+
+To access your WordPress site from outside the cluster follow the steps below:
+
+1. Get the WordPress URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        Watch the status with: 'kubectl get svc --namespace default -w wp-wordpress'
+
+   export SERVICE_IP=$(kubectl get svc --namespace default wp-wordpress --template "{{ range (index .status.loadBalancer.ingress 0) }}{{ . }}{{ end }}")
+   echo "WordPress URL: http://$SERVICE_IP/"
+   echo "WordPress Admin URL: http://$SERVICE_IP/admin"
+
+2. Open a browser and access WordPress using the obtained URL.
+
+3. Login with the following credentials below to see your blog:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default wp-wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
+
+
+
+
+oc get secret --namespace default wp-wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d
