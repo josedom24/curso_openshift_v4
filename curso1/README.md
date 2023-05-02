@@ -6,7 +6,7 @@
 	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
 
 2. Trabajando con OpenShift en local
-	* Instalación en local con crc
+	* [Instalación en local con crc](modulo2/instalacion_crc.md)
 	* Configuración de oc para crc
 	* Visión general de la consola web
 	* Proyectos en OpenShift
