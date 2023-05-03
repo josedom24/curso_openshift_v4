@@ -2,18 +2,18 @@
 
 Existe un componente en OpenShift que ofrece un servidor DNS interno para que los Pods puedan resolver diferentes nombres de recursos (Services, Pods, ...) a direcciones IP.
 
-Cada vez que se crea un nuevo recurso Service se crea un registro de tipo A con el nombre:
+Cada vez que se crea un nuevo recurso **Service** se crea un registro de tipo A con el nombre:
 
     <nombre_servicio>.<nombre_namespace>.svc.cluster.local.
 
 ## Comprobemos el servidor DNS
 
-Partimos del punto anterior donde tenemos creados un Service:
+Partimos del punto anterior donde tenemos creado un **Service**:
 
     oc get services
     test-web            ClusterIP   172.30.211.73   <none>        8080/TCP  
    
-Para comprobar el servidor DNS de nuestro clúster y que podemos resolver los nombres de los distintos Services, vamos a usar un Pod, cuya definción esta en el fichero `busybox.yaml` creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
+Para comprobar el servidor DNS de nuestro clúster y que podemos resolver los nombres de los distintos **Services**, vamos a usar un Pod, cuya definición esta en el fichero `busybox.yaml` creado desde una imagen `busybox`.  Es una imagen muy pequeña pero con algunas utilidades que nos vienen muy bien:
 
 ```yaml
 apiVersion: v1
@@ -37,21 +37,21 @@ Creamos el pod:
 ¿Qué servidor DNS está configurado en los Pods que estamos creando? Podemos ejecutar la siguiente instrucción para comprobarlo:
 
     oc exec -it busybox -- cat /etc/resolv.conf
-    search josedom24-dev.svc.cluster.local svc.cluster.local cluster.local ec2.internal
-    nameserver 172.30.0.10
+    search test-web.svc.cluster.local svc.cluster.local cluster.local crc.testing
+    nameserver 10.217.4.10
 
+* El servidor DNS tiene asignado la IP del clúster 10.217.4.10.
+* Podemos utilizar el nombre corto del **Service**, porque buscará el nombre del host totalmente cualificado usando los dominios indicados en el parámetro `search`. Como vemos el primer nombre de dominio es el que se crea con los **Services**: `test-web.svc.cluster.local svc.cluster.local` (recuerda que el proyecto que estamos usando es `test-web`).
 
-* El servidor DNS tiene asignado la IP del clúster 172.30.0.10.
-* Podemos utilizar el nombre corto del Service, porque buscará el nombre del host totalmente cualificado usando los dominios indicados en el parámetro `search`. Como vemos el primer nombre de dominio es el que se crea con los Services: `josedom24-dev.svc.cluster.local` (recuerda que el *namespace* que estamos usando es `josedom24-dev`).
-
-Vamos a comprobar que realmente se ha creado un registro A para el Service, haciendo consultas DNS:
+Vamos a comprobar que realmente se ha creado un registro A para el **Service**, haciendo consultas DNS:
 
     oc exec -it busybox -- nslookup test-web
-    Server:		172.30.0.10
-    Address:	172.30.0.10:53
+    Server:		10.217.4.10
+    Address:	10.217.4.10:53
     ...
-    Name:	test-web.josedom24-dev.svc.cluster.local
-    Address: 172.30.211.73
+    Name:	test-web.test-web.svc.cluster.local
+    Address: 10.217.4.144
+    
 
 Vemos que ha hecho la resolución del nombre `test-web` con la IP correspondiente a su servicio.
 

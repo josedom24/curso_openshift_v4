@@ -2,7 +2,7 @@
 
 ## Ingress
 
-Aunque podríamos utilizar la definción de un recurso ingress para el acceso a la aplicación usando una URL, por ejemplo con n fichero `ingress.yaml`:
+Aunque podríamos utilizar la definición de un recurso **ingress** para el acceso a la aplicación usando una URL, por ejemplo con un fichero `ingress.yaml`:
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -23,7 +23,7 @@ spec:
               number: 8080
 ```
 
-En la definción hemos inciado los siguientes parámetros:
+En la definición hemos iniciado los siguientes parámetros:
 
 * `host`: Indicamos el nombre de host que vamos a usar para el acceso. Este nombre debe apuntar a la ip de un nodo del clúster.
 * `path`: Indicamos el path de la url que vamos a usar, en este caso sería la ruta raíz: `/`. 
@@ -34,9 +34,9 @@ Y podríamos crear el recurso, ejecutando:
 
     oc apply -f ingress.yaml
 
-El problema que tenemos, al estar usando OpenShift Dedicated Developer Sandbox, es que no tenemos acceso a la URL de los nodos del clúster, por lo que en nuestro servidor DNS no podemos asociar la URL con una dirección IP.
+**Nota:** Si estamos usando **OpenShift Dedicated Developer Sandbox**, no tenemos acceso a la dirección IP del nodo master del clúster, por lo que en nuestro servidor DNS no podemos asociar la URL con una dirección IP. De la misma manera, no podremos usar run recurso **Service** de tipo `NodePort`.
 
-**En OpenShift se recomienda el uso de recursos routes, que nos asignan de forma automática una URL que podemos usar directamente (está dada de alta en un servidor DNS)**.
+**En OpenShift se recomienda el uso de recursos Routes, que nos asignan de forma automática una URL que podemos usar directamente (está dada de alta en un servidor DNS)**.
 
 ## Route
 
