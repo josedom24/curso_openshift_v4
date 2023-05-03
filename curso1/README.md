@@ -10,12 +10,12 @@
 	* [Configuración de oc para crc](modulo2/oc.md)
 	* [Proyectos en OpenShift](modulo2/proyectos.md)
 	* [Visión general de la consola web](modulo2/consola_web.md)
-	* [Ejecución de pods privilegiados](modulo2/pods_privilegiados.md)
-
+	
 3. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes (P)](modulo3/aplicaciones.md)
 	* [Recursos que nos ofrece OpenShift para desplegar aplicaciones (P)](modulo3/recursos.md)
 	* [Trabajando con Pods](modulo3/pods.md)
+	* [Ejecución de pods privilegiados](modulo3/pods_privilegiados.md)
 	* [Trabajando con Pods desde la consola web](modulo3/pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
 	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet](modulo3/replicaset.md)
