@@ -6,11 +6,11 @@
 
 * En la mayoría de los casos y siguiendo el principio de un proceso por contenedor, un pod ejecutará un contenedor que ejecuta un sólo proceso.
 * En determinadas circunstancias será necesario ejecutar más de un proceso en el mismo "sistema", como en los casos de procesos
-  fuertemente acoplados, en esos casos, tendremos más de un   contenedor dentro del Pod. Cada uno de los contenedores ejecutando
+  fuertemente acoplados, en esos casos, tendremos más de un contenedor dentro del Pod. Cada uno de los contenedores ejecutando
   un solo proceso, pero pudiendo compartir almacenamiento y una misma dirección IP como si se tratase de un sistema ejecutando múltiples
   procesos. Ejemplo: servidor web nginx con un servidor de aplicaciones PHP-FPM.
 
-Un aspecto muy importante que hay que ir asumiendo es que los Pods son **efímeros**, se lanzan y en determinadas circunstancias se paran o se destruyen, creando en muchos casos nuevos Pods que sustituyan a los anteriores. Esto tiene importantes ventajas a la hora de realizar modificaciones en los despliegues en producción, pero tiene una consecuencia directa sobre la información que pueda tener almacenada el Pod, por lo que tendremos que utilizar algún mecanismo adicional cuando necesitemos que la información sobreviva a un Pod.
+Un aspecto muy importante que hay que ir asumiendo es que los Pods son **efímeros**, se lanzan y en determinadas circunstancias se paran o se destruyen, creando en muchos casos nuevos Pods que sustituyen a los anteriores. Esto tiene importantes ventajas a la hora de realizar modificaciones en los despliegues en producción, pero tiene una consecuencia directa sobre la información que pueda tener almacenada el Pod, por lo que tendremos que utilizar algún mecanismo adicional cuando necesitemos que la información sobreviva a un Pod.
 
 ## ReplicaSet
 
@@ -18,7 +18,7 @@ Un aspecto muy importante que hay que ir asumiendo es que los Pods son **efímer
 
 Un recurso ReplicaSet controla un conjunto de Pods y es el responsable de que estos Pods siempre estén ejecutándose (**Tolerancia a fallos**) y de aumentar o disminuir las réplicas de dicho Pod (**Escalabilidad dinámica**). Estas réplicas de los Pods se ejecutarán en nodos distintos del clúster.
 
-El ReplicaSet va a hacer todo lo posible para que el conjunto    de Pods que controla siempre se estén ejecutando. Por ejemplo: si el nodo del cluster donde se están ejecutando una serie de Pods se apaga, el ReplicaSet crearía nuevos Pods en otro nodo para tener siempre ejecutando el número que hemos indicado. Si un Pod se para por cualquier problema, el ReplicaSet intentará que vuelva a ejecutarse  para que siempre tengamos el número de Pods deseado.
+El ReplicaSet va a hacer todo lo posible para que el conjunto de Pods que controla siempre se estén ejecutando. Por ejemplo: si el nodo del clúster donde se están ejecutando una serie de Pods se apaga, el ReplicaSet creará nuevos Pods en otro nodo para tener siempre ejecutando el número que hemos indicado. Si un Pod se para por cualquier problema, el ReplicaSet intentará que vuelva a ejecutarse  para que siempre tengamos el número de Pods deseado.
 
 ## Deployment
 
