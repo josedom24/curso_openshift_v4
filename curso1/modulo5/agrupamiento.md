@@ -39,7 +39,7 @@ En este caso queremos señalar que los Pods del despliegue Wordpress acceden a l
 
 ## Gestión de la aplicación
 
-Ahora podemos gestionar el agrupamiento o aplicación que hemos creado, podemos añadirle nuevos recursos, o podemos elimar la aplicación con lo que se eliminarán todos los recursos relacionados:
+Ahora podemos gestionar el agrupamiento o aplicación que hemos creado, podemos añadirle nuevos recursos, o podemos eliminar la aplicación con lo que se eliminarán todos los recursos relacionados:
 
 ![agrupación](img/agrupacion6.png)
 

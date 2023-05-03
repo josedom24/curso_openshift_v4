@@ -7,6 +7,18 @@ En este ejemplo vamos a desplegar la aplicación Wordpress, para ello será nece
 * El valor de la variable `WORDPRESS_DATABASE_HOST` será el nombre del Service que creemos para acceder a la base de datos, como ya hemos estudiado, se creará un registro en el DNS del cluster que permitirá que Wordpress acceda a la base de datos usando el nombre del Service.
 * Los valores de las credenciales para el acceso a la base de datos, las vamos a guardar en dos recursos de nuestro cluster:: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un ConfigMap y los datos sensibles, las contraseñas, la guardaremos en un Secret.
 
+## Creación y configuración del poryecto
+
+Trabajamos con el usuario `developer` creando un nuevo proyecto, y configurándolo de manera adecuada para poder ejecutar Pods privilegiados.
+
+    oc new-project wordpress
+
+    oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
+    oc adm policy add-scc-to-user anyuid -z default
+    oc login -u developer -p developer https://api.crc.testing:6443
+    ...
+    Using project "wordpress".
+
 ## Creación del ConfigMap y el Secret
 
     oc create cm wordpress-cm --from-literal=bd_user=user_wordpress \
@@ -217,7 +229,6 @@ Finalmente visualizamos todos los recursos que hemos creado:
     pod/wordpress-64bfd486d5-75l7v   1/1     Running   0          62s
 
     NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                               AGE
-    service/modelmesh-serving   ClusterIP   None             <none>        8033/TCP,8008/TCP,8443/TCP,2112/TCP   8d
     service/mysql               ClusterIP   172.30.221.14    <none>        3306/TCP                              82s
     service/wordpress           ClusterIP   172.30.187.161   <none>        8080/TCP,443/TCP                      51s
 
@@ -229,9 +240,9 @@ Finalmente visualizamos todos los recursos que hemos creado:
     replicaset.apps/mysql-547989d679        1         1         1       90s
     replicaset.apps/wordpress-64bfd486d5   1         1         1       62s
 
-    NAME                                 HOST/PORT                                                           PATH   SERVICES    PORT           TERMINATION   WILDCARD
-    route.route.openshift.io/wordpress   wordpress-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com          wordpress   http-sv-port                 None
-
+    NAME                                 HOST/PORT                              PATH   SERVICES    PORT           TERMINATION   WILDCARD
+    route.route.openshift.io/wordpress   wordpress-wordpress.apps-crc.testing          wordpress   http-sv-port                 None
+  
 Y podemos acceder a la URL generada para que comprobar que el Wordpress está funcionando:
 
 ![wp](img/wp1.png)

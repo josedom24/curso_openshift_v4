@@ -6,23 +6,23 @@ Para gestionar ConfigMap tenemos varias opciones: vista **Developer**, apartado 
 
 ![parámetros](img/var1.png)
 
-En esa ventana tenemos las distintas opciones que podemos realizar sobre un ConfigMap, además tenemos la opción de crear un nuevo ConfigMap pulsando el botón **Create ConfigMap** (Tendremos la opción de crearlo a parir de un formulario o a parir de la definición yaml del recurso):
+En esa ventana tenemos las distintas opciones que podemos realizar sobre un **ConfigMap**, además tenemos la opción de crear un nuevo **ConfigMap** pulsando el botón **Create ConfigMap** (Tendremos la opción de crearlo a parir de un formulario o a partir de la definición yaml del recurso):
 
 ![parámetros](img/var2.png)
 
-Si escogemos un ConfigMap de la lista, obtendremos los detalles del mismo:
+Si escogemos un **ConfigMap** de la lista, obtendremos los detalles del mismo:
 
 ![parámetros](img/var3.png)
 
-Además ne este pantalla, te tenemos una pestaña llamada **YAML** que nos permite editar la configuración del recurso.
+Además en esta pantalla, te tenemos una pestaña llamada **YAML** que nos permite editar la configuración del recurso.
 
 ## Secret
 
-De la misma forma podemos gestionar los recursos Secret. También tendríamos varias formas de acceder a su gestión: vista **Developer**, apartado **Secrets**. también puedes escoger vista **Administrator**, apartado **Workloads -> Secrets**:
+De la misma forma podemos gestionar los recursos **Secrets**. También tendríamos varias formas de acceder a su gestión: vista **Developer**, apartado **Secrets**. también puedes escoger vista **Administrator**, apartado **Workloads -> Secrets**:
 
 ![parámetros](img/var4.png)
 
-Vemos en esta pantalla las distintas opciones que podemos realizar sobre un Secret determinado. Además comprobamos que a la hora de crear un nuevo Secret con el botón **Create Secret**, tenemos varias posibilidades:
+Vemos en esta pantalla las distintas opciones que podemos realizar sobre un **Secret** determinado. Además comprobamos que a la hora de crear un nuevo **Secret** con el botón **Create Secret**, tenemos varias posibilidades:
 
 ![parámetros](img/var5.png)
 
@@ -42,6 +42,6 @@ Si escogemos un despliegue para obtener información detallada, podremos ver las
 
 ![parámetros](img/var8.png)
 
-Podremos añadir nuevas variables de entorno, pudiendo indicar un valor concreto, o indicando la clave del ConfigMap o del Secret donde tiene que escoger el valor:
+Podremos añadir nuevas variables de entorno, pudiendo indicar un valor concreto, o indicando la clave del **ConfigMap** o del **Secret** donde tiene que escoger el valor:
 
 ![parámetros](img/var9.png)
