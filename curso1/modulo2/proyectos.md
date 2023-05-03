@@ -14,8 +14,8 @@ Vamos a seguir trabajando con el usuario `developer`, que hemos usado para acced
 
 Por lo tanto lo primero que vamos a hacer es crear un nuevo proyecto que utilizará este usuario:
 
-    oc new-project ejemplo1
-    Now using project "ejemplo1" on server "https://api.crc.testing:6443".
+    oc new-project developer
+    Now using project "developer" on server "https://api.crc.testing:6443".
 
     You can add applications to this project with the 'new-app' command. For example, try:
 
@@ -25,28 +25,28 @@ Por lo tanto lo primero que vamos a hacer es crear un nuevo proyecto que utiliza
 
         kubectl create deployment hello-node --image=k8s.gcr.io/e2e-test-images/agnhost:2.33 -- /agnhost serve-hostname
 
-Vemos que ahora está usando el proyecto `ejemplo1`. Para obtener la lista de proyectos disponibles:
+Vemos que ahora está usando el proyecto `developer`. Para obtener la lista de proyectos disponibles:
 
     oc get projects
     NAME       DISPLAY NAME   STATUS
-    ejemplo1                  Active
+    developer                  Active
 
 Y para ver los detalles del proyecto, ejecutamos:
 
-    oc describe project ejemplo1
+    oc describe project developer
 
-Si creamos un nuevo projecto:
+Si creamos un nuevo proyecto:
 
-    oc new-project ejemplo2
+    oc new-project developer2
 
     oc get projects
     NAME       DISPLAY NAME   STATUS
-    ejemplo1                  Active
-    ejemplo2                  Active
+    developer                  Active
+    developer2                 Active
 
 Nos podemos posicionar en uno de ellos, ejecutando:
 
-    oc project ejemplo1
+    oc project developer
 
 ## Proyectos y namespaces
 
@@ -62,7 +62,7 @@ Vamos a conectarnos como administrador para poder acceder a los **namespaces**:
     
     You have access to 68 projects, the list has been suppressed. You can list all projects with 'oc projects'
 
-    Using project "ejemplo2".
+    Using project "developer2".
 
 El administrador tiene acceso a 68 proyectos, por defecto, está usando el último que se ha creado. Podemos ver todos los poryecrtos, ejecutando:
 
@@ -72,7 +72,7 @@ Ahora si podemos acceder a los **namespaces**, ejecutando:
 
     oc get ns
 
-Y podemos comprobar que se han creado el **namespace** `ejemplo1` y `ejemplo2` correspondiente a los proyectos creados anteriormente.
+Y podemos comprobar que se han creado el **namespace** `developer` y `developer2` correspondiente a los proyectos creados anteriormente.
 Finalmente si queremos trabajar en un proyecto en concreto, por ejemplo en el `default`, ejecutaremos:
 
     oc project default
@@ -80,4 +80,4 @@ Finalmente si queremos trabajar en un proyecto en concreto, por ejemplo en el `d
 
 Finalmente para borrar un proyecto, ejecutamos:
 
-    pc delete project ejemplo2
+    pc delete project developer2
