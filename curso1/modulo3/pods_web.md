@@ -1,16 +1,16 @@
 # Trabajando con Pods desde la consola web
 
-Tenemos varias formas para ver los pods que hemos creado en la unidad anterior. Por ejemplo desde la vista **Developer**, en la sección **Topology**, vemos todos los recursos que tenemos creado. 
+Tenemos varias formas para ver los Pods que hemos creado en la unidad anterior. Por ejemplo desde la vista **Developer**, en la sección **Topology**, vemos todos los recursos que tenemos creado. 
 
 ![pod1](img/pod1.png)
 
-Al elegir uno de los pods, podemos ver en la ventana lateral todos los detalles, y en el desplegable **Actions**, algunas de las opciones que hemos estudiado (editar los labels, editar la definición del pod, eliminar el pod,...).
+Al elegir uno de los Pods, podemos ver en la ventana lateral todos los detalles, y en el desplegable **Actions**, algunas de las opciones que hemos estudiado (editar los labels, editar la definición del pod, eliminar el pod,...).
 
 Otra forma de acceder a los Pods sería en la vista de **Administrator**, en el apartado **Workloads -> Pods**:
 
 ![pod2](img/pod2.png)
 
-En este caso obtenemos la lista de pods, y en el botón final (con tres puntos) tenemos las acciones que podemos realizar sobre un pod en particular.
+En este caso obtenemos la lista de Pods, y en el botón final (con tres puntos) tenemos las acciones que podemos realizar sobre un Pod en particular.
 
 En esta pantalla también tenemos un botón **Create Pod** que nos permite la creación de un nuevo pod:
 
@@ -24,7 +24,7 @@ Si pinchamos sobre un pod, obtenemos los detalles del mismo:
 
 En esta pantalla tenemos varias opciones:
 
-* **Details**: Nos da información del recurso, en este caso del pod seleccionado.
+* **Details**: Nos da información del recurso, en este caso del Pod seleccionado.
 * **Metrics**: Podemos ver las gráficas de métricas (uso de memoria, cpu, sistema de ficheros y red).
 * **YAML**: Podemos editar el YAML con todos los parámetros del recurso.
 * **Environment**: Podemos definir las variables de entorno que tendrán los contenedores del pod.

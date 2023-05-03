@@ -6,7 +6,7 @@ Lo primero será crear un objeto Deployment, para ello desde la vista **Administ
 
 ![volumen](img/volumen2.png)
 
-Creamos el Deployment desde el formulario, indicando el nombre, la imagen y el número de pods que queremos desplegar:
+Creamos el Deployment desde el formulario, indicando el nombre, la imagen y el número de Pods que queremos desplegar:
 
 ![volumen](img/volumen3.png)
 
@@ -36,11 +36,11 @@ Indicando el recurso **PersistentVolumenClaim (PVC)** que vamos a asociar, y el 
 
 ![volumen](img/volumen8.png)
 
-Como ha cambiado la definición del objeto, se crear un nuevo pod con la nueva definición:
+Como ha cambiado la definición del objeto, se crear un nuevo Pod con la nueva definición:
 
 ![volumen](img/volumen9.png)
 
-A continuación, creamos el fichero `index.html` desde un terminal del pod que se está ejecutando:
+A continuación, creamos el fichero `index.html` desde un terminal del Pod que se está ejecutando:
 
 ![volumen](img/volumen10.png)
 

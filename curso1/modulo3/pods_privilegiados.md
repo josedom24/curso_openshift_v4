@@ -44,7 +44,7 @@ Creamos el recurso ejecutando:
     Warning: would violate PodSecurity "restricted:v1.24": allowPrivilegeEscalation != false (container "contenedor-nginx" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container "contenedor-nginx" must set securityContext.capabilities.drop=["ALL"]), runAsNonRoot != true (pod or container "contenedor-nginx" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container "contenedor-nginx" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
 
 
-Nos aparece un aviso, de que no estamos cumpliendo las restricciones de seguridad, pero los recursos se han creado. Cuando vemos el estado del pod que hemos creado, nos encontramos:
+Nos aparece un aviso, de que no estamos cumpliendo las restricciones de seguridad, pero los recursos se han creado. Cuando vemos el estado del Pod que hemos creado, nos encontramos:
 
     NAME                     READY   STATUS             RESTARTS      AGE
     nginx-8565794bdc-lzf65   0/1     CrashLoopBackOff   4 (14s ago)   110s
@@ -77,7 +77,7 @@ Por lo tanto, ahora ejecutamos la instrucción:
 
     oc apply -f nginx.yaml
 
-    oc get pods
+    oc get pod
     NAME                     READY   STATUS    RESTARTS   AGE
     nginx-8565794bdc-lm7dp   1/1     Running   0          25s
 

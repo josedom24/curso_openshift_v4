@@ -21,7 +21,7 @@ En esta pantalla tenemos varias opciones:
 
 * **Details**: Nos da información del recurso, en este caso del **ReplicaSet** seleccionado.
 * **YAML**: Podemos editar el YAML con todos los parámetros del recurso.
-* **Pods**: Obtenemos la lista de pods que controla el **ReplicaSet**.
+* **Pods**: Obtenemos la lista de Pods que controla el **ReplicaSet**.
 * **Environment**: Podemos definir las variables de entorno que tendrán los contenedores del **ReplicaSet**.
 * **Events**: Listamos los distintos eventos que se han producido sobre el recurso.
 

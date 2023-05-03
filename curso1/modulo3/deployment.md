@@ -41,7 +41,7 @@ spec:
 La creación de un **Deployment** crea un **ReplicaSet** y los Pods correspondientes. Por lo tanto en la definición de un **Deployment** se define también el **ReplicaSet** asociado (los parámetros `replicas`, `selector` y `template`). Los atributos relacionados con el **Deployment** que hemos indicado en la definición son:
 
 * `revisionHistoryLimit`: Indicamos cuántos **ReplicaSets** antiguos deseamos conservar, para poder realizar rollback a estados anteriores. Por defecto, es 10.
-* `strategy`: Indica el modo en que se realiza una actualización del Deployment. Es decir, cuando modificamos la versión de la imagen del Deployment, se crea un ReplicaSet nuevo y ¿qué hacemos con los pods?:
+* `strategy`: Indica el modo en que se realiza una actualización del Deployment. Es decir, cuando modificamos la versión de la imagen del Deployment, se crea un ReplicaSet nuevo y ¿qué hacemos con los Pods?:
     * `Recreate`: elimina los Pods antiguos y crea los nuevos.
     * `RollingUpdate`: va creando los nuevos Pods, comprueba que funcionan y se eliminan los antiguos; es la opción por defecto.
 
@@ -60,8 +60,8 @@ Para ver los recursos que hemos creado también podemos utilizar la instrucción
 
 Al crear el **Deployment** nos da un warning igual que en el apartado anterior, al crear un **ReplicaSet**. De la misma menra que vimos en el apartado anterior, tenemos dos posibles soluciones:
 
-1. Actualizar la definición del pod para indicar el contento de seguridad.
-2. Otorgar privilegios para ejecutar pod privilegiados, para ello:
+1. Actualizar la definición del Pod para indicar el contento de seguridad.
+2. Otorgar privilegios para ejecutar Pod privilegiados, para ello:
     
         oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
         oc project proyecto-deploy

@@ -80,7 +80,7 @@ Y obtener información de la ruta creada con el comando:
     Weight:		100 (100%)
     Endpoints:	10.128.43.128:8080, 10.128.51.189:8080
 
-Podemos ver la URL que nos han asignado para el acceso (`Requested Host`), el servicio con el que esta conectado (`Service`) y cómo está balanceado la carga entre los pods seleccionados por el servicio (`Endpoints`).
+Podemos ver la URL que nos han asignado para el acceso (`Requested Host`), el servicio con el que esta conectado (`Service`) y cómo está balanceado la carga entre los Pods seleccionados por el servicio (`Endpoints`).
 
 El formato de la URL que se ha generado es:
 

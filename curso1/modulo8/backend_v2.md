@@ -24,7 +24,7 @@ Y la actualización de la versión del despliegue también la hacemos de forma i
 
     oc set image deploy citas contenedor-citas=josedom24/citas-backend:v2
 
-Esperamos unos segundos y comprobamos que los 3 pods del despliegue se han creado de nuevo con la nueva versión:
+Esperamos unos segundos y comprobamos que los 3 Pods del despliegue se han creado de nuevo con la nueva versión:
 
 
     oc get pod -l app=citas

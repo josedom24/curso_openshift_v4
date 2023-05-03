@@ -138,11 +138,11 @@ Si escalamos el despliegue:
       Normal   Scheduled           24s   default-scheduler        Successfully assigned josedom24-dev/nginx-5676d5ddc6-rjs4x to ip-10-0-136-61.ec2.internal
       Warning  FailedAttachVolume  24s   attachdetach-controller  Multi-Attach error for volume "pvc-4b828a1b-8977-4cde-bcf3-36dead6c0c06" Volume is already used by pod(s) nginx-5676d5ddc6-5xzkw
 
-Es decir, el segundo pod se va a quedar en estado **ContainerCreating** porque las caracteríosticas del volumen que estamos usando no permiten conectarlos a dos pods al mismo tiempo. Para ello, es decir, para tener almacenamiento compartido entre varios pods, tendríamos que tener volúmenes con modo de acceso: **ReadOnlyMany**, de sólo lectura, o **ReadWriteMany**, de lectura y escritura.
+Es decir, el segundo Pod se va a quedar en estado **ContainerCreating** porque las caracteríosticas del volumen que estamos usando no permiten conectarlos a dos Pods al mismo tiempo. Para ello, es decir, para tener almacenamiento compartido entre varios Pods, tendríamos que tener volúmenes con modo de acceso: **ReadOnlyMany**, de sólo lectura, o **ReadWriteMany**, de lectura y escritura.
 
 ## Eliminación del volumen
 
-En este caso, los volúmenes que crea de forma dinámica el StorageClass tiene como política de reciclaje el valor de `Delete`. Esto significa que cuando eliminemos la solicitud, el objeto PersistentVolumeClaim, también se borrará el volumen, el objeto PersistentVolume.
+En este caso, los volúmenes que crea de forma dinámica el StorageClass tiene como política de reciclaje el valor de `Delete`. Esto significa que cuando eliminemos la solicitud, el objeto **PersistentVolumeClaim**, también se borrará el volumen, el objeto **PersistentVolume**.
 
     oc delete deploy/nginx
     oc delete persistentvolumeclaim/my-pvc

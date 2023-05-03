@@ -4,7 +4,7 @@
 
 **La unidad mínima de ejecución en OpenShift es el Pod**. De forma genérica, un Pod representa un conjunto de contenedores que comparten almacenamiento y una única IP. Al ejecutar un Pod, se ejecutan uno o varios contenedores, según las necesidades:
 
-* En la mayoría de los casos y siguiendo el principio de un proceso por contenedor, un pod ejecutará un contenedor que ejecuta un sólo proceso.
+* En la mayoría de los casos y siguiendo el principio de un proceso por contenedor, un Pod ejecutará un contenedor que ejecuta un sólo proceso.
 * En determinadas circunstancias será necesario ejecutar más de un proceso en el mismo "sistema", como en los casos de procesos
   fuertemente acoplados, en esos casos, tendremos más de un contenedor dentro del Pod. Cada uno de los contenedores ejecutando
   un solo proceso, pero pudiendo compartir almacenamiento y una misma dirección IP como si se tratase de un sistema ejecutando múltiples
@@ -34,7 +34,7 @@ El despliegue o **Deployment** es la unidad de más alto nivel que podemos gesti
 Por la manera de trabajar de un Deployment, podemos indicar las funciones que nos aporta:
 
 * Control de réplicas
-* Escalabilidad de pods
+* Escalabilidad de Pods
 * Actualizaciones continuas
 * Despliegues automáticos
 * Rollback a versiones anteriores

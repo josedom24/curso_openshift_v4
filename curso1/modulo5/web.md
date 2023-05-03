@@ -38,7 +38,7 @@ Y podremos editar la configuración del recurso, en la pestaña **YAML**.
 
 ## Variables de entorno
 
-Si escogemos un despliegue para obtener información detallada, podremos ver las variables de entorno que tienen definido los contenedores de los pods que controla accediendo al apartado **Environment**:
+Si escogemos un despliegue para obtener información detallada, podremos ver las variables de entorno que tienen definido los contenedores de los Pods que controla accediendo al apartado **Environment**:
 
 ![parámetros](img/var8.png)
 

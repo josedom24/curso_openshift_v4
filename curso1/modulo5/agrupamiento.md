@@ -3,7 +3,7 @@
 En la topología de la consola web podemos visualizar los distintos despliegues que tenemos en nuestro proyecto. Para organizar los recursos tenemos la posibilidad de realizar dos operaciones:
 
 * **Agrupar** distintos recursos dentro de una aplicación: Será una agrupación lógica que nos permitirá visualizar los recursos de forma agrupada para saber que despliegues están relacionados.
-* **Conectar** unos despliegues con otros: Nos permitirá establecer una relación más particular entre despliegues, por ejmplo los pods del despliegue Wordpress acceden a los pods del despliegue MySql.
+* **Conectar** unos despliegues con otros: Nos permitirá establecer una relación más particular entre despliegues, por ejemplo los Pods del despliegue Wordpress acceden a los Pods del despliegue MySql.
 
 ## Agrupando despliegues en aplicaciones
 
@@ -33,7 +33,7 @@ Podemos indicar que existe una relación entre despliegues de una aplicación, p
 
 ![agrupación](img/agrupacion5.png)
 
-En este caso queremos señalar que los pods del despliegue Wordpress acceden a los pods del despliegue MySql. Las conexiones se señalan en el recurso con una anotación, por ejemplo en el despliegue Wordpress se ha realiza una nueva anotación:
+En este caso queremos señalar que los Pods del despliegue Wordpress acceden a los Pods del despliegue MySql. Las conexiones se señalan en el recurso con una anotación, por ejemplo en el despliegue Wordpress se ha realiza una nueva anotación:
 
         app.openshift.io/connects-to: [{"apiVersion":"apps/v1","kind":"Deployment","name":"mysql"}]
 

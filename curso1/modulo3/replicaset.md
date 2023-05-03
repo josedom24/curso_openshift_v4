@@ -40,7 +40,7 @@ De forma declarativa creamos el **ReplicaSet** ejecutando:
 
 Y podemos ver los recursos que se han creado con:
 
-    oc get rs,pods
+    oc get rs,pod
 
 Observamos que queríamos crear 2 replicas del Pod, y efectivamente se han creado.
 
@@ -63,11 +63,11 @@ Las restricciones que se indican en el warning son:
 * `allowPrivilegeEscalation != false`: Este parámetro debe ser false, lo que impide que el contenedor pueda obtener más privilegios de los que se le han asignado.
 * `unrestricted capabilities`: Esto significa que el contenedor debe establecer `securityContext.capabilities.drop=["ALL"]` para eliminar todas las capacidades adicionales del contenedor que no son necesarias.
 * `runAsNonRoot != true`: Este parámetro debe ser true para garantizar que el contenedor se ejecute como un usuario no privilegiado.
-* `seccompProfile`: Esto significa que el pod o el contenedor deben establecer `securityContext.seccompProfile.type en "RuntimeDefault"` o `"Localhost"` para garantizar que la política de seguridad de Seccomp esté configurada adecuadamente. Seccomp (modo de computación segura), es una característica del kernel de Linux que se puede utilizar para limitar el proceso que se ejecuta en un contenedor para que sólo llame a un subconjunto de las llamadas al sistema disponibles.
+* `seccompProfile`: Esto significa que el Pod o el contenedor deben establecer `securityContext.seccompProfile.type en "RuntimeDefault"` o `"Localhost"` para garantizar que la política de seguridad de Seccomp esté configurada adecuadamente. Seccomp (modo de computación segura), es una característica del kernel de Linux que se puede utilizar para limitar el proceso que se ejecuta en un contenedor para que sólo llame a un subconjunto de las llamadas al sistema disponibles.
 
-### Solución 1: Actualizar la definición del pod para indicar el contento de seguridad
+### Solución 1: Actualizar la definición del Pod para indicar el contento de seguridad
 
-Para resolver este warning, debe actualizar la definición del pod o del contenedor para cumplir con estas restricciones de seguridad. 
+Para resolver este warning, debe actualizar la definición del Pod o del contenedor para cumplir con estas restricciones de seguridad. 
 
 ```yaml
     spec:
@@ -84,11 +84,11 @@ Para resolver este warning, debe actualizar la definición del pod o del contene
               - ALL
 ```
 
-### Solución 2: Otorgar privilegios para ejecutar pod privilegiados
+### Solución 2: Otorgar privilegios para ejecutar Pod privilegiados
 
 Muchas de las interacciones que se hacen sobre la API de OpenShift se realizan por el usuario final, pero muchas otras se hacen internamente. Para hacer estas últimas peticiones a la API se utiliza una cuenta especial de usuario, que se llaman **Service Account**.
 
-OpenShift crea automáticamente algunas **Service Account** en cada proyecto. Por ejemplo, hay una **Service Account** que se llama **default** y será la responsable de ejecutar los pods.
+OpenShift crea automáticamente algunas **Service Account** en cada proyecto. Por ejemplo, hay una **Service Account** que se llama **default** y será la responsable de ejecutar los Pods.
 
 Vamos a modificar los privilegios de ejecución al **Service Account** llamado `default`, para ello:
 
@@ -97,23 +97,23 @@ Vamos a modificar los privilegios de ejecución al **Service Account** llamado `
     oc adm policy add-scc-to-user anyuid -z default
 
 * Esta instrucción agrega el restricción de seguridad llamada **anyuid** al **ServiceAccount** predeterminado (`default`) en tu proyecto actual de OpenShift.
-* La restricción **anyuid** permite a los contenedores en el pod ejecutarse con privilegios.
+* La restricción **anyuid** permite a los contenedores en el Pod ejecutarse con privilegios.
 
-Esta segunda opción la utilizaremos más adelante para poder ejecutar pods privilegiados.
+Esta segunda opción la utilizaremos más adelante para poder ejecutar Pods privilegiados.
 
 ## Tolerancia a fallos
 
 ¿Qué pasaría si borro uno de los Pods que se han creado? Inmediatamente se creará uno nuevo para que siempre estén ejecutándose los Pods deseados, en este caso 2:
 
     oc delete pod <nombre_del_pod>
-    oc get pods
+    oc get pod
 
 ## Escalabilidad
 
-Para escalar el número de pods:
+Para escalar el número de Pods:
 
     oc scale rs replicaset-nginx --replicas=5
-    oc get pods
+    oc get pod
     NAME                     READY   STATUS    RESTARTS   AGE
     replicaset-nginx-88rzr   1/1     Running   0          9s
     replicaset-nginx-gq8bs   1/1     Running   0          10m

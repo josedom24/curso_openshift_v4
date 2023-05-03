@@ -64,7 +64,7 @@ Ahora para crear el Pod a partir del fichero yaml, podemos usar dos subcomandos:
 
 Podemos ver el estado en el que se encuentra y si está o no listo:
 
-    oc get pods
+    oc get pod
 
 **Nota:** Sería equivalente usar po, pod o pods.
 
@@ -104,20 +104,20 @@ Y accedemos al servidor web en la url http://localhost:8080.
 
 Para obtener las etiquetas de los Pods que hemos creado:
 
-    oc get pods --show-labels
+    oc get pod --show-labels
 
 Las etiquetas las hemos definido en la sección metadata del fichero yaml, pero también podemos añadirlos a los Pods ya creados:
 
-    oc label pods pod-nginx service=web --overwrite=true
+    oc label pod pod-nginx service=web --overwrite=true
 
 Las etiquetas son muy útiles, ya que permiten seleccionar un recurso determinado (en el clúster puede haber cientos o miles de objetos). Por ejemplo para visualizar los Pods que tienen una etiqueta con un determinado valor:
 
-    oc get pods -l service=web
+    oc get pod -l service=web
 
 También podemos visualizar los valores de las etiquetas como una nueva
 columna:
 
-    oc get pods -Lservice
+    oc get pod -Lservice
 
 Y por último, eliminamos el Pod mediante:
 

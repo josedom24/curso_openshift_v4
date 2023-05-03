@@ -1,10 +1,10 @@
 # DaemonSet
 
-Un recurso **DaemonSet** garantiza que un pod esté en ejecución en cada nodo del clúster OpenShift.
+Un recurso **DaemonSet** garantiza que un Pod esté en ejecución en cada nodo del clúster OpenShift.
 
-El recurso DaemonSet es útil en situaciones donde se necesita ejecutar una tarea o servicio en todos los nodos del clúster, como la recolección de logs o la supervisión del sistema. También es común utilizar un DaemonSet para desplegar agentes de monitoreo o herramientas de seguridad en todos los nodos del clúster.
+El recurso **DaemonSet** es útil en situaciones donde se necesita ejecutar una tarea o servicio en todos los nodos del clúster, como la recolección de logs o la supervisión del sistema. También es común utilizar un **DaemonSet** para desplegar agentes de monitoreo o herramientas de seguridad en todos los nodos del clúster.
 
-Podemos seleccionar un subconjuntos de nodos del clúster donde queremos que se ejecuten los pods, pero usando RedHat OpenShift Dedicated Developer Sandbox, no somos usuarios administradores, por lo que no tenemos acceso a los bojetos nodos del clúster y por lo tanto no podemos realziar la selacciión.
+Podemos seleccionar un subconjuntos de nodos del clúster donde queremos que se ejecuten los Pods, pero usando **RedHat OpenShift Dedicated Developer Sandbox**, no somos usuarios administradores, por lo que no tenemos acceso a los objetos nodos del clúster y por lo tanto no podemos realizar la selección.
 
 Veamos un ejemplo, tenemos descrito el recurso **DaemonSet** en el fichero `daemonset.yaml`:
 
@@ -30,11 +30,11 @@ spec:
 
 ```
 
-En este caso se va a crear un contenedor por cada nodo del clúster, para ello creamos el recursos y vemos los pods que se han creado:
+En este caso se va a crear un contenedor por cada nodo del clúster, para ello creamos el recursos y vemos los Pods que se han creado:
 
     oc apply -f daemonset.yaml
 
-    oc get pods -o wide
+    oc get pod -o wide
     NAME            READY   STATUS    RESTARTS   AGE   IP              NODE                           NOMINATED NODE   READINESS GATES
     logging-4d9l6   1/1     Running   0          10s   10.128.53.82    ip-10-0-243-92.ec2.internal    <none>           <none>
     logging-6bcmx   1/1     Running   0          10s   10.128.18.135   ip-10-0-150-108.ec2.internal   <none>           <none>

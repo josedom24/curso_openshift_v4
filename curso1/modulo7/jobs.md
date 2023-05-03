@@ -2,12 +2,12 @@
 
 Los recursos **Jobs** y **CronJobs** son recursos que permiten ejecutar tareas en un clúster. 
 
-* Un job es un objeto que crea uno o más pods en Kubernetes para ejecutar una tarea. Los jobs se utilizan comúnmente para realizar trabajos puntuales o tareas que no necesitan ejecutarse de manera continua. 
+* Un job es un objeto que crea uno o más Pods en Kubernetes para ejecutar una tarea. Los jobs se utilizan comúnmente para realizar trabajos puntuales o tareas que no necesitan ejecutarse de manera continua. 
 * Por otro lado, un cronjob es un objeto que crea jobs de manera programada en un clúster de Kubernetes. Los cronjobs se utilizan para realizar tareas de manera repetitiva, según un horario establecido. 
 
 ## Jobs
 
-Vamos a ejecutar un recurso **Job** que simplemente crea un pod para calcular el valor del numero pi con 200 decimales. La definición del recurso la tenemos guardada en el fichero `job.yaml`:
+Vamos a ejecutar un recurso **Job** que simplemente crea un Pod para calcular el valor del numero pi con 200 decimales. La definición del recurso la tenemos guardada en el fichero `job.yaml`:
 
 ```yaml
 apiVersion: batch/v1
@@ -25,14 +25,14 @@ spec:
   backoffLimit: 4
 ```
 
-* El valor de `restartPolicy` se establece en `Never`, lo que significa que el pod no se reiniciará después de que se complete la tarea del contenedor.
+* El valor de `restartPolicy` se establece en `Never`, lo que significa que el Pod no se reiniciará después de que se complete la tarea del contenedor.
 * En el parámetro `backoffLimit` indicamos el número de intentos que se van a ejecutar antes de determinar que la tarea ha fallado.
 
-Vamos a ejecutar el recurso Job, y comprobamos que cuando termina el pod está en estado Completado y que podemos acceder al resultado del cálculo:
+Vamos a ejecutar el recurso Job, y comprobamos que cuando termina el Pod está en estado Completado y que podemos acceder al resultado del cálculo:
 
     oc apply -f job.yaml 
     
-    oc get pods
+    oc get pod
     NAME       READY   STATUS      RESTARTS   AGE
     pi-bkk2b   0/1     Completed   0          21s
     
@@ -41,7 +41,7 @@ Vamos a ejecutar el recurso Job, y comprobamos que cuando termina el pod está e
 
 ## CronJobs
 
-En este caso se ejecuta una tarea periodicamente. Vamos a ver un ejemplo, que tenemos definido en el fichero `cronjob.yaml`:
+En este caso se ejecuta una tarea periódicamente. Vamos a ver un ejemplo, que tenemos definido en el fichero `cronjob.yaml`:
 
 ```yaml
 apiVersion: batch/v1

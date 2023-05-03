@@ -112,20 +112,20 @@ Y si accedemos la URL proporcionada por el recuro Route podemos acceder a la apl
 
 ### Escalando la aplicación `citas-backend`
 
-Podemos escalar cualquiera de los dos despliegues que hemos realizado. En este caso vamos a escalar el número de pods del despliegue de `citas-backend` y podremos observar como en la información que se muestra en la página web va cambiado el nombre del hostname demostrando, de esta manera, que se esta balanceando la carga entre los pods del despliegue:
+Podemos escalar cualquiera de los dos despliegues que hemos realizado. En este caso vamos a escalar el número de Pods del despliegue de `citas-backend` y podremos observar como en la información que se muestra en la página web va cambiado el nombre del hostname demostrando, de esta manera, que se esta balanceando la carga entre los Pods del despliegue:
 
     oc scale deployment.apps/citas --replicas=3
 
-Y vemos los nuevos pods que se han creado:
+Y vemos los nuevos Pods que se han creado:
 
-    oc get pods
+    oc get pod
     NAME                        READY   STATUS    RESTARTS   AGE
     citas-6b98bb97f9-7p6tk      1/1     Running   0          9s
     citas-6b98bb97f9-ndgdn      1/1     Running   0          9s
     citas-6b98bb97f9-vr4dx      1/1     Running   0          172m
     citasweb-7c5469486c-5slwn   1/1     Running   0          3m19s
 
-Y si accedemos a la página web y vamos refrescando, observamos como se balancea la carga entre los distintos pods:  
+Y si accedemos a la página web y vamos refrescando, observamos como se balancea la carga entre los distintos Pods:  
 
 ![citas](img/citas.gif)
 

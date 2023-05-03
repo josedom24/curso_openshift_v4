@@ -2,11 +2,11 @@
 
 A diferencia de un Deployment, un StatefulSet mantiene una identidad fija para cada uno de sus Pods.
 
-Por lo tanto cada pod es distinto (**tiene una identidad única**), y este hecho tiene algunas consecuencias:
-* El nombre de cada pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
-* Si un nuevo pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen
+Por lo tanto cada Pod es distinto (**tiene una identidad única**), y este hecho tiene algunas consecuencias:
+* El nombre de cada Pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
+* Si un nuevo Pod es recreado, obtendrá el mismo nombre (hostname), los mismos nombres DNS (aunque la IP pueda cambiar) y el mismo volumen
 que tenía asociado.
-* Necesitamos crear un servicio especial, llamado **Headless Service**, que nos permite acceder a los pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este servicio no tendrá una ClusterIP.
+* Necesitamos crear un servicio especial, llamado **Headless Service**, que nos permite acceder a los Pods de forma independiente, pero que no balancea la carga entre ellos, por lo tanto este servicio no tendrá una ClusterIP.
 
 La definición del objeto **StatefulSet** la tenemos guardada en el fichero `statefulset.yaml`:
 
@@ -46,8 +46,8 @@ spec:
 
 ```
 
-* Se indica los pods que vamos a controlar por medio de la etiqueta `selector`.
-* Como hemos indicado cada pods va a tener asociado un volumen persistente, se hace la definición de la reclamación del volumen con la etiqueta `volumeClaimTemplates`.
+* Se indica los Pods que vamos a controlar por medio de la etiqueta `selector`.
+* Como hemos indicado cada Pods va a tener asociado un volumen persistente, se hace la definición de la reclamación del volumen con la etiqueta `volumeClaimTemplates`.
 * Se indica el punto de montaje en el contenedor, con la etiqueta `volumeMounts`.
 
 Por otro lado la definición del recurso **Headless Service** la tenemos en el fichero `service.yaml`:
@@ -68,16 +68,16 @@ spec:
     app: nginx
 ```
 
-* En este caso no se balancea la carga a cada pod, sino que podemos acceder a cada pod de manera independiente, con el nombre:
+* En este caso no se balancea la carga a cada pod, sino que podemos acceder a cada Pod de manera independiente, con el nombre:
         
         <nombre_del_pod>.<nombre-statefulset>.<nombre-proyecto>.svc.cluster.local
 
 * Por lo tanto no va tener asignada ninguna Cluster IP (`clusterIP: None`).
-* Se seleccionan los pods a los que se puede acceder por medio de la etiqueta declarada en el apartado `selector`.
+* Se seleccionan los Pods a los que se puede acceder por medio de la etiqueta declarada en el apartado `selector`.
 
-## Creación ordenada de pods
+## Creación ordenada de Pods
 
-Lo primero creamos el recurso **Headless Service** y vamos comprobar la creación ordenados de pods, para ello en un terminal observamos la creación de pods y en otro terminal creamos los pods
+Lo primero creamos el recurso **Headless Service** y vamos comprobar la creación ordenados de Pods, para ello en un terminal observamos la creación de Pods y en otro terminal creamos los Pods
 
     watch oc get pod
     oc apply -f statefulset.yaml
@@ -99,9 +99,9 @@ Vemos los hostname y los nombres DNS asociados:
     ...
     Address 1: 10.128.43.7 web-1.nginx.josedom24-dev.svc.cluster.local
 
-## Eliminación de pods
+## Eliminación de Pods
 
-En un terminal observamos la creación de pods y en otro terminal eliminamos los pods
+En un terminal observamos la creación de Pods y en otro terminal eliminamos los Pods
 
     watch oc get pod
     oc delete pod -l app=nginx
@@ -119,7 +119,7 @@ Volvemos a crear el recurso StatefulSet y comprobamos que los hostnames y los no
 
 ## Escribiendo en los volúmenes persistentes
 
-Comprobamos que se han creado volúmenes para los pods:
+Comprobamos que se han creado volúmenes para los Pods:
 
     oc get pvc
 
@@ -130,7 +130,7 @@ Creamos el fichero `index.html` en el directorio que hemos montado (directorio *
     web-0
     web-1
 
-    Volvemos a eliminar los pods, y comprobamos que la información es persistente al estar guardadas en los volúmenes:
+    Volvemos a eliminar los Pods, y comprobamos que la información es persistente al estar guardadas en los volúmenes:
 
     oc delete pod -l app=nginx
     oc apply -f statefulset.yaml
@@ -142,11 +142,11 @@ Para escalar el despliegue:
 
     oc scale sts web --replicas=5
 
-Comprobamos los pods y los volúmenes:
+Comprobamos los Pods y los volúmenes:
 
     oc get pod,pvc
 
-Si reducimos el número de pods los volúmenes no se eliminan.
+Si reducimos el número de Pods los volúmenes no se eliminan.
 
 ## Gestión de StatefulSet desde la consola web
 
@@ -158,7 +158,7 @@ En esa pantalla además tenemos la opción de crear un nuevo recurso con el bot�
 
 ![st](img/statefulset2.png)
 
-También podemos gestionar los objetos **PersistentVolumeClaim** que se han creado para cada uno de los pods, en la sección **Storage - > PersistentVolumeClaim**:
+También podemos gestionar los objetos **PersistentVolumeClaim** que se han creado para cada uno de los Pods, en la sección **Storage - > PersistentVolumeClaim**:
 
 ![st](img/statefulset3.png)
 
