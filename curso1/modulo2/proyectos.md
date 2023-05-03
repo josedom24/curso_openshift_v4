@@ -80,4 +80,4 @@ Finalmente si queremos trabajar en un proyecto en concreto, por ejemplo en el `d
 
 Finalmente para borrar un proyecto, ejecutamos:
 
-    pc delete project developer2
+    oc delete project developer2
