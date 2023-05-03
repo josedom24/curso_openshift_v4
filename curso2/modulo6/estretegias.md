@@ -1,12 +1,12 @@
 # Estrategias de despliegues
 
-Cuando se actualiza un despliegue, la manera en cómo se van eliminando los pods antiguos y se crean los nuevos, es lo que llamamos **estrategias de despliegue**. El objetivo, es el tiempo de inactividad sea lo más bajo posible. Lo que vamos a explicar sobre las estrategias de despliegues en este apartado, nos sirve tanto para los objetos **deployment** como para los objetos **DeploymentConfig**.
+Cuando se actualiza un despliegue, la manera en cómo se van eliminando los pods antiguos y se crean los nuevos, es lo que llamamos **estrategias de despliegue**. El objetivo, es que el tiempo de inactividad sea lo más bajo posible. Lo que vamos a explicar sobre las estrategias de despliegues en este apartado, nos sirve tanto para los objetos **Deployment** como para los objetos **DeploymentConfig**.
 
 Vamos a estudiar dos tipos de estrategias:
 
 ## Estrategia Rolling Update
 
-En este tipo de estrategia utiliza una implementación gradual y en cascada para actualizar los pods: se van creando los nuevos pods, se comprueba que funcionan, y posteriormente se van eliminando los pods antiguos. Es la estrategia por defecto. Veamos la configuración de esta estrategia, creando un **DeploymentConfig** a partir de la **ImageStream** `is-example` que tiene otras dos etqiuetas apuntando a las versiones:
+En este tipo de estrategia utiliza una implementación gradual y en cascada para actualizar los pods: se van creando los nuevos pods, se comprueba que funcionan, y posteriormente se van eliminando los pods antiguos. Es la estrategia por defecto. Veamos la configuración de esta estrategia, creando un **DeploymentConfig** a partir de la **ImageStream** `is-example` que tiene otras dos etiquetas apuntando a las versiones:
 
     oc create is is_example
     oc import-image is_example:v1 --from=quay.io/openshifttest/deployment-example:v1
@@ -54,12 +54,11 @@ Y en otra terminal actualizamos la etiqueta `latest` del **ImageStream** Para pr
     oc tag -d is_example:latest
     oc tag is_example:v2 is_example:latest
 
-
 Finalmente podemos comprobamos que tenemos desplegada la versión 2:
 
 ![example](img/example2.png)
 
-En la cosnola web, también podemos ver la transición de los pods. En la vista **Developer**, la opción **Topology**, escogemos el bojeto **DeploymentConfig** y en las acciones elegimos **Start rollout**:
+En la consola web, también podemos ver la transición de los pods. En la vista **Developer**, la opción **Topology**, escogemos el objeto **DeploymentConfig** y en las acciones elegimos **Start rollout**:
 
 ![example](img/example3.png)
 
@@ -67,7 +66,7 @@ En la cosnola web, también podemos ver la transición de los pods. En la vista 
 
 En algunas circunstancias, podemos necesitar eliminar todos los pods antiguos y posteriormente crear los nuevos. Este tipo de estrategia se denomina **Recreate**.
 
-Vamos a modificar lel tipo de estrategia en nuestro **DeploymentConfig**:
+Vamos a modificar el tipo de estrategia en nuestro **DeploymentConfig**:
 
     oc edit dc example
 

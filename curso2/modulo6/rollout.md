@@ -45,7 +45,7 @@ La primera actualización la vamos a hacer de forma manual, y simplemente vamos 
     pod/web1-2-deploy   0/1     Completed   0          20s
     pod/web1-2-lpss4    1/1     Running     0          19s
 
-Vemos que ya tenemos dos revisiones (dos actualizaciones), por lo tanto dos objetos **ReplicationController**, dos **pod deploy** y el pod de la aplicación ha cambiado y tiene un `2` indicando que corresponde a la segunda revisión.
+Vemos que ya tenemos dos revisiones (dos actualizaciones), por lo tanto, tenemos dos objetos **ReplicationController**, dos **pod deploy** y el pod de la aplicación ha cambiado y tiene un `2` indicando que corresponde a la segunda revisión.
 
 Para ver el estado y el historial de revisiones ejecutamos:
 
@@ -96,7 +96,7 @@ Y cambiamos el parámetro `terminationGracePeriodSeconds` (especifica el tiempo 
 
 ## Actualización por ImageChange
 
-Por último, vamos a hacer un cambio en la aplicación, voy a generar una nueva imagen, y el despliegue se actualizará opr el cambio de imagen. Para ello, en tro en repositorio y cambio el fichero `index.html`. Una vez realizado el cambio guardo los cambios en el repositorio y genero de nuevo la imagen:
+Por último, vamos a hacer un cambio en la aplicación, voy a generar una nueva imagen, y el despliegue se actualizará por el cambio de imagen. Para ello, entro en repositorio y cambio el fichero `index.html`. Una vez realizado el cambio guardo los cambios en el repositorio y genero de nuevo la imagen:
 
     git commit -am "Cambio index.html"
     git push

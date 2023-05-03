@@ -1,6 +1,6 @@
 # Trabajando con DeploymentConfig desde la consola web
 
-Cuando creamos una nueva aplicación web desde la consola web, y queremos utilizar como recurso de despliegue un **DeploymentConfig**, tenemos que seleccionar el recurso en el apartado **Resource type**:
+Cuando creamos una nueva aplicación desde la consola web, y queremos utilizar como recurso de despliegue un **DeploymentConfig**, tenemos que seleccionar el recurso en el apartado **Resource type**:
 
 ![dc](img/dc_web1.png)
 
@@ -29,8 +29,8 @@ Si pulsamos en un objeto **DeploymentConfig** acedemos a una página donde nos d
 En esta pantalla encontramos varias pestañas:
 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
-* **YAML**: donde accedemos a la definición yaml del objeto.
-* **ReplicationControllers**: Accedemos a la ventana donde se nos muestra los objetos **ReplicationControllers** de el objeto **DeploymentConfig** que estamos viendo.
+* **YAML**: Donde accedemos a la definición yaml del objeto.
+* **ReplicationControllers**: Accedemos a la ventana donde se nos muestran los objetos **ReplicationControllers** del objeto **DeploymentConfig** que estamos viendo.
 * **Pods**: La lista de pods controlada por el **ReplicationController** activo.
 * **Environment**: Donde podemos crear variables de entorno de tipo clave=valor que se crearan en los pods.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.
@@ -48,7 +48,7 @@ De la misma manera, si pulsamos sobre un objeto determinado, obtenemos la inform
 Donde tenemos varias pestañas con distintas informaciones:
 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
-* **YAML**: donde accedemos a la definición yaml del objeto.
+* **YAML**: Donde accedemos a la definición yaml del objeto.
 * **Pods**: La lista de pods controlada por el **ReplicationController** activo.
 * **Environment**: Donde podemos crear variables de entorno de tipo clave=valor que se crearan en los pods.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.

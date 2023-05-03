@@ -23,7 +23,7 @@ Si queremos que la ruta nos sirva la nueva aplicación, simplemente tenemos que 
 
     oc patch route/app -p '{"spec":{"to":{"name":"app-green"}}}'
 
-Vamos a servir la primera versión, para continuar con el ejemplo:
+Vamos a servir la primera versión para continuar con el ejemplo:
 
     oc patch route/app -p '{"spec":{"to":{"name":"app-blue"}}}'
 

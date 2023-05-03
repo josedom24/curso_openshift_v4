@@ -2,14 +2,14 @@
 
 Tenemos la posibilidad de volver al estado del despliegue que teníamos en una revisión anterior (**Rollback**). Para realizar este ejercicio vamos a desplegar una nueva aplicación a partir de una imagen que tenemos en DockerHub. La imagen `josedom24/test_web` tiene tres versiones, identificadas por etiquetas.
 
-En este ejercicio, vamos a crear un **ImageStream** antes de deplegar la aplicación, que nos permitirá ir cambiando de imagen con el uso de un tag, para ello:
+En este ejercicio, vamos a crear un **ImageStream** antes de desplegar la aplicación, que nos permitirá ir cambiando de imagen con el uso de un tag, para ello:
 
     oc create is is_test_web
     oc import-image is_test_web:v1 --from=docker.io/josedom24/test_web:v1
     oc import-image is_test_web:v2 --from=docker.io/josedom24/test_web:v2
     oc import-image is_test_web:v3 --from=docker.io/josedom24/test_web:v3
 
-Vamos a crear una nueva etiqueta `prod` que en primer lugar apuntará al `v1` y que utilizaremos para el despliegue, posteriormente airemos referenciando con esta etiqueta otra versiones de la imagen, por lo que se producirá el trigger **ImageChange**:
+Vamos a crear una nueva etiqueta `prod` que en primer lugar apuntará a la versión `v1` y que utilizaremos para el despliegue, posteriormente iremos referenciando con esta etiqueta otras versiones de la imagen, por lo que se producirá el trigger **ImageChange**:
 
     oc tag is_test_web:v1 is_test_web:prod
 
@@ -40,7 +40,7 @@ Creamos el **DeploymentConfig** con la siguiente instrucción:
 
 ## Actualización del despliegue a la versión 2
 
-Para producir la actualización vamos a cambiar en la imagen, para ello vamos a referenciar el tag `prod` a la segunda versión:
+Para producir la actualización vamos a cambiar la imagen, para ello vamos a referenciar el tag `prod` a la segunda versión:
 
     oc tag is_test_web:prod -d
     oc tag is_test_web:v2 is_test_web:prod

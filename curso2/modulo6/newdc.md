@@ -1,6 +1,6 @@
 # Creación de un DeployConfig al crear una aplicación
 
-Como hemos indicado anteriormente al crear una nueva aplicación para desplegar una aplicación, por defecto se va a desplegar usando un recurso de tipo **Deployment**. Si queremos crear un despliegue usando un recurso **DeploymentConfig**, tenemos que indicarlo explícitamente cuando creamos la aplicación.
+Como hemos indicado anteriormente al crear una nueva aplicación con `oc new-app`, por defecto se va a desplegar usando un recurso de tipo **Deployment**. Si queremos crear un despliegue usando un recurso **DeploymentConfig**, tenemos que indicarlo explícitamente cuando creamos la aplicación.
 
 El siguiente ejercicio lo vamos a realizar sobre nuestra instalación local instalada con **crc**. Por ejemplo, si queremos crear un despliegue a partir de la imagen `josedom24/test_web:v1` y queremos hacerlo con un **DeploymentConfig**, ejecutaremos:
 

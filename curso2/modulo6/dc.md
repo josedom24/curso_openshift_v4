@@ -1,13 +1,13 @@
 # Características del recurso DeploymentConfig
 
-Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan la funcionalidad de desplegar una aplicación. Son dos métodos similares pero diferentes para la gestión detallada de aplicaciones.
+Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan la funcionalidad de desplegar aplicaciones. Son dos métodos similares pero diferentes para la gestión detallada de aplicaciones.
 
-* Estos recursos describen **el estado deseado de una aplicación** y lo usamos como plantillas de pod.
-* Los objetos **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los pods de la aplicación. Para ello se utiliza un pod-deploy**, responsable de la creación de los pods.
+* Estos recursos describen **el estado deseado de una aplicación** y lo usamos como plantillas para la creación de Pods.
+* El objeto **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los pods de la aplicación. Para ello se utiliza un **pod-deploy**, responsable de la creación de los pods.
 
     ![dc](img/deploymentconfig.png)
 
-* Los objetos **Deployment** utilizan recursos **ReplicSets** para el control de los pods.
+* Los objetos **Deployment** utilizan recursos **ReplicaSets** para el control de los pods.
 
     ![deploy](img/deployment.png)
 
@@ -26,7 +26,7 @@ Si se actualiza un despliegue, se creará otro **ReplicationController**, que po
 
 ## Comparación de los objetos Deployment y DeploymentConfig
 
-La recomendación es usar objetos **Deployment**, a menos que necesite una función o un comportamiento específicos proporcionados por los objetos **DeploymentConfig**.
+La recomendación es usar objetos **Deployment**, a menos que necesites una función o un comportamiento específicos proporcionados por los objetos **DeploymentConfig**.
 
 Para ayudarnos a elegir que recurso usar, veamos algunas características de cada uno de ellos:
 
@@ -35,8 +35,8 @@ Para ayudarnos a elegir que recurso usar, veamos algunas características de cad
 3. Los objetos **Deployment** de forma implícita desencadenan un nuevo despliegue si hay un cambio en la configuración del recurso. Sin embargo, los objetos **DeploymentConfig**, pueden tener otras causas para desencadenar un despliegue de forma automática, por ejemplo, la modificación de la imagen.
 4. Los **DeploymentConfig** tiene la posibilidad de ejecutar ciertos procesos en su ciclo de vida con los **lifecycle hooks**.
 5. Los **DeploymentConfig** tiene la posibilidad de configurar estrategias personalizadas de despliegues.
-6. Los recursos **Deployment** no utiliza un **pod de deploy**, por lo que pueden tener varios **ReplicaSet** activos, sin embargo los **DeploymentConfig**, pueden tener como máximo un **pod de deploy** en ejecución, por lo que sólo dos **ReplicationController** pueden estar activos al mismo tiempo. Esto se traduce que los **Deployment** pueden hacer despliegue más rápidos.
+6. Los recursos **Deployment** no utilizan un **pod de deploy**, por lo que pueden tener varios **ReplicaSet** activos, sin embargo los **DeploymentConfig**, pueden tener como máximo un **pod de deploy** en ejecución, por lo que sólo dos **ReplicationController** pueden estar activos al mismo tiempo. Esto se traduce que los **Deployment** pueden hacer despliegues más rápidos.
 7. En los objetos **DeploymentConfig**, no se puede hacer un escalado parcial, es decir escalar un despliegue que se está ejecutando. Sin embargo, los **Deployment** si permiten esta característica.
-8. Usando objetos **Deployment** podemos pausar el despliegue, sin embargo, en los **DeploymentConfig**, al no poder para el **pod de deploy**, no se pueden pausar los despliegues.
+8. Usando objetos **Deployment** podemos pausar el despliegue, sin embargo, en los **DeploymentConfig**, al no poder parar el **pod de deploy**, no se pueden pausar los despliegues.
 
 Por último, recordar que desde la versión 4.5 de OpenShift, al desplegar una aplicación usando el comando `oc new-app` se utilizará el recurso **Deployment** por defecto. Si queremos usar un recurso **DeploymentConfig** habrá que indicarlo explícitamente.
