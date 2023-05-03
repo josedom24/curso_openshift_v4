@@ -30,7 +30,7 @@ Y comprobamos los recursos que hemos creado:
 
 ![mysql](img/mysql1.png)
 
-A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del pod en una variable de entorno:
+A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del Pod en una variable de entorno:
 
     export PODNAME="mysql-2-wzqv4"
 

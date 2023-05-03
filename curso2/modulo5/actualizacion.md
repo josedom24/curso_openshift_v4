@@ -52,13 +52,13 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
         app4-1      Docker   Git@8ab1cd8   Complete   8 minutes ago       58s
         app4-2      Docker   Git@a672300   Running    18 seconds ago      
 
-        oc get pods
+        oc get pod
         NAME                       READY   STATUS      RESTARTS   AGE
         app4-1-build               0/1     Completed   0          9m40s
         app4-2-build               1/1     Running     0          10s
         app4-4fbd68446-trd56       1/1     Running     0          2m45s
 
-    Vemos como tenemos en ejecución otro pod constructor (**app4-2-build**) donde se está creando la nueva imagen.
+    Vemos como tenemos en ejecución otro Pod constructor (**app4-2-build**) donde se está creando la nueva imagen.
 
 4. ¿Qué a ocurrido al finalizar la construcción de la nueva imagen? El despliegue se ha actualizado, al cambiar la imagen de origen, y por tanto ha creado un nuevo recurso **ReplicaSet** que ha creado un nuevo pod:
 
@@ -68,7 +68,7 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
         app4-578d64d9ff      0         0         0       8m34s
         app4-65b86b5b8f      1         1         1       58s
 
-        oc get pods
+        oc get pod
         NAME                       READY   STATUS      RESTARTS   AGE
         app4-1-build               0/1     Completed   0          9m40s
         app4-2-build               0/1     Completed   0          101s
@@ -102,7 +102,7 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
         app4-2      Docker   Git@a672300   Complete   8 minutes ago       1m0s
         app4-3      Docker   Git@a672300   Running    8 seconds ago       
 
-        oc get pods
+        oc get pod
         NAME                       READY   STATUS      RESTARTS   AGE
         app4-1-build               0/1     Completed   0          16m
         app4-2-build               0/1     Completed   0          8m27s
@@ -118,7 +118,7 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
         app4-65b86b5b8f      0         0         0       8m42s
         app4-67df6db9bf      1         1         1       27s
         
-        oc get pods
+        oc get pod
         NAME                       READY   STATUS      RESTARTS   AGE
         app4-1-build               0/1     Completed   0          17m
         app4-2-build               0/1     Completed   0          9m44s
@@ -140,7 +140,7 @@ Podemos cancelar una construcción ejecutando la instrucción `oc cancel-build`:
     oc cancel-build app4-5
     build.build.openshift.io/app4-5 marked for cancellation, waiting to be cancelled
 
-Por último si borramos el objeto **BuildConfig** se borrarán todas los objetos builds y todos los pods de construcción:
+Por último si borramos el objeto **BuildConfig** se borrarán todas los objetos builds y todos los Pods de construcción:
 
     oc delete bc app4
     buildconfig.build.openshift.io "app4" deleted

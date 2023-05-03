@@ -40,7 +40,7 @@ Todas las interacciones que hacemos sobre la API de OpenShift son **autenticadas
 
 Muchas de las interacciones que se hacen sobre la API de OpenShift se realizan por el usuario final, pero muchas otras se hacen internamente. Para hacer estas últimas peticiones a la API se utiliza una cuenta especial de usuario, que se llaman **Service Account**.
 
-OpenShift crea automáticamente algunas **Service Account** en cada proyecto. Por ejemplo, hay una **Service Account** que se llama **default** y será la responsable de ejecutar los pods.
+OpenShift crea automáticamente algunas **Service Account** en cada proyecto. Por ejemplo, hay una **Service Account** que se llama **default** y será la responsable de ejecutar los Pods.
 
 Puede ver los permisos actuales en la consola web: en la vista **Administrator** y escoge la opción **User Management -> RoleBindings**:
 
@@ -48,7 +48,7 @@ Puede ver los permisos actuales en la consola web: en la vista **Administrator**
 
 Más adelante, veremos que la aplicación Parksmap necesita hacer una petición a la API OpenShift para preguntar sobre la configuración de otros recursos.
 
-Por lo tanto, tenemos que otorgar el permiso **view** al **Service Account default**, para que l pod pueda consultar sobre los recursos que se encuentran dentro del proyecto. Para ello, pulsamos sobre le botón **Create binding** de la pantalla anterior y configuramos el permiso indicando el nombre del permiso, el proyecto y el **Role** `view` que se va a asignar a un **Service Account** llamado **default** en nuestro proyecto.
+Por lo tanto, tenemos que otorgar el permiso **view** al **Service Account default**, para que l Pod pueda consultar sobre los recursos que se encuentran dentro del proyecto. Para ello, pulsamos sobre le botón **Create binding** de la pantalla anterior y configuramos el permiso indicando el nombre del permiso, el proyecto y el **Role** `view` que se va a asignar a un **Service Account** llamado **default** en nuestro proyecto.
 
 ![parksmap](img/parksmap7.png)
 ![parksmap](img/parksmap8.png)

@@ -1,6 +1,6 @@
 # Actualización de un DeploymentConfig (rollout)
 
-En este apartado vamos a estudiar las distintas causas que provocan la actualización de un **DeploymentConfig**. Cuando se produce una actualización se creará un nuevo **ReplicationController** que creará un nuevo conjuntos de pods con la nueva versión del despliegue.
+En este apartado vamos a estudiar las distintas causas que provocan la actualización de un **DeploymentConfig**. Cuando se produce una actualización se creará un nuevo **ReplicationController** que creará un nuevo conjuntos de Pods con la nueva versión del despliegue.
 
 Tenemos tres posibles causas de actualización de un **DeploymentConfig**:
 
@@ -45,7 +45,7 @@ La primera actualización la vamos a hacer de forma manual, y simplemente vamos 
     pod/web1-2-deploy   0/1     Completed   0          20s
     pod/web1-2-lpss4    1/1     Running     0          19s
 
-Vemos que ya tenemos dos revisiones (dos actualizaciones), por lo tanto, tenemos dos objetos **ReplicationController**, dos **pod deploy** y el pod de la aplicación ha cambiado y tiene un `2` indicando que corresponde a la segunda revisión.
+Vemos que ya tenemos dos revisiones (dos actualizaciones), por lo tanto, tenemos dos objetos **ReplicationController**, dos **pod deploy** y el Pod de la aplicación ha cambiado y tiene un `2` indicando que corresponde a la segunda revisión.
 
 Para ver el estado y el historial de revisiones ejecutamos:
 

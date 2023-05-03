@@ -3,11 +3,11 @@
 Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan la funcionalidad de desplegar aplicaciones. Son dos métodos similares pero diferentes para la gestión detallada de aplicaciones.
 
 * Estos recursos describen **el estado deseado de una aplicación** y lo usamos como plantillas para la creación de Pods.
-* El objeto **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los pods de la aplicación. Para ello se utiliza un **pod-deploy**, responsable de la creación de los pods.
+* El objeto **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los Pods de la aplicación. Para ello se utiliza un **pod-deploy**, responsable de la creación de los Pods.
 
     ![dc](img/deploymentconfig.png)
 
-* Los objetos **Deployment** utilizan recursos **ReplicaSets** para el control de los pods.
+* Los objetos **Deployment** utilizan recursos **ReplicaSets** para el control de los Pods.
 
     ![deploy](img/deployment.png)
 
@@ -20,9 +20,9 @@ Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan
 5. **Versionado de la aplicación** para permitir la reversión manual o automática en caso de fallo de despliegue.
 6. **Escalado** manual de la replicación y autoescalado.
 
-Cuando se crea un objeto **DeploymentConfig**, se crea un **ReplicationController** que representa la plantilla de pod. Un pod de despliegue (**pod deploy**) es el responsable de crear los nuevos pods.
+Cuando se crea un objeto **DeploymentConfig**, se crea un **ReplicationController** que representa la plantilla de pod. Un Pod de despliegue (**pod deploy**) es el responsable de crear los nuevos Pods.
 
-Si se actualiza un despliegue, se creará otro **ReplicationController**, que por medio de otro pod de despliegue eliminará los pods antiguos y creará los nuevos. El objeto **ReplicationController** antiguo se conserva para permitir la vuelta a la versión anterior de la aplicación.
+Si se actualiza un despliegue, se creará otro **ReplicationController**, que por medio de otro Pod de despliegue eliminará los Pods antiguos y creará los nuevos. El objeto **ReplicationController** antiguo se conserva para permitir la vuelta a la versión anterior de la aplicación.
 
 ## Comparación de los objetos Deployment y DeploymentConfig
 

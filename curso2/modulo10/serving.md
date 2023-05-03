@@ -123,19 +123,19 @@ Podemos comprobar que la aplicación funciona:
     curl https://hello-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
     Hello Serverless! v1!
 
-Comprobamos que hay un pod ejecutando la aplicación:
+Comprobamos que hay un Pod ejecutando la aplicación:
 
     oc get pod
     NAME                                      READY   STATUS    RESTARTS   AGE
     hello-00001-deployment-57d4c44b69-vd7kz   2/2     Running   0          3s
 
-Si esperamos unos segundos veremos que el despliegue Serverless escala a 0, eliminando el pod mientras no accedemos a la aplicación.
+Si esperamos unos segundos veremos que el despliegue Serverless escala a 0, eliminando el Pod mientras no accedemos a la aplicación.
 
     oc get pod
     NAME                                      READY   STATUS        RESTARTS   AGE
     hello-00001-deployment-57d4c44b69-4df6z   2/2     Terminating   0          64s
 
-Puedes ejecutar la instrucción `watch oc get pod` y comprobar como se crean y eliminan los pods si hay o no tráfico hacia la aplicación.
+Puedes ejecutar la instrucción `watch oc get pod` y comprobar como se crean y eliminan los Pods si hay o no tráfico hacia la aplicación.
 
 ## Distribución de tráfico hacía una aplicación Serverless
 
@@ -159,8 +159,8 @@ Ahora hemos creado una segunda revisión de la aplicación:
     hello-00001   hello                            1            True             0                 0
     hello-00002   hello                            2            True             0                 0
 
-El objeto **Revision** que hemos creado ha creado un nuevo **Deployment** que controlará los pods de la nueva versión de la aplicación.
-Si accedemos ahora a la ruta de la aplicación, veremos que nos redirige a los pods de la nueva revisión:
+El objeto **Revision** que hemos creado ha creado un nuevo **Deployment** que controlará los Pods de la nueva versión de la aplicación.
+Si accedemos ahora a la ruta de la aplicación, veremos que nos redirige a los Pods de la nueva revisión:
 
     curl https://hello-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
     Hello Serverless! v2!

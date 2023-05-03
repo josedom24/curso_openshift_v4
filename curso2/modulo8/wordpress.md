@@ -30,7 +30,7 @@ Podemos comprobar que se ha creado un objeto **PersistentVolumeClaim** asociado 
     NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
     mariadb   Bound    pvc-b36f04d5-c067-4aea-b7e2-1ca499a7ff6e   5Gi        RWO            gp3            6s
 
-Y que efectivamente está montado en un directorio de los pods:
+Y que efectivamente está montado en un directorio de los Pods:
 
     oc describe dc/mariadb
     ...

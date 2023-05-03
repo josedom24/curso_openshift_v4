@@ -51,7 +51,7 @@ Creamos el objeto **BuildConfig**, creando en primer lugar la ^ImageStream** que
     NAME     TYPE     FROM             STATUS     STARTED          DURATION
     app7-1   Docker   Dockerfile       Running    24 seconds ago   
 
-Una vez creada la nueva imagen, podemos desplegarla y comprobar la salida del pod que se ha creado:
+Una vez creada la nueva imagen, podemos desplegarla y comprobar la salida del Pod que se ha creado:
 
     oc new-app imagen-app7 --name=app7
 

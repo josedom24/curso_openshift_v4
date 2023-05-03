@@ -23,10 +23,10 @@ A continuación vamos a entrar en la zona de administración,en la URL `/cms`, y
 
 ## Los contenedores son efímeros
 
-Los contenedores son efímeros. La información que se guarda en ellos se pierde al eliminar el contenedor, además si tenemos varias replicas de una misma aplicación (varios pods) la información que se guarda en cada una de ellas es independiente. Vamos a comprobarlo:
+Los contenedores son efímeros. La información que se guarda en ellos se pierde al eliminar el contenedor, además si tenemos varias replicas de una misma aplicación (varios Pods) la información que se guarda en cada una de ellas es independiente. Vamos a comprobarlo:
 
-1. Cuando escalemos nuestra aplicación se va a crear otro pod con la base de datos inicial, en este nuevo pod no tenemos el mismo contenido que el original.
-2. Si realizamos un nuevo despliegue después de una actualización, los nuevos pods perderán los datos de la base de datos.
+1. Cuando escalemos nuestra aplicación se va a crear otro Pod con la base de datos inicial, en este nuevo Pod no tenemos el mismo contenido que el original.
+2. Si realizamos un nuevo despliegue después de una actualización, los nuevos Pods perderán los datos de la base de datos.
 
 ## Volúmenes persistentes
 
@@ -42,7 +42,7 @@ Indicando el objeto **PersistentVolumenClaim** que hemos creado, y directorio do
 
 ![phpsqlitecms](img/phpsqlitecms6.png)
 
-Se ha actualizado el despliegue, se ha creado un nuevo pod con la nueva versión (el volumen montado en el directorio) y podemos comprobar que el **PersistentVolumenClaim** se ha asociado con un **PersistentVolumen**:
+Se ha actualizado el despliegue, se ha creado un nuevo Pod con la nueva versión (el volumen montado en el directorio) y podemos comprobar que el **PersistentVolumenClaim** se ha asociado con un **PersistentVolumen**:
 
 ![phpsqlitecms](img/phpsqlitecms12.png)
 
@@ -55,7 +55,7 @@ La aplicación no está funcionando bien. ¿Qué ha pasado?. Al montar el volume
     git clone https://github.com/ilosuna/phpsqlitecms
     cd phpsqlitecms/cms
 
-    oc get pods
+    oc get pod
     NAME                            READY   STATUS      RESTARTS   AGE
     phpsqlitecms-1-build            0/1     Completed   0          8m26s
     phpsqlitecms-687b8ff8cd-sqcdm   1/1     Running     0          6m17s
@@ -84,10 +84,10 @@ Si vemos los eventos del pod, nos aclara el problema que ha existido:
 
 El problema es el siguiente:
 
-* El volumen que se ha creado no permite que dos pods estén conectados simultáneamente a él.
-* La estrategia de despliegue **RolligUpdate** crea el nuevo pod, comprueba que funciona para posteriormente eliminar el viejo. Pero en este caso, no puede terminar de crear el nuevo pod, porque no se puede conectar al volumen mienstras el antiguo pod este conectado a él.
+* El volumen que se ha creado no permite que dos Pods estén conectados simultáneamente a él.
+* La estrategia de despliegue **RolligUpdate** crea el nuevo pod, comprueba que funciona para posteriormente eliminar el viejo. Pero en este caso, no puede terminar de crear el nuevo pod, porque no se puede conectar al volumen mienstras el antiguo Pod este conectado a él.
 
-La solución es configurar la estrategia de despliegue a **Recreate**, al eli,minar el pod antiguo, el pod nuevo se puede conectar al volumen sin problemas. Para ello:
+La solución es configurar la estrategia de despliegue a **Recreate**, al eli,minar el Pod antiguo, el Pod nuevo se puede conectar al volumen sin problemas. Para ello:
 
     oc edit deploy/phpsqlitecms
     ...
@@ -100,28 +100,28 @@ Y volvemos realizar la actualización del despliegue:
 
     oc rollout restart deploy/phpsqlitecms
 
-    oc get pods
+    oc get pod
     NAME                            READY   STATUS      RESTARTS   AGE
     phpsqlitecms-1-build            0/1     Completed   0          4h30m
     phpsqlitecms-6bc4dd8f58-ld6bf   1/1     Running     0          2s
 
-Como vemos se ha creado un nuevo pod sin problemas.
+Como vemos se ha creado un nuevo Pod sin problemas.
 
 ## Escalado y almacenamiento
 
-Como hemos indicado el almacenamiento ofrecido por RedHat OpenShift Dedicated Developer Sandbox no permite que varios pods estén simultáneamente conectado a un mismo volumen, no proporciona almacenamiento compartido.
+Como hemos indicado el almacenamiento ofrecido por RedHat OpenShift Dedicated Developer Sandbox no permite que varios Pods estén simultáneamente conectado a un mismo volumen, no proporciona almacenamiento compartido.
 
 Esto tiene otra consecuencia, además de la estudiada en el punto anterior. Veamos como se comporta un escalado del despliegue:
 
     oc scale deploy/phpsqlitecms --replicas=2
 
-    oc get pods
+    oc get pod
     NAME                            READY   STATUS              RESTARTS   AGE
     phpsqlitecms-1-build            0/1     Completed           0          4h34m
     phpsqlitecms-6bc4dd8f58-74h49   0/1     ContainerCreating   0          11s
     phpsqlitecms-6bc4dd8f58-ld6bf   1/1     Running             0          3m47s
 
-De la misma manera, el nuevo pod que se está creando no termina d crearse por que no se puede conectar al volumen, que ya está conectado al primer pod.
+De la misma manera, el nuevo Pod que se está creando no termina d crearse por que no se puede conectar al volumen, que ya está conectado al primer pod.
 
 Podríamos ver los detalles del pod, para ver el problema que tiene:
 

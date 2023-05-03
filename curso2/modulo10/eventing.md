@@ -41,8 +41,8 @@ Podemos ejecutar en un terminal la siguiente instrucción:
 
     watch oc get pod
 
-Para comprobar que cada 2 minutos se crea un pod trás recibir el evento, pasado unos segundo el pod se elimina.
-Cuando tenemos un pod en ejecución podemos ver sus logs para comprobar que efectivamente ha recibido la información del evento:
+Para comprobar que cada 2 minutos se crea un Pod tras recibir el evento, pasado unos segundo el Pod se elimina.
+Cuando tenemos un Pod en ejecución podemos ver sus logs para comprobar que efectivamente ha recibido la información del evento:
 
     oc logs $(oc get pod -o name | grep event-display) -c event-display
     

@@ -102,7 +102,7 @@ Y comprobamos que hemos desplegado la versión 1 de la aplicación:
     curl http://app-citas-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/version
     v1
 
-¿Qué ocurrirá si hacemos que la etiqueta `prod` del **ImageStream** referencia a la segunda versión de la imagen?. Habrá un cambio en la imagen que se ha utilizado en el despliegue, y esto hará que se actualice el despliegue creando un nuevo **ReplicaSet** que creará un nuevo pod con la nueva versión de la imagen:
+¿Qué ocurrirá si hacemos que la etiqueta `prod` del **ImageStream** referencia a la segunda versión de la imagen?. Habrá un cambio en la imagen que se ha utilizado en el despliegue, y esto hará que se actualice el despliegue creando un nuevo **ReplicaSet** que creará un nuevo Pod con la nueva versión de la imagen:
 
     oc tag citas:prod -d
     oc tag citas:v2 citas:prod

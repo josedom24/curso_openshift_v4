@@ -41,7 +41,7 @@ Y si vemos los recursos que se han creado:
     imagestream.image.openshift.io/test-web   default-route-openshift-image-registry.apps-crc.testing/test-web/test-web   v1     25 seconds ago
 
 
-Podemos observa como se ha ejecutado el pod `pod/test-web-1-deploy` responsable de crear los pods del primer despliegue que hemos realizado con el recursos **ReplicationController**, controlado por el **DeploymentConfig**.
+Podemos observa como se ha ejecutado el Pod `pod/test-web-1-deploy` responsable de crear los Pods del primer despliegue que hemos realizado con el recursos **ReplicationController**, controlado por el **DeploymentConfig**.
 
 Podemos ver la descripción de los recursos creados:
 

@@ -20,11 +20,11 @@ A continuación, creamos la ruta para acceder a GuestBook y comprobamos que func
 
 ## Persistencia de la información
 
-La aplicación funciona de forma correcta, pero tenemos que tener en cuenta que **los Pods son efímeros**, es decir, cuando se eliminan pierden la información. en nuestro caso si eliminamos el pod del despliegue redis (por alguna actualización, escalado, ...) se perderá la información de la base de datos.
+La aplicación funciona de forma correcta, pero tenemos que tener en cuenta que **los Pods son efímeros**, es decir, cuando se eliminan pierden la información. en nuestro caso si eliminamos el Pod del despliegue redis (por alguna actualización, escalado, ...) se perderá la información de la base de datos.
 
 Si estudiamos la documentación de la imagen `bitnami/redis` en [Docker Hub](https://hub.docker.com/r/bitnami/redis/), para que la información de la base de datos se guarde en un directorio `/bitnami/redis/data`.
 
-Además como vimos en el Ejercicio 1, tenemos que modificar la estrategia de despliegue a **Recreate**, para que no exista el pod antiguo cuando se crea uno nuevo, y se puede conectar sin problemas al volumen.
+Además como vimos en el Ejercicio 1, tenemos que modificar la estrategia de despliegue a **Recreate**, para que no exista el Pod antiguo cuando se crea uno nuevo, y se puede conectar sin problemas al volumen.
 
 En primer lugar vamos a crear un objeto **PersistentVolumeClaim** que nos va apermite solicitar la creación de un **PersistentVolume**, para ello usamos la definción del objeto que tenemos en el fichero `pvc-redis.yaml`:
 
@@ -83,7 +83,7 @@ Cuando modificamos el **Deployment**, se produce una actualización: se creará 
     redis-7596cbd6d5       0         0         0       26m
     redis-7f59bf9479       1         1         1       6s
 
-    oc get pods
+    oc get pod
     ...
     NAME                        READY   STATUS      RESTARTS      
     redis-7f59bf9479-mm76b      1/1     Running     0          10s

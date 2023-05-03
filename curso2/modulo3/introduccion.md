@@ -30,7 +30,7 @@ En la creación de aplicaciones, se usan otros recursos de OpenShift:
 
 * **ImageStreams**: Cuando se crea un despliegue con alguno de estos métodos, no se utiliza directamente una imagen que esta almacenada en un registro. Se utiliza un recurso llamado **ImageStream** que nos permite referenciar a las imágenes que tenemos en un registro externo o en el registro interno de imágenes de OpenShift. 
 * **BuildConfig**: Cuando el método de despliegue conlleva la construcción automática de una imagen (s2i o Dockerfile), este recurso se utiliza para configurar el proceso de construcción de la imagen (build).
-* **Build**: Cada vez que se hace una construcción automática de una imagen con la configuración del recurso **BuildConfig**, se creará un recurso del tipo **Build**. La construcción se realizará en un pod cuyo nombre tendrá la palabra *build*.
+* **Build**: Cada vez que se hace una construcción automática de una imagen con la configuración del recurso **BuildConfig**, se creará un recurso del tipo **Build**. La construcción se realizará en un Pod cuyo nombre tendrá la palabra *build*.
 
 ## El catálogo de aplicaciones
 

@@ -21,6 +21,6 @@ Pulsamos el botón **Create**, y al cabo de unos segundos tenemos desplegada nue
 
 ![catalogoweb](img/catalogoweb5.png)
 
-Finalmente, para comprobar que la base de datos está funcionando, podemos acceder a los detalles del pod que se ha creado, y en la **Terminal** accedemos al servicio de mariadb:
+Finalmente, para comprobar que la base de datos está funcionando, podemos acceder a los detalles del Pod que se ha creado, y en la **Terminal** accedemos al servicio de mariadb:
 
 ![catalogoweb](img/catalogoweb6.png)

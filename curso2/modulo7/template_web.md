@@ -16,7 +16,7 @@ Creamos el despliegue, y comprobamos los recursos que se han creado:
 
 ![template_web](img/template_web3.png)
 
-Finalmente, accedemos a la **Terminal** del pod que se ha creado y probamos a realizar la conexión:
+Finalmente, accedemos a la **Terminal** del Pod que se ha creado y probamos a realizar la conexión:
 
 ![template_web](img/template_web4.png)
 

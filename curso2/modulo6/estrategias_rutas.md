@@ -1,6 +1,6 @@
 # Estrategias de despliegues basadas en rutas
 
-En este tipo de estrategias de despliegues configuramos el objeto **Route** para que enrute el tráfico a distintos pods de distintos servicios.
+En este tipo de estrategias de despliegues configuramos el objeto **Route** para que enrute el tráfico a distintos Pods de distintos servicios.
 
 Con esta funcionalidad podemos implementar una estrategia de despliegue Blue/Green, podemos ofrecer dos versiones de la aplicación: la nueva (la "verde") se pone a prueba y se evalúa, mientras los usuarios siguen usando la versión actual (la "azul"). El cambio entre versiones se va haciendo gradualmente. Si hay algún problema con la nueva versión, es muy fácil volver a la antigua versión.
 

@@ -69,6 +69,6 @@ El proceso de construcción se ha creado en un nuevo **build pod**, que podemos 
 
 ![build_web](img/build_web13.png)
 
-Como sabemos, esta nueva construcción hace que el objeto **Deployment** se actualice creando un nuevo **ReplicaSet** que creará un nuevo conjunto de pods basados en la nueva imagen construida:
+Como sabemos, esta nueva construcción hace que el objeto **Deployment** se actualice creando un nuevo **ReplicaSet** que creará un nuevo conjunto de Pods basados en la nueva imagen construida:
 
 ![build_web](img/build_web12.png)

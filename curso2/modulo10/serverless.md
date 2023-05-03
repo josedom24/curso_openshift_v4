@@ -28,7 +28,7 @@ Knative Serving es el componente responsable de:
 * Enrutar el tráfico a las aplicaciones
 * Auto-escalado de aplicaciones
 
-Knative Serving crea nuevos despliegues y garantiza que el tráfico sólo se redirige a las versiones operativas de la aplicación. Cuando no hay tráfico, reduce los pods de aplicación a cero. Si llega nuevo tráfico se escalará de forma automática para servir la petición.
+Knative Serving crea nuevos despliegues y garantiza que el tráfico sólo se redirige a las versiones operativas de la aplicación. Cuando no hay tráfico, reduce los Pods de aplicación a cero. Si llega nuevo tráfico se escalará de forma automática para servir la petición.
 
 ## Knative Eventing
 

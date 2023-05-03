@@ -53,7 +53,7 @@ Además, se ha comenzado el proceso de creación de la imagen, y para ello se ha
     NAME     TYPE     FROM          STATUS    STARTED         DURATION
     app1-1   Source   Git@3f2efa3   Running   9 seconds ago   
 
-¿Donde se ejecuta la construcción de la nueva imagen? En un pod de construcción:
+¿Donde se ejecuta la construcción de la nueva imagen? En un Pod de construcción:
 
     oc get pod
     NAME           READY   STATUS    RESTARTS   AGE
@@ -75,7 +75,7 @@ Podemos comprobar que se ha creado el objeto **ImageStram** apuntando a la nueva
     NAME   IMAGE REPOSITORY                                                                                      TAGS     UPDATED
     app1   default-route-openshift-image-registry.apps.sandbox-m3.1530.p1.openshiftapps.com/josedom24-dev/app1   latest   51 seconds ago
 
-Y se ha creado el objeto **Deployment** responsable de la creación de los pods de la aplicación, que se construyen a partir de la imagen construida:
+Y se ha creado el objeto **Deployment** responsable de la creación de los Pods de la aplicación, que se construyen a partir de la imagen construida:
 
     oc get deploy,rs,pod
     NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
@@ -89,7 +89,7 @@ Y se ha creado el objeto **Deployment** responsable de la creación de los pods 
     pod/app1-1-build           0/1     Completed   0          118s
     pod/app1-56cc6dfcb-fnnpj   1/1     Running     0          67s
 
-Podemos ver como cuando el pod constructor (**app1-1-build**) termina de construir la imagen, se detiene y está en estado *Completed*.
+Podemos ver como cuando el Pod constructor (**app1-1-build**) termina de construir la imagen, se detiene y está en estado *Completed*.
 
 Por último podemos crear el objeto **Route**:
 

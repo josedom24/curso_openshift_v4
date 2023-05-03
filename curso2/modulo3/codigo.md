@@ -53,7 +53,7 @@ Como vemos se han creado varios recursos:
 
 1. Un **ImageStream** `app1` que apuntará a la nueva imagen que vamos a generar, y que se utilizará en la definición del despliegue.
 2. Un **BuildConfig**, que guardará la configuración necesaria para construir la nueva imagen. De forma automática creará un objeto **Build** responsable de crear la imagen. Este proceso se realizará en un **build pod**.
-3. Un recurso **Deployment** responsable de desplegar los recursos necesario para ejecutar los pods.
+3. Un recurso **Deployment** responsable de desplegar los recursos necesario para ejecutar los Pods.
 4. Un recurso **Service** que nos posibilita el acceso a la aplicación.
 5. No ha creado un recurso **Route** para el acceso por medio de una URL, pero nos ha indicado el comando necesario para crearlo.
 
