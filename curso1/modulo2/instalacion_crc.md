@@ -38,7 +38,7 @@ Una vez descargado el paquete lo descomprimimos y lo copiamos a un directorio de
     cd crc-linux-2.17.0-amd64
     sudo install crc /usr/local/bin
 
-     crc version
+    crc version
     CRC version: 2.17.0+44e15711
     OpenShift version: 4.12.9
     Podman version: 4.4.1
@@ -75,7 +75,7 @@ Después de unos mínutos, el clúster estará preparado y nos dara información
       Username: developer
       Password: developer
 
-No es necesario entalar la herramienta `oc`, durante el proceso de instalación se ha descargado, lo único que tenemos que hacer es configurar el PATH para que podamos acceder a ella, para ello:
+No es necesario instalar la herramienta `oc`, durante el proceso de instalación se ha descargado, lo único que tenemos que hacer es configurar el PATH para que podamos acceder a ella, para ello:
 
     eval $(crc oc-env)
     
@@ -83,7 +83,7 @@ No es necesario entalar la herramienta `oc`, durante el proceso de instalación 
 
 Durante la instalación en Debian 11, al ejecutar el comando `crc start` me aparecía un error del tipo:
 
-  Failed to start: virError(Code=38, Domain=18, Message='Cannot access backing file '/home/usuario/.crc/cache/crc_libvirt_x.x.x/crc.qcow2' of storage file '/home/usuario/.crc/machines/crc/crc.qcow2' (as uid:107, gid:107): Permission denied')
+    Failed to start: virError(Code=38, Domain=18, Message='Cannot access backing file '/home/usuario/.crc/cache/crc_libvirt_x.x.x/crc.qcow2' of storage file '/home/usuario/.crc/machines/crc/crc.qcow2' (as uid:107, gid:107): Permission denied')
 
 Es decir, al intentar usar la imagen base que se ha descargado y ha guardado en el directorio `~/.crc/cache` nos encontramos con problemas de permiso y no se puede crear la máquina virtual.
 
@@ -165,9 +165,9 @@ Finalmente nos logueamos con la cuenta de administración:
     eval $(crc oc-env)
     oc login -u kubeadmin -p kJJ3H-MZ5dg-2EzcV-LywLn https://api.crc.testing:6443
     Login successful.
-    
+
     You have access to 66 projects, the list has been suppressed. You can list all projects with 'oc projects'
-    
+
     Using project "default".
     usuario@openshift:~$ oc get nodes
     NAME                 STATUS   ROLES                         AGE   VERSION
