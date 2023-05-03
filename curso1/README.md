@@ -7,9 +7,9 @@
 
 2. Trabajando con OpenShift en local
 	* [Instalación en local con crc](modulo2/instalacion_crc.md)
-	* Configuración de oc para crc
-	* Visión general de la consola web
-	* Proyectos en OpenShift
+	* [Configuración de oc para crc](modulo2/oc.md)
+	* [Proyectos en OpenShift](modulo2/proyectos.md)
+	* [Visión general de la consola web](modulo2/consola_web.md)
 	* [Ejecución de pods privilegiados](modulo2/pods_privilegiados.md)
 
 3. OpenShift como distribución de Kubernetes

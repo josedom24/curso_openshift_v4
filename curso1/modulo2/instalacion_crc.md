@@ -160,18 +160,6 @@ Si queremos la información para loguearno con el comando `oc` podemos ejecutar:
     To login as a regular user, run 'oc login -u developer -p developer https://api.crc.testing:6443'.
     To login as an admin, run 'oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443'
 
-Finalmente nos logueamos con la cuenta de administración:
-
-    eval $(crc oc-env)
-    oc login -u kubeadmin -p kJJ3H-MZ5dg-2EzcV-LywLn https://api.crc.testing:6443
-    Login successful.
-
-    You have access to 66 projects, the list has been suppressed. You can list all projects with 'oc projects'
-
-    Using project "default".
-    usuario@openshift:~$ oc get nodes
-    NAME                 STATUS   ROLES                         AGE   VERSION
-    crc-8tnb7-master-0   Ready    control-plane,master,worker   36d   v1.25.7+eab9cc9
 
 
 
