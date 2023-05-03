@@ -1,23 +1,16 @@
 # Ejemplo: Pod multicontenedor
 
-La razón principal por la que los Pods pueden tener múltiples
-contenedores es para admitir aplicaciones auxiliares que ayudan a una
-aplicación primaria. Ejemplos típicos de estas aplicaciones pueden ser
-las que envían o recogen datos externos (por ejemplo de un
-repositorio) y los servidores proxy. El ayudante y las aplicaciones
-primarias a menudo necesitan comunicarse entre sí. Normalmente, esto
-se realiza a través de un sistema de archivos compartido o mediante la
-interfaz loopback (localhost).
+La razón principal por la que los Pods pueden tener múltiples contenedores es para admitir aplicaciones auxiliares que ayudan a una
+aplicación primaria. Ejemplos típicos de estas aplicaciones pueden ser las que envían o recogen datos externos (por ejemplo de un
+repositorio) y los servidores proxy. El ayudante y las aplicaciones primarias a menudo necesitan comunicarse entre sí. Normalmente, esto
+se realiza a través de un sistema de archivos compartido o mediante la interfaz loopback (localhost).
 
 Veamos dos ejemplos concretos:
 
-1. Un servidor web junto con un programa auxiliar que sondea un
-   repositorio Git en busca de nuevas actualizaciones.
-2. Un  servidor  web con un servidor de aplicaciones PHP-FPM, lo
-   podemos implementar  en un Pod, y cada servicio en un
-   contenedor. Además tendría un volumen interno que se montaría en el
-   *DocumentRoot* para que el servidor web y el servidor de
-   aplicaciones puedan acceder a la aplicación.
+1. Un servidor web junto con un programa auxiliar que sondea un repositorio Git en busca de nuevas actualizaciones.
+2. Un servidor web con un servidor de aplicaciones PHP-FPM, lo podemos implementar en un Pod, y cada servicio en un
+ contenedor. Además tendría un volumen interno que se montaría en el *DocumentRoot* para que el servidor web y el servidor de
+ aplicaciones puedan acceder a la aplicación.
 
 Veamos un pequeño ejemplo de un pod multicontenedor. Tenemos la definición del Pod en el fichero `pod-multicontenedor.yaml`:
 
@@ -54,22 +47,14 @@ Estudiemos la definición del Pod:
 
 ![pod_multicontenedor](img/pod_multicontenedor.png)
 
-* El Pod se llama `pod-multicontenedor` y en el apartado `spec` vemos
-  que está formado por un volumen (llamado `html` y de tipo
-  `emptyDir`, que estudiaremos más adelante, pero que básicamente es
-  un directorio que vamos a montar en los contenedores) y dos
+* El Pod se llama `pod-multicontenedor` y en el apartado `spec` vemos que está formado por un volumen (llamado `html` y de tipo
+  `emptyDir`, que estudiaremos más adelante, pero que básicamente es un directorio que vamos a montar en los contenedores) y dos
   contenedores (llamados `contenedor1` y `contenedor2`).
-* El `contenedor1` se crea a partir de la imagen `bitnami/nginx`, es el
-  contenedor principal, encargado de servir la web. En este contenedor
-  montamos el volumen `html` en su *DocumentRoot*
-  (`/app`). Va a servir el fichero `index.html` que
-  está modificando el otro contenedor.
-* El `contenedor2` es el auxiliar. En este caso se monta el volumen
-  `html` en el directorio `html` donde va modificando el fichero
-  `index.html` con la fecha y hora actuales cada un segundo (parámetro
-  `command` y `args`).
-* Como los dos contenedores tienen montado el volumen, el fichero
-  `index.html` que va modificando el `contenedor2`, es el fichero que
+* El `contenedor1` se crea a partir de la imagen `bitnami/nginx`, es el contenedor principal, encargado de servir la web. En este contenedor
+  montamos el volumen `html` en su *DocumentRoot* (`/app`). Va a servir el fichero `index.html` que está modificando el otro contenedor.
+* El `contenedor2` es el auxiliar. En este caso se monta el volumen `html` en el directorio `html` donde va modificando el fichero
+  `index.html` con la fecha y hora actuales cada un segundo (parámetro `command` y `args`).
+* Como los dos contenedores tienen montado el volumen, el fichero `index.html` que va modificando el `contenedor2`, es el fichero que
   sirve el `contenedor1`.
 
 Vamos a realizar los siguientes pasos:

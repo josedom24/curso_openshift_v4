@@ -15,12 +15,13 @@
 	* [Despliegues de aplicaciones en Kubernetes (P)](modulo3/aplicaciones.md)
 	* [Recursos que nos ofrece OpenShift para desplegar aplicaciones (P)](modulo3/recursos.md)
 	* [Trabajando con Pods](modulo3/pods.md)
-	* [Ejecución de pods privilegiados](modulo3/pods_privilegiados.md)
 	* [Trabajando con Pods desde la consola web](modulo3/pods_web.md)
 	* [Ejemplo: Pod multicontenedor](modulo3/pod_multicontenedor.md)
 	* [Tolerancia a fallos, escalabilidad, balanceo de carga: ReplicaSet](modulo3/replicaset.md)
 	* [Trabajando con ReplicaSets desde la consola web](modulo3/replicaset_web.md)
 	* [Desplegando aplicaciones: Deployment](modulo3/deployment.md)
+	* [Trabajando con Deployment desde la consola web](modulo3/deployment_web.md)
+	* [Ejecución de Pods privilegiados](modulo3/pods_privilegiados.md)
 	* [Actualización de un Deployment (*rollout* y *rollback*)](modulo3/actualizacion_deployment.md)
 	
 4. Acceso a las aplicaciones 
