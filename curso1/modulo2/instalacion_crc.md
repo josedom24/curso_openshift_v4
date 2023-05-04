@@ -158,7 +158,7 @@ Si queremos la información para loguearno con el comando `oc` podemos ejecutar:
 
     crc console --credentials
     To login as a regular user, run 'oc login -u developer -p developer https://api.crc.testing:6443'.
-    To login as an admin, run 'oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443'
+    To login as an admin, run 'oc login -u kubeadmin -p xxxxxxxxxxxxxxx https://api.crc.testing:6443'
 
 
 

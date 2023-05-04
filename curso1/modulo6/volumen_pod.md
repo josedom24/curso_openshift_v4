@@ -1,6 +1,6 @@
 # Volúmenes dentro de un pod
 
-Los volúmenes son objetos que permiten a los contenedores acceder y compartir datos entre ellos o con el host. Hay varios tipos de volúmenes disponibles, y dos de ellos son "emptyDir" y "hostPath".
+Los volúmenes son objetos que permiten a los contenedores acceder y compartir datos entre ellos o con el host. Hay varios tipos de volúmenes disponibles, entre ellos:
 
 * **emptyDir** es un tipo de volumen que se crea vacío al comienzo de la vida de un Pod y se elimina cuando el Pod muere. Este tipo de volumen se utiliza para compartir datos temporales entre los contenedores dentro de un mismo pod. Como su nombre indica, está vacío al principio, y cualquier contenido que se escriba en él se perderá si el Pod se reinicia o se elimina.
 
@@ -48,9 +48,12 @@ spec:
 * El contenedor `writer-container` escribe un fichero en el directorio `/data`.
 * El contenedor `reader-container` lee el fichero guardado en el directorio `/data`.
 
-Creamos el pod:
+Estamos trabajando con el usuario administrador en el proyecto `default`_
 
-    oc apply - pod.yaml
+    oc login -u kubeadmin https://api.crc.testing:6443
+    oc project default
+
+    oc apply -f pod.yaml
 
 Y mostramos los logs del contenedor `reader-container`, para asegurarnos que está leyendo el fichero que ha creado el contenedor `writer-container`:
 
@@ -63,13 +66,13 @@ Si cambiamos el valor del fichero en el primer contenedor, cambiará en el segun
     oc exec -c reader-container my-pod -- sh -c 'cat /data/my-file.txt'
     Hola, mundo!
 
-Si creamos un nuevo fichero en el directorio `/dir` del primer contenedor, se estará creando en el directorio `/temp/datos` del host donde se está ejecutando el pod. A continuación listaremos los ficheros del directorio `/dir` del segundo contenedor y se debe mostrar el fichero:
+Si creamos un nuevo fichero en el directorio `/dir` del primer contenedor, se estará creando en el directorio `/tep/datos` del host donde se está ejecutando el pod. A continuación listaremos los ficheros del directorio `/dir` del segundo contenedor y se debe mostrar el fichero:
 
     oc exec -c writer-container my-pod -- sh -c 'touch /dir/new-file.txt'
     oc exec -c reader-container my-pod -- sh -c 'ls /dir'
     new-file.txt
 
-Si borramos el Pod se eliminará lo guardado en el directorio `/data`, sin embargo el fichero creado en el directorio `/dir` no se eliminará del directorio `/tmp/datos` del host. Sin embargo, al crear de nuevo el Pod es muy probable que se cree en otro worker del clúster por lo que el directorio`/dir` de los contenedores estará vacío.
+Si borramos el Pod se eliminará lo guardado en el directorio `/data`. Al crear un nuevo Pod, el volumen de tipo **hostPath** se creará de nuevo por lo que el directorio `/tmp/datos` se creará de nuevo y el directorio `/dir` del Pod también estará vacío.
 
 Finalmente podemos obtener información de los volúmenes que tenemos en un Pod ejecutando:
 

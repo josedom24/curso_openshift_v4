@@ -92,7 +92,7 @@ OpenShift crea automáticamente algunas **Service Account** en cada proyecto. Po
 
 Vamos a modificar los privilegios de ejecución al **Service Account** llamado `default`, para ello:
 
-    oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
+    oc login -u kubeadmin https://api.crc.testing:6443
     oc project proyecto-rs
     oc adm policy add-scc-to-user anyuid -z default
 

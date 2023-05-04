@@ -63,7 +63,7 @@ Al crear el **Deployment** nos da un warning igual que en el apartado anterior, 
 1. Actualizar la definición del Pod para indicar el contento de seguridad.
 2. Otorgar privilegios para ejecutar Pod privilegiados, para ello:
     
-        oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
+        oc login -u kubeadmin https://api.crc.testing:6443
         oc project proyecto-deploy
         oc adm policy add-scc-to-user anyuid -z default
 

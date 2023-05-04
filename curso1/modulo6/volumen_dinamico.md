@@ -1,15 +1,14 @@
 # Aprovisionamiento dinámico de volúmenes
 
+Desde el punto de vista del desarrollador que necesita almacenamiento para su aplicación, este realizará una petición de un volumen (objeto **PersistentVolumeClaim**) y usando algún mecanismo que haya configurado el administrador del clúster se asociará un volumen a esa petición.
+
 En este ejemplo vamos a desplegar un servidor web que va a servir una página html que tendrá almacenada en un volumen. La asignación del volumen se va a realizar de forma dinámica.
 
-Como vimos en RedHat OpenShift Dedicated Developer Sandbox tenemos configurado varios recursos StrogaClass, que son los que de una forma dinámica crear el nuevo volumen y lo asocian a la petición de volumen que vamos a realizar.
+Como vimos en CRC tenemos configurado un recurso **StorageClass**, que de forma dinámica van a crear el nuevo volumen de tipo hostPath y lo asocian a la petición de volumen que vamos a realizar.
 
     oc get storageclass
-    NAME            PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-    gp2             kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   true                   143d
-    gp2-csi         ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   143d
-    gp3 (default)   ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   143d
-    gp3-csi         ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   143d      
+    NAME                                     PROVISIONER                        RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+    crc-csi-hostpath-provisioner (default)   kubevirt.io.hostpath-provisioner   Delete          WaitForFirstConsumer   false                  36d     
 
 ## Solicitud del volumen
 
@@ -30,31 +29,22 @@ spec:
 
 Al crear el objeto **PersistentVolumenClaim (PVC)**, veremos que se queda en estado Pending, no se creará el objeto **PersistentVolume (PV)** hasta que no lo vayamos a usar por primera vez:
 
+    oc login -u developer -p developer https://api.crc.testing:6443
+    oc new-project almacenamiento
+
     oc apply -f pvc.yaml 
 
     oc get pvc
-    NAME     STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+    NAME     STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS                   AGE
+    my-pvc   Pending                                      crc-csi-hostpath-provisioner   2s
+
+Podemos ver las características del objeto que hemos creado, ejecutando:
 
     oc describe pvc my-pvc
-    Name:          my-pvc
-    Namespace:     josedom24-dev
-    StorageClass:  gp3
-    Status:        Pending
-    Volume:        
-    Labels:        <none>
-    Annotations:   <none>
-    Finalizers:    [kubernetes.io/pvc-protection]
-    Capacity:      
-    Access Modes:  
-    VolumeMode:    Filesystem
-    Used By:       <none>
-    Events:
-      Type    Reason                Age               From                         Message
-      ----    ------                ----              ----                         -------
-
+    
 ## Uso del volumen
 
-Creamos el Deployment usando el `fichero deployment.yaml`:
+Creamos el Deployment usando el fichero `deployment.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -97,16 +87,37 @@ spec:
 ```
 
 * En la especificación del Pod, además de indicar el contenedor, hemos indicado que va a tener un volumen (campo `volumes`). 
-* En realidad definimos una lista de volúmenes (en este caso solo definimos uno) indicando su nombre (`name`) y la solicitud del volumen (`persistentVolumeClaim`, `claimName`).
+* En realidad, definimos una lista de volúmenes (en este caso solo definimos uno) indicando su nombre (`name`) y la solicitud del volumen (`persistentVolumeClaim`, `claimName`).
 * Además en la definición del contenedor tendremos que indicar el punto de montaje del volumen (`volumeMounts`) señalando el directorio del contenedor (`mountPath`) y el nombre (`name`).
 
-Creamos el Deployment:
-
+Creamos el **Deployment**:
 
     oc apply -f deployment.yaml
 
-Y a continuación, cuando el contenedor esté funcionando, creamos el fichero `index.html`:
+Ya podemos comprobar que se ha asociado un volumen a la solicitud de volumen:
 
+    oc get pvc
+    NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                   AGE
+    my-pvc   Bound    pvc-69e0a042-6964-45aa-b06e-73a2f620b1bb   30Gi       RWO            crc-csi-hostpath-provisioner   2m25s
+
+También podemos verlos desde el punto de vista del administrador para poder listar los objetos **PeristentVolume**:
+
+    oc login -u kubeadmin https://api.crc.testing:6443
+    oc project developer
+
+    oc get pv,pvc
+
+    NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                 STORAGECLASS                   REASON   AGE
+    persistentvolume/pvc-69e0a042-6964-45aa-b06e-73a2f620b1bb   30Gi       RWO            Delete           Bound    developer/my-pvc                                      crc-csi-hostpath-provisioner            2m38s
+
+    NAME                           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                   AGE
+    persistentvolumeclaim/my-pvc   Bound    pvc-69e0a042-6964-45aa-b06e-73a2f620b1bb   30Gi       RWO            crc-csi-hostpath-provisioner   4m22s
+
+**Nota**: Los objetos **PersistentVolumeClaim** están asociados a un proyecto (en nuestro caso `developer/my-pvc`). Sin embargo, los objetos **PersistentVolume** no pertenecen a un proyecto, son globales al clúster de OpenShift.
+
+Seguimos trabajando con el usaurio `developer`, y creamos un fichero `index.html`:
+
+    oc login -u developer -p developer https://api.crc.testing:6443
     oc exec deploy/nginx -- bash -c "echo '<h1>Curso de OpenShift</h1>' > /app/index.html"
 
 Finalmente creamos el Service y el Route para acceder al despliegue:
@@ -116,33 +127,12 @@ Finalmente creamos el Service y el Route para acceder al despliegue:
 
 ![volumen](img/volumen1.png)
 
-Finalmente podemos comprobar que la información de la aplicación no se pierde borrando el Deployment y volviéndolo a crear, comprobando que se sigue sirviendo el fichero `index.html`.
+Finalmente podemos comprobar que la información de la aplicación no se pierde borrando el **Deployment** y volviéndolo a crear, comprobando que se sigue sirviendo el fichero `index.html`.
 
-## Escalando el despliegue
-
-Veamos una característica del tipo de volumen que estamos usando. El modo de acceso del volumen AWS EBS es **ReadWriteOnce**. Es decir, se puede montar en modo lectura y escritura en un sólo contenedor que se esté ejecutando en un nodo del clúster. 
-
-Si escalamos el despliegue:
-
-    oc scale deploy/nginx --replicas=2
-    oc get pod
-    NAME                     READY   STATUS              RESTARTS   AGE
-    nginx-5676d5ddc6-5xzkw   1/1     Running             0          7m14s
-    nginx-5676d5ddc6-rjs4x   0/1     ContainerCreating   0          15s
- 
-    oc describe pod nginx-5676d5ddc6-rjs4x
-    ...
-    Events:
-      Type     Reason              Age   From                     Message
-      ----     ------              ----  ----                     -------
-      Normal   Scheduled           24s   default-scheduler        Successfully assigned josedom24-dev/nginx-5676d5ddc6-rjs4x to ip-10-0-136-61.ec2.internal
-      Warning  FailedAttachVolume  24s   attachdetach-controller  Multi-Attach error for volume "pvc-4b828a1b-8977-4cde-bcf3-36dead6c0c06" Volume is already used by pod(s) nginx-5676d5ddc6-5xzkw
-
-Es decir, el segundo Pod se va a quedar en estado **ContainerCreating** porque las caracteríosticas del volumen que estamos usando no permiten conectarlos a dos Pods al mismo tiempo. Para ello, es decir, para tener almacenamiento compartido entre varios Pods, tendríamos que tener volúmenes con modo de acceso: **ReadOnlyMany**, de sólo lectura, o **ReadWriteMany**, de lectura y escritura.
 
 ## Eliminación del volumen
 
-En este caso, los volúmenes que crea de forma dinámica el StorageClass tiene como política de reciclaje el valor de `Delete`. Esto significa que cuando eliminemos la solicitud, el objeto **PersistentVolumeClaim**, también se borrará el volumen, el objeto **PersistentVolume**.
+En este caso, los volúmenes que crea de forma dinámica el **StorageClass** tiene como política de reciclaje el valor de `Delete`. Esto significa que cuando eliminemos la solicitud, el objeto **PersistentVolumeClaim**, también se borrará el volumen, el objeto **PersistentVolume**.
 
     oc delete deploy/nginx
     oc delete persistentvolumeclaim/my-pvc

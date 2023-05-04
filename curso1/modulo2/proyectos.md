@@ -57,7 +57,7 @@ Como hemos comentado un objeto **project** es en realidad un **namespace** que p
 
 Vamos a conectarnos como administrador para poder acceder a los **namespaces**:
 
-    oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
+    oc login -u kubeadmin https://api.crc.testing:6443
     Login successful.
     
     You have access to 68 projects, the list has been suppressed. You can list all projects with 'oc projects'

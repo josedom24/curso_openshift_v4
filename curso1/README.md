@@ -42,7 +42,7 @@
 
 6. Almacenamiento en OpenShift
 	* [Introducción al almacenamiento (P)](modulo6/almacenamiento.md)
-	* Almacenamiento en CRC
+	* [Almacenamiento en CRC](modulo6/almacenamiento_crc.md)
 	* [Volúmenes dentro de un pod](modulo6/volumen_pod.md)
 	* [Aprovisionamiento dinámico de volúmenes](modulo6/volumen_dinamico.md)
 	* [Gestionando el almacenamiento desde la consola web](modulo6/volumen_web.md)

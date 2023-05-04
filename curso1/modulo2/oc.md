@@ -12,13 +12,13 @@ Como hemos dicho anteriormente para obtener las instrucciones para hacer login e
 
     crc console --credentials
     To login as a regular user, run 'oc login -u developer -p developer https://api.crc.testing:6443'.
-    To login as an admin, run 'oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443'
+    To login as an admin, run 'oc login -u kubeadmin https://api.crc.testing:6443'
 
 Como vemos podemos loguearno con dos usarios: `kubeadmin` que será un usuario administrador con todos los permisos disponibles, y con el usuario `developer` que será un usuario sin privilegios.
 
 Por ejemplo para loguearnos como administrador.
     
-    oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
+    oc login -u kubeadmin https://api.crc.testing:6443
     Login successful.
 
     You have access to 66 projects, the list has been suppressed. You can list all projects with 'oc projects'

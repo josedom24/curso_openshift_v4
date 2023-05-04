@@ -13,7 +13,7 @@ Trabajamos con el usuario `developer` creando un nuevo proyecto, y configurándo
 
     oc new-project wordpress
 
-    oc login -u kubeadmin -p 7CCZB-XLaxk-ELS2G-GrGaw https://api.crc.testing:6443
+    oc login -u kubeadmin https://api.crc.testing:6443
     oc adm policy add-scc-to-user anyuid -z default
     oc login -u developer -p developer https://api.crc.testing:6443
     ...
