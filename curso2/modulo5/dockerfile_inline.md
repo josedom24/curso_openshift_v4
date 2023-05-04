@@ -2,7 +2,7 @@
 
 En este tipo de construcción vamos a tener el contenido del fichero `Dockerfile` dentro de la definición del objeto **BuildConfig**.
 
-Vamos a ver sos ejemplos:
+Vamos a ver dos ejemplos:
 
 ## Ejemplo 1: BuildConfig con un Dockerfile inline
 
@@ -37,7 +37,7 @@ spec:
     type: ImageChange
 ```
 
-Creamos el objeto **BuildConfig**, creando en primer lugar la ^ImageStream** que hemos indicado como salida:
+Creamos el objeto **BuildConfig**, creando en primer lugar la **ImageStream** que hemos indicado como salida:
 
     oc create is imagen-app7
     oc apply -f bc-dockerfile1.yaml 
@@ -60,7 +60,7 @@ Una vez creada la nueva imagen, podemos desplegarla y comprobar la salida del Po
 
 ## Ejemplo 2: BuildConfig con un Dockerfile sustituido
 
-En este caso partimos de un repositorio Git donde tenemos una aplicación y un `Dockerfile` para la creación de la imagen. sin embargo, vamos a partir del código de ese repositorio pero vamos a sustituir el `Dockerfile` por uno que tenemos definido en el **BuildConfig**. Para ello partimos de la definición que tenemos en el fichero `bc-dockerfile2.yaml`:
+En este caso partimos de un repositorio Git donde tenemos una aplicación y un `Dockerfile` para la creación de la imagen. Sin embargo, vamos a partir del código de ese repositorio pero vamos a sustituir el `Dockerfile` por uno que tenemos definido en el **BuildConfig**. Para ello partimos de la definición que tenemos en el fichero `bc-dockerfile2.yaml`:
 
 ```yaml
 apiVersion: build.openshift.io/v1

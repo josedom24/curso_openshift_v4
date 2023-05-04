@@ -1,10 +1,8 @@
 # Construcción de imágenes con estrategia Source-to-image (S2I)
 
-Los ejercicios de este módulo lo vamos a ejecutar en RedHat OpenShift Dedicated Developer Sandbox con nuestro usuario sin privilegios. Se puede realizar en nuestra instalación local con crc, pero el proceso de build requiere más recursos de computación y he tenido algunos problemas de conexión con el clúster.
+En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Source-to-image (S2I)** y como fuente de entrada donde esta nuestro código un **repositorio en GitHub**. 
 
-En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Source-to-image (S2I)** y como fuente de entrada donde esta nuestra código un **repositorio en GitHub**. 
-
-En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto unos de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se apuntara con un objeto **ImageStream**. En posteriores capítulos utilizaremos lel comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
+En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto anteriormente, uno de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se referenciará con un objeto **ImageStream**. En posteriores capítulos utilizaremos lel comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
 
 ## Despliegue de la aplicación con la estrategia Source-to-image
 
@@ -22,7 +20,7 @@ Para ello usamos el comando `oc new-app` indicando la imagen constructora que va
 |scala|build.sbt|
 |golang|Godeps, main.go|
 
-Por lo tanto en la primera aplicación no vamos a indicar la imagen constructora y vemos que imagen nos sugiere, con nuestra aplicación PHP:
+Por lo tanto en la primera aplicación no vamos a indicar la imagen constructora y comprobamos que imagen nos sugiere, con nuestra aplicación PHP:
 
     oc new-app https://github.com/josedom24/osv4_php --name=app1
     -> Found image b34c3d8 (5 months old) in image stream "openshift/php" under tag "8.0-ubi8" for "php"
@@ -53,13 +51,13 @@ Además, se ha comenzado el proceso de creación de la imagen, y para ello se ha
     NAME     TYPE     FROM          STATUS    STARTED         DURATION
     app1-1   Source   Git@3f2efa3   Running   9 seconds ago   
 
-¿Donde se ejecuta la construcción de la nueva imagen? En un Pod de construcción:
+¿Dónde se ejecuta la construcción de la nueva imagen? En un Pod de construcción:
 
     oc get pod
     NAME           READY   STATUS    RESTARTS   AGE
     app1-1-build   1/1     Running   0          12s
 
-Si quieres ver la tareas que se están ejecutando en el proceso de construcción, ejecuta:
+Si quieres ver las tareas que se están ejecutando en el proceso de construcción, ejecuta:
 
     oc logs -f bc/app1
 
@@ -69,7 +67,7 @@ Una vez terminada la construcción:
     NAME     TYPE     FROM          STATUS     STARTED              DURATION
     app1-1   Source   Git@3f2efa3   Complete   About a minute ago   54s
 
-Podemos comprobar que se ha creado el objeto **ImageStram** apuntando a la nueva imagen que hemos creado:
+Podemos comprobar que se ha creado el objeto **ImageStream** apuntando a la nueva imagen que hemos creado:
 
     oc get is
     NAME   IMAGE REPOSITORY                                                                                      TAGS     UPDATED
@@ -105,7 +103,7 @@ Y acceder a la aplicación:
 
 En el ejercicio anterior, al no indicar la imagen constructora, OpenShift detectó el lenguaje de programación de la aplicación guardada en el repositorio y nos ofreció una imagen constructora, en este caso una imagen PHP.
 
-Sin embargo, es posible que indiquemos una imagen constructora explícitamente al desplegar la aplicación. Podemos buscar en el catálago, cuantas versión de la imagen PHP tenemos a nuestra disposición:
+Sin embargo, es posible que indiquemos una imagen constructora explícitamente al desplegar la aplicación. Podemos buscar en el catálogo, cuantas versiones de la imagen PHP tenemos a nuestra disposición:
 
     oc new-app -S php
     ...
@@ -119,7 +117,7 @@ Además, en la ejecución de la aplicación nos hemos dado cuenta que la aplicac
 
     oc new-app php:7.4-ubi8~https://github.com/josedom24/osv4_php --name=app1-v2 -e INFORMACION="Versión 2"
 
-Comprobamos que se ha creado otro objeto **BuildCondif** y que se ha empezado a realizar un nuevo build:
+Comprobamos que se ha creado otro objeto **BuildConfig** y que se ha empezado a realizar un nuevo build:
 
     oc get bc
     NAME      TYPE     FROM   LATEST

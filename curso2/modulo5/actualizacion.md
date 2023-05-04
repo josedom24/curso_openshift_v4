@@ -16,13 +16,13 @@ Por lo tanto lo primero que vamos a hacer es crear el objeto **BuildCondig**, pa
     NAME        TYPE     FROM          STATUS     STARTED             DURATION
     app4-1      Docker   Git@8ab1cd8   Running    18 seconds ago    
 
-Como vemos en el campo `LATEST` se ha creado un build, que de forma automática ha llamado `app4-1`.
+Como vemos en el campo `LATEST`, se ha creado un build, que de forma automática ha llamado `app4-1`.
 Cuando termina la construcción, comprobamos que se ha creado un nuevo **ImageStream** apuntando a la nueva imagen:
 
     oc get is -o name
     imagestream.image.openshift.io/app4
 
-Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen que hemos generado (vamos a llamar a la aplicación con el mismo nombre que el build, aunque se podría llamar de forma distinta):
+Ahora, podríamos crear una nueva aplicación que utilizará esta nueva imagen que hemos generado (vamos a llamar a la aplicación con el mismo nombre que el build, aunque se podría llamar de forma distinta):
 
     oc new-app app4 --name=app4
     oc expose service app4
@@ -60,7 +60,7 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
 
     Vemos como tenemos en ejecución otro Pod constructor (**app4-2-build**) donde se está creando la nueva imagen.
 
-4. ¿Qué a ocurrido al finalizar la construcción de la nueva imagen? El despliegue se ha actualizado, al cambiar la imagen de origen, y por tanto ha creado un nuevo recurso **ReplicaSet** que ha creado un nuevo pod:
+4. ¿Qué ha ocurrido al finalizar la construcción de la nueva imagen? El despliegue se ha actualizado, al cambiar la imagen de origen, y por tanto ha creado un nuevo recurso **ReplicaSet** que ha creado un nuevo Pod:
 
         oc get rs
         NAME                 DESIRED   CURRENT   READY   AGE
@@ -85,7 +85,7 @@ Ahora, podríamos crear una nueva aplicación que utilizara esta nueva imagen qu
 1. Modifica el fichero `Dockerfile` y cambia el valor de la variable de entorno: `ENV PROVINCIA=cadiz`.
 2. Guardamos los cambios en el repositorio:
 
-        git commit -am "Modificaciión Dockerfile"
+        git commit -am "Modificación Dockerfile"
         git push
 3. Lanzamos manualmente una nueva construcción de la imagen:
 
@@ -140,7 +140,7 @@ Podemos cancelar una construcción ejecutando la instrucción `oc cancel-build`:
     oc cancel-build app4-5
     build.build.openshift.io/app4-5 marked for cancellation, waiting to be cancelled
 
-Por último si borramos el objeto **BuildConfig** se borrarán todas los objetos builds y todos los Pods de construcción:
+Por último si borramos el objeto **BuildConfig** se borrarán todas los objetos **Builds** y todos los Pods de construcción:
 
     oc delete bc app4
     buildconfig.build.openshift.io "app4" deleted

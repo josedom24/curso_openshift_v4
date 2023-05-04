@@ -2,7 +2,7 @@
 
 Un **build** el es proceso por el que OpenShift construye una nueva imagen docker a partir de unos parámetros de entrada.
 
-La definición de este proceso de construcción se define en un objeto **BuildConfig**. Cuando se comienza el proceso de construcción definido en un **BuildConfig** se crea un objeto **Build** que representa ese proceso de construcción. La construcción se realizará en un **pod de construcción (pod build)**.
+La definición de este proceso de construcción se define en un objeto **BuildConfig**. Cuando se comienza el proceso de construcción definido en un **BuildConfig** se crea un objeto **Build** que representa ese proceso de construcción. La construcción se realizará en un **Pod de construcción (pod build)**.
 
 ## Estrategias de construcción
 

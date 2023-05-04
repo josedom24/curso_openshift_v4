@@ -1,8 +1,8 @@
 # Construcción de imágenes desde ficheros locales
 
-A este tipo de construcción de imágenes se la llama **binary build**, y nos permite cargar código fuente directamente en un build en lugar de indicar un repositorio Git.
+A este tipo de construcción de imágenes se la llama **Binary Build**, y nos permite cargar código fuente directamente en un build en lugar de indicar un repositorio Git.
 
-Podemos iniciar una construcción binaria, en cualquier **BuildConfig** que ues estrategia Docker o s2i. Para indicar el código fuente que vamos a usar, tenemos varias formas:
+Podemos iniciar una construcción binaria, en cualquier **BuildConfig** que use estrategia Docker o s2i. Para indicar el código fuente que vamos a usar, tenemos varias formas:
 
 * `from-file`: Se indica un sólo fichero.
 * `from-dir`: Se indica un directorio donde están los ficheros.
@@ -19,7 +19,7 @@ Se suelen usar en varios casos:
 
 Como limitaciones indicar:
 
-* Que las binary builds no son reproducibles, si queremos repetirlas tenemos que cargar el mismo código fuente.
+* Que los **Binary Builds** no son reproducibles, si queremos repetirlas tenemos que cargar el mismo código fuente.
 * No se pueden activar automáticamente, disparadas por triggers. Sólo pueden iniciarse manualmente.
 
 ## Ejemplo 1: Construcción de cambios locales del código fuente

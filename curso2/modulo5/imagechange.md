@@ -1,6 +1,6 @@
 # Actualización automática de un build
 
-Vamos a crear un nuevo objeto **BuildCondig** y nos vamos a centrar en su definción en la sección de triggers, donde se definen los distintos eventos que disparan la construcción de forma automática.
+Vamos a crear un nuevo objeto **BuildCondig** y nos vamos a centrar en su definición en la sección de **triggers**, donde se definen los distintos eventos que disparan la construcción de forma automática.
 
 En primer lugar vamos a crear un objeto **ImageStream** que apuntará a una imagen constructora de PHP, que luego utilizaremos para explicar el trigger `ImageChange`.
 
@@ -15,7 +15,7 @@ En primer lugar vamos a crear un objeto **ImageStream** que apuntará a una imag
     NAME     TYPE     FROM          STATUS    STARTED          DURATION
     app9-1   Source   Git@4cca4f9   Running   12 seconds ago   
 
-Si comprobamos la definción del objeto y nos centramos en la sección `triggers`:
+Si comprobamos la definición del objeto y nos centramos en la sección `triggers`:
 
     oc get bc app9 -o yaml
     ...
@@ -44,9 +44,9 @@ También lo podríamos ver obteniendo información del objeto:
 
 Vemos que tenemos tres posibles disparadores:
 
-* `ConfigChange`: Permite que se cree una nueva construcción de forma automática cunado se crea el objeto **BuildConfig**.
+* `ConfigChange`: Permite que se cree una nueva construcción de forma automática cuando se crea el objeto **BuildConfig**.
 * `ImageChange`: Permite que se cree una nueva construcción de forma automática cuando está disponible una nueva versión de la imagen constructora.
-* `Webhook`: Nos permite dispara una nueva construcción de forma automática cuando ocurre un evento (por ejemplo un ++push`) en un servicio externo, por ejemplo un repositorio GitHub. Este servicio hace una llamada a una URL que nosotros le proporcionamos que hace que se inicie el proceso de construcción. 
+* `Webhook`: Nos permite disparar una nueva construcción de forma automática cuando ocurre un evento (por ejemplo un `push`) en un servicio externo (por ejemplo, un repositorio GitHub). Este servicio hace una llamada a una URL que nosotros le proporcionamos que produce que se inicie el proceso de construcción. 
 
 ## Ejemplo de actualización del build por ImageChange
 

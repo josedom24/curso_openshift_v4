@@ -2,9 +2,9 @@
 
 Este tipo de actualización de un **BuildConfig** se realizará por medio de la configuración de un webhook en un servicio externo. El servicio externo hará una llamada a una URL de nuestro clúster de OpenShift cuando ocurra un evento. Esta llamada, provocará el inicio de un nuevo build.
 
-Esta característica nos permite la funcionalidad de **Despliegue Continuo** en Openshift. Por ejemplo, podemos configurar el repositorio GitHub donde tenemos nuestra aplicación para que cada vez que hagamos un `push` se la llame a un webhook que hemos configurado y que inicie de forma automática un nuevo build. Si hemos utilizado la imagen generada en un despliegue, finalmente se actualizará el despliegue obteniendo la implantación de la nueva versión de la aplicación.
+Esta característica nos permite la funcionalidad de **Despliegue Continuo** en OpenShift. Por ejemplo, podemos configurar el repositorio GitHub donde tenemos nuestra aplicación para que cada vez que hagamos un `push` se haga una petición al webhook que hemos configurado y que inicie de forma automática un nuevo build. Si hemos utilizado la imagen generada en un despliegue, finalmente se actualizará el despliegue obteniendo la implantación de la nueva versión de la aplicación.
 
-Veamos un ejemplo: siguiendo con en el ejemplo del apartado anterior, vamos a desplegar la imagen que habíamos generado:
+Veamos una demostración, siguiendo con en el ejemplo del apartado anterior, vamos a desplegar la imagen que habíamos generado:
 
     oc new-app app9
     oc expose service/app9
@@ -71,7 +71,7 @@ Ahora, configuramos el Webhook. En **Payload URL** pegamos la URL y en el parám
 
 ![app9](img/app9-4.png)
 
-Vamos comprobar que funciona. Modificamos un fichero `index.php` y lo guardamos en el repositorio:
+Vamos a comprobar que funciona. Modificamos un fichero `index.php` y lo guardamos en el repositorio:
 
     git commit -am "Modifico index.php"
     git push

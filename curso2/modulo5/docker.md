@@ -4,7 +4,7 @@ En el apartado anterior, vimos que al desplegar una aplicación con `oc new-app`
 
 En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Docker** y como fuente de entrada donde esta nuestro fichero `Dockerfile` indicaremos  un **repositorio en GitHub**. 
 
-En este ejercicio no vamos a desplegar la aplicación, vamos a construir la imagen ejecutando el comando `oc nrw-build`, que creará el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se apuntara con un objeto **ImageStream**. Posteriormente desplegaremos la aplicación con `oc new-app` utilizando la imagen construida.
+En este ejercicio no vamos a desplegar la aplicación, vamos a construir la imagen ejecutando el comando `oc new-build`, que creará el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se referenciará con un objeto **ImageStream**. Posteriormente desplegaremos la aplicación con `oc new-app` utilizando la imagen construida.
 
 ## Creación del BuildConfig con estrategia Docker
 
@@ -41,7 +41,7 @@ Ahora, vamos a usar el comando `oc new-build` para construir la imagen. Este com
         imagestream.image.openshift.io "app2" created
         buildconfig.build.openshift.io "app2" created
 
-Como vemos se crean dos objetos **ImageStream**. uno que referencia a la imagen indicada en el fichero `Dockerfile` y otro referencia a la imagen creada, y un objeto **BuildConfig**:
+Como vemos se crean dos objetos **ImageStream**: uno que referencia a la imagen indicada en el fichero `Dockerfile` y otro que referencia a la imagen creada, y un objeto **BuildConfig**:
 
     oc get bc
     NAME      TYPE     FROM   LATEST
@@ -51,7 +51,7 @@ Como vemos se crean dos objetos **ImageStream**. uno que referencia a la imagen 
     NAME        TYPE     FROM          STATUS     STARTED          DURATION
     app2-1      Docker   Git@91cf2b5   Running    38 seconds ago   
 
-Si quieres ver la tareas que se están ejecutando en el proceso de construcción, ejecuta:
+Si quieres ver las tareas que se están ejecutando en el proceso de construcción, ejecuta:
 
     oc logs -f bc/app2
 
@@ -62,7 +62,7 @@ Una vez terminada, la construcción podemos ver los objetos **ImageStream** que 
     app2      default-route-openshift-image-registry.apps.sandbox-m3.1530.p1.openshiftapps.com/josedom24-dev/app2      latest   About a minute ago
     php-74    default-route-openshift-image-registry.apps.sandbox-m3.1530.p1.openshiftapps.com/josedom24-dev/php-74    latest   2 minutes ago
 
-Sólo hemos creado la nueva imagen, pero no hemos realizado un despliegue, podemos deplegar nuestra nueva imagen utilizando el comando `oc new-app` indicando la imagen que hemos creado (el nombre del objeto **ImageStream** que lo referencia):
+Sólo hemos creado la nueva imagen, pero no hemos realizado un despliegue, podemos desplegar nuestra nueva imagen utilizando el comando `oc new-app` indicando la imagen que hemos creado (el nombre del objeto **ImageStream** que lo referencia):
 
     oc new-app app2 --name=app2
     --> Found image c48eb64 (2 minutes old) in image stream "josedom24-dev/app2" under tag "latest" for "app2"
@@ -71,7 +71,7 @@ Sólo hemos creado la nueva imagen, pero no hemos realizado un despliegue, podem
         deployment.apps "app2" created
         service "app2" created
 
-Como vemos ha encontrado una **ImagenStream** llamada `app2:latest, que será la que se utiliza para realizar el despliegue. Sólo se ha quedado un recurso **Deployment** y otro **Service**.
+Como vemos ha encontrado una **ImageStream** llamada `app2:latest`, que será la que se utiliza para realizar el despliegue. En este caso, `oc new-app` sólo ha creado un recurso **Deployment** y otro **Service**.
 
     oc get deploy,rs,pod 
     NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
@@ -85,7 +85,7 @@ Como vemos ha encontrado una **ImagenStream** llamada `app2:latest, que será la
     pod/app2-1-build               0/1     Completed   0          35m
     pod/app2-7f44b89867-ppfpd      1/1     Running     0          3m40s
 
-Ya nos había ocurrido en un ejemplo anterior, vemos que se han creado dos recursos **ReplicaSet**. En realidad, en el proceso interno de creación del despliegue se crea un ReplicaSet pero no tiene indicada la imagen, por eso falla y a continuación, se vuelve a crear otro, con la imagen que hemos indicado, que ya si funciona y crea el pod.
+Ya nos había ocurrido en un ejemplo anterior, vemos que se han creado dos recursos **ReplicaSet**. En realidad, en el proceso interno de creación del despliegue se crea un ReplicaSet pero no tiene indicada la imagen, por eso falla y a continuación, se vuelve a crear otro, con la imagen que hemos indicado, que ya si funciona y crea el Pod.
 
 Creamos el objeto **Route** y accedemos a la aplicación:
 

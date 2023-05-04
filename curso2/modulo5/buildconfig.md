@@ -1,6 +1,6 @@
 # Definición del objeto BuildConfig
 
-Como hemos visto el objeto **BuildConfig** guardar la configuración (estrategia y fuentes de entrada) para realizar la construcción de una nueva imagen.
+Como hemos visto el objeto **BuildConfig** guarda la configuración (estrategia y fuentes de entrada) para realizar la construcción de una nueva imagen.
 
 Hemos creado objetos **BuildConfig** con dos comandos distintos: `oc new-app` y con `oc new-build`. Pero como cualquier recurso de OpenShift podemos tener su definición en un fichero yaml, y crearlo a partir de este fichero.
 
@@ -60,7 +60,7 @@ Y comprobamos que se ha comenzando una construcción:
 
     oc get build
     NAME        TYPE     FROM          STATUS     STARTED             DURATION
-    app3-1   Source   Git              New (InvalidOutputReference)
+    app3-1      Source   Git           New (InvalidOutputReference)
 
 Vemos que la construcción ha dado un fallo: `InvalidOutputReference`. Esto es debido a que la **ImageStream** que habíamos configurado de salida: `imagen-app3`no existe. Para crear el objeto **ImageStream** ejecutamos:
 
@@ -77,7 +77,7 @@ Si queremos ver las características de los recursos que hemos creado, podemos e
     oc describe bc app3
     oc describe build app3-1
 
-Cuando finalice la construcción de la image, podríamos desplegarla ejecutando:
+Cuando finalice la construcción de la imagen, podríamos desplegarla ejecutando:
 
     oc new-app imagen-app3 --name=app3
 
@@ -116,7 +116,7 @@ Recordamos que teníamos un **BuildConfig** `app1` que utilizaba la estrategia *
       - imageChange: {}
         type: ImageChange
 
-El **BuildConfig** `app2` utilizaba la estrategia **Docker)** y obtenía el fichero `Dockerfile` de un repositorio Git, podemos ver su definición ejecutando:
+El **BuildConfig** `app2` utilizaba la estrategia **Docker** y obtenía el fichero `Dockerfile` de un repositorio Git, podemos ver su definición ejecutando:
 
     oc get bc app2 -o yaml
     ...
