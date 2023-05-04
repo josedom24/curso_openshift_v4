@@ -16,7 +16,7 @@ Si queremos ver los parámetros que podemos configurar en la plantilla, ejecutam
 
 Donde vemos el nombre, la descripción y los valores por defecto de los parámetros.
 
-Podemos generar la definición de los objetos que crear un **Template**. La generación de la definición de los objetos no implica su creación. Veamos algunos ejemplos:
+Podemos generar la definición de los objetos que crea un **Template**. La generación de la definición de los objetos no implica su creación. Veamos algunos ejemplos:
 
 1. Genero la definición en formato yaml de los objetos sin indicar ningún parámetro (se cogen los valores por defecto):
 
@@ -49,13 +49,13 @@ Podemos generar la definición de los objetos que crear un **Template**. La gene
         oc process mysql-plantilla -o yaml -p REPLICAS=2 -l type=database
 
 
-Una vez que sabemos como generar lla definición de los objetos que están definido en una plantilla,tenemos varias formas para crearlos:
+Una vez que sabemos como generar la definición de los objetos que están definido en una plantilla, tenemos varias formas para crearlos:
 
 1. Generar la definición de los objetos de la plantilla (si es necesario indicado parámetros y etiquetas) y ejecutando `oc apply` sobre la definición generada, por ejemplo:
 
         oc process mysql-plantilla -o yaml -p REPLICAS=2 -p NOMBRE_APP=mimysql | oc apply -f -
 
-2. Guardar la generación de la definición de los objetos en un fichero yaml, y utilizar este fichero para crear los bojetos. Esta opción tiene dos ventajas: que podemos reproducir el despliegue y que podemos eliminar los objetos utilizando el fichero yaml. Por ejemplo:
+2. Guardar la generación de la definición de los objetos en un fichero yaml, y utilizar este fichero para crear los objetos. Esta opción tiene dos ventajas: que podemos reproducir el despliegue y que podemos eliminar los objetos utilizando el fichero yaml. Por ejemplo:
 
         oc process mysql-plantilla -o yaml -p NOMBRE_APP=app1 -p REPLICAS=3 -l type=database > deploy_mysql.yaml        
         oc apply -f deploy_mysql.yaml

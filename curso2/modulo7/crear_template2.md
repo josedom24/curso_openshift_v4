@@ -4,7 +4,7 @@ En este apartado vamos a aprender a crear nuevos **Templates** a partir de recur
 
 ## Crear Templates a partir de Templates existentes
 
-Esta operación es muy sencilla, y simplemente consiste en copiar la definición yaml de un **template** en un fichero y posteriormente hacer las modificaciones que necesitemos. Por ejemplo:
+Esta operación es muy sencilla, y simplemente consiste en copiar la definición yaml de un **Template** en un fichero y posteriormente hacer las modificaciones que necesitemos. Por ejemplo:
 
     oc get template mysql-plantilla -o yaml > nueva_plantilla.yaml
 
@@ -14,7 +14,7 @@ Otro ejemplo que nos permite hacer una copia de una plantilla del catálogo de a
 
 ## Crear Templates a partir de objetos existentes
 
-Vamos a imaginar que hemos desplegado una aplicación PHP que tenemos guardada en un repositorio. para ello hemos ejecutado el comando:
+Vamos a imaginar que hemos desplegado una aplicación PHP que tenemos guardada en un repositorio. Para ello hemos ejecutado el comando:
 
     oc new-app php~https://github.com/josedom24/osv4_php --name=app-php --as-deployment-config=true
     oc expose service app-php

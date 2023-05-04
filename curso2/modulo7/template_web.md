@@ -1,6 +1,6 @@
 # Crear objetos desde un Template desde la consola web
 
-Cuando hemos creado nuestra plantilla hemos comprado que ha aparecido en el **catálogo de aplicaciones**:
+Cuando hemos creado nuestra plantilla hemos comprobado que ha aparecido en el **catálogo de aplicaciones**:
 
 ![mysql](img/mysql.png)
 

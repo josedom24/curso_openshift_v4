@@ -31,7 +31,7 @@ Continuamos creando nuestra nueva plantilla que nos va a permitir desplegar apli
     Modifica la definición de los objetos, para ir introduciendo los parámetros en los campos necesarios.
 4. Alguna cosas a tener en cuenta:
 
-    * El objeto **DeploymentConfig** tiene que desplegar la aplicación, una vez exista la **ImageStream** que apunta a la imagen que estamos generando. Para ello en la definición del contenedor del **DeploymentConfig** no se va a indicar ninguna imagen (`image: ' '`) y se le va a configurar un trigger de tipo `ImageChange` apuntando al **ImageStream**, De esta manera el **DeploymentConfig** no creará un **ReplicationController** hasta que la imagen no se haya creado.
+    * El objeto **DeploymentConfig** tiene que desplegar la aplicación, una vez exista la **ImageStream** que apunta a la imagen que estamos generando. Para ello en la definición del contenedor del **DeploymentConfig** no se va a indicar ninguna imagen (`image: ' '`) y se le va a configurar un trigger de tipo `ImageChange` apuntando al **ImageStream**. De esta manera el **DeploymentConfig** no creará un **ReplicationController** hasta que la imagen no se haya creado.
     * Podemos indicar que no se ha terminado la creación completa de una plantilla hasta que no terminen de crearse algunos objetos. Por ejemplo, en nuestro caso se considera que se ha terminada de generar la plantilla cuando termine la construcción y el despliegue. Para ello en los objetos **BuildConfig** y **DeploymentConfig** hemos añadido la siguiente anotación:
 
             "template.alpha.openshift.io/wait-for-ready": "true"

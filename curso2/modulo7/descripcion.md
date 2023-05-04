@@ -1,6 +1,6 @@
 # Descripción de un objeto Template
 
-Vamos a crear un objeto **Template** desde su definición en un fichero yaml. En este ejmplo vamos a hacer un **Template** muy sencillo, que sólo va a crear un objeto de tipo pod. Nos va a permitir crear un recurso **Deployment** usando la imagen `bitnami/mysql` y como veremos posteriormente hemos creados varios parámetros para permitir su configuración. Partimos del fichero `mysql-plantilla.yaml` con el siguiente contenido:
+Vamos a crear un objeto **Template** desde su definición en un fichero yaml. En este ejemplo vamos a hacer un **Template** muy sencillo, que nos va a permitir crear un recurso **Deployment** usando la imagen `bitnami/mysql` y como veremos posteriormente hemos creado varios parámetros para permitir su configuración. Partimos del fichero `mysql-plantilla.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: template.openshift.io/v1
@@ -72,18 +72,18 @@ parameters:
 
 Veamos cada uno de los apartados que tiene la configuración:
 
-* `labels`: Indicamos las etiquetas que tendrán todos los objetos que vamos aa crear.
-* `metadata`: Tiene las secciones que normalmente tiene esta sección en la definición de cualquier objeto. En este caso nos vamos a ficjar en las anotaciones (`annotations`):
+* `labels`: Indicamos las etiquetas que tendrán todos los objetos que vamos a crear.
+* `metadata`: Tiene las secciones que normalmente tiene esta sección en la definición de cualquier objeto. En este caso nos vamos a fijar en las anotaciones (`annotations`):
     * `description`: Definimos una descripción de lo que hace la plantilla.
     * `iconClass`: Indicamos el icono que se mostrará en el catálogo de aplicaciones. [Más iconos](https://rawgit.com/openshift/openshift-logos-icon/master/demo.html).
     * `tags`: Etiquetas asignadas a la plantilla, que facilita su búsqueda en el catálogo.
     * Hay más posibles anotaciones que puedes estudiar en la [documentación](https://docs.openshift.com/container-platform/4.12/openshift_images/using-templates.html).
-* `objects`: Define la definición de los objetos que va a crear la plantilla.
+* `objects`: Definimos los objetos que se van a crear al instanciar la plantilla.
 * `parameters`: Define los parámetros que hemos indicado en la definición de los objetos. A la hora de instanciar la plantilla estos parámetros se pueden sobreescribir. Algunos de los atributos que podemos poner de cada parámetro:
     * `name`: Nombre del parámetro.
-    * `description`: descripción del parámetro.
+    * `description`: Descripción del parámetro.
     * `value`: Valor por defecto. Si no indico el parámetro al crear los objetos del **Template** tomará el valor por defecto.
-    * `from`: Expresión regular que se usa para generar un valor aleatorio, si no indicamos el valor del parámetro. Va a compañdo del atributo `generate: expression`.
+    * `from`: Expresión regular que se usa para generar un valor aleatorio, si no indicamos el valor del parámetro. Va acompañado del atributo `generate: expression`.
 
 Como vemos los parámetros se pueden indicar de dos formas:
 

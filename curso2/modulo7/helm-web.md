@@ -2,7 +2,7 @@
 
 [Helm](https://helm.sh/) es un software que nos permite empaquetar aplicaciones completas y gestionar el ciclo completo de despliegue de dicha aplicación. Helm usa un formato de empaquetado llamado **charts**. Un chart es una colección de archivos que describen un conjunto de recursos que nos permite desplegar una aplicación en Kubernetes o en OpenShift.
 
-tenemos diversos repositorios de Helm que nos permiten instalar un conjunto de charts. Por defecto en la consola web de OpenShift v4 tenemos instalado el repositorio de Helm de OpenShift: `https://charts.openshift.io/`. Para ver los charts que podemos instalar, tenemos que acceder al **catálogo de aplicaciones**:
+Tenemos diversos repositorios de Helm que nos permiten instalar un conjunto de charts. Por defecto en la consola web de OpenShift v4 tenemos instalado el repositorio de Helm de OpenShift: `https://charts.openshift.io/`. Para ver los charts que podemos instalar, tenemos que acceder al **catálogo de aplicaciones**:
 
 ![helm](img/helm1.png)
 
@@ -26,7 +26,7 @@ Podemos acceder a la URL de la aplicación y comprobar que esta funcionando:
 
 ![helm](img/helm5.png)
 
-Como indicábamos anteriormente, lo interesante es que podemos controlar el ciclo de vida de la aplicación que hemos instalado, para ello desde la vita **Developer** escogemos la opción **Helm**. Accedemos a una ventana donde tenemos una pestaña **Helm Releases** donde tenemos la lista de las aplicaciones instaladas, así como las acciones que podemos hacer sobre ellas: actualización y borrado.
+Como indicábamos anteriormente, lo interesante es que podemos controlar el ciclo de vida de la aplicación que hemos instalado, para ello desde la vista **Developer** escogemos la opción **Helm**. Accedemos a una ventana donde tenemos una pestaña **Helm Releases** donde tenemos la lista de las aplicaciones instaladas, así como las acciones que podemos hacer sobre ellas: actualización y borrado.
 
 ![helm](img/helm6.png)
 
@@ -34,7 +34,7 @@ Como indicábamos anteriormente, lo interesante es que podemos controlar el cicl
 
 Podemos añadir nuevos repositorios. Para buscar repositorios y la documentación de los distintos charts es aconsejable estudiar el repositorio de charts [Artifacts Hub](https://artifacthub.io/).
 
-Por ejemplo vamos a añadir el repositorio de charts de bitnami: `https://charts.bitnami.com/bitnami`, para ello, en la ventana anterior pulsamos sobre el botón **Create -> Repository** y añadimos el nombre del repositorio y la URL:
+Por ejemplo vamos a añadir el repositorio de charts de Bitnami: `https://charts.bitnami.com/bitnami`, para ello, en la ventana anterior pulsamos sobre el botón **Create -> Repository** y añadimos el nombre del repositorio y la URL:
 
 ![helm](img/helm7.png)
 
