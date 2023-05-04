@@ -1,11 +1,17 @@
 # Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
-En este ejemplo vamos a volver e realizar el depliege de Wordparess +  MySql, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente.
+En este ejemplo vamos a volver e realizar el despliege de Wordpress +  MySql, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente.
 
 Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes:
 
 * Uno para guardar la información de Wordpress.
 * Otro para guardar la información de MySql.
+
+Vamos a trabajar con el usuario `developer`:
+
+    oc login -u developer -p developer https://api.crc.testing:6443
+    oc new-project wp-persitente
+
 
 ## Creación de los volúmenes necesarios
 
@@ -26,7 +32,7 @@ spec:
       storage: 5Gi
 ```
 
-Y para solicitar el volumen para la base de datos usaremos un fichero similar: `mariadb-pvc.yaml`:
+Y para solicitar el volumen para la base de datos usaremos un fichero similar: `mysql-pvc.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -45,7 +51,7 @@ Creamos las solicitudes ejecutando:
 
 
     oc apply -f wordpress-pvc.yaml
-    oc apply -f mariadb-pvc.yaml
+    oc apply -f mysql-pvc.yaml
 
 
 ## Modificación de los Deployments para el uso de los volúmenes
@@ -107,9 +113,9 @@ spec:
             claimName: wordpress-pvc      
 ```
 
-Como observamos vamos a usar el volumen asociado al PersistentVolumenClaim `wordpress-pvc` y que lo vamos a montar en el directorio *DocumentRoot* del servidor web: `/bitnami/wordpress`.
+Como observamos vamos a usar el volumen asociado al **PersistentVolumenClaim** `wordpress-pvc` y que lo vamos a montar en el directorio *DocumentRoot* del servidor web: `/bitnami/wordpress`.
 
-De forma similar, tenemos el fichero `mariadb-deployment.yaml` para deplegar la base de datos:
+De forma similar, tenemos el fichero `mysql-deployment.yaml` para desplegar la base de datos:
 
 ```yaml
 apiVersion: apps/v1
@@ -183,13 +189,13 @@ Acedemos a la aplicación, y usando el usuario y la contraseña por defecto (`us
 
 ## Comprobando la persistencia de la información
 
-Si en cualquier momento tenemos que eliminar o actualizar uno de los despliegues, podemos comprobar que la información sigue existiendo después de volver a crear los Deployments:
+Si en cualquier momento tenemos que eliminar o actualizar uno de los despliegues, podemos comprobar que la información sigue existiendo después de volver a crear los **Deployments**:
 
 
     oc delete -f mysql-deployment.yaml
     oc delete -f wordpress-deployment.yaml
     
-    oc apply -f mariadb-deployment.yaml
+    oc apply -f mysql-deployment.yaml
     oc apply -f wordpress-deployment.yaml
 
 

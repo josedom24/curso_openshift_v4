@@ -70,6 +70,7 @@
 	* [Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms](modulo8/phpsqlitecms.md)
 	* [Ejemplo 2: Gestión de almacenamiento desde la línea de comandos: GuestBook](modulo8/guestbook.md)
 	* [Ejemplo 3: Haciendo persistente la aplicación Wordpress](modulo8/wordpress.md)
+	* [Instantáneas de volúmenes](modulo8/snapshot.md)
 
 9. OpenShift Pipelines
 	
