@@ -56,15 +56,15 @@ Podemos indicar algunos detalles importantes:
 
 * La sección `metadata` define el nombre y las etiquetas para el objeto **DeploymentConfig**. 
 * La sección `spec` define el recurso **ReplicationController** que se creará, donde se incluye  el número deseado de réplicas (`replicas`)(en este caso, 1), el límite de historial de revisiones (`revisionHistoryLimit`) y las etiquetas que seleccionan los Pods que se controlan (`selector`).
-* La sección `template` describe la plantilla de Pod que se utilizará para crear nuevas réplicas. Como hemos creado el recurso **DeploymentConfig** con la instrucción `oc new-app` se ha creado un recurso **Image Stream** que es el que se utiliza para indicar la imagen desde la que se creará el contenedor.
+* La sección `template` describe la plantilla de Pod que se utilizará para crear nuevas réplicas. Como hemos creado el recurso **DeploymentConfig** con la instrucción `oc new-app` se ha creado un recurso **ImageStream** que es el que se utilizará para indicar la imagen desde la que se creará el contenedor.
 * La sección `triggers` define las condiciones bajo las cuales se desencadenará una nueva implementación. En este caso, se definen dos disparadores. 
-    * El primer disparador es de tipo `ConfigChange`, que provocará que se desencadene una nueva implementación si cambian alguno de los parámetros de configuración del **DeploymentConfig**. 
+    * El primer disparador es de tipo `ConfigChange`, que provocará que se desencadene una nueva implementación si cambian algunos de los parámetros de configuración del **DeploymentConfig**. 
     * El segundo disparador es de tipo `ImageChange`, que provocará que se desencadene una nueva implementación si cambia la imagen utilizada por el contenedor. El campo `from` especifica la fuente de la nueva imagen, en este caso un **ImageStreamTag** llamado `test-web:v1`. El campo `automatic` especifica si el cambio de imagen debe detectarse automáticamente o no.
 
 
 ## Escalado de los Deployments
 
-Como ocurría con los **Deployments** los **DeploymentConfig** también se pueden escalar, aumentando o disminuyendo el número de Pods asociados. Al escalar un **DeploymentConfig** estamos escalando el **ReplicationController** asociado en ese momento:
+Como ocurría con los **Deployments**, los **DeploymentConfig** también se pueden escalar, aumentando o disminuyendo el número de Pods asociados. Al escalar un **DeploymentConfig** estamos escalando el **ReplicationController** asociado en ese momento:
 
     oc scale dc/test-web --replicas=4
 

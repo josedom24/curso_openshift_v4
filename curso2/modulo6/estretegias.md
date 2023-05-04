@@ -6,7 +6,7 @@ Vamos a estudiar dos tipos de estrategias:
 
 ## Estrategia Rolling Update
 
-En este tipo de estrategia utiliza una implementación gradual y en cascada para actualizar los Pods: se van creando los nuevos Pods, se comprueba que funcionan, y posteriormente se van eliminando los Pods antiguos. Es la estrategia por defecto. Veamos la configuración de esta estrategia, creando un **DeploymentConfig** a partir de la **ImageStream** `is-example` que tiene otras dos etiquetas apuntando a las versiones:
+En este tipo de estrategia utiliza una implementación gradual y en cascada para actualizar los Pods: se van creando los nuevos Pods, se comprueba que funcionan, y posteriormente se van eliminando los Pods antiguos. Es la estrategia por defecto. Veamos la configuración de esta estrategia, creando un **DeploymentConfig** a partir de la **ImageStream** `is-example` que tiene otras dos etiquetas apuntando a las distintas versiones:
 
     oc create is is_example
     oc import-image is_example:v1 --from=quay.io/openshifttest/deployment-example:v1
@@ -54,7 +54,7 @@ Y en otra terminal actualizamos la etiqueta `latest` del **ImageStream** Para pr
     oc tag -d is_example:latest
     oc tag is_example:v2 is_example:latest
 
-Finalmente podemos comprobamos que tenemos desplegada la versión 2:
+Finalmente podemos comprobar que tenemos desplegada la versión 2:
 
 ![example](img/example2.png)
 
