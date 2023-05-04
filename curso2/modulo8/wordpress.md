@@ -47,7 +47,7 @@ Y que efectivamente está montado en un directorio de los Pods:
 
 ## WordPress persistente
 
-Vamos a desplegar WordPress y posteriormente, crearemos un nuevo volumen para guardar los datos del blog. este volumen habrá que montarlo en el directorio `/bitnami/wordpress`.
+Vamos a desplegar WordPress y posteriormente, crearemos un nuevo volumen para guardar los datos del blog. Este volumen habrá que montarlo en el directorio `/bitnami/wordpress`.
 
 Para desplegar el WordPress usando un **DeploymentConfig**:
 
@@ -57,7 +57,7 @@ En primer lugar cambiamos la estrategia de despliegue, para evitar el problema q
 
     oc patch dc/wordpress --patch '{"spec":{"strategy":{"type":"Recreate"}}}'
 
-A continuación, creamos un **PersistentVolumeClaim** usando la definción que tenemos en el fichero `pvc-wordpress.yaml`:
+A continuación, creamos un **PersistentVolumeClaim** usando la definición que tenemos en el fichero `pvc-wordpress.yaml`:
 
 ```yam
 apiVersion: v1

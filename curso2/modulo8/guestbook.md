@@ -10,7 +10,7 @@ Por lo tanto para desplegar las aplicaciones vamos a ejecutar los siguientes com
     oc new-app https://github.com/josedom24/osv4_guestbook.git --name=guestbook
     oc new-app bitnami/redis  -e REDIS_PASSWORD=mypass --name=redis
 
-Nota: No hay que indicar la contraseña de la base de datos en el despliegue de la aplicación Guestbook, porque por defecto coincide con la que hemos establecido en el despliegue de Redis.
+**Nota**: No hay que indicar la contraseña de la base de datos en el despliegue de la aplicación Guestbook, porque por defecto coincide con la que hemos establecido en el despliegue de Redis.
 
 A continuación, creamos la ruta para acceder a GuestBook y comprobamos que funciona:
 
@@ -22,11 +22,11 @@ A continuación, creamos la ruta para acceder a GuestBook y comprobamos que func
 
 La aplicación funciona de forma correcta, pero tenemos que tener en cuenta que **los Pods son efímeros**, es decir, cuando se eliminan pierden la información. en nuestro caso si eliminamos el Pod del despliegue redis (por alguna actualización, escalado, ...) se perderá la información de la base de datos.
 
-Si estudiamos la documentación de la imagen `bitnami/redis` en [Docker Hub](https://hub.docker.com/r/bitnami/redis/), para que la información de la base de datos se guarde en un directorio `/bitnami/redis/data`.
+Si estudiamos la documentación de la imagen `bitnami/redis` en [Docker Hub](https://hub.docker.com/r/bitnami/redis/), para que la información de la base de datos sea persistente, tenemos que asociar un volumen al directorio `/bitnami/redis/data`.
 
-Además como vimos en el Ejercicio 1, tenemos que modificar la estrategia de despliegue a **Recreate**, para que no exista el Pod antiguo cuando se crea uno nuevo, y se puede conectar sin problemas al volumen.
+Además como vimos en el Ejercicio 1, tenemos que modificar la estrategia de despliegue a **Recreate**, para que no exista el Pod antiguo cuando se crea uno nuevo, y se pueda conectar sin problemas al volumen.
 
-En primer lugar vamos a crear un objeto **PersistentVolumeClaim** que nos va apermite solicitar la creación de un **PersistentVolume**, para ello usamos la definción del objeto que tenemos en el fichero `pvc-redis.yaml`:
+En primer lugar vamos a crear un objeto **PersistentVolumeClaim** que nos va permitir solicitar la creación de un **PersistentVolume**, para ello usamos la definición del objeto que tenemos en el fichero `pvc-redis.yaml`:
 
 ```yaml
 apiVersion: v1

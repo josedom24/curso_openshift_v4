@@ -1,6 +1,6 @@
 # Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox
 
-Al usar RedHat OpenShift Dedicated Developer Sandbox, estamos usando un clúster compartido, multitenant, en que accedemos con un usuario sin privilegios administrativos.
+Al usar **RedHat OpenShift Dedicated Developer Sandbox**, estamos usando un clúster compartido, multitenant, en que accedemos con un usuario sin privilegios administrativos.
 
 * La primera consecuencia, en relación con el almacenamiento es que no tendremos acceso directo a los recursos **PersistentVolumen (PV)**.
 
@@ -9,7 +9,7 @@ Al usar RedHat OpenShift Dedicated Developer Sandbox, estamos usando un clúster
 
     Por la tanto, usaremos **aprovisionamiento dinámico** para obtener almacenamiento.
 
-* Por otro lado hay que tener en cuenta que la plataforma RedHat OpenShift Dedicated Developer Sandbox está mostrada sobre una infraestructura cloud en el proveedor Amazon Web Service (AWS) por lo tanto el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**. Y tendremos a nuestra disposición 4 recursos **StorageClass** que de forma dinámica nos proporcionarán este tipo de volúmenes:
+* Por otro lado hay que tener en cuenta que la plataforma **RedHat OpenShift Dedicated Developer Sandbox** está montada sobre una infraestructura cloud en el proveedor Amazon Web Service (AWS) por lo tanto el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**. Y tendremos a nuestra disposición 4 recursos **StorageClass** que de forma dinámica nos proporcionarán este tipo de volúmenes:
 
         oc get storageclass
         NAME            PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE

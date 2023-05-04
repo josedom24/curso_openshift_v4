@@ -15,7 +15,7 @@ OpenShift soporta varios tipos de almacenamiento que nos ofrecen distintas carac
 * Proporcionados por proveedores de cloud: AWS Elastic Block Store (EBS), Azure, Disk, OpenStack Cinder, ...
 * Propios de Kubernetes/OpenShift:
     * emptyDir: Volumen efímero con la misma vida que el Pod. Usado como almacenamiento secundario o para compartir entre contenedores del mismo Pod. (**Almacenamiento efímero**).
-    * hostPath: Monta un directorio del host en el Pod (usado excepcionalmente, pero es el que nosotros vamos a usar con minikube).
+    * hostPath: Monta un directorio del host en el Pod.
     * ...
 * Habituales en despliegues "on premises": iscsi, nfs, ...
 
@@ -61,9 +61,9 @@ Las políticas de reciclaje de volúmenes también dependen del backend y son:
 |Red Hat OpenShift Data Foundation | ✓ | - | ✓ |
 |VMware vSphere | ✓ | - | ✓ |
 
-## Recursos de openshift para trabajar con almacenamiento
+## Recursos de OpenShift para trabajar con almacenamiento
 
-* Un **PersistentVolumen (PV)** es un objeto que representa los volúmenes disponibles en el cluster. En él se van a definir los detalles del backend de almacenamiento que vamos a utilizar, el tamaño disponible, los modos de acceso, las políticas de reciclaje, etc.
+* Un **PersistentVolumen (PV)** es un objeto que representa los volúmenes disponibles en el clúster. En él se van a definir los detalles del backend de almacenamiento que vamos a utilizar, el tamaño disponible, los modos de acceso, las políticas de reciclaje, etc.
 * Cuando necesitamos usar almacenamiento en nuestro despliegue crearemos un recurso **PersistentVolumenClaim (PVC)**, donde se solicita el tamaño de almacenamiento que necesitamos, modos de acceso, ...
 
 ## Tipos de aprovisionamiento

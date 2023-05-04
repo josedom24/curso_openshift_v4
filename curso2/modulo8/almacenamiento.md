@@ -2,24 +2,24 @@
 
 El uso de volúmenes en OpenShift nos proporcionar la capacidad de que los Pods puedan guardar información, y que los datos de nuestras aplicaciones no se pierdan cuando un Pod se elimina.
 
-Tenemos distintos tipos de fuentes de almacenamiento, que dependerá de la implementación del clúster de OpenShift. 
+Tenemos distintos tipos de fuentes de almacenamiento, que dependerá de la implementación del clúster de OpenShift:
 
 * Proporcionados por proveedores de cloud: AWS Elastic Block Store (EBS), Azure, Disk, OpenStack Cinder, ...
 * Propios de Kubernetes/OpenShift:
     * emptyDir: Volumen efímero con la misma vida que el Pod. Usado como almacenamiento secundario o para compartir entre contenedores del mismo Pod. (**Almacenamiento efímero**).
-    * hostPath: Monta un directorio del host en el Pod (usado excepcionalmente, pero es el que nosotros vamos a usar con minikube).
+    * hostPath: Monta un directorio del host en el Pod.
     * ...
 * Habituales en despliegues "on premises": iscsi, nfs, ...
 
-Cada una de las fuentes de almacenamiento nos puede dar distintas características:
+Cada una de las fuentes de almacenamiento nos pueden dar distintas características:
 
 * Almacenamiento que ofrece: **Filesystem**: El almacenamiento es tipo sistema de fichero; **Block**: El almacenamiento se comparte con un dispositivo de bloque. 
 * Modos de acceso: **ReadWriteOnce**: read-write solo para un nodo (RWO); **ReadOnlyMany**: read-only para muchos nodos (ROX) y **ReadWriteMany**: read-write para muchos nodos (RWX).
 * Políticas de reciclajes: **Retain**: El volumen no se elimina; **Recycle**: Reutilizar contenido y **Delete**: Se borra después de su utilización.
 
-## Recursos de openshift para trabajar con almacenamiento
+## Recursos de OpenShift para trabajar con almacenamiento
 
-* Un **PersistentVolumen (PV)** es un objeto que representa los volúmenes disponibles en el cluster. En él se van a definir los detalles del backend de almacenamiento que vamos a utilizar, el tamaño disponible, los modos de acceso, las políticas de reciclaje, etc.
+* Un **PersistentVolumen (PV)** es un objeto que representa los volúmenes disponibles en el clúster. En él se van a definir los detalles del backend de almacenamiento que vamos a utilizar, el tamaño disponible, los modos de acceso, las políticas de reciclaje, etc.
 * Cuando necesitamos usar almacenamiento en nuestro despliegue crearemos un recurso **PersistentVolumenClaim (PVC)**, donde se solicita el tamaño de almacenamiento que necesitamos, modos de acceso, ...
 
 ## Tipos de aprovisionamiento
