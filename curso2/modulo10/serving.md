@@ -6,12 +6,12 @@ En estos ejemplos, vamos a usar la herramienta de línea de comando `kn` para ma
 
 ![kn](img/kn1.png)
 
-También los puedes bajar en la página de la [documentación oficial](https://docs.openshift.com/container-platform/4.12/serverless/install/installing-kn.html).
+También lo puedes bajar en la página de la [documentación oficial](https://docs.openshift.com/container-platform/4.12/serverless/install/installing-kn.html).
 
 Para la instalación, descomprimimos y copiamos a un directorio que tengamos en el path:
 
     tar -xf kn-linux-amd64.tar.gz
-    sudo cp kn /usr/local/bin
+    sudo install kn /usr/local/bin
     
     kn version
     Version:      v1.7.1
@@ -66,7 +66,7 @@ Indicamos la imagen, el nombre y nos aseguramos que en el tipo de despliegue (**
 
 ## Comprobación de los recursos que se han creado
 
-Si creamos con la aplicación con cualquiera de las tres alternativas, podemos comprobar los recursos que se han creado:
+Si creamos la aplicación con cualquiera de las tres alternativas, podemos comprobar los recursos que se han creado:
 
     oc get ksvc,revision,configuration,route.serving.knative
     NAME                                URL                                                                     LATESTCREATED   LATESTREADY   READY   REASON
@@ -88,13 +88,12 @@ Puedes ver estos recursos también con la herramienta `kn`:
     kn route list
 
 
-Veamos los recursos que se han creado propios de las aplicaciones Serverless:
+Veamos los recursos que se han creado, propios de las aplicaciones Serverless:
 
 * **Service**: El objeto **service.serving.knative.dev** gestiona automáticamente el ciclo de vida de su carga de trabajo para garantizar que la aplicación se despliega y es accesible a través de la red. Crea una ruta, una configuración y una nueva revisión para cada cambio en un servicio creado por el usuario, o recurso personalizado.
 * **Revision**: El objeto **revision.serving.knative.dev** es una instantánea puntual del código y la configuración para cada modificación realizada en la carga de trabajo. 
 * **Route**: El objeto **route.serving.knative.dev** asigna una URL para acceder a una o varias revisiones.
-* **Configuration**: El objeto **configuration.serving.knative.dev** mantiene el estado deseado para su despliegue. Proporciona una separación limpia entre el código y la configuración. Modificar una configuración crea una nueva revisión.
-
+* **Configuration**: El objeto **configuration.serving.knative.dev** mantiene el estado deseado para su despliegue. Proporciona una separación limpia entre el código y la configuración. Cuando modificamos una configuración se crea una nueva revisión.
 
 Realmente podemos comprobar que estos objetos han creado otros objetos, para que la aplicación este desplegada:
 
@@ -139,7 +138,7 @@ Puedes ejecutar la instrucción `watch oc get pod` y comprobar como se crean y e
 
 ## Distribución de tráfico hacía una aplicación Serverless
 
-Esta característica la podemos usar para realizar distintas estrategias de despliegues, por ejemplo una estrategia Blue/Green. Para ello vamos a crear una nueva revisión, creando un nuevo objeto **Revision** modificando la configuración del servicio, por ejemplo cambiando la variable de entorno. Para ello podemos realizar la modificación como hemos con otros objetos de OpenShift:
+Esta característica la podemos usar para realizar distintas estrategias de despliegues, por ejemplo una estrategia Blue/Green. Para ello vamos a crear una nueva revisión, creando un nuevo objeto **Revision** modificando la configuración del servicio, por ejemplo cambiando la variable de entorno. Para ello podemos realizar la modificación como hemos visto con otros objetos de OpenShift:
 
     oc edit ksvc/hello
     ...
@@ -165,7 +164,7 @@ Si accedemos ahora a la ruta de la aplicación, veremos que nos redirige a los P
     curl https://hello-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
     Hello Serverless! v2!
 
-Sin embargo, de una manera muy sencilla podemos redistribuir el tráfico entre cualquier revisión del despliegue, asignando pesos a cada uno de ello y de está manera podemos implementar una estrategia de despliegue Blue/Green.
+Sin embargo, de una manera muy sencilla podemos redistribuir el tráfico entre cualquier revisión del despliegue, asignando pesos a cada uno de ellos y de está manera podemos implementar una estrategia de despliegue Blue/Green.
 
 Por ejemplo, desde la consola web, elegimos la opción **Set traffic distribution**:
 

@@ -8,9 +8,9 @@ Para crear la aplicación Serverless vamos a crear una nueva aplicación usando 
 
 ![kn](img/kn8.png)
 
-Recuerda que el parámetro **Resource type** debe estar definido con la opción **serverless Aplicattion**.
+Recuerda que el parámetro **Resource type** debe estar definido con la opción **Serverless Aplicattion**.
 
-A continuación vamos a crear el generador de eventos de tipo **PingSource**, para ello desde el catálogo de aplicaciones lo vamos a instalar:
+A continuación vamos a crear el generador de eventos de tipo **PingSource**, para ello desde el **catálogo de aplicaciones** lo vamos a instalar:
 
 ![kn](img/kn9.png)
 
@@ -18,7 +18,7 @@ Y realizamos la configuración:
 
 ![kn](img/kn10.png)
 
-En cada evento se va a enviar una información, en este caso hemos indicado un json, hemos definido un cron para que se envíen eventos cada 2 minutos u por último, hemos indicado la fuente de eventos nuestra aplicación Serverless. Desde la topología obtenemos el siguientes esquema:
+En cada evento se va a enviar una información, en este caso hemos indicado un json (`{"message":"Hello world!"}`), hemos definido un cron para que se envíen eventos cada 2 minutos (`*/2 * * * *`) y por último, hemos indicado la fuente de eventos nuestra aplicación Serverless. Desde la topología obtenemos el siguientes esquema:
 
 ![kn](img/kn11.png)
 

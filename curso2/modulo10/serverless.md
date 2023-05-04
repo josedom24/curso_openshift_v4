@@ -5,9 +5,9 @@ Serverless es más adecuado para aplicaciones asíncronas y sin estado, especial
 
 ## Ventajas de Serverless
 
-* **Aprovisionamiento automatizado**: La principal ventaja es que los servidores son totalmente proporcionados por el proveedor serverless, que se encarga de aprovisionarlos, mantenerlos y escalarlos. Esta está asociada a la reducción de costes.
+* **Aprovisionamiento automatizado**: La principal ventaja es que los servidores son totalmente proporcionados por el proveedor serverless, que se encarga de aprovisionarlos, mantenerlos y escalarlos. Esta ventaja está asociada a la reducción de costes.
 * **Enfoque en el desarrollador**: Permite a los desarrolladores centrarse en la lógica de negocio.
-* **Escala a cero**: No necesitamos ejecutar ninguna instancias de aplicación cuando no hay tráfico y reaccionan a las solicitudes entrantes poniéndolas en espera mientras se activan las aplicaciones necesarias.
+* **Escala a cero**: No necesitamos ejecutar ninguna instancia de aplicación cuando no hay tráfico y reaccionan a las solicitudes entrantes poniéndolas en espera mientras se activan las aplicaciones necesarias.
 * **Elasticidad**: Con la infraestructura tradicional, los recursos computacionales se reservan y se pagan por adelantado, mientras que los Serverless sólo se ejecutan cuando se necesitan.
 
 ## Red Hat OpenShift Serverless
@@ -17,16 +17,16 @@ Serverless es más adecuado para aplicaciones asíncronas y sin estado, especial
 OpenShift Serverless se basa en el proyecto de código abierto **Knative**, que nos ofrece dos funcionalidades:
 
 * **Servicio**: Componente encargado del despliegue y escalado automático de aplicaciones.
-* **Eventos**: Infraestructura para consumir y producir eventos que no permite crear aplicaciones usando **Arquitectura dirigida por eventos**, que nos permite tener aplicaciones distribuidas cuyos componentes intercambian **eventos** para la comunicación entre ellos.
+* **Eventos**: Infraestructura para consumir y producir eventos que nos permite crear aplicaciones usando **Arquitectura dirigida por eventos**: desplegar aplicaciones distribuidas cuyos componentes intercambian **eventos** para la comunicación entre ellos.
 
 ### Knative Servig
 
 Knative Serving es el componente responsable de:
 
-* Desplegar aplicaciones
-* Actualizar aplicaciones
-* Enrutar el tráfico a las aplicaciones
-* Auto-escalado de aplicaciones
+* Desplegar aplicaciones.
+* Actualizar aplicaciones.
+* Enrutar el tráfico a las aplicaciones.
+* Auto-escalado de aplicaciones.
 
 Knative Serving crea nuevos despliegues y garantiza que el tráfico sólo se redirige a las versiones operativas de la aplicación. Cuando no hay tráfico, reduce los Pods de aplicación a cero. Si llega nuevo tráfico se escalará de forma automática para servir la petición.
 
@@ -34,7 +34,7 @@ Knative Serving crea nuevos despliegues y garantiza que el tráfico sólo se red
 
 Knative Eventing nos permite utilizar una **arquitectura basada en eventos** con Serverless. Una arquitectura dirigida por eventos se basa en el concepto de relaciones desacopladas entre productores y consumidores de **eventos**.
 
-Los productores de eventos crean eventos, y los sumideros de eventos, o consumidores, reciben eventos. Knative Eventing utiliza peticiones HTTP POST estándar para enviar y recibir eventos entre productores y receptores de eventos. 
+Los productores de eventos crean eventos, y los consumidores de eventos reciben eventos. Knative Eventing utiliza peticiones HTTP POST estándar para enviar y recibir eventos entre productores y receptores de eventos. 
 
 ## Serverless Functions
 
