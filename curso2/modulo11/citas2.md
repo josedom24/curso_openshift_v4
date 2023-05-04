@@ -2,7 +2,7 @@
 
 ## Despliegue de la base de datos mysql
 
-Para hacer el despliegue de la base de datos persistente vamos a usar la plantilla `mysql-persistent`. Veamos los parámetros que poodemos configurar:
+Para hacer el despliegue de la base de datos persistente vamos a usar la plantilla `mysql-persistent`. Veamos los parámetros que podemos configurar:
 
     oc process --parameters mysql-persistent -n openshift
     NAME                    DESCRIPTION                                                             GENERATOR           VALUE
@@ -37,7 +37,6 @@ A continuación nos queda inicializar la base de datos, para ello vamos a copiar
 A continuación copiamos el fichero:
 
     oc cp citas.sql $PODNAME:/tmp/
-
 
 Y finalmente ejecutamos el fichero sql:
 

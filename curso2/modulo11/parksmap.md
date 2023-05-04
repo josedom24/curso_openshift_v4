@@ -14,7 +14,7 @@ Hemos escogido en la vista **Developer**, la opción **+Add -> Conatiner Images*
 
 ![parksmap](img/parksmap1.png)
 
-A continuación, indicamos el nombre de la aplicación, el nombre del despliegue y creamos un recurso **Route**:
+A continuación, indicamos el nombre de la aplicación `workshop`, el nombre del despliegue `parksmap` y creamos un recurso **Route**:
 
 ![parksmap](img/parksmap2.png)
 
@@ -38,11 +38,11 @@ Accedemos a la URL del objeto **Route** y comprobamos que la aplicación está f
 
 Todas las interacciones que hacemos sobre la API de OpenShift son **autenticadas** (¿Quién eres?) y **autorizadas** (¿Estás autorizado a hacer esta operación?).
 
-Muchas de las interacciones que se hacen sobre la API de OpenShift se realizan por el usuario final, pero muchas otras se hacen internamente. Para hacer estas últimas peticiones a la API se utiliza una cuenta especial de usuario, que se llaman **Service Account**.
+Muchas de las interacciones que se hacen sobre la API de OpenShift se realizan por el usuario final, pero muchas otras se hacen internamente. Para hacer estas últimas peticiones a la API se utilizan unas cuentas especiales de usuario, que se llaman **Service Account**.
 
 OpenShift crea automáticamente algunas **Service Account** en cada proyecto. Por ejemplo, hay una **Service Account** que se llama **default** y será la responsable de ejecutar los Pods.
 
-Puede ver los permisos actuales en la consola web: en la vista **Administrator** y escoge la opción **User Management -> RoleBindings**:
+Puede ver los permisos actuales en la consola web: en la vista **Administrator**, escogiendo la opción **User Management -> RoleBindings**:
 
 ![parksmap](img/parksmap6.png)
 
