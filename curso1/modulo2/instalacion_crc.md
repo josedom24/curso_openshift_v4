@@ -10,25 +10,25 @@ Los requisitos necesarios serán:
 * 9Gb de RAM.
 * 35 Gb de almacenamiento.
 
-Los sitemas operativos soportados son: Windows 10 Fall Creators Update (version 1709) os superior, macOS 11 Big Sur os superior, las dos últimas versiones de Red Hat Enterprise Linux/CentOS y Fedora. Ubuntu 18.04 y Debian 10 o superior no están soportadas y reuieren configuración manual.
+Los sistemas operativos soportados son: Windows 10 Fall Creators Update (version 1709) os superior, macOS 11 Big Sur os superior, las dos últimas versiones de Red Hat Enterprise Linux/CentOS y Fedora. Ubuntu 18.04 y Debian 10 o superior no están soportadas y requieren configuración manual.
 
 Para más información de la instalación puedes leer la [documentación oficial](https://crc.dev/crc/).
 
 ## Instalación de crc en Debian/Ubuntu
 
-La instalación la he realizado sobre una versión Debian 11. También he probado la instalación en una versión Uvuntu 22.04.
+La instalación la he realizado sobre una versión Debian 11. También he probado la instalación en una versión Ubuntu 22.04.
 
-La máquina virtual que se va acrear se ejecuta sobre Kvm/libvirt, por loo primero es instalar los paquetes necesarios para que funcione este sistema de virtualziación:
+La máquina virtual que se va a crear, se ejecuta sobre KVM/libvirt, por lo que debemos instalar los paquetes necesarios para que funcione este sistema de virtualización:
 
     sudo apt install qemu-kvm libvirt-daemon libvirt-daemon-system network-manager
 
-Nos tenemos que assegurar que el usuario sin privilegio pertenezaca al grupo `libvirt` para que pueda conectarse con el hypervisor (necesitaremos reinicar la sesión de usuario para que el siguiente comando tenga eefecto):
+Nos tenemos que asegurar que el usuario sin privilegio pertenezca al grupo `libvirt` para que pueda conectarse con el hypervisor (necesitaremos reiniciar la sesión de usuario para que el siguiente comando tenga efecto):
 
     sudo adduser usuario libvirt
 
-A continuación tienes que bajarte la última versión de crc del sistema operativo que estes usando desde la página oficial de descarga (para ello tendrás que hacer login con un cuenta de Red Hat): [https://console.redhat.com/openshift/create/local](https://console.redhat.com/openshift/create/local)
+A continuación tienes que bajarte la última versión de CRC, eligiendo la versión del sistema operativo que estés usando, desde la página oficial de descarga (para ello tendrás que hacer login con un cuenta de Red Hat): [https://console.redhat.com/openshift/create/local](https://console.redhat.com/openshift/create/local)
 
-Además de bajarta la versión de crc, tendrás que bajarte o copiar en el portapapeles un token que durante la instalación tendrás que introducir:
+Además de bajarte la versión de crc, tendrás que bajarte o copiar en el portapapeles un token que durante la instalación tendrás que introducir:
 
 ![crc](img/crc1.png)
 
@@ -43,24 +43,28 @@ Una vez descargado el paquete lo descomprimimos y lo copiamos a un directorio de
     OpenShift version: 4.12.9
     Podman version: 4.4.1
 
-Empezamos la instalación, el siguiente comando configurará de manera adecudad kvm/libvirt y bajará los ficheros necesario (por ejemplo, la imagen base) que se utilizarán posteriormente para crear la máquina virtual:
+Empezamos la instalación, el siguiente comando configurará de manera adecuada KVM/libvirt y bajará los ficheros necesarios (por ejemplo, la imagen base) que se utilizarán posteriormente para crear la máquina virtual:
 
     crc setup
 
-A continuación, aunque no es necesrio, si necesitamos aumentar los recursos de la máquina virtual que vamos a crear podemos hacerlo de la siguiente manera:
+A continuación, aunque no es necesario, si necesitamos aumentar los recursos de la máquina virtual que vamos a crear podemos hacerlo de la siguiente manera:
 
     crc config set cpus 8
     crc config set memory 20480
+
+Esto también es opcional, pero si queremos que durante la instalación se instalen los componentes de telemtría para mostrar los recursos que se están utilizando, debes realizar la siguiente configuración:
+
+    crc config set enable-cluster-monitoring true
 
 Finalmente creamos la máquina virtual, que ejecutará el clúster de OpenShift v4:
 
     crc start
 
-Durante el proceso nos pedirán que introduzcamos el token que hemos bajao o copiado:
+Durante el proceso nos pedirán que introduzcamos el token que hemos bajado o copiado:
 
     ? Please enter the pull secret  
 
-Después de unos mínutos, el clúster estará preparado y nos dara información para acceder:
+Después de unos minutos, el clúster estará preparado y nos dará información para acceder:
 
     Started the OpenShift cluster.
 
@@ -69,7 +73,7 @@ Después de unos mínutos, el clúster estará preparado y nos dara información
 
     Log in as administrator:
       Username: kubeadmin
-      Password: 7CCZB-XLaxk-ELS2G-GrGaw
+      Password: xxxxxxxxxxxxxxxxxxxxxxxxx
 
     Log in as user:
       Username: developer
@@ -87,7 +91,7 @@ Durante la instalación en Debian 11, al ejecutar el comando `crc start` me apar
 
 Es decir, al intentar usar la imagen base que se ha descargado y ha guardado en el directorio `~/.crc/cache` nos encontramos con problemas de permiso y no se puede crear la máquina virtual.
 
-La configuracionde seguridad de AppArmor en Debian 11, evita que kvm/libvirt utilice imágenes bases que no estén guardadas en determinados directorios. Por lo tanto hay que modificar la configuración para que se permita el uso de esta imagen base que está guardada en este directorio, para ello, modifcamos el fichero `/etc/apparmor.d/libvirt/TEMPLATE.qemu` y añadimos la siguiente línea:
+La configuracion de seguridad de AppArmor en Debian 11, evita que kvm/libvirt utilice imágenes bases que no estén guardadas en determinados directorios. Por lo tanto hay que modificar la configuración para que se permita el uso de esta imagen base que está guardada en este directorio, para ello, modificamos el fichero `/etc/apparmor.d/libvirt/TEMPLATE.qemu` y añadimos la siguiente línea:
 
     sudo nano /etc/apparmor.d/libvirt/TEMPLATE.qemu
 
@@ -96,16 +100,16 @@ La configuracionde seguridad de AppArmor en Debian 11, evita que kvm/libvirt uti
       /home/jose/.crc/cache/crc_libvirt_4.12.9_amd64/crc.qcow2 rk,
     }
 
-Y posteriormente reinciamos AppArmor:
+Y posteriormente reiniciamos AppArmor:
 
     sudo systemctl restart apparmor
 
-Y ya podemos realizar la instalación de CRC siin problemas.
+Y ya podemos realizar la instalación de CRC sin problemas.
 
 ## Algunos detalles de la instalación
 
-Como hemos dicheho todos los ficheros relacionados con CRC se guardan en el directorio `~/.crc`.
-La configuración de acceso al clúster, al igual que los clústers de kubernetes se guarda en el fichero `~/.kube/config`. En nuestro caso:
+Como hemos dicho, todos los ficheros relacionados con CRC se guardan en el directorio `~/.crc`.
+La configuración de acceso al clúster, al igual que los clúster de kubernetes se guarda en el fichero `~/.kube/config`. En nuestro caso:
 
 ```yaml
 apiVersion: v1
@@ -138,11 +142,11 @@ users:
 ```
 ## Algunos comando útiles de crc
 
-Cada vez que empecemos a utiliizar CRC inciamos la máquina virtual con:
+Cada vez que empecemos a utilizar CRC iniciamos la máquina virtual con:
 
     crc start
 
-Cuando terminemos de trabajr, para mos la máquina con:
+Cuando terminemos de trabajar, paramos la máquina con:
 
     crc stop
 
@@ -154,7 +158,7 @@ Podemos acceder a la consola web podemos acceder a la URL `https://console-opens
 
     crc console
 
-Si queremos la información para loguearno con el comando `oc` podemos ejecutar:
+Si queremos la información para loguearnos con el comando `oc` podemos ejecutar:
 
     crc console --credentials
     To login as a regular user, run 'oc login -u developer -p developer https://api.crc.testing:6443'.
