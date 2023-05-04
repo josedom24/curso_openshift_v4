@@ -12,20 +12,20 @@ Vamos a usar una herramienta de línea de comandos llamada `tkn`, puedes seguir 
 Vamos a desplegar una aplicación muy sencilla de votaciones:
 
 * [frontend](https://github.com/josedom24/pipelines-vote-ui): Aplicación construida con Python Flask que nos permite votar.
-* [backend](https://github.com/josedom24/pipelines-vote-api): Aplicación escrita en Go que nos permite guardar la votaciones.
+* [backend](https://github.com/josedom24/pipelines-vote-api): Aplicación escrita en Go que nos permite guardar las votaciones.
 
 En el directorio `k8s` del repositorio se encuentran los ficheros yaml que posibilitan el despliegue de la aplicación.
 
 ## Instalación de Tasks
 
-Las **Tasks** consisten en una serie de pasos que se ejecutan secuencialmente. Las tareas se ejecutan mediante la creación de **TaskRuns**. Un **TaskRun** creará un Pod y cada paso se ejecuta en un contenedor independiente dentro del mismo pod. Podemos definir entradas y salidas para interactuar con otras tareas en el pipeline.
+Las **Tasks** consisten en una serie de pasos que se ejecutan de forma secuencial. Las tareas se ejecutan mediante la creación de **TaskRuns**. Un **TaskRun** creará un Pod y cada paso se ejecuta en un contenedor independiente dentro del mismo pod. Podemos definir entradas y salidas para interactuar con otras tareas en el pipeline.
 
 Vamos a instalar dos tareas:
 
 1. `apply-manifests`: responsable de ejecutar los ficheros yaml que se encuentran en el directorio`k8s` y por lo tanto aplicar los posibles cambios en los recurso que estamos creando.
 2. `update-deployment`: responsable de actualizar el objeto **Deployment**, en concreto cambiar el nombre y la imagen.
 
-Para ello tenemos el fichero `01_apply_manifest_task.yaml` con el siguiente [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/01_apply_manifest_task.yaml) y el fichero `02_update_deployment_task.yaml` con este [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/02_update_deployment_task.yaml)
+Para ello tenemos el fichero `01_apply_manifest_task.yaml` con el siguiente [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/01_apply_manifest_task.yaml) y el fichero `02_update_deployment_task.yaml` con este [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/02_update_deployment_task.yaml).
 
 Creamos las tareas ejecutando:
 
@@ -135,7 +135,7 @@ En concreto los parámetros que hay que proporcionar son:
 
 * `deployment-name`: Nombre del despliegue que tiene que coincidir con el que se ha indicado como nombre del **Deployment** en el fichero yaml correspondiente en el repositorio `k8s`.
 * `git-url`: URL del repositorio GitHub que queremos desplegar.
-* `git-revision`: Rama del repositorio GitHub, pode defecto es `master`.
+* `git-revision`: Rama del repositorio GitHub, por defecto es `master`.
 * `IMAGE`: Nombre de la imagen que vamos a construir. En nuestro caso indicaremos el registro interno de OpenShift. Recuerda que el registro interno tiene la siguiente URL, donde hay que indicar el nombre del proyecto, en mi caso: 
 
         `image-registry.openshift-image-registry.svc:5000/josedom24-dev`
@@ -163,9 +163,9 @@ Y si pulsamos sobre el **Pipeline** obtenemos información detallada del mismo:
 
 ## Disparar el pipeline
 
-Como indicado anteriormente, para que las distintas tareas del pipeline compartan información en el **Workspaces**, necesitamos asociar un volumen para que se guarde la información de manera compartida entre los distintos Pods que ejecutan las tareas. Para crear el volumen vamos a usar un objeto **PersistentVolumeClaim** que esta definido en el fichero `03_persistent_volume_claim.yaml` y que tiene este [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/03_persistent_volume_claim.yaml).
+Como hemos indicado anteriormente, para que las distintas tareas del pipeline compartan información en el **Workspaces**, necesitamos asociar un volumen para que se guarde la información de manera compartida entre los distintos Pods que ejecutan las tareas. Para crear el volumen vamos a usar un objeto **PersistentVolumeClaim** que esta definido en el fichero `03_persistent_volume_claim.yaml` y que tiene este [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/03_persistent_volume_claim.yaml).
 
-Para disparar la primera ejecución del **Pipeline** que creara el primer **PipelineRun** vamos a usar la herramienta `tk`, ejecutando la siguiente instrucción para la aplicación `backend`:
+Para disparar la primera ejecución del **Pipeline** que creará el primer **PipelineRun** vamos a usar la herramienta `tk`, ejecutando la siguiente instrucción para la aplicación `backend`:
 
     tkn pipeline start build-and-deploy \
         -w name=shared-workspace,volumeClaimTemplateFile=https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/03_persistent_volume_claim.yaml \
@@ -212,10 +212,10 @@ Podemos ver los recursos que hemos creado:
 
 ![pipeline](img/pipeline3.png)
 
-Y si accedemos a la aplicaciones, vemos que está funcionando:
+Y si accedemos a la aplicación, vemos que está funcionando:
 
 ![pipeline](img/pipeline4.png)
 
-Si haces algún cambio en las aplicaciones y quieres volver a lanzar el depliegue, tendrías que ejecutar:
+Si haces algún cambio en las aplicaciones y quieres volver a lanzar el despliegue, tendrías que ejecutar:
 
     tkn pipeline start build-and-deploy --last

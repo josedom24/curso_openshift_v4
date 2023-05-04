@@ -1,13 +1,13 @@
 # Introducción a OpenShift Pipelines
 
-**OpenShift Pipelines** es una solución de integración y entrega continuas (CI/CD) nativa de la nube para crear pipelines con Tekton. **Tekton** es un framework CI/CD flexible, nativo de Kubernetes y de código abierto que permite automatizar despliegues en distintas plataformas.
+**OpenShift Pipelines** es una solución de integración y entrega continua (CI/CD) nativa de la nube para crear pipelines con Tekton. **Tekton** es un framework CI/CD flexible, nativo de Kubernetes y de código abierto que permite automatizar despliegues en distintas plataformas.
 
 Tekton define una serie de recursos de Kubernetes/OpenShift con el fin de estandarizar los conceptos de de IC/DC:
 
-* `Task`: un número de pasos reutilizables que realizan una tarea específica (por ejemplo, construir una imagen de contenedor).
-* `Pipeline`: la definición del pipeline y las tareas que debe realizar.
-* `TaskRun`: la ejecución y el resultado de ejecutar una instancia de tarea.
-* `PipelineRun`: la ejecución y el resultado de ejecutar una instancia de pipeline, que incluye un número de TaskRuns.
+* `Task`: Un número de pasos reutilizables que realizan una tarea específica (por ejemplo, construir una imagen de contenedor).
+* `Pipeline`: La definición del conjunto de tareas que se deben ejecutar.
+* `TaskRun`: La ejecución y el resultado de ejecutar una instancia de tarea.
+* `PipelineRun`: La ejecución y el resultado de ejecutar una instancia de pipeline, que incluye un número de TaskRuns.
 
 ![tekton](img/tekton-architecture.svg)
 
