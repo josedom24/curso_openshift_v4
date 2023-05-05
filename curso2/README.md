@@ -54,7 +54,7 @@
 	* [Creación de plantillas a partir de objetos existentes](modulo6/crear_template2.md)
 	* [Despliegue de una aplicación con plantillas](modulo6/php-template.md)
 	* [Uso de Helm en OpenShift desde la consola web](modulo6/helm-web.md)
-	* [Uso de Helm en OpenShift desde la línea de comandos TERMINAR!!!](modulo6/helm-cli.md)
+	* [Uso de Helm en OpenShift desde la línea de comandos](modulo6/helm-cli.md)
 
 7. Almacenamiento en OpenShift
 	* [Introducción al almacenamiento en OpenShift](modulo7/almacenamiento.md)
