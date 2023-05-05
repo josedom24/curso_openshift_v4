@@ -11,9 +11,9 @@ Tenemos varias soluciones para trabajar con OpenShift v4:
 * [OKD (Origin Community Distribution)](https://www.okd.io/): OKD es la versión impulsada por la comunidad de OpenShift que está disponible de forma gratuita y es totalmente de código abierto.
 * [CRC (CodeReady Containers)](https://developers.redhat.com/products/openshift-local/overview): CRC es una versión ligera y portátil de OpenShift que se puede ejecutar en un ordenador personal. 
 
-## Developer Sandbox us CRC
+## Developer Sandbox y CRC
 
-Estas dos opciones son las que vamos a usar en este curso.
+**RedHat OpenShift Dedicated Developer Sandbox** y **CRC (CodeReady Containers)** son las opciones que vamos a usar en este curso.
 
 ### RedHat OpenShift Dedicated Developer Sandbox
 
