@@ -4,7 +4,7 @@ Podemos instalar el cliente de Helm, para realizar la gestión de charts de Helm
 
 ## Instalación de Helm chart
 
-Si accedemos ala consola web, en la parte superior derecha lel botón **?** y la opción **Command line tools**, nos parece la página web de descargar del Helm CLI: [Download Helm](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/).
+Si accedemos a la consola web, en la parte superior derecha lel botón **?** y la opción **Command line tools**, nos parece la página web de descargar del Helm CLI: [Download Helm](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/).
 
 Podemos descargarnos la versión que necesitemos y copiar el binario en un directorio del PATH, por ejemplo en Linux:
 
@@ -14,7 +14,7 @@ Podemos descargarnos la versión que necesitemos y copiar el binario en un direc
     helm version
     version.BuildInfo{Version:"v3.10.1+2.el8", GitCommit:"add6b4d0bfd122afc3ec403812efb2079ee5a2f0", GitTreeState:"clean", GoVersion:"go1.18.4"}
 
-Aunque desde el cliente `helm` podemos gestionar el ciclo de visa de las aplicaciones instaladas en nuestro clúster:
+Aunque desde el cliente `helm` podemos gestionar el ciclo de vida de las aplicaciones instaladas en nuestro clúster:
 
     helm ls
     NAME   	NAMESPACE    	REVISION	UPDATED                                	STATUS  	CHART        	APP VERSION
@@ -47,48 +47,56 @@ Y para buscar información acerca de ese chart:
 
 ## Instalación de un chart helm desde la línea de comandos
 
-oc project default
-oc adm policy add-scc-to-user anyuid -z default
+Podemos buscar más repositorios de charts buscando en la página [Artifact Hub](https://artifacthub.io/), por ejemplo podemos añadir el repositorio de charts de Bitnami de la siguiente manera:
 
-helm install wp bitnami/wordpress --set wordpressBlogName="Curso OpenShiift v4"
+    helm repo add bitnami https://charts.bitnami.com/bitnami
+    "bitnami" has been added to your repositories
 
-W0502 21:19:11.394096   34829 warnings.go:70] would violate PodSecurity "restricted:latest": unrestricted capabilities (container "mariadb" must set securityContext.capabilities.drop=["ALL"]), seccompProfile (pod or container "mariadb" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
-NAME: wp
-LAST DEPLOYED: Tue May  2 21:19:11 2023
-NAMESPACE: default
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-CHART NAME: wordpress
-CHART VERSION: 15.2.41
-APP VERSION: 6.1.1
+Y podemos comprobar que hemos añadido un nuevo repositorio:
 
-** Please be patient while the chart is being deployed **
+    helm repo list
+    NAME                	URL                                               
+    openshift           	https://charts.openshift.io/      
+    bitnami             	https://charts.bitnami.com/bitnami                
 
-Your WordPress site can be accessed through the following DNS name from within your cluster:
+Actualizamos la lista de charts ofrecidos por los repositorios:
 
-    wp-wordpress.default.svc.cluster.local (port 80)
+    helm repo update
 
-To access your WordPress site from outside the cluster follow the steps below:
+Como hemos comentado anteriormente, los charts los podemos buscar en la página [Artifact Hub](https://artifacthub.io/) o los podemos buscar desde la línea de comandos, por ejemplo si queremos buscar un chart relacionado con nginx:
 
-1. Get the WordPress URL by running these commands:
+    helm search repo nginx
+    NAME                   	CHART VERSION	APP VERSION	DESCRIPTION                                       
+    bitnami/nginx         	14.1.0       	1.24.0     	NGINX Open Source is a web server that can be a...
+    ...
 
-  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
-        Watch the status with: 'kubectl get svc --namespace default -w wp-wordpress'
+Todos los ficheros yaml que forman parte de un chart están parametrizados, es decir cada propiedad tiene un valor por defecto, pero a la hora de instalarlo se puede cambiar. Por ejemplo, ¿qué tipo de **Service** se creará al instalar el chart `bitnami/nginx`? Por defecto, el parámetro `service.type` tiene como valor `LoadBalancer`, pero si queremos un **Service** de tipo `NodePort`, podremos redefinir este parámetro a la hora de instalar el chart.
 
-   export SERVICE_IP=$(kubectl get svc --namespace default wp-wordpress --template "{{ range (index .status.loadBalancer.ingress 0) }}{{ . }}{{ end }}")
-   echo "WordPress URL: http://$SERVICE_IP/"
-   echo "WordPress Admin URL: http://$SERVICE_IP/admin"
+¿Y cómo sabemos los parámetros que tiene definido cada chart y sus valores por defecto?. Estudiando la documentación del chart en Artifact Hub. En concreto para el chart con el que estamos trabajando, accediendo a su [página de de documentación](https://artifacthub.io/packages/helm/bitnami/nginx). También podemos obtener esta información ejecutando el siguiente comando:
 
-2. Open a browser and access WordPress using the obtained URL.
+    helm show all bitnami/nginx
 
-3. Login with the following credentials below to see your blog:
+Vamos a desplegar este chart modificando el parámetro `service.type` como `ClusterIP` ya que luego crearemos un recurso **Route** para acceder a él.
 
-  echo Username: user
-  echo Password: $(kubectl get secret --namespace default wp-wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
+    helm install web bitnami/nginx --set service.type=ClusterIP 
 
+Podemos listar los charts que tenemos instalados:
 
+    helm ls
+    NAME	NAMESPACE    	REVISION	UPDATED                                 	STATUS  	CHART       	APP VERSION
+    web 	josedom24-dev	1       	2023-05-05 21:19:39.759567746 +0200 CEST	deployed	nginx-14.1.0	1.24.0  
 
+Los nombres de los recursos que se han creado son del tipo `<nombre-instancia>-<nombre-chart>, por ejemplo:
 
-oc get secret --namespace default wp-wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d
+    oc get all -o name
+    service/web-nginx
+    deployment.apps/web-nginx
+    ...
+
+Podemos crear la ruta de acceso:
+
+    oc expose service/web-nginx
+
+Y acceder para comprobar que funciona. Finalmente podemos borrar la aplicación desplegada con:
+
+    helm uninstall web
