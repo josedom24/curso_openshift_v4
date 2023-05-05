@@ -34,7 +34,7 @@ Nos descargamos un fichero comprimido `oc.tar`, lo descomprimimos y lo copiamos 
     tar xvf oc.tar
     sudo install oc /usr/local/bin
 
-## Configuración de oc
+### Configuración de oc
 
 Una vez que tenemos instalado la herramienta `oc`, el siguiente paso el realizar el login en nuestro clúster. En el caso de **RedHat OpenShift Dedicated Developer Sandbox**, la autentificación se hace por medio de un token.
 
