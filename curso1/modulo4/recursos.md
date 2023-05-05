@@ -1,48 +1,46 @@
-# Recursos que nos ofrece OpenShift para el acceso a las aplicaciones
+# Recursos que nos ofrece OpenShift para desplegar aplicaciones
 
-## Services
+## Pods
 
-Los servicios ([Services](https://kubernetes.io/docs/concepts/services-networking/service/)) nos permiten acceder a las aplicaciones que hemos desplegado en el cluster.
+**La unidad mínima de ejecución en OpenShift es el Pod**. De forma genérica, un Pod representa un conjunto de contenedores que comparten almacenamiento y una única IP. Al ejecutar un Pod, se ejecutan uno o varios contenedores, según las necesidades:
 
-* Un **Service** es una abstracción que **nos permite acceder a un conjunto de Pods** (que se han creado a partir de un Deployment) que implementan una aplicación (Por ejemplo: acceder a un servidor web, a una servidor de base de datos, a un servicio que forma parte de una aplicación, ...).
-* A cada Pod se le asigna una IP a la que no se puede acceder directamente, por lo tanto necesitamos un **Service** que nos ofrece **una dirección virtual (CLUSTER-IP) y un nombre** que identifica al conjunto de Pods que representa, al cual nos podemos conectar.
-* La conexión al **Service** se puede realizar **desde otros Pods o desde el exterior** (mediante la generación aleatoria de un puerto). Por ejemplo, si tenemos una aplicación formada por dos **Services**: servidor web y servidor de base de datos, tendremos que acceder desde el exterior al servidor web, y acceder al servidor de base de datos desde el servidor web. En principio no será necesario acceder al servidor de base de datos desde el exterior.
-* Si el Deployment que hemos creado tiene más de un Pod asociado, el **Service** que representa el acceso a esta aplicación **balanceará la carga** entre los Pods con una política Round Robin.
-* En el cluster existirá un componente que nos ofrece un **servicio DNS**. Cada vez que creamos un **Service** se actualizará el DNS para resolver el nombre que hemos asignado al **Service** con la IP virtual (CLUSTER-IP) que se le ha asignado.
+* En la mayoría de los casos y siguiendo el principio de un proceso por contenedor, un Pod ejecutará un contenedor que ejecuta un sólo proceso.
+* En determinadas circunstancias será necesario ejecutar más de un proceso en el mismo "sistema", como en los casos de procesos
+  fuertemente acoplados, en esos casos, tendremos más de un contenedor dentro del Pod. Cada uno de los contenedores ejecutando
+  un solo proceso, pero pudiendo compartir almacenamiento y una misma dirección IP como si se tratase de un sistema ejecutando múltiples
+  procesos. Ejemplo: servidor web nginx con un servidor de aplicaciones PHP-FPM.
 
-### Tipos de Services
+Un aspecto muy importante que hay que ir asumiendo es que los Pods son **efímeros**, se lanzan y en determinadas circunstancias se paran o se destruyen, creando en muchos casos nuevos Pods que sustituyen a los anteriores. Esto tiene importantes ventajas a la hora de realizar modificaciones en los despliegues en producción, pero tiene una consecuencia directa sobre la información que pueda tener almacenada el Pod, por lo que tendremos que utilizar algún mecanismo adicional cuando necesitemos que la información sobreviva a un Pod.
 
-#### ClusterIP
+## ReplicaSet
 
-Solo se permite el acceso interno a un **Service** de este tipo. Es decir, si tenemos un despliegue con una aplicación a la que no es necesario acceder desde el exterior, crearemos un **Service** de este tipo para que otras aplicaciones puedan acceder a ella (por ejemplo, una base de datos). Es el tipo por defecto. 
+**ReplicaSet** es un recurso de Kubernetes que asegura que siempre se ejecuta un número de réplicas concreto de un Pod determinado. Por lo tanto, nos garantiza que un conjunto de Pods siempre están funcionando y disponibles.
 
-![clusterip](img/clusterip.png)
+Un recurso ReplicaSet controla un conjunto de Pods y es el responsable de que estos Pods siempre estén ejecutándose (**Tolerancia a fallos**) y de aumentar o disminuir las réplicas de dicho Pod (**Escalabilidad dinámica**). Estas réplicas de los Pods se ejecutarán en nodos distintos del clúster.
 
-#### NodePort
+El ReplicaSet va a hacer todo lo posible para que el conjunto de Pods que controla siempre se estén ejecutando. Por ejemplo: si el nodo del clúster donde se están ejecutando una serie de Pods se apaga, el ReplicaSet creará nuevos Pods en otro nodo para tener siempre ejecutando el número que hemos indicado. Si un Pod se para por cualquier problema, el ReplicaSet intentará que vuelva a ejecutarse  para que siempre tengamos el número de Pods deseado.
 
-Abre un puerto, para que el **Service** sea accesible desde el exterior. Por defecto el puerto generado está en el rango de 30000:40000. Para acceder usamos la ip del servidor master del cluster y el puerto asignado.
+## Deployment
 
-![nodeport](img/nodeport.png)
+El despliegue o **Deployment** es la unidad de más alto nivel que podemos gestionar en OpenShift.
 
-#### LoadBalancer
+¿Qué ocurre cuando creamos un nuevo recurso Deployment?
 
-Este tipo sólo está soportado en servicios de cloud público (GKE, AKS o AWS). El proveedor asignará un recurso de balanceo de carga para el acceso a los **Services**. Si usamos un cloud privado como OpenStack, necesitaremos un plugin para configurar el funcionamiento. Este tipo de **Service** no lo vamos a utilizar en el presente curso.
+* La creación de un Deployment conlleva la creación de un ReplicaSet que controlará un conjunto de Pods creados a partir de la versión de la imagen que se ha indicado.
+* Si hemos desarrollado una nueva versión de la aplicación y hemos creado una nueva imagen con la nueva versión, podemos modificar el Deployment indicando la nueva versión de la imagen. En ese momento se creará un nuevo ReplicaSet que controlará un nuevo conjunto de Pods creados a partir de la nueva versión de la imagen (habremos desplegado una nueva versión de la aplicación).
+* Por lo tanto podemos decir que un Deployment va guardando un historial con los ReplicaSet que se van creando al ir cambiado la versión de la imagen. El ReplicaSet que esté activo en un determinado momento será el responsable de crear los Pods con la versión actual de la aplicación.
+* Si tenemos un historial de ReplicaSet según las distintas versiones de la imagen que estamos utilizando, podemos, de una manera sencilla, volver a una versión anterior de la aplicación (**Rollback**).
 
-![loadbalancer](img/loadbalancer.png)
+Por la manera de trabajar de un Deployment, podemos indicar las funciones que nos aporta:
 
-## Ingress
+* Control de réplicas
+* Escalabilidad de Pods
+* Actualizaciones continuas
+* Despliegues automáticos
+* Rollback a versiones anteriores
 
-Un [Ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) que nos permite utilizar un proxy inverso (HAproxy, nginx, traefik,...) que por medio de reglas de encaminamiento que obtiene de la API de Kubernetes, nos permite el acceso a nuestras aplicaciones por medio de nombres.
+## Otros recursos para el despliegue de aplicaciones
 
-![ingress](img/ingress.png)
-
-## Routes
-
-Un recurso **Route** es un recurso de OpenShift, muy similar al recurso **Ingress**, que permite exponer una aplicación a través de una URL personalizada y fácilmente recordable.
-
-Cuando se crea una ruta para una aplicación en OpenShift, se genera una URL única que se asocia con un servicio.
-
-La ventaja de usar rutas en OpenShift es que permiten a los desarrolladores desacoplar la URL pública de acceso a una aplicación de la URL interna del clúster. Esto significa que la aplicación puede moverse entre diferentes servidores o entornos de desarrollo sin que los usuarios tengan que actualizar sus marcadores o enlaces a la aplicación.
-
-Además también permiten a los desarrolladores configurar HTTPS, el balanceo de carga, la autenticación y la autorización, lo que ayuda a mejorar la seguridad y la disponibilidad de la aplicación expuesta.
+* OpenShift nos permite desplegar aplicaciones con dos recursos propios: **DeploymentConfig** y **Deployment Serverless**. Estos recursos no lo estudiaremos en este curso.
+* Además para desplegar aplicaciones que requieren de otras características veremos más adelante el uso de recursos como el **StatefulSet**, **DaemonSet**, **Job**,...
 
