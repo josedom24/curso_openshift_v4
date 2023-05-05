@@ -1,10 +1,9 @@
 # Curso 2: OpenShift v4 como PaaS
 
 1. Introducción a OpenShift v4
-	* Cloud Computing
-	* PaaS: Plataforma como servicio
-	* OpenShift como PaaS
-	* Plataformas para trabajar con OpenShift v4
+	* [Cloud Computing PaaS: Plataforma como servicio](modulo1/paas.md)
+	* OpenShift la plataforma PaaS de RedHat
+	* [Plataformas para trabajar con OpenShift v4](modulo1/plataformas.md)
 
 2. Despliegue de aplicaciones en OpenShift
 	* [Introducción al despliegue de aplicaciones en OpenShift](modulo2/introduccion.md)

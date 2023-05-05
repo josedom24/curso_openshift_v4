@@ -7,7 +7,7 @@ Como hemos comentado, **CRC (CodeReady Containers)** nos permite hacer una insta
 Entre las similitudes podemos señalar:
 
 * Son **plataformas de prueba**, que nos permiten realizar pruebas sobre un clúster de OpenShift v4. No se pueden usar para puesta en producción.
-* Nos ofrecen las últimas versiones de la plataforma OpenShift v4.
+* Nos ofrecen la última versión de la plataforma OpenShift v4.
 * Aunque con algunas limitaciones, son totalmente operativas, podemos trabajar con la mayoría de los recursos ofrecidos por la plataforma.
 
 ## Diferencias
@@ -31,7 +31,7 @@ Entre las similitudes podemos señalar:
     * CRC: Al tener un sólo nodo en el clúster, los volúmenes ofrecidos corresponden a directorios en el host. Es suficiente para simular el almacenamiento en un clúster con un único nodo, ya que todos los contenedores se ejecutan en la misma máquina.
     * Developer SandBox: Al estar construida en el AWS, el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**.
 
-## ¿Qué vamos a usar?
+## ¿Qué plataforma vamos a usar en este curso?
 
 En este curso vamos a usar principalmente **CRC**, aunque algunos ejercicios lo vamos a realizar sobre **RedHat OpenShift Dedicated Developer Sandbox** por alguna característica específica, por ejemplo, por ser un clúster con varios nodos de computación.
 
