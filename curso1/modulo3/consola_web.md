@@ -1,10 +1,11 @@
-# Visión general de la consola web
+# La consola web en CRC
 
-Tenemos varias formas de interactuar con nuestro clúster de OpenShift:
+La consola WEB en la instalación de OpenShift con CRC, es similar a la que hemos estudiado en **RedHat OpenShift Dedicated Developer Sandbox**, teniendo en cuenta algunas diferencias:
 
-* Usando la **consola web**, una aplicación web que nos permite gestionar todos los recursos del clúster.
-* Usando la **herramienta de línea de comandos oc**, que nos permite gestionar los recursos con un comando desde la terminal. Puede ser mucho más útil a la hora de automatizar operaciones.
-* Accediendo directamente a la **API** que nos proporciona el nodo maestro del clúster. Podríamos hacer peticiones HTTP directamente a la API restful para gestionar los recursos.
+* Con CRC no tenemos todas las funcionalidades ofrecidas con **RedHat OpenShift Dedicated Developer Sandbox**, aunque podemos añadirlas con la instalación de nuevos **Operadores**. Por lo tanto faltan opciones como: Pipelines, Serverless,...
+* En **RedHat OpenShift Dedicated Developer Sandbox** accedemos a la consola web con un usuario sin privilegios, por lo que muchas opciones no la tenemos disponibles por falta de autorización. Con CRC ocurre lo mismo si accedemos con el usuario `developer`, sin embargo, al acceder con el usuario privilegiado `kubeadmin` tendremos a nuestras disposición todas las opciones de configuración.
+
+## Acceso a la consola web
 
 Para acceder a la consola web, usamos la URL: [https://console-openshift-console.apps-crc.testing](https://console-openshift-console.apps-crc.testing) y nos pide que hagamos login:
 
@@ -12,40 +13,25 @@ Para acceder a la consola web, usamos la URL: [https://console-openshift-console
 
 Usamos el usuario `developer` o el usuario `kubeadmin` para acceder con un usuario normal o un usuario administrador. Las opciones serán las mismas, pero como hemos visto el usuario `developer` no tendrá acceso a algunos recursos.
 
-En este apartado vamos a ofrecer una vista general de la consola web. La consola web, nos permite trabajar con ella usando dos vistas distintas: la de Administrador y la de Desarrollador.
+Al igual que hemos visto en **RedHat OpenShift Dedicated Developer Sandbox**, tenemos dos vistas para interactuar con los recursos de OpenShift:
 
-## Consola web: vista Developer
+**Developer**, los usuarios tienen acceso a herramientas para desarrollar, implementar y supervisar aplicaciones en el clúster de OpenShift.
+**Administrator**, los usuarios tienen acceso a herramientas para administrar el clúster de OpenShift y las aplicaciones que se ejecutan en él. 
 
-**En la vista Developer**, los usuarios tienen acceso a herramientas para desarrollar, implementar y supervisar aplicaciones en el clúster de OpenShift.
+## Gestión de proyectos en la consola web
 
-![vista](img/web2.png)
+En al instalación local de OpenShift con CRC, hemos visto que tenemos la posibilidad de gestionar nuestros proyectos de trabajo. Al igual que vimos en **RedHat OpenShift Dedicated Developer Sandbox**, podemos obtener la información del proyecto actual en el que estamos trabajando, para ello escogemos en la vista **Developer**, la opción **Project**:
 
-Algunas de las opciones que tenemos disponibles en esta vista son:
+![web](img/web2.png)
 
-* **+Add**: Tenemos a nuestra disposición una página donde podemos escoger entre los distintos mecanismos que nos ofrece OpenShift para crear aplicaciones en el clúster: desde un repositorio Git, desde el catálogo de aplicaciones, desde imágenes de contenedores, desde ficheros YAML,... 
-* **Topology**: En este apartado vemos gráficamente los recursos que tenemos creados en el clúster y de una manera sencilla podemos acceder a ellos para su gestión.
-* **Observe**: En este apartado tenemos las herramientas de monitorización y supervisión. Podemos ver paneles gráficos con el consumo de recursos (CPU, memoria, uso de la red,...), elegir distintas métricas, las alertas que hemos definido o los eventos que han ocurrido en el clúster.
-* **Search**: Nos permite, de una manera sencilla, buscar los recursos que hemos creado en el clúster, pudiendo filtrar por las etiquetas.
-* **Build**: En esta opción accedemos a los recursos **Builds** que hemos creado y que nos permiten la construcción automática de imágenes.
-* **Helm**: Nos permite la configuración de la herramienta Helm, que nos proporciona una manera rápida y sencilla de realizar instalaciones en nuestro clúster.
-* **Project**: Nos permite gestionar los proyectos a los que tenemos acceso.
-* Desde la opción **Search**, podemos escoger un recurso de la API y "engancharlo" en el menú de navegación de la vista Developer, por defecto nos encontramos los recursos **ConfigMaps** y **Secrets**.
+Obtenemos la información del proyecto actual, y tenemos la opción de cambiar el proyecto activo. Además, con el botón **Create Project**, tenemos la posibilidad de crear un nuevo proyecto. Y en el desplegable **Actions** tenemos las opciones de editar o borrar el proyecto actual.
 
-## Consola web: vista Administrator
+Si pulsamos sobre el botón **Create Project**, aparece un sencillo formulario que nos posibilita la creación de un nuevo proyecto:
 
-**En la vista Administrator**, los usuarios tienen acceso a herramientas para administrar el clúster de OpenShift y las aplicaciones que se ejecutan en él. 
+![web](img/web3.png)
 
-![vista](img/web3.png)
+Desde la vista **Administrator**, la opción **Home->Projects** podemos ver la lista de proyectos que tenemos disponibles:
 
-Algunas de las opciones que tenemos disponibles en esta vista son:
+![web](img/web4.png)
 
-* **Home**: Nos da acceso a los proyectos definidos en el clúster, a la opción de búsqueda de recursos, a un explorador de los recursos de la API y a los eventos que han ocurrido en el clúster.
-* **Operators**: Los operadores nos permiten añadir funcionalidades a nuestro clúster. 
-* **Workloads**: Nos permite la gestión de los recursos de la API relacionados con el despliegue de aplicaciones: **Deployment**, **ReplicaSet**, **Pod**, ...
-* **Networking**: Nos permite la gestión de todos los recursos de la API que nos permiten el acceso a las aplicaciones: **Service**, **Routes**,...
-* **Storage**: Nos da acceso a la gestión de los recursos relacionados con el almacenamiento: **PersistentVolumeClaim**, **PersitentVolume**,...
-* **Build**: En esta opción accedemos a los recursos **Builds** que hemos creado y que nos permiten la construcción automática de imágenes. Nos ofrece más opciones que en la vista Developer.
-* **Observe**: En este apartado tenemos las herramientas de monitorización y supervisión. Podemos ver paneles gráficos con el consumo de recursos (CPU, memoria, uso de la red,...), elegir distintas métricas, las alertas que hemos definido o los eventos que han ocurrido en el clúster.
-* **Compute**: Gestiona todos los recursos relacionados con el clúster: nodos, máquinas, ...
-* **User Management**: Gestión de los usuarios del clúster. 
-* **Administration**: Configuración general del clúster.
+Evidentemente, si nos conectamos con el usuario administrador `kubeadmin`, tendremos acceso a todos los proyectos del clúster:

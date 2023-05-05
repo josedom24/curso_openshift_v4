@@ -16,7 +16,7 @@
 	* [Instalación en local con crc](modulo3/instalacion_crc.md)
 	* [Configuración de oc para crc](modulo3/oc.md)
 	* [Proyectos en OpenShift](modulo3/proyectos.md)
-	* [Visión general de la consola web](modulo3/consola_web.md)
+	* [La consola web en CRC](modulo3/consola_web.md)
 	
 4. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes (P)](modulo4/aplicaciones.md)
