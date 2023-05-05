@@ -14,7 +14,7 @@ Entre las similitudes podemos señalar:
 
 * Recursos a nuestra disposición:
     * CRC: Se ejecuta en una máquina virtual en nuestro ordenador, por lo tanto los recursos que asignemos a esa máquina.
-    * Developer SandBox: Están limitados: 7 GB RAM, y 15 GB de almacenamiento
+    * Developer SandBox: Están limitados: 7 GB RAM, y 15 GB de almacenamiento.
 * Clúster:
     * CRC: Realiza la instalación de un clúster con un sólo nodo.
     * Developer SandBox: Está montada sobre una infraestructura cloud en el proveedor Amazon Web Service (AWS) y posee varios nodos en el clúster.
@@ -30,4 +30,3 @@ Entre las similitudes podemos señalar:
 * Almacenamiento:
     * CRC: Al tener un sólo nodo en el clúster, los volúmenes ofrecidos corresponden a directorios en el host. Es suficiente para simular el almacenamiento en un clúster con un único nodo, ya que todos los contenedores se ejecutan en la misma máquina.
     * Developer SandBox: Al estar construida en el AWS, el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**.
-    
