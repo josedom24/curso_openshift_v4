@@ -13,7 +13,7 @@ Para realizar el ejercicio, vamos a desplegar un servidor web nginx asociado a u
     oc apply -f pvc.yaml
     oc new-app bitnami/nginx --name nginx
     oc expose deploy/nginx
-    oc set volumes deploy/nginx --add -m /ap --name=my-vol -t pvc --claim-name=my-pvc --overwrite
+    oc set volumes deploy/nginx --add -m /app --name=my-vol -t pvc --claim-name=my-pvc --overwrite
     oc exec deploy/nginx -- bash -c "echo '<h1>Probando los SnapShots</h1>' > /app/index.html"
 
 A continuación vamos a crear una instantánea de ese volumen, para ello entramos en la sección **Storage -> VolumeSnapshots** y pulsamos sobre el botón **Create VolumeSnapshot**:
@@ -44,4 +44,4 @@ Indicando las propiedades del recurso **PersistentVolumeClaim**:
 
 Volvemos a crear el **Deployment**, y comprobamos que podemos acceder al fichero `index.html`, que en esta ocasión no hemos tenido que crear porque se ha restaurado desde la instantánea de volumen.
 
-
+![snapshot](img/snapshot9.png)
