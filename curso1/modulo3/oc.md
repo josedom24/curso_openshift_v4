@@ -1,4 +1,4 @@
-# Configuración de oc para crc
+# Configuración de oc para CRC
 
 La herramienta `oc` nos permite gestionar los recursos de nuestro clúster de OpenShift desde la línea de comandos.
 

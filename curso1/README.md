@@ -13,10 +13,11 @@
 	* [Configuración de oc para el Developer Sandbox](modulo2/oclogin.md)
 
 3. Trabajando con OpenShift en local
-	* [Instalación en local con crc](modulo3/instalacion_crc.md)
-	* [Configuración de oc para crc](modulo3/oc.md)
+	* [Instalación en local con CRC](modulo3/instalacion_crc.md)
+	* [Configuración de oc para CRC](modulo3/oc.md)
 	* [Proyectos en OpenShift](modulo3/proyectos.md)
 	* [La consola web en CRC](modulo3/consola_web.md)
+	* [Similitudes y diferencias entre CRC y Developer Sandbox](modulo3/crc_sandbox.md)
 	
 4. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes (P)](modulo4/aplicaciones.md)

@@ -1,6 +1,6 @@
-# Instalación en local con crc
+# Instalación en local con CRC
 
-CRC nos proporicona la posibilidad de realizar una instalación local de OpenShift V4, creando un clúster de un nodo que se ejecutará een una máquina virtual. Evidentemente, tener una instalación de este tipo, es adecuado por motivos educativos, en ningún caso para poner aplicaciones en producción.
+CRC nos proporciona la posibilidad de realizar una instalación local de OpenShift V4, creando un clúster de un nodo que se ejecutará een una máquina virtual. Evidentemente, tener una instalación de este tipo, es adecuado por motivos educativos, en ningún caso para poner aplicaciones en producción.
 
 ## Requisitos mínimos
 
@@ -14,7 +14,7 @@ Los sistemas operativos soportados son: Windows 10 Fall Creators Update (version
 
 Para más información de la instalación puedes leer la [documentación oficial](https://crc.dev/crc/).
 
-## Instalación de crc en Debian/Ubuntu
+## Instalación de CRC en Debian/Ubuntu
 
 La instalación la he realizado sobre una versión Debian 11. También he probado la instalación en una versión Ubuntu 22.04.
 
@@ -28,7 +28,7 @@ Nos tenemos que asegurar que el usuario sin privilegio pertenezca al grupo `libv
 
 A continuación tienes que bajarte la última versión de CRC, eligiendo la versión del sistema operativo que estés usando, desde la página oficial de descarga (para ello tendrás que hacer login con un cuenta de Red Hat): [https://console.redhat.com/openshift/create/local](https://console.redhat.com/openshift/create/local)
 
-Además de bajarte la versión de crc, tendrás que bajarte o copiar en el portapapeles un token que durante la instalación tendrás que introducir:
+Además de bajarte la versión de CRC, tendrás que bajarte o copiar en el portapapeles un token que durante la instalación tendrás que introducir:
 
 ![crc](img/crc1.png)
 
