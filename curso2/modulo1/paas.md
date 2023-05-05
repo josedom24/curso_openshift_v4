@@ -27,9 +27,9 @@ A esta manera de ofrecer servicios se le suele llamar **... as a service**, y se
 
 La **Plataforma como servicio (PaaS)** es una modalidad del Cloud Computing en la cual un tercero brinda una plataforma de software de aplicaciones. La PaaS es ideal principalmente para los desarrolladores y los programadores, ya que permite que el usuario desarrolle, ejecute y gestione sus propias aplicaciones sin tener que diseñar ni mantener la infraestructura ni la plataforma que suelen estar relacionadas con el proceso.
 
-Al usar PaaS:
+Al usar alguna plataforma de PaaS:
 
-* Los desarrolladores solo tienen que preocuparse por la programación de las aplicaciones.
+* Los desarrolladores solo tienen que preocuparse por la programación y centrarse en el código de las aplicaciones.
 * No se preocupan por la configuración ni el software que hay por debajo, ahorrando tiempo y recursos.
 * PaaS puede ejecutarse por encima del IaaS (si vamos a virtualizar todo), en máquinas físicas e incluso en contenedores.
 * Obtenemos características de Cloud Computing: elasticidad, pago por uso,...
