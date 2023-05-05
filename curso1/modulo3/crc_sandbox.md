@@ -30,3 +30,9 @@ Entre las similitudes podemos señalar:
 * Almacenamiento:
     * CRC: Al tener un sólo nodo en el clúster, los volúmenes ofrecidos corresponden a directorios en el host. Es suficiente para simular el almacenamiento en un clúster con un único nodo, ya que todos los contenedores se ejecutan en la misma máquina.
     * Developer SandBox: Al estar construida en el AWS, el tipo de volúmenes que vamos  a poder usar será **AWS Elastic Block Store (EBS)**.
+
+## ¿Qué vamos a usar?
+
+En este curso vamos a usar principalmente **CRC**, aunque algunos ejercicios lo vamos a realizar sobre **RedHat OpenShift Dedicated Developer Sandbox** por alguna característica específica, por ejemplo, por ser un clúster con varios nodos de computación.
+
+Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se puede desarrollar indistintamente en las dos plataformas, a excepción de las veces que usemos el usuario administrador en **CRC** para alguna tarea específica.
