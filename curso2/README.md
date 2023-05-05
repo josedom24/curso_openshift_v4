@@ -70,6 +70,7 @@
 	* [Despliegue de una aplicación con OpenShift Pipeline](modulo8/pipeline.md)
 	* [Gestión de OpenShift Pipeline desde la consola web](modulo8/pipeline_web.md)
 	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo8/pipeline_webhook.md)
+	* [Instalación de OpenShift Pipeline en CRC](modulo8/operador.md)
 
 9. OpenShift Serverless
 
