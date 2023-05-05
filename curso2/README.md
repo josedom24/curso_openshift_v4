@@ -78,6 +78,7 @@
 	* [Ejemplo de Serverless Serving](modulo9/serving.md)
 	* [Ejemplo de Serverless Eventing](modulo9/eventing.md)
 	* [Ejemplo de Serverless Function](modulo9/function.md)
+	* [Instalación de OpenShift Serverless en CRC](modulo9/operador.md)
 
 10. Ejemplos de despliegues de aplicaciones web
 	* [Despliegue de aplicación Citas en OpenShift v4 (1ª parte)](modulo10/citas.md)
