@@ -4,11 +4,18 @@ Un recurso **VolumeSnapshot** representa una instantánea de un volumen en un si
 
 Realmente un recurso **VolumeSnapshot** es una solicitud de instantánea de un volumen por parte de un usuario. Será necesio tener configurado un recurso **VolumeSnapshotClass**, donde el administrador del clúster habrá configurado diferentes características sobre al almacenamiento que está utilizando para que se realicen las instantáneas.
 
-Eb la consola web, en la vista de **Administrator**, el apartado **Storage -> VolumeSnapshotClasses**, podemos ver los recursos **VolumeSnapshotClasses** que están definido en este clúster:
+Eb la consola web, en la vista de **Administrator**, el apartado **Storage -> VolumeSnapshotClasses**, podemos ver los recursos **VolumeSnapshotClasses** que están definidos en este clúster:
 
 ![snapshot](img/snapshot1.png)
 
-Continuamos con en el ejemplo anterior, donde habíamos creado un objeto **PersistentVolumeClaim** asociado a un recurso **PersistentVolume**, que estaba asociado a un Deployment. A continuación vamos a crear una instantánea de ese volumen, para ello entramos en la sección **Storage -> VolumeSnapshots** y pulsamos sobre el botón **Create VolumeSnapshot**:
+Para realizar el ejercicio, vamos a desplegar un servidor web nginx asociado a un volumen, para ello:
+
+    oc apply -f pvc.yaml
+    oc new-app bitnami/nginx --name nginx
+    oc expose deploy/nginx
+    oc set volumes deploy/nginx --add -m /ap --name=my-vol -t pvc --claim-name=my-pvc --overwrite
+
+A continuación vamos a crear una instantánea de ese volumen, para ello entramos en la sección **Storage -> VolumeSnapshots** y pulsamos sobre el botón **Create VolumeSnapshot**:
 
 ![snapshot](img/snapshot2.png)
 
