@@ -35,3 +35,5 @@ Desde la vista **Administrator**, la opción **Home->Projects** podemos ver la l
 ![web](img/web4.png)
 
 Evidentemente, si nos conectamos con el usuario administrador `kubeadmin`, tendremos acceso a todos los proyectos del clúster:
+
+![web](img/web5.png)
