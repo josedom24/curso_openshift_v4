@@ -31,7 +31,7 @@ La versión **Developer Sandbox** de **OpenShift Dedicated** nos permite probar 
 
 ### CRC (CodeReady Containers)
 
-**CRC** nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará een una máquina virtual. Nos proporciona las siguientes características:
+**CRC** nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará en una máquina virtual. Nos proporciona las siguientes características:
 
 * El clúster de un sólo nodo los administramos nosotros. Y podemos trabajar con usuarios con y sin permisos de administración.
 * El uso de la plataforma no tiene ningún coste, y no tiene cuota de recursos, el clúster se ejecuta en una máquina virtual y los recursos serán los que asignemos a está máquina.
