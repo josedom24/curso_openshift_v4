@@ -49,7 +49,7 @@ Donde vemos que se ha creado un contexto, donde se guarda el servidor al que nos
 
 Esta operación habrá que repetirla cada vez que el token se caduque.
 
-Como hemos indicado anteriormente el proyecto que estamos usando se corresponde con un recurso `namespace` que nos permite agrupar todos nuestros recursos. Con el usuario que usamos tenemos acceso a nuestro proyecto, pero no podemos acceder a los recurso `namespaces` que están definido en el clúster:
+Como hemos indicado anteriormente el proyecto que estamos usando se corresponde con un recurso `namespace` que nos permite agrupar todos nuestros recursos. Con el usuario que usamos tenemos acceso a nuestro proyecto, pero no podemos acceder a los recurso `namespaces` que están definidos en el clúster:
 
     oc get project
     NAME            DISPLAY NAME    STATUS
