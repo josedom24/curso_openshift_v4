@@ -1,13 +1,13 @@
 # Curso 2: OpenShift v4 como PaaS
 
 1. Introducción a OpenShift v4
-	* [Cloud Computing PaaS: Plataforma como servicio](modulo1/paas.md)
-	* [OpenShift la plataforma PaaS de RedHat](modulo1/openshift.md)
-	* [Plataformas para trabajar con OpenShift v4](modulo1/plataformas.md)
+	* [Cloud Computing PaaS: Plataforma como servicio (P)](modulo1/paas.md)
+	* [OpenShift la plataforma PaaS de RedHat (P)](modulo1/openshift.md)
+	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
 	* [Introducción a  RedHat OpenShift Dedicated Developer Sandbox](modulo1/sandbox.md)
 
 2. Despliegue de aplicaciones en OpenShift
-	* [Introducción al despliegue de aplicaciones en OpenShift](modulo2/introduccion.md)
+	* [Introducción al despliegue de aplicaciones en OpenShift (P)](modulo2/introduccion.md)
 	* [Despliegue de aplicaciones desde imágenes con oc](modulo2/imagen.md)
 	* [Despliegue de aplicaciones desde imágenes desde la consola web](modulo2/imagen_web.md)
 	* [Despliegue de aplicaciones desde código fuente con oc](modulo2/codigo.md	)
@@ -18,7 +18,7 @@
 	* [Despliegue de aplicaciones desde el catálogo desde la consola web](modulo2/catalogo_web.md)
 
 3. ImageStreams: Gestión de imágenes en OpenShift v4
-	* [Introducción al recurso ImageStream](modulo3/introduccion.md)
+	* [Introducción al recurso ImageStream (P)](modulo3/introduccion.md)
 	* [ImageStream a imágenes del registro interno](modulo3/registro_interno.md)
 	* [Creación de ImageStream](modulo3/crear_is.md)
 	* [Gestión de ImageStream desde la consola web](modulo3/is_web.md)
@@ -26,7 +26,7 @@
 	* [Actualización automática de ImageStream](modulo3/update.md)
 
 4. Builds: Construcción automática de imágenes
-	* [Introducción a la construcción automática de imágenes (build)](modulo4/build.md)
+	* [Introducción a la construcción automática de imágenes (build) (P)](modulo4/build.md)
 	* [Construcción de imágenes con estrategia Source-to-image (S2I) + repositorio Git](modulo4/s2i.md)
 	* [Construcción de imágenes con estrategia Docker + repositorio Git](modulo4/docker.md)
 	* [Definición del objeto BuildConfig](modulo4/buildconfig.md)
@@ -38,7 +38,7 @@
 	* [Actualización automática de un build por trigger webhook](modulo4/webhook.md)
 
 5. Deployment us DeploymentConfig
-	* [Características del recurso DeploymentConfig](modulo5/dc.md)
+	* [Características del recurso DeploymentConfig (P)](modulo5/dc.md)
 	* [Creación de un DeployConfig al crear una aplicación](modulo5/newdc.md)
 	* [Definición de un recurso DeploymentConfig](modulo5/deploymentconfig.md)
 	* [Actualización de un DeploymentConfig (rollout)](modulo5/rollout.md)
@@ -48,7 +48,7 @@
 	* [Estrategias de despliegues basadas en rutas](modulo5/estrategias_rutas.md)
 
 6. Plantillas: empaquetando los objetos en OpenShift
-	* [Introducción a los Templates](modulo6/template.md)
+	* [Introducción a los Templates (P)](modulo6/template.md)
 	* [Descripción de un objeto Template](modulo6/descripcion.md)
 	* [Crear objetos desde un Template](modulo6/crear_template.md)
 	* [Crear objetos desde un Template desde la consola web](modulo6/template_web.md)
@@ -58,7 +58,7 @@
 	* [Uso de Helm en OpenShift desde la línea de comandos](modulo6/helm-cli.md)
 
 7. Almacenamiento en OpenShift
-	* [Introducción al almacenamiento en OpenShift](modulo7/almacenamiento.md)
+	* [Introducción al almacenamiento en OpenShift (P)](modulo7/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo7/almacenamiento_sandbox.md)
 	* [Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms](modulo7/phpsqlitecms.md)
 	* [Ejemplo 2: Gestión de almacenamiento desde la línea de comandos: GuestBook](modulo7/guestbook.md)
@@ -67,7 +67,7 @@
 
 8. OpenShift Pipelines
 	
-	* [Introducción a OpenShift Pipelines](modulo8/introduccion_pipeline.md)
+	* [Introducción a OpenShift Pipelines (P)](modulo8/introduccion_pipeline.md)
 	* [Despliegue de una aplicación con OpenShift Pipeline](modulo8/pipeline.md)
 	* [Gestión de OpenShift Pipeline desde la consola web](modulo8/pipeline_web.md)
 	* [Despliegues automáticos con trigger webhook en OpenShift Pipeline](modulo8/pipeline_webhook.md)
@@ -75,7 +75,7 @@
 
 9. OpenShift Serverless
 
-	* [Introducción a OpenShift Serverless](modulo9/serverless.md)
+	* [Introducción a OpenShift Serverless (P)](modulo9/serverless.md)
 	* [Ejemplo de Serverless Serving](modulo9/serving.md)
 	* [Ejemplo de Serverless Eventing](modulo9/eventing.md)
 	* [Ejemplo de Serverless Function](modulo9/function.md)
