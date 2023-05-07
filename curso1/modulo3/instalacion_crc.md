@@ -97,7 +97,7 @@ La configuracion de seguridad de AppArmor en Debian 11, evita que kvm/libvirt ut
 
     profile LIBVIRT_TEMPLATE flags=(attach_disconnected) {
       #include <abstractions/libvirt-qemu>
-      /home/jose/.crc/cache/crc_libvirt_4.12.9_amd64/crc.qcow2 rk,
+      /home/usuario/.crc/cache/crc_libvirt_4.12.9_amd64/crc.qcow2 rk,
     }
 
 Y posteriormente reiniciamos AppArmor:
