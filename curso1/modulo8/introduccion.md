@@ -34,7 +34,7 @@ El recurso **Horizontal Pod AutoScaler** nos permite variar el número de Pods d
 
 ## PodDisruptionBudgets
 
-El recurso **PodDisruptionBudgets** (PDB) se utiliza para garantizar la disponibilidad y la y la continuidad del servicio ofrecida por los servicios de las aplicaciones que se ejecutan en un clúster de Kubernetes o OpenShift.
+El recurso **PodDisruptionBudgets** (PDB) se utiliza para garantizar la disponibilidad y la continuidad del servicio ofrecido por una determinada aplicación que se ejecuta en un clúster de Kubernetes o OpenShift.
 
 En esencia, un PDB es un objeto que limita el número de Pods de una aplicación que se pueden eliminar simultáneamente del clúster. Esto es importante porque la eliminación simultánea de múltiples Pods de una aplicación puede provocar interrupciones en el servicio o, peor aún, la pérdida total del servicio.
 
