@@ -9,16 +9,16 @@ Una característica de una aplicación que es muy importante para su despliegue 
 * Una **aplicación sin estado** es aquella en la que las peticiones son totalmente independientes unas de otras y no necesita ninguna referencia de una petición anterior. 
 * Por contra, las **aplicaciones con estado** son aquellas en las que una petición puede verse afectada por el resultado de las anteriores y a su vez puede afectar a las posteriores (por eso se dice que tiene estado). 
 
-Mientras los recursos **Deployments** nos permite el despliegue de aplicaciones sin estado, los recursos StatefulSet en Kubernetes están diseñados para manejar aplicaciones con estado. Para ello este recurso nos ofrece algunas características:
+Mientras los recursos **Deployments** nos permite el despliegue de aplicaciones sin estado, los recursos StatefulSet en Kubernetes/OpenShift están diseñados para manejar aplicaciones con estado. Para ello este recurso nos ofrece algunas características:
 
 * Los StatefulSets permiten que **cada Pod tenga un nombre y un estado únicos y estables** en todo momento. Tienen un **identificado de red estable** (nombre DNS), por ejemplo un clúster de servidores mongodb necesitan tener una identidad de red persistente.
 * Nos ofrece **almacenamiento persistente**, es decir, a cada Pod se le asocia un volumen de almacenamiento persistente. Si el Pod falla y debe ser recreado en otro nodo, el nuevo Pod aún puede acceder al mismo volumen de almacenamiento persistente que el Pod anterior. Por ejemplo, un clúster de Zookeeper, cada nodo necesita almacenamiento único y estable, ya que el identificador de cada nodo se guarda en un fichero.
-También nos proporciona **un orden determinado para la creación y eliminación de Pods**, lo que es importante en aplicaciones que dependen del orden de los eventos o que deben ser inicializadas en un orden específico, por ejemplo en un clúster de redis **necesita que el master esté corriendo antes de que podamos configurar las réplicas.**.
+También nos proporciona **un orden determinado para la creación y eliminación de Pods**, lo que es importante en aplicaciones que dependen del orden de los eventos o que deben ser inicializadas en un orden específico, por ejemplo en un clúster de redis **necesita que el master esté corriendo antes de que podamos configurar las réplicas**.
 
 ## DaemonSet
 
 El objeto **DaemonSet** nos asegura que en todos (o en algunos) nodos de nuestro cluster vamos a tener un Pod ejecutándose. Si añadimos nuevos
-nodos al clúster se crearán nuevo Pods. Para que podemos necesitar esta característica:
+nodos al clúster se crearán nuevos Pods. Para que podemos necesitar esta característica:
 * Monitorización del cluster (Prometheus)
 * Recolección y gestión de logs (fluentd)
 * Cluster de almacenamiento (glusterd o ceph)
