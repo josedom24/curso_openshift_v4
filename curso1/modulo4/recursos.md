@@ -28,7 +28,7 @@ El despliegue o **Deployment** es la unidad de más alto nivel que podemos gesti
 
 * La creación de un Deployment conlleva la creación de un ReplicaSet que controlará un conjunto de Pods creados a partir de la versión de la imagen que se ha indicado.
 * Si hemos desarrollado una nueva versión de la aplicación y hemos creado una nueva imagen con la nueva versión, podemos modificar el Deployment indicando la nueva versión de la imagen. En ese momento se creará un nuevo ReplicaSet que controlará un nuevo conjunto de Pods creados a partir de la nueva versión de la imagen (habremos desplegado una nueva versión de la aplicación).
-* Por lo tanto podemos decir que un Deployment va guardando un historial con los ReplicaSet que se van creando al ir cambiado la versión de la imagen. El ReplicaSet que esté activo en un determinado momento será el responsable de crear los Pods con la versión actual de la aplicación.
+* Por lo tanto podemos decir que un Deployment va guardando un historial con los ReplicaSet que se van creando al ir cambiando la versión de la imagen. El ReplicaSet que esté activo en un determinado momento será el responsable de crear los Pods con la versión actual de la aplicación.
 * Si tenemos un historial de ReplicaSet según las distintas versiones de la imagen que estamos utilizando, podemos, de una manera sencilla, volver a una versión anterior de la aplicación (**Rollback**).
 
 Por la manera de trabajar de un Deployment, podemos indicar las funciones que nos aporta:
@@ -41,6 +41,6 @@ Por la manera de trabajar de un Deployment, podemos indicar las funciones que no
 
 ## Otros recursos para el despliegue de aplicaciones
 
-* OpenShift nos permite desplegar aplicaciones con dos recursos propios: **DeploymentConfig** y **Deployment Serverless**. Estos recursos no lo estudiaremos en este curso.
+* OpenShift nos permite desplegar aplicaciones con dos recursos propios: **DeploymentConfig** y **Deployment Serverless**. Estos recursos no los estudiaremos en este curso.
 * Además para desplegar aplicaciones que requieren de otras características veremos más adelante el uso de recursos como el **StatefulSet**, **DaemonSet**, **Job**,...
 
