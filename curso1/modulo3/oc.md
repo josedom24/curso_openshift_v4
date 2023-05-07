@@ -6,7 +6,7 @@ Para más información de esta herramienta puedes acceder a la [documentación o
 
 Si utilizamos CRC no es necesario la instalación de esta herramienta, solamente tenemos que configurar de forma adecuada el PATH, ejecutando:
 
-eval $(crc oc-env)
+    eval $(crc oc-env)
 
 Como hemos dicho anteriormente para obtener las instrucciones para hacer login en el clúster, ejecutamos:
 
