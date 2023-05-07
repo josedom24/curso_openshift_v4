@@ -45,7 +45,7 @@ users:
     token: sha256~UDgHaWXrosaNOAJEFxjhqZMPgH8ksbREvd8LZ_7mFYw
 ```
 
-Donde vemos que se ha creado un contexto, donde se gurda el servidor al que nos conectamos (`cluster`), el namespace o proyecto que estamos usando (`namespace`) y el usuario (`user`). Como hemos indicado el usuario utiliza el token para autentificarse sobre el clúster.
+Donde vemos que se ha creado un contexto, donde se guarda el servidor al que nos conectamos (`cluster`), el namespace o proyecto que estamos usando (`namespace`) y el usuario (`user`). Como hemos indicado el usuario utiliza el token para autentificarse sobre el clúster.
 
 Esta operación habrá que repetirla cada vez que el token se caduque.
 
