@@ -18,7 +18,7 @@
 	* [Configuración de oc para CRC](modulo3/oc.md)
 	* [Proyectos en OpenShift](modulo3/proyectos.md)
 	* [La consola web en CRC](modulo3/consola_web.md)
-	* [Similitudes y diferencias entre CRC y Developer Sandbox](modulo3/crc_sandbox.md)
+	* [Similitudes y diferencias entre CRC y Developer Sandbox (P)](modulo3/crc_sandbox.md)
 	
 4. OpenShift como distribución de Kubernetes
 	* [Despliegues de aplicaciones en Kubernetes (P)](modulo4/aplicaciones.md)
