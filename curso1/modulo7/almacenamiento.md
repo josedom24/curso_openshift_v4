@@ -8,7 +8,7 @@ Es necesario usar un mecanismo que nos permita guardar la información con la qu
 2. Si usamos volúmenes, y tenemos varios Pods que están ofreciendo un servicio y se están ejecutando en nodos distintos del clúster, estos Pods tendrán la información compartida y por tanto todos podrán leer y escribir la misma información.
 3. También podemos usar los volúmenes dentro de un Pod, para que los contenedores que forman parte de él puedan compartir información.
 
-## Fuente de almacenamiento 
+## Fuentes de almacenamiento 
 
 OpenShift soporta varios tipos de almacenamiento que nos ofrecen distintas características:
 
@@ -21,7 +21,7 @@ OpenShift soporta varios tipos de almacenamiento que nos ofrecen distintas carac
 
 ## Tipos de almacenamiento
 
-Según como usemos el almacenamiento en el contenedor, tendremos dos tipos:
+Según cómo usemos el almacenamiento en el contenedor, tendremos dos tipos:
 
 * **Filesystem**: El almacenamiento es tipo sistema de fichero, con lo que podremos montar un directorio compartido. Tipo por defecto.
 * **Block**: El almacenamiento se comparte con un dispositivo de bloque. El contenedor verá el almacenamiento como un nuevo disco. 
@@ -42,7 +42,7 @@ Las políticas de reciclaje de volúmenes también dependen del backend y son:
 * **Recycle**: Reutilizar contenido. Se elimina el contenido y el volumen es de nuevo utilizable.
 * **Delete**: Se borra después de su utilización.
 
-## Resumen de tipo de almacenamiento
+## Resumen de fuentes de almacenamiento
 
 |Plugin |ReadWriteOnce |ReadOnlyMany| ReadWriteMany|
 |:---:|:---:|:---:|:---:|
@@ -68,7 +68,7 @@ Las políticas de reciclaje de volúmenes también dependen del backend y son:
 
 ## Tipos de aprovisionamiento
 
-* **Aprovisionamiento estático**: En este caso, es el administrador del cluster el responsable de ir definiendo los distintos volúmenes disponibles en el cluster creando manualmente los distintos recursos **PersistentVolumen (PV)**. Cuando un desarrollador necesita usar almacenamiento lo solicitará, creando un objeto **PersistentVolumenClaim (PVC)**. Si existe un PV que cumpla los requisitos solicitados en el PVC, el PV se asociará con el PVC (estado **bound**).
+* **Aprovisionamiento estático**: En este caso, es el administrador del clúster el responsable de ir definiendo los distintos volúmenes disponibles en el clúster creando manualmente los distintos recursos **PersistentVolumen (PV)**. Cuando un desarrollador necesita usar almacenamiento lo solicitará, creando un objeto **PersistentVolumenClaim (PVC)**. Si existe un PV que cumpla los requisitos solicitados en el PVC, el PV se asociará con el PVC (estado **bound**).
 * **Aprovisionamiento dinámico**: El administrador del clúster es el responsable de configurar distintos "aprovisionadores" de almacenamiento que se definen en los objetos **StorageClass**. En este caso, cuando un desarrollador necesita almacenamiento para su aplicación, hace una petición de almacenamiento creando un recurso **PersistentVolumenClaim (PVC)** y de forma dinámica se crea el recurso **PersistentVolume** que representa el volumen y se asocia con esa petición. 
 
 
