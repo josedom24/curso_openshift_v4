@@ -18,7 +18,7 @@ Si pulsamos sobre el nombre del proyecto, obtendremos los detalles del mismo: de
 
 Tenemos varias opciones:
 
-* **Details**: detalles sobre la definición del proyecto.
-* **YAML**: definición YAML del recurso proyecto.
-* **Workloads**: acceso a todos los recursos definidos en este proyecto.
+* **Details**: Detalles de la definición del proyecto.
+* **YAML**: Definición YAML del recurso proyecto.
+* **Workloads**: Acceso a todos los recursos definidos en este proyecto.
 * **RoleBindings**: Permisos definidos para este proyecto.
