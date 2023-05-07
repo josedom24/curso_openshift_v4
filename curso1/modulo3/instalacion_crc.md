@@ -52,7 +52,7 @@ A continuación, aunque no es necesario, si necesitamos aumentar los recursos de
     crc config set cpus 8
     crc config set memory 20480
 
-Esto también es opcional, pero si queremos que durante la instalación se instalen los componentes de telemtría para mostrar los recursos que se están utilizando, debes realizar la siguiente configuración:
+Esto también es opcional, pero si queremos que durante la instalación se instalen los componentes de telemtría para mostrar las métricas de los recursos que se están utilizando, debes realizar la siguiente configuración:
 
     crc config set enable-cluster-monitoring true
 
