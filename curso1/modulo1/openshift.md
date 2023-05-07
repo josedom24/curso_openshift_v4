@@ -8,7 +8,7 @@
 
 ## Ventajas del uso de OpenShift v4
 
-* Por un lado nos ofrece las ventajas que nos ofrece como una distribución de Kubernetes:
+* Por un lado nos ofrece las ventajas propias de una distribución de Kubernetes:
     * Desplegar aplicaciones de forma muy sencilla.
     * Tolerancia a fallos.
     * Escalalabilidad de las aplicaciones.
