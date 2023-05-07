@@ -19,7 +19,7 @@ Entre las similitudes podemos señalar:
     * CRC: Realiza la instalación de un clúster con un sólo nodo.
     * Developer SandBox: Está montada sobre una infraestructura cloud en el proveedor Amazon Web Service (AWS) y posee varios nodos en el clúster.
 * Gestión:
-    * CRC: Tenemos acceso con un usuario administrador, por loq ue podemos hacer las configuraciones que queramos. Podemos añadir nuevas funcionalidades con la instalación de nuevos Operadores.
+    * CRC: Tenemos acceso con un usuario administrador, por lo que podemos hacer las configuraciones que queramos. Podemos añadir nuevas funcionalidades con la instalación de nuevos Operadores.
     * Developer SandBox: No accedemos con un usuario privilegiado. El clúster está gestionado por Red Hat y los servicios que se ofrecen no se pueden configurar, ni añadir nuevos.
 * Usuarios y proyectos:
     * CRC: Tenemos la opción de usar usuarios con y sin permisos de administración. Podemos crear nuevos usuarios y cada usuario puede gestionar sus proyectos.
@@ -35,4 +35,4 @@ Entre las similitudes podemos señalar:
 
 En este curso vamos a usar principalmente **CRC**, aunque algunos ejercicios lo vamos a realizar sobre **RedHat OpenShift Dedicated Developer Sandbox** por alguna característica específica, por ejemplo, por ser un clúster con varios nodos de computación.
 
-Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se puede desarrollar indistintamente en las dos plataformas, a excepción de las veces que usemos el usuario administrador en **CRC** para alguna tarea específica.
+Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se pueden desarrollar indistintamente en las dos plataformas, a excepción de las veces que usemos el usuario administrador en **CRC** para alguna tarea específica.

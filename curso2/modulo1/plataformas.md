@@ -33,13 +33,13 @@ La versión **Developer Sandbox** de **OpenShift Dedicated** nos permite probar 
 
 **CRC** nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará en una máquina virtual. Nos proporciona las siguientes características:
 
-* El clúster de un sólo nodo los administramos nosotros. Y podemos trabajar con usuarios con y sin permisos de administración.
+* El clúster de un sólo nodo lo administramos nosotros. Y podemos trabajar con usuarios con y sin permisos de administración.
 * El uso de la plataforma no tiene ningún coste, y no tiene cuota de recursos, el clúster se ejecuta en una máquina virtual y los recursos serán los que asignemos a está máquina.
-* No viene por defecto con todas las funcionalidades de OpenShift, pero usando el usuario administrador podemos instalar nuevas funcionales por medio de Operadores.
+* No viene por defecto con todas las funcionalidades de OpenShift, pero usando el usuario administrador podemos instalar nuevas funcionalidades por medio de Operadores.
 * Al tener un sólo nodo en el clúster, los volúmenes ofrecidos corresponden a directorios en el host. Es suficiente para simular el almacenamiento en un clúster con un único nodo, ya que todos los contenedores se ejecutan en la misma máquina. 
 
 ## ¿Qué plataforma vamos a usar en este curso?
 
 En este curso vamos a usar principalmente **RedHat OpenShift Dedicated Developer Sandbox**, aunque algunos ejercicios lo vamos a realizar sobre **CRC** por alguna característica específica, por ejemplo, por poder utilizar un usuario con permisos administrativos.
 
-Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se puede desarrollar indistintamente en las dos plataformas.
+Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se pueden desarrollar indistintamente en las dos plataformas.
