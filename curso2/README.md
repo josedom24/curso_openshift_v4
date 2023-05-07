@@ -48,7 +48,7 @@
 	* [Estrategias de despliegues basadas en rutas](modulo5/estrategias_rutas.md)
 
 6. Plantillas: empaquetando los objetos en OpenShift
-	* [Introducción a los Templates (P)](modulo6/template.md)
+	* [Introducción a los Templates](modulo6/template.md)
 	* [Descripción de un objeto Template](modulo6/descripcion.md)
 	* [Crear objetos desde un Template](modulo6/crear_template.md)
 	* [Crear objetos desde un Template desde la consola web](modulo6/template_web.md)
