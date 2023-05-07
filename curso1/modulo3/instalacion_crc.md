@@ -1,13 +1,6 @@
 # Instalación en local con CRC
 
-CRC nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará een una máquina virtual. Evidentemente, tener una instalación de este tipo, es adecuado por motivos educativos, en ningún caso para poner aplicaciones en producción.
-
-Nos proporciona las siguientes características:
-
-* El clúster de un sólo nodo los administramos nosotros. Y podemos trabajar con usuarios con y sin permisos de administración.
-* El uso de la plataforma no tiene ningún coste, y no tiene cuota de recursos, el clúster se ejecuta en una máquina virtual y los recursos serán los que asignemos a está máquina.
-* No viene por defecto con todas las funcionalidades de OpenShift, pero usando el usuario administrador podemos instalar nuevas funcionales por medio de Operadores.
-* Al tener un sólo nodo en el clúster, los volúmenes ofrecidos corresponden a directorios en el host. Es suficiente para simular el almacenamiento en un clúster con un único nodo, ya que todos los contenedores se ejecutan en la misma máquina. 
+CRC nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará een una máquina virtual. 
 
 ## Requisitos mínimos
 
