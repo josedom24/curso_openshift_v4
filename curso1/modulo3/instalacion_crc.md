@@ -154,7 +154,7 @@ Si necesitamos hacer una nueva instalación y eliminar la máquina virtual, ejec
 
     crc delete
 
-Podemos acceder a la consola web podemos acceder a la URL `https://console-openshift-console.apps-crc.testing` o ejecutar el comando:
+Podemos acceder a la consola web usando la URL `https://console-openshift-console.apps-crc.testing` o ejecutar el comando:
 
     crc console
 
