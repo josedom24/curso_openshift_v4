@@ -13,6 +13,7 @@
 	* [Configuración de oc para el Developer Sandbox](modulo2/oclogin.md)
 
 3. Trabajando con OpenShift en local
+	* [CRC (CodeReady Containers) (P)](modulo3/introudccion_crc.md)
 	* [Instalación en local con CRC](modulo3/instalacion_crc.md)
 	* [Configuración de oc para CRC](modulo3/oc.md)
 	* [Proyectos en OpenShift](modulo3/proyectos.md)
