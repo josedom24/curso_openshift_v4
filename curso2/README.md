@@ -6,7 +6,7 @@
 	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
 	* [Introducción a  RedHat OpenShift Dedicated Developer Sandbox](modulo1/sandbox.md)
 
-2. Despliegue de aplicaciones en OpenShift
+2. Despliegue de aplicaciones en OpenShift v4
 	* [Introducción al despliegue de aplicaciones en OpenShift (P)](modulo2/introduccion.md)
 	* [Despliegue de aplicaciones desde imágenes con oc](modulo2/imagen.md)
 	* [Despliegue de aplicaciones desde imágenes desde la consola web](modulo2/imagen_web.md)
@@ -57,7 +57,7 @@
 	* [Uso de Helm en OpenShift desde la consola web](modulo6/helm-web.md)
 	* [Uso de Helm en OpenShift desde la línea de comandos](modulo6/helm-cli.md)
 
-7. Almacenamiento en OpenShift
+7. Almacenamiento en OpenShift v4
 	* [Introducción al almacenamiento en OpenShift (P)](modulo7/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo7/almacenamiento_sandbox.md)
 	* [Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms](modulo7/phpsqlitecms.md)
