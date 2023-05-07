@@ -10,7 +10,7 @@ Los requisitos necesarios serán:
 * 9Gb de RAM.
 * 35 Gb de almacenamiento.
 
-Los sistemas operativos soportados son: Windows 10 Fall Creators Update (version 1709) os superior, macOS 11 Big Sur os superior, las dos últimas versiones de Red Hat Enterprise Linux/CentOS y Fedora. Ubuntu 18.04 y Debian 10 o superior no están soportadas y requieren configuración manual.
+Los sistemas operativos soportados son: Windows 10 Fall Creators Update (version 1709) o superior, macOS 11 Big Sur os superior, las dos últimas versiones de Red Hat Enterprise Linux/CentOS y Fedora. Ubuntu 18.04 y Debian 10 o superior no están soportadas y requieren configuración manual.
 
 Para más información de la instalación puedes leer la [documentación oficial](https://crc.dev/crc/).
 
