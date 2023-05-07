@@ -4,7 +4,7 @@
 En este tipo de virtualización, sobre el núcleo del sistema operativo de la máquina anfitriona se ejecuta una capa de virtualización que
 permite que existan múltiples instancias aisladas de espacios de usuario (**contenedor**).
 
-Un **contenedor** es un conjunto de procesos aislados, que se ejecutan en un servidor, y que acceden a un sistema de ficheros propio, tienen una configuración red propia y accede a los recursos del host (memoria y CPU).
+Un **contenedor** es un conjunto de procesos aislados, que se ejecutan en un servidor, y que acceden a un sistema de ficheros propio, tienen una configuración de red propia y accede a los recursos del host (memoria y CPU).
 
 ![virtualización ligera](img/virt_ligera.png)
 
