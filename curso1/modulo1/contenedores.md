@@ -4,7 +4,7 @@
 En este tipo de virtualización, sobre el núcleo del sistema operativo de la máquina anfitriona se ejecuta una capa de virtualización que
 permite que existan múltiples instancias aisladas de espacios de usuario (**contenedor**).
 
-Un **contenedor** es un conjunto de procesos aislados, que se ejecutan en un servidor, y que acceden a un sistema de ficheros propio, tienen una configuración red propio y accede a los recursos del host (memoria y CPU).
+Un **contenedor** es un conjunto de procesos aislados, que se ejecutan en un servidor, y que acceden a un sistema de ficheros propio, tienen una configuración red propia y accede a los recursos del host (memoria y CPU).
 
 ![virtualización ligera](img/virt_ligera.png)
 
@@ -19,8 +19,8 @@ Tipos de contenedores:
 * Realmente, las aplicaciones que mejor se ajustan al despliegue en contenedores
 son la desarrolladas con **microservicios**:
     * Cada componente de la aplicación ("microservicio") se puede desplegar en un contenedor.
-    * Comunicación vía HTTP REST y colas de mensajes
-    * Facilita enormemente las actualizaciones de versiones de cada componente
+    * Comunicación vía HTTP REST y colas de mensajes.
+    * Facilita enormemente las actualizaciones de versiones de cada componente.
     * ... 
 
 ## Docker
@@ -28,9 +28,9 @@ son la desarrolladas con **microservicios**:
 **Docker** es una tecnología de virtualización “ligera” cuyo elemento básico es la utilización de contenedores en vez de máquinas virtuales y cuyo objetivo principal es el despliegue de aplicaciones encapsuladas en dichos contenedores.
 Establece una nueva metodología en el despliegue de aplicaciones en contenedores: **build, ship and run**
 
-Otros programas similares;
+Otros software similares:
 
-* **cri-o**: Creado por Red Hat como alternativa a containerd y pensado solo para funcionar integrado en kubernetes.
+* **cri-o**: Creado por Red Hat y pensado solo para funcionar integrado en kubernetes.
 * **podman**: Creado por Red Hat como alternativa a docker.
 * **pouch**: Creado por Alibaba como alternativa a docker. 
 

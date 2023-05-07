@@ -24,7 +24,7 @@ La versión **Dedicated** nos brinda 3 formas distintas para probar la plataform
 
     * [Try Red Hat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift/try-it)
 
-## Otras opciones de usar OpenShift
+## Otras opciones de usar OpenShift v4
 
 * **OKD (Origin Community Distribution)**: OKD es la versión impulsada por la comunidad de OpenShift que está disponible de forma gratuita y es totalmente de código abierto. Es adecuado para organizaciones que tienen un equipo de desarrolladores y personal de TI capacitados que pueden administrar la instalación, configuración y mantenimiento de la plataforma. 
 

@@ -18,7 +18,7 @@
     * Uso de volúmenes para guardar la información.
     * ...
 * Por otro lado, OpenShift v4 utiliza distintas herramientas que nos aportan otras muchas funcionalidades:
-    * Es una plataforma al desarrollo, con características de Cloud Computing (PaaS).
+    * Es una plataforma para el desarrollo de aplicaciones, con características de Cloud Computing (PaaS).
     * Nos permite centrarnos en el desarrollo de la aplicación.
     * Esto se consigue con funcionalidades adicionales como la construcción automática de imágenes.
     * Permite la integración con herramienta de IC/DC, que nos facilita la gestión del ciclo de vida de la aplicación.
