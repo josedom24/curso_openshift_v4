@@ -50,7 +50,7 @@ Veamos cada uno de los parámetros que hemos definido:
         * Si queremos forzar la descarga desde el repositorio externo, indicaremos el valor `Always`.
         * Si estamos seguro que la imagen esta en el registro interno, y no queremos bajar la imagen del registro externo, indicamos el valor `Never`.
 
-Ahora para crear el Pod a partir del fichero yaml, podemos usar dos subcomandos:
+Ahora para crear el Pod a partir del fichero YAML, podemos usar dos subcomandos:
 
 * `create`: **Configuración imperativa de objetos**, creamos el objeto (en nuestro caso el pod) pero si necesitamos modificarlo tendremos que eliminarlo y volver a crearlo después de modificar el fichero de definición.
 
@@ -105,7 +105,7 @@ Para obtener las etiquetas de los Pods que hemos creado:
 
     oc get pod --show-labels
 
-Las etiquetas las hemos definido en la sección metadata del fichero yaml, pero también podemos añadirlos a los Pods ya creados:
+Las etiquetas las hemos definido en la sección metadata del fichero YAML, pero también podemos añadirlos a los Pods ya creados:
 
     oc label pod pod-nginx service=web --overwrite=true
 

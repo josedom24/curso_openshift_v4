@@ -16,7 +16,7 @@ En esta pantalla también tenemos un botón **Create Service** que nos permite l
 
 ![acceso3](img/acceso3.png)
 
-**Nota**: También podemos ejecutar un fichero yaml desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
+**Nota**: También podemos ejecutar un fichero YAML desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
 
 Si pinchamos sobre un **Service**, obtenemos los detalles del mismo:
 

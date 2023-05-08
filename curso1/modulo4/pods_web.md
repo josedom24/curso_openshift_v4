@@ -16,7 +16,7 @@ En esta pantalla también tenemos un botón **Create Pod** que nos permite la cr
 
 ![pod3](img/pod3.png)
 
-**Nota**: También podemos ejecutar un fichero yaml desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
+**Nota**: También podemos ejecutar un fichero YAML desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
 
 Si pinchamos sobre un pod, obtenemos los detalles del mismo:
 

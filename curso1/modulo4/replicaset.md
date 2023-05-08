@@ -122,7 +122,7 @@ Para escalar el número de Pods:
     replicaset-nginx-xzdq8   1/1     Running   0          9s
 
 
-Otra forma de hacerlo sería cambiando el parámetro `replicas` de fichero yaml, y volviendo a ejecutar:
+Otra forma de hacerlo sería cambiando el parámetro `replicas` de fichero YAML, y volviendo a ejecutar:
 
     oc apply -f nginx-rs.yaml
 
@@ -136,6 +136,6 @@ Por último, si borramos un ReplicaSet se borrarán todos los Pods asociados:
 
     oc delete rs replicaset-nginx
 
-Otra forma de borrar el recurso, es utilizar el fichero yaml:
+Otra forma de borrar el recurso, es utilizar el fichero YAML:
 
     oc delete -f replicaset.yaml

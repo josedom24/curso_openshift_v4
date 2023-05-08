@@ -8,7 +8,7 @@ Podemos crear un **Deployment** de forma imperativa utilizando un comando como e
 
     oc create deployment nginx --image bitnami/nginx
 
-Nosotros, sin embargo, vamos a seguir describiendo los recursos en un fichero yaml. En este caso para describir un **Deployment** de nginx podemos escribir un fichero `deployment.yaml`:
+Nosotros, sin embargo, vamos a seguir describiendo los recursos en un fichero YAML. En este caso para describir un **Deployment** de nginx podemos escribir un fichero `deployment.yaml`:
 
 ```yaml
 apiVersion: apps/v1

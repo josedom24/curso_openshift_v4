@@ -81,7 +81,7 @@ Y si accedemos al Pod con un `port-forward` comprobamos que la versión actual e
 
 A continuación queremos desplegar una versión más reciente de la aplicación. Para ello tenemos que modificar el campo `image` de nuestro **Deployment**, esta operación la podemos hacer de dos formas:
 
-1. Modificando el fichero yaml y volviendo a ejecutar un `oc apply`.
+1. Modificando el fichero YAML y volviendo a ejecutar un `oc apply`.
 2. Ejecutando la siguiente instrucción:
 
         oc set image deployment/test-web contenedor1=josedom24/test_web:v2

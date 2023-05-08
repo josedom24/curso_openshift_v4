@@ -8,7 +8,7 @@ Podríamos crear un recurso **Service** desde la línea de comandos:
 
     oc expose deployment/test-web 
 
-También podemos describir las características del **Service** en un fichero yaml `service.yaml`:
+También podemos describir las características del **Service** en un fichero YAML `service.yaml`:
 
 ```yaml
 kind: Service

@@ -23,7 +23,7 @@ Podemos obtener información de los **Secret** que hemos creado con las instrucc
     password:  11 bytes
 
 
-Si queremos crear un fichero yaml para declarar el objeto **Secret**, podemos ejecutar:
+Si queremos crear un fichero YAML para declarar el objeto **Secret**, podemos ejecutar:
 
     oc create secret generic mysql --from-literal=password=my-password \
                               -o yaml --dry-run=client > secret.yaml

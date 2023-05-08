@@ -6,7 +6,7 @@ Para gestionar ConfigMap tenemos varias opciones: vista **Developer**, apartado 
 
 ![parámetros](img/var1.png)
 
-En esa ventana tenemos las distintas opciones que podemos realizar sobre un **ConfigMap**, además tenemos la opción de crear un nuevo **ConfigMap** pulsando el botón **Create ConfigMap** (Tendremos la opción de crearlo a parir de un formulario o a partir de la definición yaml del recurso):
+En esa ventana tenemos las distintas opciones que podemos realizar sobre un **ConfigMap**, además tenemos la opción de crear un nuevo **ConfigMap** pulsando el botón **Create ConfigMap** (Tendremos la opción de crearlo a parir de un formulario o a partir de la definición YAML del recurso):
 
 ![parámetros](img/var2.png)
 
