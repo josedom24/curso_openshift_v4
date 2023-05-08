@@ -2,7 +2,7 @@
 
 ## Services
 
-Desde la vista **Developer**, en la sección **Topology**, vemos todos los recursos que tenemos creado. Si elegimos un **Deployment** podremos acceder a los **Services** y **Routes** asociadas a él:
+Desde la vista **Developer**, en la sección **Topology**, vemos todos los recursos que tenemos creados. Si elegimos un **Deployment** podremos acceder a los **Services** y **Routes** asociadas a él:
 
 ![acceso1](img/acceso1.png)
 

@@ -28,19 +28,19 @@ En la definición hemos iniciado los siguientes parámetros:
 * `host`: Indicamos el nombre de host que vamos a usar para el acceso. Este nombre debe apuntar a la ip de un nodo del clúster.
 * `path`: Indicamos el path de la url que vamos a usar, en este caso sería la ruta raíz: `/`. 
 * `pathType`: No es importante, nos permite indicar cómo se van a trabajar con las URL. 
-* `backend`: Indicamos el Service al que vamos a acceder. En este caso indicamos el nombre del Service (`service/name`) y el puerto del Service (`service/port/number`).
+* `backend`: Indicamos el Service al que vamos a acceder. En este caso indicamos el nombre del Service (`service/name`) y el puerto del **Service** (`service/port/number`).
 
 Y podríamos crear el recurso, ejecutando:
 
     oc apply -f ingress.yaml
 
-**Nota:** Si estamos usando **OpenShift Dedicated Developer Sandbox**, no tenemos acceso a la dirección IP del nodo master del clúster, por lo que en nuestro servidor DNS no podemos asociar la URL con una dirección IP. De la misma manera, no podremos usar run recurso **Service** de tipo `NodePort`.
+**Nota:** Si estamos usando **OpenShift Dedicated Developer Sandbox**, no tenemos acceso a la dirección IP del nodo master del clúster, por lo que en nuestro servidor DNS no podemos asociar la URL con una dirección IP. De la misma manera, no podremos usar un recurso **Service** de tipo `NodePort`.
 
 **En OpenShift se recomienda el uso de recursos Routes, que nos asignan de forma automática una URL que podemos usar directamente (está dada de alta en un servidor DNS)**.
 
 ## Route
 
-La manera más sencilla de crear un recurso Route en OpenShift es ejecutando:
+La manera más sencilla de crear un recurso **Route** en OpenShift es ejecutando:
 
     oc expose service/test-web
 
