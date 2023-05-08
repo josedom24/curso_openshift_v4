@@ -49,7 +49,7 @@
     * [Ejemplo completo: Despliegue y acceso a Wordpress + MySql](modulo6/wordpress.md)
 	* [Agrupación de aplicaciones](modulo6/agrupamiento.md)
 
-7. Almacenamiento en OpenShift
+7. Almacenamiento en OpenShift v4
 	* [Introducción al almacenamiento (P)](modulo7/almacenamiento.md)
 	* [Almacenamiento en CRC](modulo7/almacenamiento_crc.md)
 	* [Volúmenes dentro de un pod](modulo7/volumen_pod.md)
