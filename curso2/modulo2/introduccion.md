@@ -2,7 +2,7 @@
 
 ## Recursos que nos ofrece OpenShift v4 para el despliegue de aplicaciones
 
-* **Deployment**: Este recurso es igual al ofrecido por Kubernetes, y nos permite el despliegue y actualización de una aplicación, creando varias replicas de la misma y balanceando la carga a las distintas réplicas cuando accedemos a la aplicación.. 
+* **Deployment**: Este recurso es igual al ofrecido por Kubernetes, y nos permite el despliegue y actualización de una aplicación, creando varias réplicas de la misma y balanceando la carga a las distintas réplicas cuando accedemos a la aplicación.. 
 * **DeploymentConfig**: Este recurso es propio de OpenShift. Es muy similar al recurso Deployment, por lo que de la misma manera, nos permite el despliegue y la actualización de aplicaciones. Tiene algunas diferencias con la anterior, por ejemplo la posibilidad de tener estrategias de despliegue configurables, o el uso de triggers para actualizar el despliegue.
 * **Deployment Serverless**:  Es un recurso que permite desplegar aplicaciones sin tener que preocuparse por el número de réplicas en ejecución. En lugar de utilizar réplicas, la aplicación se ejecuta en un **pod autoscaling** que se adapta automáticamente según la demanda. **Deployment Serverless** es ideal para aplicaciones con fluctuaciones en el uso, como las aplicaciones web que experimentan una mayor carga durante los picos de tráfico.
 
