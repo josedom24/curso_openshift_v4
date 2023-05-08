@@ -2,9 +2,9 @@
 
 1. Introducción a OpenShift v4
 	* [Cloud Computing PaaS: Plataforma como servicio (P)](modulo1/paas.md)
-	* [OpenShift, la plataforma PaaS de RedHat (P)](modulo1/openshift.md)
+	* [OpenShift, la plataforma PaaS de Red Hat (P)](modulo1/openshift.md)
 	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
-	* [Introducción a  RedHat OpenShift Dedicated Developer Sandbox](modulo1/sandbox.md)
+	* [Introducción a  Red Hat OpenShift Dedicated Developer Sandbox](modulo1/sandbox.md)
 
 2. Despliegue de aplicaciones en OpenShift v4
 	* [Introducción al despliegue de aplicaciones en OpenShift v4 (P)](modulo2/introduccion.md)
@@ -59,7 +59,7 @@
 
 7. Almacenamiento en OpenShift v4
 	* [Introducción al almacenamiento en OpenShift v4 (P)](modulo7/almacenamiento.md)
-	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo7/almacenamiento_sandbox.md)
+	* [Almacenamiento en Red Hat OpenShift Dedicated Developer Sandbox](modulo7/almacenamiento_sandbox.md)
 	* [Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms](modulo7/phpsqlitecms.md)
 	* [Ejemplo 2: Gestión de almacenamiento desde la línea de comandos: GuestBook](modulo7/guestbook.md)
 	* [Ejemplo 3: Haciendo persistente la aplicación Wordpress](modulo7/wordpress.md)

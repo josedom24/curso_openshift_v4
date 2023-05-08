@@ -13,9 +13,9 @@ Tenemos varias soluciones para trabajar con OpenShift v4:
 
 ## Developer Sandbox y CRC
 
-**RedHat OpenShift Dedicated Developer Sandbox** y **CRC (CodeReady Containers)** son las opciones que vamos a usar en este curso.
+**Red Hat OpenShift Dedicated Developer Sandbox** y **CRC (CodeReady Containers)** son las opciones que vamos a usar en este curso.
 
-### RedHat OpenShift Dedicated Developer Sandbox
+### Red Hat OpenShift Dedicated Developer Sandbox
 
 La versión **Developer Sandbox** de **OpenShift Dedicated** nos permite probar OpenShift v4 en una plataforma con las siguientes características:
 
@@ -40,6 +40,6 @@ La versión **Developer Sandbox** de **OpenShift Dedicated** nos permite probar 
 
 ## ¿Qué plataforma vamos a usar en este curso?
 
-En este curso vamos a usar principalmente **RedHat OpenShift Dedicated Developer Sandbox**, aunque algunos ejercicios lo vamos a realizar sobre **CRC** por alguna característica específica, por ejemplo, por poder utilizar un usuario con permisos administrativos.
+En este curso vamos a usar principalmente **Red Hat OpenShift Dedicated Developer Sandbox**, aunque algunos ejercicios lo vamos a realizar sobre **CRC** por alguna característica específica, por ejemplo, por poder utilizar un usuario con permisos administrativos.
 
 Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se pueden desarrollar indistintamente en las dos plataformas.

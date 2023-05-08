@@ -25,7 +25,7 @@ Es el momento de desplegar una base de datos MongoDB para guardar la informació
 
     oc create -f https://raw.githubusercontent.com/openshift-labs/starter-guides/ocp-4.8/mongodb-template.yaml
 
-Hay que indicar que el **Template** que hemos creado intenta crear el despliegue de MongoDB desde una imagen `mongodb:3.6` que busca por defecto en el proyecto `openshift`. Como en **RedHat OpenShift Dedicated Developer Sandbox** no tenemos esa imagen, vamos a crear un objeto **ImageStream** en nuestro proyecto que apunte a una imagen de MongoDB externa, para ello:
+Hay que indicar que el **Template** que hemos creado intenta crear el despliegue de MongoDB desde una imagen `mongodb:3.6` que busca por defecto en el proyecto `openshift`. Como en **Red Hat OpenShift Dedicated Developer Sandbox** no tenemos esa imagen, vamos a crear un objeto **ImageStream** en nuestro proyecto que apunte a una imagen de MongoDB externa, para ello:
 
     oc import-image mongodb:3.6 --from=registry.access.redhat.com/rhscl/mongodb-36-rhel7 --confirm
 

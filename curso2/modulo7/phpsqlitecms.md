@@ -109,7 +109,7 @@ Como vemos se ha creado un nuevo Pod sin problemas.
 
 ## Escalado y almacenamiento
 
-Como hemos indicado el almacenamiento ofrecido por **RedHat OpenShift Dedicated Developer Sandbox** no permite que varios Pods estén simultáneamente conectado a un mismo volumen, no proporciona almacenamiento compartido.
+Como hemos indicado el almacenamiento ofrecido por **Red Hat OpenShift Dedicated Developer Sandbox** no permite que varios Pods estén simultáneamente conectado a un mismo volumen, no proporciona almacenamiento compartido.
 
 Esto tiene otra consecuencia, además de la estudiada en el punto anterior. Veamos como se comporta un escalado del despliegue:
 

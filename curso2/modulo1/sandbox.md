@@ -1,6 +1,6 @@
-# Introducción a  RedHat OpenShift Dedicated Developer Sandbox
+# Introducción a  Red Hat OpenShift Dedicated Developer Sandbox
 
-[Acceso a RedHat OpenShift Dedicated Developer Sandbox](https://developers.redhat.com/developer-sandbox)
+[Acceso a Red Hat OpenShift Dedicated Developer Sandbox](https://developers.redhat.com/developer-sandbox)
 
 Tenemos varias formas de interactuar con nuestro clúster de OpenShift:
 
@@ -36,7 +36,7 @@ Nos descargamos un fichero comprimido `oc.tar`, lo descomprimimos y lo copiamos 
 
 ### Configuración de oc
 
-Una vez que tenemos instalado la herramienta `oc`, el siguiente paso el realizar el login en nuestro clúster. En el caso de **RedHat OpenShift Dedicated Developer Sandbox**, la autentificación se hace por medio de un token.
+Una vez que tenemos instalado la herramienta `oc`, el siguiente paso el realizar el login en nuestro clúster. En el caso de **Red Hat OpenShift Dedicated Developer Sandbox**, la autentificación se hace por medio de un token.
 
 Para obtener este token accedemos al menú que aparece al pulsar sobre nuestro nombre de usuario (parte superior derecha), eligiendo la opción **Copy login command**:
 
