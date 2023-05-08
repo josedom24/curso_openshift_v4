@@ -58,7 +58,7 @@
 	* [Uso de Helm en OpenShift desde la línea de comandos](modulo6/helm-cli.md)
 
 7. Almacenamiento en OpenShift v4
-	* [Introducción al almacenamiento en OpenShift (P)](modulo7/almacenamiento.md)
+	* [Introducción al almacenamiento en OpenShift v4 (P)](modulo7/almacenamiento.md)
 	* [Almacenamiento en RedHat OpenShift Dedicated Developer Sandbox](modulo7/almacenamiento_sandbox.md)
 	* [Ejemplo 1: Gestión de almacenamiento desde la consola web: phpsqlitecms](modulo7/phpsqlitecms.md)
 	* [Ejemplo 2: Gestión de almacenamiento desde la línea de comandos: GuestBook](modulo7/guestbook.md)
