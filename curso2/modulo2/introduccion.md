@@ -1,4 +1,4 @@
-# Introducción al despliegue de aplicaciones en OpenShift
+# Introducción al despliegue de aplicaciones en OpenShift v4
 
 ## Recursos que nos ofrece OpenShift v4 para el despliegue de aplicaciones
 
