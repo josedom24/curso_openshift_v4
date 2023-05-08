@@ -1,6 +1,6 @@
 # Ejemplo completo: Haciendo persistente la aplicación Wordpress
 
-En este ejemplo vamos a volver e realizar el despliege de Wordpress +  MySql, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente.
+En este ejemplo vamos a volver e realizar el despliegue de Wordpress +  MySql, pero añadiendo el almacenamiento necesario para que la aplicación sea persistente.
 
 Para llevar a cabo esta tarea necesitaremos tener a nuestra disposición dos volúmenes:
 

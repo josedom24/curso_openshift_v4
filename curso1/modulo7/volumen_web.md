@@ -2,7 +2,7 @@
 
 ## Gestionando el almacenamiento desde la consola web como usuario sin privilegios
 
-Vamos a repetir el ejemplo visto en el punto anterior desde la consola web, con el usuario `developer` trabajdno en el mismo proyecto `developer`.
+Vamos a repetir el ejemplo visto en el punto anterior desde la consola web, con el usuario `developer` trabajando en el mismo proyecto `developer`.
 
 Lo primero será crear un objeto **Deployment**, para ello desde la vista **Administrator**, escogemos el apartado **Workloads -> Deployments** y pulsamos sobre el botón **Create Deployment**:
 
@@ -38,7 +38,7 @@ Indicando el recurso **PersistentVolumenClaim (PVC)** que vamos a asociar, y el 
 
 ![volumen](img/volumen8.png)
 
-Como ha cambiado la definición del objeto, se crear un nuevo Pod con la nueva definición:
+Como ha cambiado la definición del objeto, se crea un nuevo Pod con la nueva definición:
 
 ![volumen](img/volumen9.png)
 
@@ -46,6 +46,6 @@ A continuación, creamos el fichero `index.html` desde un terminal del Pod que s
 
 ![volumen](img/volumen10.png)
 
-Y podemos acceder a la aplicación usando los recursos **Serviice** y **Route** del aparatado anterior y comprobamos que está funcionando de forma adecuada:
+Y podemos acceder a la aplicación usando los recursos **Service** y **Route** del aparatado anterior y comprobamos que está funcionando de forma adecuada:
 
 ![volumen](img/volumen11.png)

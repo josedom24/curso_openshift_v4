@@ -4,7 +4,7 @@ Los volúmenes son objetos que permiten a los contenedores acceder y compartir d
 
 * **emptyDir** es un tipo de volumen que se crea vacío al comienzo de la vida de un Pod y se elimina cuando el Pod muere. Este tipo de volumen se utiliza para compartir datos temporales entre los contenedores dentro de un mismo pod. Como su nombre indica, está vacío al principio, y cualquier contenido que se escriba en él se perderá si el Pod se reinicia o se elimina.
 
-* **hostPath** es un tipo de volumen que permite a los contenedores acceder a un directorio o archivo en el host en el que se ejecuta el pod. Este tipo de volumen es útil cuando se necesita acceder a datos persistentes en el host, como archivos de configuración o bases de datos. A diferencia de "emptyDir", el contenido del directorio o archivo en el host persiste incluso si el Pod se reinicia o se elimina.
+* **hostPath** es un tipo de volumen que permite a los contenedores acceder a un directorio o archivo en el host en el que se ejecuta el pod. Este tipo de volumen es útil cuando se necesita acceder a datos persistentes en el host, como archivos de configuración o bases de datos. A diferencia de **emptyDir**, el contenido del directorio o archivo en el host persiste incluso si el Pod se reinicia o se elimina.
 
 ## Declaración de volúmenes en un pod
 
@@ -66,7 +66,7 @@ Si cambiamos el valor del fichero en el primer contenedor, cambiará en el segun
     oc exec -c reader-container my-pod -- sh -c 'cat /data/my-file.txt'
     Hola, mundo!
 
-Si creamos un nuevo fichero en el directorio `/dir` del primer contenedor, se estará creando en el directorio `/tep/datos` del host donde se está ejecutando el pod. A continuación listaremos los ficheros del directorio `/dir` del segundo contenedor y se debe mostrar el fichero:
+Si creamos un nuevo fichero en el directorio `/dir` del primer contenedor, se estará creando en el directorio `/tmp/datos` del host donde se está ejecutando el Pod. A continuación listaremos los ficheros del directorio `/dir` del segundo contenedor y se debe mostrar el fichero:
 
     oc exec -c writer-container my-pod -- sh -c 'touch /dir/new-file.txt'
     oc exec -c reader-container my-pod -- sh -c 'ls /dir'

@@ -4,7 +4,7 @@ Desde el punto de vista del desarrollador que necesita almacenamiento para su ap
 
 En este ejemplo vamos a desplegar un servidor web que va a servir una página html que tendrá almacenada en un volumen. La asignación del volumen se va a realizar de forma dinámica.
 
-Como vimos en CRC tenemos configurado un recurso **StorageClass**, que de forma dinámica van a crear el nuevo volumen de tipo hostPath y lo asocian a la petición de volumen que vamos a realizar.
+Como vimos en CRC tenemos configurado un recurso **StorageClass**, que de forma dinámica van a crear el nuevo volumen de tipo `hostPath` y lo asocian a la petición de volumen que vamos a realizar.
 
     oc get storageclass
     NAME                                     PROVISIONER                        RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
@@ -27,7 +27,7 @@ spec:
       storage: 1Gi
 ```
 
-Al crear el objeto **PersistentVolumenClaim (PVC)**, veremos que se queda en estado Pending, no se creará el objeto **PersistentVolume (PV)** hasta que no lo vayamos a usar por primera vez:
+Al crear el objeto **PersistentVolumenClaim (PVC)**, veremos que se queda en estado `Pending`, no se creará el objeto **PersistentVolume (PV)** hasta que no lo vayamos a usar por primera vez:
 
     oc login -u developer -p developer https://api.crc.testing:6443
     oc new-project almacenamiento
@@ -44,7 +44,7 @@ Podemos ver las características del objeto que hemos creado, ejecutando:
     
 ## Uso del volumen
 
-Creamos el Deployment usando el fichero `deployment.yaml`:
+Creamos el **Deployment** usando el fichero `deployment.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -87,7 +87,7 @@ spec:
 ```
 
 * En la especificación del Pod, además de indicar el contenedor, hemos indicado que va a tener un volumen (campo `volumes`). 
-* En realidad, definimos una lista de volúmenes (en este caso solo definimos uno) indicando su nombre (`name`) y la solicitud del volumen (`persistentVolumeClaim`, `claimName`).
+* En realidad, definimos una lista de volúmenes (en este caso solo definimos uno) indicando su nombre (`name`) y la solicitud del volumen (`persistentVolumeClaim` - `claimName`).
 * Además en la definición del contenedor tendremos que indicar el punto de montaje del volumen (`volumeMounts`) señalando el directorio del contenedor (`mountPath`) y el nombre (`name`).
 
 Creamos el **Deployment**:
@@ -115,19 +115,19 @@ También podemos verlos desde el punto de vista del administrador para poder lis
 
 **Nota**: Los objetos **PersistentVolumeClaim** están asociados a un proyecto (en nuestro caso `developer/my-pvc`). Sin embargo, los objetos **PersistentVolume** no pertenecen a un proyecto, son globales al clúster de OpenShift.
 
-Seguimos trabajando con el usaurio `developer`, y creamos un fichero `index.html`:
+Seguimos trabajando con el usurio `developer`, y creamos un fichero `index.html`:
 
     oc login -u developer -p developer https://api.crc.testing:6443
     oc exec deploy/nginx -- bash -c "echo '<h1>Curso de OpenShift</h1>' > /app/index.html"
 
-Finalmente creamos el Service y el Route para acceder al despliegue:
+Finalmente creamos el **Service** y el **Route** para acceder al despliegue:
 
     oc expose deploy/nginx
     oc expose service/nginx
 
 ![volumen](img/volumen1.png)
 
-Finalmente podemos comprobar que la información de la aplicación no se pierde borrando el **Deployment** y volviéndolo a crear, comprobando que se sigue sirviendo el fichero `index.html`.
+Podemos comprobar que la información de la aplicación no se pierde borrando el **Deployment** y volviéndolo a crear, comprobando que se sigue sirviendo el fichero `index.html`.
 
 
 ## Eliminación del volumen

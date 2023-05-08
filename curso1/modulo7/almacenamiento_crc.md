@@ -23,7 +23,6 @@ En el caso de nuestra instalación con CRC tenemos disponible un **StorageClass*
         NAME                                     PROVISIONER                        RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
         crc-csi-hostpath-provisioner (default)   kubevirt.io.hostpath-provisioner   Delete          WaitForFirstConsumer   false                  36d
 
-
 Podemos observar que la configuración del recurso **Storage Class** tiene los siguientes parámetros:
 
 * Política de reciclaje `Delete`, es decir cuando el volumen se desasocie de su solicitud, se borrará.
