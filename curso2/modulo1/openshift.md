@@ -1,4 +1,4 @@
-# OpenShift la plataforma PaaS de RedHat
+# OpenShift, la plataforma PaaS de RedHat
 
 OpenShift v4 es una plataforma de contenedores de código abierto basada en Kubernetes que proporciona una solución completa de orquestación de contenedores y servicios de aplicaciones para desarrolladores y equipos de operaciones. 
 
