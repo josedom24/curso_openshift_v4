@@ -14,7 +14,7 @@ Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan
 ## Características del recurso DeploymentConfig
 
 1. Un objeto **DeploymentConfig** es una plantilla para ejecutar aplicaciones.
-2. Podemos actualizar los despliegues con ul uso **triggers** (disparadores).
+2. Podemos actualizar los despliegues con el uso de **triggers** (disparadores).
 3. Además de las estrategias de despliegue que poseen los **Deployment** (Rolling Update y Recreate), podemos crear **estrategias personalizadas**.
 4. Podemos usar *ganchos* (**lifecycle hooks**) para ejecutar comportamientos personalizados a lo largo del ciclo de vida del despliegue.
 5. **Versionado de la aplicación** para permitir la reversión manual o automática en caso de fallo de despliegue.
