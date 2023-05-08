@@ -1,7 +1,7 @@
 #  Secrets
 
 Cuando en un variable de entorno indicamos una información sensible, como por ejemplo, una contraseña o una clave ssh, es mejor utilizar un
-nuevo recurso de Kubernetes llamado **Secret**.
+nuevo recurso de Kubernetes/OpenShift llamado **Secret**.
 
 Los [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) permiten guardar información sensible que será **codificada** o
 **cifrada**.
@@ -10,7 +10,7 @@ Hay distintos tipos de **Secret**, en este curso vamos a usar los genéricos y l
 
     oc create secret generic mysql --from-literal=password=my-password
 
-Podemos obtener información de los **Secret** que hemos creado con las instrucciones:
+Podemos obtener información de los **Secrets** que hemos creado con las instrucciones:
 
     oc get secret
     oc describe secret mysql
@@ -28,8 +28,7 @@ Si queremos crear un fichero YAML para declarar el objeto **Secret**, podemos ej
     oc create secret generic mysql --from-literal=password=my-password \
                               -o yaml --dry-run=client > secret.yaml
 
-Veamos a continuación cómo quedaría un despliegue que usa el valor de un Secret para inicializar una variable de entorno. Vamos a usar el
-fichero `mysql-deployment-secret.yaml`:
+Veamos a continuación cómo quedaría un despliegue que usa el valor de un **Secret** para inicializar una variable de entorno. Vamos a usar el fichero `mysql-deployment-secret.yaml`:
 
 
 ```yaml
@@ -63,5 +62,5 @@ spec:
                   key: password
 ```
 Observamos como al indicar las variables de entorno (sección `env`) seguimos indicado el nombre (`name`) pero el valor se indica
-con un valor de un Secret (`valueFrom: - secretKeyRef:`), indicando el nombre del Secret (`name`) y la clave correspondiente. (`key`).
+con un valor de un **Secret** (`valueFrom: - secretKeyRef:`), indicando el nombre del **Secret** (`name`) y la clave correspondiente (`key`).
 

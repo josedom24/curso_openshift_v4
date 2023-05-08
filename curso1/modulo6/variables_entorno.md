@@ -6,7 +6,7 @@ Por ejemplo, si estudiamos la documentación de la imagen `bitnami/mysql` en [Do
 `MYSQL_PASSWORD`, etc., que nos permitirán configurar de alguna forma determinada nuestro servidor de base de datos (indicando la contraseña
 del usuario root, creando una determinada base de datos o creando un usuario con una contraseña por ejemplo).
 
-De la misma manera, al especificar los contenedores que contendrán los Pods que se van a crear desde un Deployment, también se pondrán inicializar las variables de entorno necesarias.
+De la misma manera, al especificar los contenedores que contendrán los Pods que se van a crear desde un **Deployment**, también se pondrán inicializar las variables de entorno necesarias.
 
 ## Configuración de aplicaciones usando variables de entorno
 

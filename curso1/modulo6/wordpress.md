@@ -2,12 +2,21 @@
 
 En este ejemplo vamos a desplegar la aplicación Wordpress, para ello será necesario realizar dos despliegues: uno para ejecutar los Pods que sirven la aplicación, y otro para desplegar la base de datos MySql necesaria para el funcionamiento. Veamos algunos aspectos antes de empezar:
 
-* Como hemos estudiado en los ejemplos vistos en este módulo, al crear el despliegue de MySql tendremos que configurar las siguientes variables de entorno: `MYSQL_ROOT_PASSWORD` (contraseña del usuario root de la base de datos), `MYSQL_DATABASE` (el nombre de la base de datos que se va a crear), `MYSQL_USER` (nombre del usuario de la base de datos que se va carear), `MYSQL_PASSWORD` (contraseña de este usuario).
-* Si comprobamos la documentación de la imagen [bitnami/wordpress en Docker Hub](https://hub.docker.com/r/bitnami/wordpress/) las variables de entorno que vamos a definir son las siguientes: `WORDPRESS_DATABASE_HOST` (la dirección del servidor de base de datos), `WORDPRESS_DATABASE_USER` (el usuario que se va a usar para acceder a la base de datos), `WORDPRESS_DATABASE_PASSWORD` (la contraseña de dicho usuario) y `WORDPRESS_DATABASE_NAME` (el nombre de la base de datos a las que vamos a conectar para gestionar las tablas de Wordpress).
-* El valor de la variable `WORDPRESS_DATABASE_HOST` será el nombre del Service que creemos para acceder a la base de datos, como ya hemos estudiado, se creará un registro en el DNS del cluster que permitirá que Wordpress acceda a la base de datos usando el nombre del Service.
-* Los valores de las credenciales para el acceso a la base de datos, las vamos a guardar en dos recursos de nuestro cluster:: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un ConfigMap y los datos sensibles, las contraseñas, la guardaremos en un Secret.
+* Como hemos estudiado en los ejemplos vistos en este módulo, al crear el despliegue de MySql tendremos que configurar las siguientes variables de entorno: 
+    * `MYSQL_ROOT_PASSWORD`: Contraseña del usuario root de la base de datos. 
+    * `MYSQL_DATABASE`: El nombre de la base de datos que se va a crear.
+    * `MYSQL_USER`: Nombre del usuario de la base de datos que se va carear.
+    * `MYSQL_PASSWORD`: Contraseña de este usuario.
+* Si comprobamos la documentación de la imagen [bitnami/wordpress en Docker Hub](https://hub.docker.com/r/bitnami/wordpress/) las variables de entorno que vamos a definir son las siguientes: 
+    * `WORDPRESS_DATABASE_HOST`: La dirección del servidor de base de datos, 
+    * `WORDPRESS_DATABASE_USER`: El usuario que se va a usar para acceder a la base de datos.
+    * `WORDPRESS_DATABASE_PASSWORD`: La contraseña de dicho usuario.
+    * `WORDPRESS_DATABASE_NAME`: El nombre de la base de datos a las que vamos a conectar para gestionar las tablas de Wordpress.
 
-## Creación y configuración del poryecto
+* El valor de la variable `WORDPRESS_DATABASE_HOST` será el nombre del **Service** que creemos para acceder a la base de datos, como ya hemos estudiado, se creará un registro en el DNS del cluster que permitirá que Wordpress acceda a la base de datos usando el nombre del **Service**.
+* Los valores de las credenciales para el acceso a la base de datos, las vamos a guardar en dos recursos de nuestro cluster: los datos no sensibles (nombre de usuario y nombre de la base de datos) lo guardaremos en un **ConfigMap** y los datos sensibles, las contraseñas, la guardaremos en un **Secret**.
+
+## Creación y configuración del proyecto
 
 Trabajamos con el usuario `developer` creando un nuevo proyecto, y configurándolo de manera adecuada para poder ejecutar Pods privilegiados.
 
@@ -108,7 +117,7 @@ spec:
                   key: bd_rootpassword
 ```
 
-Y la definición del recurso Service, en el fichero `mysql-service.yaml`:
+Y la definición del recurso **Service**, en el fichero `mysql-service.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -186,7 +195,7 @@ spec:
             
 ```
 
-Y el Service definido en `wordpress-service.yaml`:
+Y el **Service** definido en `wordpress-service.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -215,7 +224,7 @@ Ejecutamos:
     oc apply -f wordpress-deployment.yaml
     oc apply -f wordpress-service.yaml
 
-Además como al despliegue de Wordpress necesitamos acceder desde el exterior, vamos a crear un recurso Route:
+Además como al despliegue de Wordpress necesitamos acceder desde el exterior, vamos a crear un recurso **Route**:
 
     oc expose service/wordpress
 

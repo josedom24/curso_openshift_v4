@@ -18,7 +18,7 @@ Aunque hay distintas formas de indicar el conjunto de claves-valor de nuestro **
                               --from-literal=mysql_password=password-user \
                               --from-literal=basededatos=test
 
-En el ejemplo anterior, hemos creado un **ConfigMap** llamado `mysql` con cuatro pares clave-valor. Para ver los **ConfigMap** que tenemos
+En el ejemplo anterior, hemos creado un **ConfigMap** llamado `mysql` con cuatro pares clave-valor. Para ver los **ConfigMaps** que tenemos
 creados, podemos utilizar:
 
     oc get cm
@@ -38,7 +38,7 @@ Si queremos crear un fichero YAML para declarar el objeto **ConfigMap**, podemos
 Con la opción `--dry-run=client`, `oc` va a simular la creación del recurso, pero no se llega a ejecutar, sin embargo con la opción `-o yaml` generamos el fichero YAML con la definición del recurso. 
   
 Una vez que creado el **ConfigMap** se puede crear un despliegue donde las variables de entorno se inicializan con los valores guardados en
-el ConfigMap. Por ejemplo, un despliegue de una base de datos lo podemos encontrar en el fichero `mysql-deployment-configmap.yaml`:
+el **ConfigMap**. Por ejemplo, un despliegue de una base de datos lo podemos encontrar en el fichero `mysql-deployment-configmap.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -86,7 +86,7 @@ spec:
                   key: basededatos
 ```
 
-Observamos como al indicar las variables de entorno (sección `env`) seguimos indicado el nombre (`name`) pero el valor se indica con una clave de un ConfigMap (`valueFrom: - configMapKeyRef:`), para ello se indica el nombre del ConfigMap (`name`) y el valor que tiene una determinada clave (`key`). De esta manera, no guardamos en los ficheros YAML los valores específicos de las variables de entorno, y además, estos valores se pueden reutilizar para otros despliegues, por ejemplo, al desplegar un CMS indicar los mismos valores para las
+Observamos como al indicar las variables de entorno (sección `env`) seguimos indicado el nombre (`name`) pero el valor se indica con una clave de un **ConfigMap** (`valueFrom: - configMapKeyRef:`), para ello se indica el nombre del **ConfigMap** (`name`) y el valor que tiene una determinada clave (`key`). De esta manera, no guardamos en los ficheros YAML los valores específicos de las variables de entorno, y además, estos valores se pueden reutilizar para otros despliegues, por ejemplo, al desplegar un CMS indicar los mismos valores para las
 credenciales de acceso a la base de datos.
 
 Creamos el despliegue, comprobamos que las variables se han creado y accedemos a la base de datos con el usuario que hemos creado:

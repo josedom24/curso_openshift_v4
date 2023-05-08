@@ -19,11 +19,11 @@ En el otro despliegue escogemos la misma opción (**Edit application grouping**)
 
 ![agrupación](img/agrupacion3.png)
 
-En este momento los dos despliegues ya está agrupados, y podemos verlo visualmente en la topología:
+En este momento los dos despliegues ya están agrupados, y podemos verlo visualmente en la topología:
 
 ![agrupación](img/agrupacion4.png)
 
-La agrupación ha creado un nuevo Label en cada uno de los despliegue donde se indica:
+La agrupación ha creado un nuevo **Label** en cada uno de los **Deployments** implicados:
 
         app.kubernetes.io/part-of=wordpress
 
@@ -33,7 +33,7 @@ Podemos indicar que existe una relación entre despliegues de una aplicación, p
 
 ![agrupación](img/agrupacion5.png)
 
-En este caso queremos señalar que los Pods del despliegue Wordpress acceden a los Pods del despliegue MySql. Las conexiones se señalan en el recurso con una anotación, por ejemplo en el despliegue Wordpress se ha realiza una nueva anotación:
+En este caso queremos señalar que los Pods del despliegue Wordpress acceden a los Pods del despliegue MySql. Las conexiones se señalan en el recurso con una anotación, por ejemplo en el **Deployment**** Wordpress se ha realiza una nueva anotación:
 
         app.openshift.io/connects-to: [{"apiVersion":"apps/v1","kind":"Deployment","name":"mysql"}]
 
