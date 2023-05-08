@@ -1,6 +1,6 @@
 # Instalación en local con CRC
 
-CRC nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará een una máquina virtual. 
+CRC nos proporciona la posibilidad de realizar una instalación local de OpenShift v4, creando un clúster de un nodo que se ejecutará en una máquina virtual. 
 
 ## Requisitos mínimos
 
@@ -52,7 +52,7 @@ A continuación, aunque no es necesario, si necesitamos aumentar los recursos de
     crc config set cpus 8
     crc config set memory 20480
 
-Esto también es opcional, pero si queremos que durante la instalación se instalen los componentes de telemtría para mostrar las métricas de los recursos que se están utilizando, debes realizar la siguiente configuración:
+Esto también es opcional, pero si queremos que durante la instalación se instalen los componentes de telemetría para mostrar las métricas de los recursos que se están utilizando, debes realizar la siguiente configuración:
 
     crc config set enable-cluster-monitoring true
 
@@ -79,7 +79,7 @@ Después de unos minutos, el clúster estará preparado y nos dará información
       Username: developer
       Password: developer
 
-No es necesario instalar la herramienta `oc`, durante el proceso de instalación se ha descargado, lo único que tenemos que hacer es configurar el PATH para que podamos acceder a ella, para ello:
+No es necesario instalar la herramienta `oc`, durante el proceso de instalación se ha descargado, lo único que tenemos que hacer es configurar el PATH para que podamos acceder a ella, para ello ejecutamos:
 
     eval $(crc oc-env)
     
@@ -91,7 +91,7 @@ Durante la instalación en Debian 11, al ejecutar el comando `crc start` me apar
 
 Es decir, al intentar usar la imagen base que se ha descargado y ha guardado en el directorio `~/.crc/cache` nos encontramos con problemas de permiso y no se puede crear la máquina virtual.
 
-La configuracion de seguridad de AppArmor en Debian 11, evita que kvm/libvirt utilice imágenes bases que no estén guardadas en determinados directorios. Por lo tanto hay que modificar la configuración para que se permita el uso de esta imagen base que está guardada en este directorio, para ello, modificamos el fichero `/etc/apparmor.d/libvirt/TEMPLATE.qemu` y añadimos la siguiente línea:
+La configuración de seguridad de AppArmor en Debian 11, evita que kvm/libvirt utilice imágenes bases que no estén guardadas en determinados directorios. Por lo tanto hay que modificar la configuración para que se permita el uso de esta imagen base que está guardada en este directorio, para ello, modificamos el fichero `/etc/apparmor.d/libvirt/TEMPLATE.qemu` y añadimos la siguiente línea:
 
     sudo nano /etc/apparmor.d/libvirt/TEMPLATE.qemu
 
@@ -109,7 +109,7 @@ Y ya podemos realizar la instalación de CRC sin problemas.
 ## Algunos detalles de la instalación
 
 Como hemos dicho, todos los ficheros relacionados con CRC se guardan en el directorio `~/.crc`.
-La configuración de acceso al clúster, al igual que los clúster de kubernetes se guarda en el fichero `~/.kube/config`. En nuestro caso:
+La configuración de acceso al clúster, al igual que en kubernetes se guarda en el fichero `~/.kube/config`. En nuestro caso:
 
 ```yaml
 apiVersion: v1

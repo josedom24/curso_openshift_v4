@@ -64,7 +64,7 @@ Vamos a conectarnos como administrador para poder acceder a los **namespaces**:
 
     Using project "developer2".
 
-El administrador tiene acceso a 68 proyectos, por defecto, está usando el último que se ha creado. Podemos ver todos los poryecrtos, ejecutando:
+El administrador tiene acceso a 68 proyectos, por defecto, está usando el último que se ha creado. Podemos ver todos los proyectos, ejecutando:
 
     oc get projects
 
@@ -72,8 +72,8 @@ Ahora si podemos acceder a los **namespaces**, ejecutando:
 
     oc get ns
 
-Y podemos comprobar que se han creado el **namespace** `developer` y `developer2` correspondiente a los proyectos creados anteriormente.
-Finalmente si queremos trabajar en un proyecto en concreto, por ejemplo en el `default`, ejecutaremos:
+Y podemos comprobar que se han creado el **namespace** `developer` y `developer2` correspondientes a los proyectos creados anteriormente.
+Finalmente, si queremos trabajar en un proyecto en concreto, por ejemplo en el `default`, ejecutaremos:
 
     oc project default
     Now using project "default" on server "https://api.crc.testing:6443".

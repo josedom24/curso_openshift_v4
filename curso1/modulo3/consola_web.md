@@ -1,8 +1,8 @@
 # La consola web en CRC
 
-La consola WEB en la instalación de OpenShift con CRC, es similar a la que hemos estudiado en **RedHat OpenShift Dedicated Developer Sandbox**, teniendo en cuenta algunas diferencias:
+La consola web en la instalación de OpenShift con CRC, es similar a la que hemos estudiado en **RedHat OpenShift Dedicated Developer Sandbox**, teniendo en cuenta algunas diferencias:
 
-* Con CRC no tenemos todas las funcionalidades ofrecidas con **RedHat OpenShift Dedicated Developer Sandbox**, aunque podemos añadirlas con la instalación de nuevos **Operadores**. Por lo tanto faltan opciones como: Pipelines, Serverless,...
+* Con CRC no tenemos todas las funcionalidades ofrecidas con **RedHat OpenShift Dedicated Developer Sandbox**, aunque podemos añadirlas con la instalación de nuevos **Operadores**. Por lo tanto, faltan opciones como: Pipelines, Serverless,...
 * En **RedHat OpenShift Dedicated Developer Sandbox** accedemos a la consola web con un usuario sin privilegios, por lo que muchas opciones no la tenemos disponibles por falta de autorización. Con CRC ocurre lo mismo si accedemos con el usuario `developer`, sin embargo, al acceder con el usuario privilegiado `kubeadmin` tendremos a nuestras disposición todas las opciones de configuración.
 
 ## Acceso a la consola web
@@ -20,7 +20,7 @@ Al igual que hemos visto en **RedHat OpenShift Dedicated Developer Sandbox**, te
 
 ## Gestión de proyectos en la consola web
 
-En al instalación local de OpenShift con CRC, hemos visto que tenemos la posibilidad de gestionar nuestros proyectos de trabajo. Al igual que vimos en **RedHat OpenShift Dedicated Developer Sandbox**, podemos obtener la información del proyecto actual en el que estamos trabajando, para ello escogemos en la vista **Developer**, la opción **Project**:
+En la instalación local de OpenShift con CRC, hemos visto que tenemos la posibilidad de gestionar nuestros proyectos de trabajo. Al igual que vimos en **RedHat OpenShift Dedicated Developer Sandbox**, podemos obtener la información del proyecto actual en el que estamos trabajando, para ello escogemos en la vista **Developer**, la opción **Project**:
 
 ![web](img/web2.png)
 

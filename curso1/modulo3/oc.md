@@ -14,7 +14,7 @@ Como hemos dicho anteriormente para obtener las instrucciones para hacer login e
     To login as a regular user, run 'oc login -u developer -p developer https://api.crc.testing:6443'.
     To login as an admin, run 'oc login -u kubeadmin https://api.crc.testing:6443'
 
-Como vemos podemos loguearno con dos usarios: `kubeadmin` que será un usuario administrador con todos los permisos disponibles, y con el usuario `developer` que será un usuario sin privilegios.
+Como vemos podemos loguearnos con dos usuarios: `kubeadmin` que será un usuario administrador con todos los permisos disponibles, y con el usuario `developer` que será un usuario sin privilegios.
 
 Por ejemplo para loguearnos como administrador.
     
