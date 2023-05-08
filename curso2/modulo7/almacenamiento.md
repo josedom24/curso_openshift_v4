@@ -1,6 +1,6 @@
 # Introducción al almacenamiento en OpenShift
 
-El uso de volúmenes en OpenShift nos proporcionar la capacidad de que los Pods puedan guardar información, y que los datos de nuestras aplicaciones no se pierdan cuando un Pod se elimina.
+El uso de volúmenes en OpenShift nos proporciona la capacidad de que los Pods puedan guardar información, y que los datos de nuestras aplicaciones no se pierdan cuando un Pod se elimina.
 
 Tenemos distintos tipos de fuentes de almacenamiento, que dependerá de la implementación del clúster de OpenShift:
 
