@@ -38,7 +38,7 @@ Tenemos tres modos de acceso, que dependen del backend que vamos a utilizar:
 
 Las políticas de reciclaje de volúmenes también dependen del backend y son:
 
-* **Retain**: El volumen no se elimina, aunque el la petición de almacenamiento se elimine. El administrador debe borrar el contenido para la próxima asociación.
+* **Retain**: El volumen no se elimina, aunque la petición de almacenamiento se elimine. El administrador debe borrar el contenido para la próxima asociación.
 * **Recycle**: Reutilizar contenido. Se elimina el contenido y el volumen es de nuevo utilizable.
 * **Delete**: Se borra después de su utilización.
 
