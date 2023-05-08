@@ -85,8 +85,7 @@ en docker:
 
     oc logs pod-nginx
 
-En el caso poco habitual de que queramos ejecutar alguna orden adicional en el Pod, podemos utilizar el comando `exec`, por ejemplo,
-en el caso particular de que queremos abrir una shell de forma interactiva:
+En el caso poco habitual de que queramos ejecutar alguna orden adicional en el Pod, podemos utilizar el comando `exec`, por ejemplo, en el caso particular de que queremos abrir una shell de forma interactiva:
 
     oc exec -it pod-nginx -- /bin/bash
 

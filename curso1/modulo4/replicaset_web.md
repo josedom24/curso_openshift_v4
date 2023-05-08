@@ -12,7 +12,6 @@ En esta pantalla también tenemos un botón **Create ReplicaSet** que nos permit
 
 **Nota**: También podemos ejecutar un fichero yaml desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
 
-
 Si pinchamos sobre un **ReplicaSet**, obtenemos los detalles del mismo:
 
 ![rs3](img/rs3.png)

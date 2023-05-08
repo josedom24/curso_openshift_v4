@@ -114,13 +114,13 @@ Y volvemos a acceder a la aplicación con un `port-forward` para comprobar que r
 
 ![test-web](img/test-web2.png)
 
-## *Rollback* del Deployment
+## Rollback del Deployment
 
 El proceso de despliegue de una nueva versión de una aplicación es una labor crítica, que tradicionalmente ha dado muchos problemas. Si estamos sirviendo una aplicación web que utilizan muchos usuarios, no podemos permitir que haya un corte en el servicio por un problema en el despliegue de una nueva versión.
 
 Evidentemente, los problemas que pueden aparecer durante el despliegue de una nueva versión pueden estar causados por muchos motivos, y muchas veces es complicado tener todos los factores controlados. Si finalmente tenemos alguno, la pregunta sería: ¿Hemos diseñado un proceso que nos permita de una manera sencilla y rápida volver a la versión anterior de la aplicación que sabíamos que funcionaba bien?
 
-A ese proceso de volver a una versión anterior de la aplicación es lo que llamamos **rollback**, o de forma concreta en k8s, "deshacer" un **rollout**. Veremos en este ejemplo un mecanismo sencillo de volver a versiones anteriores. Como hemos comentado, las actualizaciones de los **Deployment** van creando nuevos **ReplicaSets**, y se va guardando el historial de **ReplicaSets** anteriores. Deshacer un Rollout será tan sencillo como activar uno de los **ReplicaSets** antiguos.
+A ese proceso de volver a una versión anterior de la aplicación es lo que llamamos **rollback**, o de forma concreta en Kubernetes y en OpenShift, "deshacer" un **rollout**. Veremos en este ejemplo un mecanismo sencillo de volver a versiones anteriores. Como hemos comentado, las actualizaciones de los **Deployment** van creando nuevos **ReplicaSets**, y se va guardando el historial de **ReplicaSets** anteriores. Deshacer un Rollout será tan sencillo como activar uno de los **ReplicaSets** antiguos.
 
 Ahora vamos a desplegar una versión que nos da un error (la versión 3 de la aplicación tiene un problema con la hoja de estilo). ¿Podremos volver al despliegue anterior?
 
@@ -161,4 +161,4 @@ REVISION  CHANGE-CAUSE
 4         Segundo despliegue. Desplegamos versión 2
 ```
 
-Finalmente, podemos acceder de nuevo con un port-forward y comprobamos que hemos vuelto a la versión 2.
+Finalmente, podemos acceder de nuevo con un `port-forward` y comprobamos que hemos vuelto a la versión 2.

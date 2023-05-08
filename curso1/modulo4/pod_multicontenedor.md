@@ -1,16 +1,11 @@
 # Ejemplo: Pod multicontenedor
 
-La razón principal por la que los Pods pueden tener múltiples contenedores es para admitir aplicaciones auxiliares que ayudan a una
-aplicación primaria. Ejemplos típicos de estas aplicaciones pueden ser las que envían o recogen datos externos (por ejemplo de un
-repositorio) y los servidores proxy. El ayudante y las aplicaciones primarias a menudo necesitan comunicarse entre sí. Normalmente, esto
-se realiza a través de un sistema de archivos compartido o mediante la interfaz loopback (localhost).
+La razón principal por la que los Pods pueden tener múltiples contenedores es para admitir aplicaciones auxiliares que ayudan a una aplicación primaria. Ejemplos típicos de estas aplicaciones pueden ser las que envían o recogen datos externos (por ejemplo de un repositorio) y los servidores proxy. El ayudante y las aplicaciones primarias a menudo necesitan comunicarse entre sí. Normalmente, esto se realiza a través de un sistema de archivos compartido o mediante la interfaz loopback (localhost).
 
 Veamos dos ejemplos concretos:
 
 1. Un servidor web junto con un programa auxiliar que sondea un repositorio Git en busca de nuevas actualizaciones.
-2. Un servidor web con un servidor de aplicaciones PHP-FPM, lo podemos implementar en un Pod, y cada servicio en un
- contenedor. Además tendría un volumen interno que se montaría en el *DocumentRoot* para que el servidor web y el servidor de
- aplicaciones puedan acceder a la aplicación.
+2. Un servidor web con un servidor de aplicaciones PHP-FPM, lo podemos implementar en un Pod, y cada servicio en un contenedor. Además tendría un volumen interno que se montaría en el *DocumentRoot* para que el servidor web y el servidor de aplicaciones puedan acceder a la aplicación.
 
 Veamos un pequeño ejemplo de un pod multicontenedor. Tenemos la definición del Pod en el fichero `pod-multicontenedor.yaml`:
 

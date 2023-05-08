@@ -70,7 +70,7 @@ Por lo tanto como administrador del clúster:
     oc adm policy add-scc-to-user anyuid -z default
     oc login -u developer -p developer https://api.crc.testing:6443
 
-* Esta instrucción agrega el restricción de seguridad llamada **anyuid** al **ServiceAccount** predeterminado (`default`) en tu proyecto actual de OpenShift.
+* Esta instrucción agrega la restricción de seguridad llamada **anyuid** al **ServiceAccount** predeterminado (`default`) en tu proyecto actual de OpenShift.
 * La restricción **anyuid** permite a los contenedores en el pod ejecutarse con privilegios.
 
 Por lo tanto, ahora ejecutamos la instrucción:

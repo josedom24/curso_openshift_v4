@@ -23,16 +23,16 @@ O la creación de un **Deployment** desde un formulario:
 
 **Nota**: También podemos ejecutar un fichero yaml desde la vista **Developer**, sección **+Add** y la opción **Import YAML** (es lo mismo que el icono **+** que encontramos en la parte superior derecha).
 
-Si pinchamos sobre un Deployment, obtenemos los detalles del mismo:
+Si pinchamos sobre un **Deployment**, obtenemos los detalles del mismo:
 
 ![deploy4](img/deploy5.png)
 
 En esta pantalla tenemos varias opciones:
 
-* **Details**: Nos da información del recurso, en este caso del deployment seleccionado.
+* **Details**: Nos da información del recurso, en este caso del **Deployment** seleccionado.
 * **Metrics**: Podemos ver las gráficas de métricas (uso de memoria, cpu, sistema de ficheros y red).
 * **YAML**: Podemos editar el YAML con todos los parámetros del recurso.
-* **ReplicaSets**: Vemos las lista del historial de replicaSet creado por el despliegue.
+* **ReplicaSets**: Vemos la lista del historial de **ReplicaSet** creado por el despliegue.
 * **Pods**: La lista de Pods que actualmente se están ejecutando.
 * **Environment**: Podemos definir las variables de entorno que tendrán los contenedores de los Pods.
 * **Events**: Listamos los distintos eventos que se han producido sobre el recurso.
