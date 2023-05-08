@@ -1,4 +1,4 @@
-# Introducción al almacenamiento en OpenShift
+# Introducción al almacenamiento en OpenShift v4
 
 El uso de volúmenes en OpenShift nos proporciona la capacidad de que los Pods puedan guardar información, y que los datos de nuestras aplicaciones no se pierdan cuando un Pod se elimina.
 
