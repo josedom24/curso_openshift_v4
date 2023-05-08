@@ -18,7 +18,7 @@ Donde vemos el nombre, la descripción y los valores por defecto de los parámet
 
 Podemos generar la definición de los objetos que crea un **Template**. La generación de la definición de los objetos no implica su creación. Veamos algunos ejemplos:
 
-1. Genero la definición en formato yaml de los objetos sin indicar ningún parámetro (se cogen los valores por defecto):
+1. Genero la definición en formato YAML de los objetos sin indicar ningún parámetro (se cogen los valores por defecto):
 
         oc process mysql-plantilla -o yaml
 
@@ -55,7 +55,7 @@ Una vez que sabemos como generar la definición de los objetos que están defini
 
         oc process mysql-plantilla -o yaml -p REPLICAS=2 -p NOMBRE_APP=mimysql | oc apply -f -
 
-2. Guardar la generación de la definición de los objetos en un fichero yaml, y utilizar este fichero para crear los objetos. Esta opción tiene dos ventajas: que podemos reproducir el despliegue y que podemos eliminar los objetos utilizando el fichero yaml. Por ejemplo:
+2. Guardar la generación de la definición de los objetos en un fichero YAML, y utilizar este fichero para crear los objetos. Esta opción tiene dos ventajas: que podemos reproducir el despliegue y que podemos eliminar los objetos utilizando el fichero YAML. Por ejemplo:
 
         oc process mysql-plantilla -o yaml -p NOMBRE_APP=app1 -p REPLICAS=3 -l type=database > deploy_mysql.yaml        
         oc apply -f deploy_mysql.yaml

@@ -4,7 +4,7 @@ En este apartado vamos a aprender a crear nuevos **Templates** a partir de recur
 
 ## Crear Templates a partir de Templates existentes
 
-Esta operación es muy sencilla, y simplemente consiste en copiar la definición yaml de un **Template** en un fichero y posteriormente hacer las modificaciones que necesitemos. Por ejemplo:
+Esta operación es muy sencilla, y simplemente consiste en copiar la definición YAML de un **Template** en un fichero y posteriormente hacer las modificaciones que necesitemos. Por ejemplo:
 
     oc get template mysql-plantilla -o yaml > nueva_plantilla.yaml
 

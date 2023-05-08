@@ -15,7 +15,7 @@ Por ejemplo si pulsamos en uno de ellos, podemos ver los detalles de este objeto
 Podemos acceder a varias pestañas:
 
 * **Details**: Es la ventana en la que estamos, y donde podemos ver lo detalles del **ImageStream**.
-* **YAML**: Accedemos a la definición yaml del objeto.
+* **YAML**: Accedemos a la definición YAML del objeto.
 * **History**: Accedemos a una línea de tiempo donde vemos gráficamente cuando de han creado o borrado las etiquetas del objeto **ImageStream**.
 
 Además en esta misma pantalla, podemos ver las etiquetas que tiene el objeto **ImageStream**:

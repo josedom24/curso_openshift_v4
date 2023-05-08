@@ -18,7 +18,7 @@ Con el botón **Create DeploymentConfig** podemos crear nuevos objetos **Deploym
 
 ![dc](img/dc_web4.png)
 
-O desde la definición yaml del objeto:
+O desde la definición YAML del objeto:
 
 ![dc](img/dc_web5.png)
 
@@ -29,7 +29,7 @@ Si pulsamos en un objeto **DeploymentConfig** acedemos a una página donde nos d
 En esta pantalla encontramos varias pestañas:
 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
-* **YAML**: Donde accedemos a la definición yaml del objeto.
+* **YAML**: Donde accedemos a la definición YAML del objeto.
 * **ReplicationControllers**: Accedemos a la ventana donde se nos muestran los objetos **ReplicationControllers** del objeto **DeploymentConfig** que estamos viendo.
 * **Pods**: La lista de Pods controlada por el **ReplicationController** activo.
 * **Environment**: Donde podemos crear variables de entorno de tipo clave=valor que se crearan en los Pods.
@@ -48,7 +48,7 @@ De la misma manera, si pulsamos sobre un objeto determinado, obtenemos la inform
 Donde tenemos varias pestañas con distintas informaciones:
 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
-* **YAML**: Donde accedemos a la definición yaml del objeto.
+* **YAML**: Donde accedemos a la definición YAML del objeto.
 * **Pods**: La lista de Pods controlada por el **ReplicationController** activo.
 * **Environment**: Donde podemos crear variables de entorno de tipo clave=valor que se crearan en los Pods.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.

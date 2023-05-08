@@ -2,7 +2,7 @@
 
 Como hemos visto el objeto **BuildConfig** guarda la configuración (estrategia y fuentes de entrada) para realizar la construcción de una nueva imagen.
 
-Hemos creado objetos **BuildConfig** con dos comandos distintos: `oc new-app` y con `oc new-build`. Pero como cualquier recurso de OpenShift podemos tener su definición en un fichero yaml, y crearlo a partir de este fichero.
+Hemos creado objetos **BuildConfig** con dos comandos distintos: `oc new-app` y con `oc new-build`. Pero como cualquier recurso de OpenShift podemos tener su definición en un fichero YAML, y crearlo a partir de este fichero.
 
 Tenemos un fichero `bc.yaml` con el siguiente contenido:
 

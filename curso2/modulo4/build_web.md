@@ -18,7 +18,7 @@ En la vista **Developer**, en la sección **Builds** podemos ver la lista de obj
 
 ![build_web](img/build_web4.png)
 
-En esta página encontramos el botón **Create BuildConfig** que nos posibilita crear un nuevo objeto **BuildConfig** desde su definición yaml:
+En esta página encontramos el botón **Create BuildConfig** que nos posibilita crear un nuevo objeto **BuildConfig** desde su definición YAML:
 
 ![build_web](img/build_web5.png)
 
@@ -28,7 +28,7 @@ Si pulsamos sobre uno de ellos obtenemos los detalles:
 
 En esta página tenemos varias pestañas: 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
-* **YAML**: Donde accedemos a la definición yaml del objeto.
+* **YAML**: Donde accedemos a la definición YAML del objeto.
 * **Builds**: Donde vemos la lista de **Builds** que se han realzados.
 * **Enverionment**: Donde podemos crear variables de entornos de tipo clave=valor que se utilizan en el proceso de construcción.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.
@@ -50,7 +50,7 @@ Si pulsamos sobre algún **Build** en concreto, accedemos a los detalles de la c
 En esta página tenemos varias pestañas: 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
 * **Metrics**: Accedemos a los recursos que ha consumido el **build pod** en la construcción de la nueva imagen.
-* **YAML**: Donde accedemos a la definición yaml del objeto.
+* **YAML**: Donde accedemos a la definición YAML del objeto.
 * **Environment**: Donde podemos crear variables de entorno de tipo clave=valor que se utilizan en el proceso de construcción.
 * **Logs**: Donde podemos visualizar los logs del proceso de construcción.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.

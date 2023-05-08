@@ -17,7 +17,7 @@ Pero lo más importante, es que podemos considerar OpenShift como una plataforma
 
 ¿Qué aspectos caracterizan a OpenShift para considerarlo una plataforma PaaS?
 
-* No es necesario diseñar la definición yaml de los recursos de kubernetes que vamos a gestionar.
+* No es necesario diseñar la definición YAML de los recursos de kubernetes que vamos a gestionar.
 * Tenemos a nuestra disposición herramientas de despliegue de aplicaciones que crean y gestionan los recursos kubernetes por nosotros.
 * Tiene procesos de construcción automática de imágenes de contenedores.
 * Nos simplifica el ciclo de vida de implantación de nuestras aplicaciones.

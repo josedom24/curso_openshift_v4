@@ -70,7 +70,7 @@ Como hemos comentado anteriormente, los charts los podemos buscar en la página 
     bitnami/nginx         	14.1.0       	1.24.0     	NGINX Open Source is a web server that can be a...
     ...
 
-Todos los ficheros yaml que forman parte de un chart están parametrizados, es decir cada propiedad tiene un valor por defecto, pero a la hora de instalarlo se puede cambiar. Por ejemplo, ¿qué tipo de **Service** se creará al instalar el chart `bitnami/nginx`? Por defecto, el parámetro `service.type` tiene como valor `LoadBalancer`, pero si queremos un **Service** de tipo `NodePort`, podremos redefinir este parámetro a la hora de instalar el chart.
+Todos los ficheros YAML que forman parte de un chart están parametrizados, es decir cada propiedad tiene un valor por defecto, pero a la hora de instalarlo se puede cambiar. Por ejemplo, ¿qué tipo de **Service** se creará al instalar el chart `bitnami/nginx`? Por defecto, el parámetro `service.type` tiene como valor `LoadBalancer`, pero si queremos un **Service** de tipo `NodePort`, podremos redefinir este parámetro a la hora de instalar el chart.
 
 ¿Y cómo sabemos los parámetros que tiene definido cada chart y sus valores por defecto?. Estudiando la documentación del chart en Artifact Hub. En concreto para el chart con el que estamos trabajando, accediendo a su [página de de documentación](https://artifacthub.io/packages/helm/bitnami/nginx). También podemos obtener esta información ejecutando el siguiente comando:
 

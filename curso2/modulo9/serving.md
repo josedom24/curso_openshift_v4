@@ -22,7 +22,7 @@ Para la instalación, descomprimimos y copiamos a un directorio que tengamos en 
 
 Tenemos varias formas de realizar el despliegue:
 
-### Usando la definición del servicio en un fichero yaml
+### Usando la definición del servicio en un fichero YAML
 
 La definición del despliegue Serverless lo tenemos guardado en el fichero `serverless.yaml`:
 

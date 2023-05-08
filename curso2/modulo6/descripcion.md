@@ -1,6 +1,6 @@
 # Descripción de un objeto Template
 
-Vamos a crear un objeto **Template** desde su definición en un fichero yaml. En este ejemplo vamos a hacer un **Template** muy sencillo, que nos va a permitir crear un recurso **Deployment** usando la imagen `bitnami/mysql` y como veremos posteriormente hemos creado varios parámetros para permitir su configuración. Partimos del fichero `mysql-plantilla.yaml` con el siguiente contenido:
+Vamos a crear un objeto **Template** desde su definición en un fichero YAML. En este ejemplo vamos a hacer un **Template** muy sencillo, que nos va a permitir crear un recurso **Deployment** usando la imagen `bitnami/mysql` y como veremos posteriormente hemos creado varios parámetros para permitir su configuración. Partimos del fichero `mysql-plantilla.yaml` con el siguiente contenido:
 
 ```yaml
 apiVersion: template.openshift.io/v1

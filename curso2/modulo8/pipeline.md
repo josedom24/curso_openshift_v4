@@ -14,7 +14,7 @@ Vamos a desplegar una aplicación muy sencilla de votaciones:
 * [frontend](https://github.com/josedom24/pipelines-vote-ui): Aplicación construida con Python Flask que nos permite votar.
 * [backend](https://github.com/josedom24/pipelines-vote-api): Aplicación escrita en Go que nos permite guardar las votaciones.
 
-En el directorio `k8s` del repositorio se encuentran los ficheros yaml que posibilitan el despliegue de la aplicación.
+En el directorio `k8s` del repositorio se encuentran los ficheros YAML que posibilitan el despliegue de la aplicación.
 
 ## Instalación de Tasks
 
@@ -22,7 +22,7 @@ Las **Tasks** consisten en una serie de pasos que se ejecutan de forma secuencia
 
 Vamos a instalar dos tareas:
 
-1. `apply-manifests`: responsable de ejecutar los ficheros yaml que se encuentran en el directorio`k8s` y por lo tanto aplicar los posibles cambios en los recurso que estamos creando.
+1. `apply-manifests`: responsable de ejecutar los ficheros YAML que se encuentran en el directorio`k8s` y por lo tanto aplicar los posibles cambios en los recurso que estamos creando.
 2. `update-deployment`: responsable de actualizar el objeto **Deployment**, en concreto cambiar el nombre y la imagen.
 
 Para ello tenemos el fichero `01_apply_manifest_task.yaml` con el siguiente [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/01_apply_manifest_task.yaml) y el fichero `02_update_deployment_task.yaml` con este [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/02_update_deployment_task.yaml).
@@ -48,7 +48,7 @@ En este ejemplo, vamos a crear un pipeline que toma el código fuente de la apli
 
 ![pipeline](img/pipeline-diagram.png)
 
-El fichero `04_pipeline.yaml` tiene la definición yaml del pipeline:
+El fichero `04_pipeline.yaml` tiene la definición YAML del pipeline:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -133,7 +133,7 @@ Es posible que haya notado que no hay referencias al repositorio git o el regist
 
 En concreto los parámetros que hay que proporcionar son:
 
-* `deployment-name`: Nombre del despliegue que tiene que coincidir con el que se ha indicado como nombre del **Deployment** en el fichero yaml correspondiente en el repositorio `k8s`.
+* `deployment-name`: Nombre del despliegue que tiene que coincidir con el que se ha indicado como nombre del **Deployment** en el fichero YAML correspondiente en el repositorio `k8s`.
 * `git-url`: URL del repositorio GitHub que queremos desplegar.
 * `git-revision`: Rama del repositorio GitHub, por defecto es `master`.
 * `IMAGE`: Nombre de la imagen que vamos a construir. En nuestro caso indicaremos el registro interno de OpenShift. Recuerda que el registro interno tiene la siguiente URL, donde hay que indicar el nombre del proyecto, en mi caso: 
