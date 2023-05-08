@@ -8,7 +8,7 @@ En este ejemplo vamos a desplegar la aplicación Wordpress, para ello será nece
     * `MYSQL_USER`: Nombre del usuario de la base de datos que se va carear.
     * `MYSQL_PASSWORD`: Contraseña de este usuario.
 * Si comprobamos la documentación de la imagen [bitnami/wordpress en Docker Hub](https://hub.docker.com/r/bitnami/wordpress/) las variables de entorno que vamos a definir son las siguientes: 
-    * `WORDPRESS_DATABASE_HOST`: La dirección del servidor de base de datos, 
+    * `WORDPRESS_DATABASE_HOST`: La dirección del servidor de base de datos. 
     * `WORDPRESS_DATABASE_USER`: El usuario que se va a usar para acceder a la base de datos.
     * `WORDPRESS_DATABASE_PASSWORD`: La contraseña de dicho usuario.
     * `WORDPRESS_DATABASE_NAME`: El nombre de la base de datos a las que vamos a conectar para gestionar las tablas de Wordpress.
