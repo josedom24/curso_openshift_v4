@@ -36,7 +36,7 @@ En la creación de aplicaciones, se usan otros recursos de OpenShift:
 
 En OpenShift v4, el **catálogo de aplicaciones** es una colección de software preempaquetado que se puede instalar y utilizar en un clúster de OpenShift. 
 
-Esta formado por varios tipos de elemento, entre los que destacamos:
+Está formado por varios tipos de elemento, entre los que destacamos:
 
 * **Builder Images**: Son imágenes de contenedor que usamos para crear nuevas imágenes. Tenemos distintos tipos, según el lenguaje de programación que implementan.
 * **Templates**: Plantillas que nos permiten crear un conjunto de objetos relacionados. Suelen definir parámetros para personalizar los despliegues.
