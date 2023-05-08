@@ -1,8 +1,6 @@
 # Despliegues de citas-backend
 
-Vamos a desplegar la **versión 1** del microservicio **citas-backend**, para ello vamos a usar los siguientes ficheros:
-
-Para el despliegue usaremos la definición del recurso deployment guardada en el fichero `deployment.yaml`:
+Vamos a desplegar la **versión 1** del microservicio **citas-backend**, para ello vamos a usar la definición del recurso **Deployment** guardada en el fichero `deployment.yaml`:
 
 ```yaml
 kind: Deployment
@@ -30,7 +28,7 @@ spec:
               protocol: TCP
 ```
 
-Vamos a crear un recurso Service, con la definición del fichero `service.yaml`:
+Vamos a crear un recurso **Service**, con la definición del fichero `service.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -50,7 +48,7 @@ spec:
   type: ClusterIP
 ```
 
-Aunque no vamos a acceder a este microservicio desde el exterior, vamos a comprobar su funcionamiento, por lo que le vamos a crear un recurso route, aunque posteriormente lo borraremos. La definición del recurso route está en el fichero `route.yaml`:
+Aunque no vamos a acceder a este microservicio desde el exterior, vamos a comprobar su funcionamiento, por lo que le vamos a crear un recurso **Route**, aunque posteriormente lo borraremos. La definición del recurso **Route** está en el fichero `route.yaml`:
 
 ```yaml
 apiVersion: route.openshift.io/v1
@@ -58,8 +56,6 @@ kind: Route
 metadata:
   labels:
     app: citas
-    sandbox: learn-kubernetes
-    sandbox-learn-kubernetes: citas
   name: citas
 spec:
   port:
@@ -94,7 +90,7 @@ Podemos ver los recursos que se han creado:
     NAME                             HOST/PORT                                                       PATH   SERVICES   PORT        TERMINATION   WILDCARD
     route.route.openshift.io/citas   citas-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com          citas      10000-tcp                 None
 
-Este servicio será interno, es decir, no será necesario el acceso desde el exterior, pero hemos creado el recurso ingress para poder probarlo:
+Este servicio será interno, es decir, no será necesario el acceso desde el exterior, pero hemos creado el recurso **ingress** para poder probarlo:
 
     curl http://citas-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/quotes
     [

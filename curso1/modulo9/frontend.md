@@ -2,9 +2,9 @@
 
 Este microservicio nos va a mostrar una aplicación web que hace una consulta al servicio anterior y muestra una cita aleatoria en pantalla. 
 
-A continuación desplegamos la aplicación, creando un deployment, un service y un route. Para ello usamos los siguientes ficheros:
+A continuación desplegamos la aplicación, creando un **Deployment**, un **Service** y un Route. Para ello usamos los siguientes ficheros.
 
-En el fichero `deployment.yaml` tenemos la definición del recurso Deployment:
+En el fichero `deployment.yaml` tenemos la definición del recurso **Deployment**:
 
 ```yaml
 kind: Deployment
@@ -35,9 +35,9 @@ spec:
               value: citas:10000
             
 ```
-Nos fijamos que en el despliegue se ha creado una variable de entorno que se debe llamar `CITAS_SERVIDOR`, con el valor del nombre del host para accede a la aplicación `citas-backend` y el puerto que está utilizando. En nuestro caso indicaremos el nombre del recurso Service que hemos creado pra acceder a la aplicación `citas`.
+Nos fijamos que en el despliegue se ha creado una variable de entorno que se debe llamar `CITAS_SERVIDOR`, con el valor del nombre del host para accede a la aplicación `citas-backend` y el puerto que está utilizando. En nuestro caso indicaremos el nombre del recurso **Service** que hemos creado pra acceder a la aplicación `citas`.
 
-La definición del recurso service, la encontramos en el fichero `service.yaml`:
+La definición del recurso **Service**, la encontramos en el fichero `service.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -58,7 +58,7 @@ spec:
   type: ClusterIP
 ```
 
-Y por último el recurso Route se encuentra en el fichero `route.yaml`:
+Y por último el recurso **Route** se encuentra en el fichero `route.yaml`:
 
 ```yaml
 apiVersion: route.openshift.io/v1
@@ -66,8 +66,6 @@ kind: Route
 metadata:
   labels:
     app: citasweb
-    sandbox: learn-kubernetes
-    sandbox-learn-kubernetes: citasweb
   name: citasweb
 spec:
   port:

@@ -2,14 +2,13 @@
 
 La versión del microservicio `citas-backend` obtiene la información de las citas de una tabla de una base de datos en un servidor mysql, por lo tanto lo primero será el despliegue de la base de datos.
 
-
 Veamos los distintos recursos que vamos a crear para el despliegue de la base de datos:
 
-* Un recurso ConfigMap donde guardamos el usuario (que hemos llamado `usuario`) y el nombre de la base de datos (que hemos llamado `citas`) que se van a crear.
-* Un recurso Secret donde guardamos las contraseñas: la del usuario `usuario` (`usuario_pass`) y la del usuario `root` de la base de datos (`admin`).
-* Un recurso VolumenPersistentClaim donde solicitamos un volumen de 5Gb para montar el directorio `/bitnami/mysql/data` del servidor mysql y por lo tanto hacerla persistente.
-* Un recurso service de tipo ClusterIP para poder acceder internamente a la base de datos.
-* Un recurso deployment para desplegar la base de datos.
+* Un recurso **ConfigMap** donde guardamos el usuario (que hemos llamado `usuario`) y el nombre de la base de datos (que hemos llamado `citas`) que se van a crear.
+* Un recurso **Secret** donde guardamos las contraseñas: la del usuario `usuario` (`usuario_pass`) y la del usuario `root` de la base de datos (`admin`).
+* Un recurso **VolumenPersistentClaim** donde solicitamos un volumen de 5Gb para montar el directorio `/bitnami/mysql/data` del servidor mysql y por lo tanto hacerlo persistente.
+* Un recurso **Service** de tipo **ClusterIP** para poder acceder internamente a la base de datos.
+* Un recurso **Deployment** para desplegar la base de datos.
 
 El despliegue estará definido en el fichero `deployment.yaml`:
 
@@ -89,7 +88,7 @@ spec:
   type: ClusterIP
 ```
 
-El recurso VolumenPersistentClaim lo definimos en el fichero `pvc.yaml`:
+El recurso **VolumenPersistentClaim** lo definimos en el fichero `pvc.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -104,7 +103,7 @@ spec:
       storage: 5Gi
 ```
 
-El recurso ConfigMap está definido en el fichero `configmap.yaml`:
+El recurso **ConfigMap** está definido en el fichero `configmap.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -117,7 +116,7 @@ metadata:
   name: bd-datos
 ```
 
-Y por último el recurso Secret, lo encontramos en el fichero `secret.yaml`:
+Y por último el recurso **Secret**, lo encontramos en el fichero `secret.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -129,7 +128,6 @@ metadata:
   creationTimestamp: null
   name: bd-passwords
 ```
-
 
 Por lo tanto para realizar todo el despliegue ejecutamos:
 
@@ -172,10 +170,9 @@ Vemos todos los recursos creados hasta ahora:
     persistentvolumeclaim/mysql-pvc   Bound    pvc-c8bd6778-c60e-4411-b595-1f82849379de   5Gi        RWO            gp3            21s
 
 
-A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del Pod en una variable de entorno:
+A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al Pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del Pod en una variable de entorno:
 
     export PODNAME="mysql-5f8c89c98b-czw6k"
-
 
 En el fichero `citas.sql` tenemos las instrucciones para crear la tabla con los registros que necesitamos:
 
@@ -209,7 +206,6 @@ INSERT INTO `quotes` VALUES
 A continuación copiamos el fichero:
 
     oc cp citas.sql $PODNAME:/tmp/
-
 
 Y finalmente ejecutamos el fichero sql:
 
