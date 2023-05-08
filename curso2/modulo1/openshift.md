@@ -2,7 +2,7 @@
 
 OpenShift v4 es una plataforma de contenedores de código abierto basada en Kubernetes que proporciona una solución completa de orquestación de contenedores y servicios de aplicaciones para desarrolladores y equipos de operaciones. 
 
-Por lo tanto nos ofrece muchas de la ventajas de usar un orquestador de contenedores como Kubernetes:
+Por lo tanto nos ofrece muchas de las ventajas de usar un orquestador de contenedores como Kubernetes:
 
 * Desplegar aplicaciones de forma muy sencilla.
 * Tolerancia a fallos.
