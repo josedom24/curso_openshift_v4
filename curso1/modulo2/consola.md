@@ -32,12 +32,12 @@ Algunas de las opciones que tenemos disponibles en esta vista son:
 
 ![vista](img/administrator.png)
 
-Al estar usando un usuario sin privilegios en **RedHat OpenShift Dedicated Developer Sandbox**, algunas de las opciones no nos dan todas las funcionalidades de administración.
+Al estar usando un usuario sin privilegios en **Red Hat OpenShift Dedicated Developer Sandbox**, algunas de las opciones no nos dan todas las funcionalidades de administración.
 
 Algunas de las opciones que tenemos disponibles en esta vista son:
 
 * **Home**: Nos da acceso a los proyectos definidos en el clúster, a la opción de búsqueda de recursos, a un explorador de los recursos de la API y a los eventos que han ocurrido en el clúster.
-* **Operators**: Los operadores nos permiten añadir funcionalidades a nuestro clúster. En el caso del uso de **RedHat OpenShift Dedicated Developer Sandbox**, al ser un clúster administrado por RedHat, no tenemos permisos para añadir nuevos operadores.
+* **Operators**: Los operadores nos permiten añadir funcionalidades a nuestro clúster. En el caso del uso de **Red Hat OpenShift Dedicated Developer Sandbox**, al ser un clúster administrado por Red Hat, no tenemos permisos para añadir nuevos operadores.
 * **Workloads**: Nos permite la gestión de los recursos de la API relacionados con el despliegue de aplicaciones: **Deployment**, **ReplicaSet**, **Pod**, ...
 * **Serverless**: Nos proporciona la posibilidad de gestionar las aplicaciones que hemos desplegado como Serverless, que nos permite desplegar aplicaciones sin tener que preocuparse por el número de réplicas en ejecución. En lugar de utilizar réplicas, la aplicación se ejecuta en un **pod autoscaling** que se adapta automáticamente según la demanda.
 * **Networking**: Nos permite la gestión de todos los recursos de la API que nos permiten el acceso a las aplicaciones: **Service**, **Routes**,...

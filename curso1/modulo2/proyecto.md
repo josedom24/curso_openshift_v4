@@ -4,7 +4,7 @@ Un proyecto permite a OpenShift agrupar distintos recursos. Es similar al recurs
 
 De hecho, cada vez que se crea un nuevo proyecto, se crea un recursos **namespace** con el mismo nombre.
 
-En **RedHat OpenShift Dedicated Developer Sandbox**, no podemos crear nuevos proyectos y se nos asigna de forma automática un proyecto con el mismo nombre que el de nuestro usuario.
+En **Red Hat OpenShift Dedicated Developer Sandbox**, no podemos crear nuevos proyectos y se nos asigna de forma automática un proyecto con el mismo nombre que el de nuestro usuario.
 
 Para acceder a la información de nuestro proyecto, en la **Vista Administrator**, escogemos la opción **Home -> Projects**:
 

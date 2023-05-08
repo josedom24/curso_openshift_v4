@@ -2,7 +2,7 @@
 
 ## Similitudes
 
-Como hemos comentado, **CRC (CodeReady Containers)** nos permite hacer una instalación local de OpenShift v4 en un ordenador personal, mientras **RedHat OpenShift Dedicated Developer Sandbox** nos permite el usar OpenShift v4 en un clúster administrador por Red Hat.
+Como hemos comentado, **CRC (CodeReady Containers)** nos permite hacer una instalación local de OpenShift v4 en un ordenador personal, mientras **Red Hat OpenShift Dedicated Developer Sandbox** nos permite el usar OpenShift v4 en un clúster administrador por Red Hat.
 
 Entre las similitudes podemos señalar:
 
@@ -33,6 +33,6 @@ Entre las similitudes podemos señalar:
 
 ## ¿Qué plataforma vamos a usar en este curso?
 
-En este curso vamos a usar principalmente **CRC**, aunque algunos ejercicios lo vamos a realizar sobre **RedHat OpenShift Dedicated Developer Sandbox** por alguna característica específica, por ejemplo, por ser un clúster con varios nodos de computación.
+En este curso vamos a usar principalmente **CRC**, aunque algunos ejercicios lo vamos a realizar sobre **Red Hat OpenShift Dedicated Developer Sandbox** por alguna característica específica, por ejemplo, por ser un clúster con varios nodos de computación.
 
 Hay que tener en cuenta que la mayoría de ejercicios que vamos a realizar en el curso se pueden desarrollar indistintamente en las dos plataformas, a excepción de las veces que usemos el usuario administrador en **CRC** para alguna tarea específica.

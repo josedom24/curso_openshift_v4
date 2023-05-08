@@ -4,7 +4,7 @@ Un recurso **DaemonSet** garantiza que un Pod esté en ejecución en cada nodo d
 
 El recurso **DaemonSet** es útil en situaciones donde se necesita ejecutar una tarea o servicio en todos los nodos del clúster, como la recolección de logs o la supervisión del sistema. También es común utilizar un **DaemonSet** para desplegar agentes de monitoreo o herramientas de seguridad en todos los nodos del clúster.
 
-Podemos seleccionar un subconjuntos de nodos del clúster donde queremos que se ejecuten los Pods, pero usando **RedHat OpenShift Dedicated Developer Sandbox**, no somos usuarios administradores, por lo que no tenemos acceso a los objetos nodos del clúster y por lo tanto no podemos realizar la selección.
+Podemos seleccionar un subconjuntos de nodos del clúster donde queremos que se ejecuten los Pods, pero usando **Red Hat OpenShift Dedicated Developer Sandbox**, no somos usuarios administradores, por lo que no tenemos acceso a los objetos nodos del clúster y por lo tanto no podemos realizar la selección.
 
 Veamos un ejemplo, tenemos descrito el recurso **DaemonSet** en el fichero `daemonset.yaml`:
 

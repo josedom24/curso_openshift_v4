@@ -5,8 +5,8 @@
 	* [Introducción a OpenShift v4 (P)](modulo1/openshift.md)
 	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
 
-2. RedHat OpenShift Dedicated Developer Sandbox
-	* [RedHat OpenShift Dedicated Developer Sandbox (P)](modulo2/sandbox.md)
+2. Red Hat OpenShift Dedicated Developer Sandbox
+	* [Red Hat OpenShift Dedicated Developer Sandbox (P)](modulo2/sandbox.md)
 	* [Visión general de la consola web](modulo2/consola.md)
 	* [Visión general del proyecto de trabajo](modulo2/proyecto.md)
 	* [Instalación del CLI de OpenShift: oc](modulo2/oc.md)
