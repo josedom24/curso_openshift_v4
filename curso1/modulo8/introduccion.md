@@ -19,9 +19,9 @@ También nos proporciona **un orden determinado para la creación y eliminación
 
 El objeto **DaemonSet** nos asegura que en todos (o en algunos) nodos de nuestro cluster vamos a tener un Pod ejecutándose. Si añadimos nuevos
 nodos al clúster se crearán nuevos Pods. Para que podemos necesitar esta característica:
-* Monitorización del cluster (Prometheus)
+* Monitorización del clúster (Prometheus)
 * Recolección y gestión de logs (fluentd)
-* Cluster de almacenamiento (glusterd o ceph)
+* Clúster de almacenamiento (glusterd o ceph)
 
 ## Jobs y cronJobs
 
