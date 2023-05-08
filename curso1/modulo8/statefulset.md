@@ -1,6 +1,6 @@
 # StatefulSet
 
-A diferencia de un Deployment, un StatefulSet mantiene una identidad fija para cada uno de sus Pods.
+A diferencia de un **Deployment**, un **StatefulSet** mantiene una identidad fija para cada uno de sus Pods.
 
 Por lo tanto cada Pod es distinto (**tiene una identidad única**), y este hecho tiene algunas consecuencias:
 * El nombre de cada Pod tendrá un número (1,2,...) que lo identifica y que nos proporciona la posibilidad de que la creación actualización y eliminación sea ordenada.
@@ -77,7 +77,7 @@ spec:
 
 ## Creación ordenada de Pods
 
-Lo primero creamos el recurso **Headless Service** y vamos comprobar la creación ordenados de Pods, para ello en un terminal observamos la creación de Pods y en otro terminal creamos los Pods
+Lo primero creamos el recurso **Headless Service** y vamos comprobar la creación ordenados de Pods, para ello en un terminal observamos la creación de Pods y en otro terminal creamos los Pods:
 
     watch oc get pod
     oc apply -f statefulset.yaml
@@ -101,14 +101,14 @@ Vemos los hostname y los nombres DNS asociados:
 
 ## Eliminación de Pods
 
-En un terminal observamos la creación de Pods y en otro terminal eliminamos los Pods
+En un terminal observamos la creación de Pods y en otro terminal eliminamos los Pods:
 
     watch oc get pod
     oc delete pod -l app=nginx
 
 ## Comprobamos la identidad de red estable
 
-Volvemos a crear el recurso StatefulSet y comprobamos que los hostnames y los nombres DNS asociados no han cambiado (las IP pueden cambiar):
+Volvemos a crear el recurso **StatefulSet** y comprobamos que los hostnames y los nombres DNS asociados no han cambiado (las IP pueden cambiar):
 
     oc apply -f statefulset.yaml
     for i in 0 1; do oc exec web-$i -- sh -c 'hostname'; done
@@ -136,7 +136,7 @@ Creamos el fichero `index.html` en el directorio que hemos montado (directorio *
     oc apply -f statefulset.yaml
     for i in 0 1; do oc exec -i -t "web-$i" -- sh -c 'cat  /app/index.html'; done
 
-## Escalar statefulset
+## Escalar el StatefulSet
 
 Para escalar el despliegue:
 
@@ -154,7 +154,7 @@ Para gestionar los objetos **StatefulSet** desde la consola web, escogemos la vi
 
 ![st](img/statefulset1.png)
 
-En esa pantalla además tenemos la opción de crear un nuevo recurso con el botón **Create StatefulSet**. Si escogemos un objeto determinado obtendremos la descripción del mismo:
+En esa pantalla además, tenemos la opción de crear un nuevo recurso con el botón **Create StatefulSet**. Si escogemos un objeto determinado obtendremos la descripción del mismo:
 
 ![st](img/statefulset2.png)
 

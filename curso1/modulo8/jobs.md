@@ -2,8 +2,8 @@
 
 Los recursos **Jobs** y **CronJobs** son recursos que permiten ejecutar tareas en un clúster. 
 
-* Un job es un objeto que crea uno o más Pods en Kubernetes para ejecutar una tarea. Los jobs se utilizan comúnmente para realizar trabajos puntuales o tareas que no necesitan ejecutarse de manera continua. 
-* Por otro lado, un cronjob es un objeto que crea jobs de manera programada en un clúster de Kubernetes. Los cronjobs se utilizan para realizar tareas de manera repetitiva, según un horario establecido. 
+* Un **Job** es un objeto que crea uno o más Pods en Kubernetes/OpenShift para ejecutar una tarea. Los jobs se utilizan comúnmente para realizar trabajos puntuales o tareas que no necesitan ejecutarse de manera continua. 
+* Por otro lado, un **CronJob** es un objeto que crea jobs de manera programada en un clúster de Kubernetes/OpenShift. Los **CronJobs** se utilizan para realizar tareas de manera repetitiva, según un horario establecido. 
 
 ## Jobs
 
@@ -28,7 +28,7 @@ spec:
 * El valor de `restartPolicy` se establece en `Never`, lo que significa que el Pod no se reiniciará después de que se complete la tarea del contenedor.
 * En el parámetro `backoffLimit` indicamos el número de intentos que se van a ejecutar antes de determinar que la tarea ha fallado.
 
-Vamos a ejecutar el recurso Job, y comprobamos que cuando termina el Pod está en estado Completado y que podemos acceder al resultado del cálculo:
+Vamos a ejecutar el recurso **Job**, y comprobamos que cuando termina el Pod está en estado *Completado* y que podemos acceder al resultado del cálculo:
 
     oc apply -f job.yaml 
     
@@ -84,7 +84,7 @@ spec:
         * `@daily`: una vez al día a las 12 de la noche. (0 0 * * *)
         * `@hourly`: Cada hora. (0 * * * *)
 
-Ejecutamos el CronJob, esperamos varios minutos y vemos cómo se han creado varios recursos cada minuto:
+Ejecutamos el **CronJob**, esperamos varios minutos y vemos cómo se han creado varios recursos cada minuto:
 
     oc apply -f cronjob.yaml
 
@@ -105,7 +105,7 @@ Ejecutamos el CronJob, esperamos varios minutos y vemos cómo se han creado vari
 
 ## Gestión de Jobs y CronJobs desde la consola web
 
-Como hemos estudiado los otros recursos, podemos gestionar los recursos Jobs y CronJobs desde la consola web:
+Como hemos estudiado los otros recursos, podemos gestionar los recursos **Jobs** y **CronJobs** desde la consola web:
 
 ![job](img/job1.png)
 

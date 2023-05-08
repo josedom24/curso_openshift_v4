@@ -49,10 +49,10 @@ En este caso se va a crear un contenedor por cada nodo del clúster, para ello c
 
 ## Gestión de DaemonSet desde la consola web
 
-Para gestionar los objetos **DaemonSets** desde la consola web, escogemos la vista **Admionistrator** y la opción **Workloads -> SaemonSets**:
+Para gestionar los objetos **DaemonSets** desde la consola web, escogemos la vista **Administrator** y la opción **Workloads -> DaemonSets**:
 
 ![st](img/daemonset1.png)
 
-En esa pantalla además tenemos la opción de crear un nuevo recurso con el botón **Create DaemonSet**. Si escogemos un objeto determinado obtendremos la descripción del mismo:
+En esa pantalla además, tenemos la opción de crear un nuevo recurso con el botón **Create DaemonSet**. Si escogemos un objeto determinado obtendremos la descripción del mismo:
 
 ![st](img/daemonset2.png)
