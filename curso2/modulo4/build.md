@@ -7,7 +7,7 @@ La definición de este proceso de construcción se define en un objeto **BuildCo
 ## Estrategias de construcción
 
 * **Docker**: La construcción se realiza a partir de un fichero `Dockerfile`.
-* **Source-to-image (S2I)**: La construcción se hace a partir de una imagen constructora (**builder image**) donde se añade el código d la aplicación.
+* **Source-to-image (S2I)**: La construcción se hace a partir de una imagen constructora (**builder image**) donde se añade el código de la aplicación.
 * **Pipeline**: En OpenShift v4 usamos el framework **Tekton** para definir las tareas que queremos ejecutar en el proceso de construcción. También podemos usar pipelines de Jenkins por compatibilidad con la versión 3.
 * **Personalizado**: Permite a los desarrolladores definir una imagen de compilación específica responsable de todo el proceso de compilación.
 
