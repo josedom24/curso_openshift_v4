@@ -27,7 +27,7 @@ Pero lo más importante, es que podemos considerar OpenShift como una plataforma
 * Tenemos a nuestra disposición distintas herramientas de métrica y monitorización.
 * Despliegue sencillo de aplicación con el uso de Plantillas.
 * Tenemos varios mecanismos para interactuar con OpenShift: entorno web, cliente de línea de comandos o uso de la API.
-* Se integra con muchas herramientas de ecosistema de Kubernetes que nos ofrecen distintas funcionalidad: Tekton (integración y despliegue continuo), Knative (aplicaciones Serverless), Helm (despliegue y gestión del ciclo de visa de aplicaciones),...
+* Se integra con muchas herramientas de ecosistema de Kubernetes que nos ofrecen distintas funcionalidades: Tekton (integración y despliegue continuo), Knative (aplicaciones Serverless), Helm (despliegue y gestión del ciclo de vida de aplicaciones),...
 
 ## Arquitectura de OpenShift v4
 
