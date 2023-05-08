@@ -2,7 +2,7 @@
 
 1. Introducción a OpenShift v4
 	* [Cloud Computing PaaS: Plataforma como servicio (P)](modulo1/paas.md)
-	* [OpenShift la plataforma PaaS de RedHat (P)](modulo1/openshift.md)
+	* [OpenShift, la plataforma PaaS de RedHat (P)](modulo1/openshift.md)
 	* [Plataformas para trabajar con OpenShift v4 (P)](modulo1/plataformas.md)
 	* [Introducción a  RedHat OpenShift Dedicated Developer Sandbox](modulo1/sandbox.md)
 
