@@ -14,8 +14,8 @@ Tekton define una serie de recursos de Kubernetes/OpenShift con el fin de estand
 En resumen, para crear un Pipeline, se hace lo siguiente:
 
 * Crear tareas (**Task**) personalizadas o instalar tareas reutilizables existentes.
-* Crear un **Pipeline** y PipelineResources para definir el pipeline de entrega de su aplicación.
+* Crear un **Pipeline**  para definir el conjunto de tareas que se tienen que ejecutar.
 * Crear un **PersistentVolumeClaim** para proporcionar el volumen/sistema de archivos para la ejecución del pipeline.
-* Crear un PipelineRun para instanciar e invocar el pipeline.
+* Crear un **PipelineRun** para instanciar e invocar el pipeline.
 * Podemos crear distintos disparadores (triggers) que ejecutan el Pipeline con algún evento determinado.
 
