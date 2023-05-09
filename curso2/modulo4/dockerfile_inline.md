@@ -25,7 +25,7 @@ spec:
   source:
     dockerfile: |
       FROM centos:centos7
-      CMD echo 'Hola, estas probando un dockerfile inline' && exec sleep infinity
+      CMD echo 'Hola, estás probando un dockerfile inline' && exec sleep infinity
     type: dockerfile
   strategy:
     dockerStrategy:
@@ -56,7 +56,7 @@ Una vez creada la nueva imagen, podemos desplegarla y comprobar la salida del Po
     oc new-app imagen-app7 --name=app7
 
     oc logs deploy/app7
-    Hola, estas probando un dockerfile inline
+    Hola, estás probando un dockerfile inline
 
 ## Ejemplo 2: BuildConfig con un Dockerfile sustituido
 

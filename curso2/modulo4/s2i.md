@@ -2,7 +2,7 @@
 
 En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Source-to-image (S2I)** y como fuente de entrada donde esta nuestro código un **repositorio en GitHub**. 
 
-En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto anteriormente, uno de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se referenciará con un objeto **ImageStream**. En posteriores capítulos utilizaremos lel comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
+En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto anteriormente, uno de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se referenciará con un objeto **ImageStream**. En posteriores capítulos utilizaremos el comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
 
 ## Despliegue de la aplicación con la estrategia Source-to-image
 
@@ -51,7 +51,7 @@ Además, se ha comenzado el proceso de creación de la imagen, y para ello se ha
     NAME     TYPE     FROM          STATUS    STARTED         DURATION
     app1-1   Source   Git@3f2efa3   Running   9 seconds ago   
 
-¿Dónde se ejecuta la construcción de la nueva imagen? En un Pod de construcción:
+¿Dónde se ejecuta la construcción de la nueva imagen? En un **Pod de construcción**:
 
     oc get pod
     NAME           READY   STATUS    RESTARTS   AGE

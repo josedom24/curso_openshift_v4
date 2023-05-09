@@ -29,11 +29,11 @@ Si pulsamos sobre uno de ellos obtenemos los detalles:
 En esta página tenemos varias pestañas: 
 * **Details**: La página donde estamos, que nos da información detallada del objeto.
 * **YAML**: Donde accedemos a la definición YAML del objeto.
-* **Builds**: Donde vemos la lista de **Builds** que se han realzados.
+* **Builds**: Donde vemos la lista de **Builds** que se han realizados.
 * **Enverionment**: Donde podemos crear variables de entornos de tipo clave=valor que se utilizan en el proceso de construcción.
 * **Events**: Donde nos indica los distintos eventos que han modificado el estado del objeto.
 
-En esta misma página podemos ver la configuración de los webhook del **BuildConfig**:
+En esta misma página podemos ver la configuración de los webhooks del **BuildConfig**:
 
 ![build_web](img/build_web7.png)
 

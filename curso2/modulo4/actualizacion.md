@@ -16,7 +16,7 @@ Por lo tanto lo primero que vamos a hacer es crear el objeto **BuildCondig**, pa
     NAME        TYPE     FROM          STATUS     STARTED             DURATION
     app4-1      Docker   Git@8ab1cd8   Running    18 seconds ago    
 
-Como vemos en el campo `LATEST`, se ha creado un build, que de forma automática ha llamado `app4-1`.
+Como vemos en el campo `LATEST`, se indica que se ha creado un build, que de forma automática ha llamado `app4-1`.
 Cuando termina la construcción, comprobamos que se ha creado un nuevo **ImageStream** apuntando a la nueva imagen:
 
     oc get is -o name
@@ -31,7 +31,7 @@ Ahora, podríamos crear una nueva aplicación que utilizará esta nueva imagen q
 
 ## Primera modificación: Modificación de la aplicación
 
-¿Qué pasa si mi equipo de desarrollo saca una nueva versión de la aplicación y queremos desplegar esta nueva versión?. Para ello vamos a modificar la aplicación y luego vamos a lanzar una nueva construcción. Para ello:
+¿Qué pasa si mi equipo de desarrollo saca una nueva versión de la aplicación y queremos desplegar esta nueva versión?. Para ello vamos a modificar la aplicación y luego vamos a lanzar una nueva construcción:
 
 1. Modificamos el fichero `app/templates/base.html` y cambiamos la línea: `<h1>Temperaturas: {{prov}}</h1>` por esta otra `<h1>Temperaturas: {{prov}} Versión 2</h1>`.
 2. Guardamos los cambios en el repositorio:

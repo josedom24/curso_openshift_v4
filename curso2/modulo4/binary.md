@@ -17,7 +17,7 @@ Se suelen usar en varios casos:
 * Cuando queremos construir una imagen usando código privado, que no tenemos en un repositorio.
 * En un proceso de IC/DC podemos inyectar un código que se haya generado en un etapa de la integración continúa.
 
-Como limitaciones indicar:
+Como limitaciones, indicar:
 
 * Que los **Binary Builds** no son reproducibles, si queremos repetirlas tenemos que cargar el mismo código fuente.
 * No se pueden activar automáticamente, disparadas por triggers. Sólo pueden iniciarse manualmente.

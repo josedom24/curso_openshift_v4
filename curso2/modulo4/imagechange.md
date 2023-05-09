@@ -56,7 +56,7 @@ Seguimos trabajando con el **BuildConfig** que hemos creado y que ha disparado e
     NAME     TYPE     FROM          STATUS     STARTED         DURATION
     app9-1   Source   Git@4cca4f9   Complete   9 minutes ago   55s
 
-Comprobamos que se han creado dos **ImageStream**, uno que se refiere a la imagen constructora y otro a la imagen generada:
+Comprobamos que se han creado dos **ImageStreams**, uno que se refiere a la imagen constructora y otro a la imagen generada:
 
     oc get is -o name
     imagestream.image.openshift.io/app9

@@ -71,7 +71,7 @@ Sólo hemos creado la nueva imagen, pero no hemos realizado un despliegue, podem
         deployment.apps "app2" created
         service "app2" created
 
-Como vemos ha encontrado una **ImageStream** llamada `app2:latest`, que será la que se utiliza para realizar el despliegue. En este caso, `oc new-app` sólo ha creado un recurso **Deployment** y otro **Service**.
+Como vemos ha encontrado una **ImageStream** llamada `app2:latest`, que será el que se utiliza para realizar el despliegue. En este caso, `oc new-app` sólo ha creado un recurso **Deployment** y otro **Service**.
 
     oc get deploy,rs,pod 
     NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
@@ -85,7 +85,7 @@ Como vemos ha encontrado una **ImageStream** llamada `app2:latest`, que será la
     pod/app2-1-build               0/1     Completed   0          35m
     pod/app2-7f44b89867-ppfpd      1/1     Running     0          3m40s
 
-Ya nos había ocurrido en un ejemplo anterior, vemos que se han creado dos recursos **ReplicaSet**. En realidad, en el proceso interno de creación del despliegue se crea un ReplicaSet pero no tiene indicada la imagen, por eso falla y a continuación, se vuelve a crear otro, con la imagen que hemos indicado, que ya si funciona y crea el Pod.
+Ya nos había ocurrido en un ejemplo anterior, vemos que se han creado dos recursos **ReplicaSet**. En realidad, en el proceso interno de creación del despliegue se crea un **ReplicaSet** pero no tiene indicada la imagen, por eso falla y a continuación, se vuelve a crear otro, con la imagen que hemos indicado, que ya si funciona y crea el Pod.
 
 Creamos el objeto **Route** y accedemos a la aplicación:
 
@@ -99,7 +99,7 @@ Si queremos crear la imagen y desplegarla, ejecutamos:
 
     oc new-app https://github.com/josedom24/osv4_php --name=app2-v2
 
-Si queremos, no utilizar el fichero `Dockerfile` para la construcción y volver a usar la estrategia de Source-2-Image, hay que indicarlo explícitamente:
+Si queremos, no utilizar el fichero `Dockerfile` para la construcción y volver a usar la estrategia de **Source-2-Image**, hay que indicarlo explícitamente:
 
     oc new-build https://github.com/josedom24/osv4_php --name=app2-v4 --strategy=source
 
