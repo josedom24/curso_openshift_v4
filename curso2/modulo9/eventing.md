@@ -10,7 +10,7 @@ Para crear la aplicación Serverless vamos a crear una nueva aplicación usando 
 
 Recuerda que el parámetro **Resource type** debe estar definido con la opción **Serverless Aplicattion**.
 
-A continuación vamos a crear el generador de eventos de tipo **PingSource**, para ello desde el **catálogo de aplicaciones** lo vamos a instalar:
+A continuación, vamos a crear el generador de eventos de tipo **PingSource**, para ello desde el **catálogo de aplicaciones** lo vamos a instalar:
 
 ![kn](img/kn9.png)
 
