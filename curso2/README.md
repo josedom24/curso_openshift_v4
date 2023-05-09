@@ -27,7 +27,7 @@
 
 4. Builds: Construcción automática de imágenes
 	* [Introducción a la construcción automática de imágenes (build) (P)](modulo4/build.md)
-	* [Construcción de imágenes con estrategia Source-to-image (S2I) + repositorio Git](modulo4/s2i.md)
+	* [Construcción de imágenes con estrategia Source-to-Image (S2I) + repositorio Git](modulo4/s2i.md)
 	* [Construcción de imágenes con estrategia Docker + repositorio Git](modulo4/docker.md)
 	* [Definición del objeto BuildConfig](modulo4/buildconfig.md)
 	* [Actualización manual de un build](modulo4/actualizacion.md)

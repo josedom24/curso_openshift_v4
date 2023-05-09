@@ -20,7 +20,7 @@ Y ahora al intentar crear una nueva aplicación, OpenShift detectará que hay un
 
     oc new-app https://github.com/josedom24/osv4_html.git --name=app1
 
-Si queremos que la construcción se vuelva a realizar usando el mecanismos de s2i, tendremos que indicar la estrategia específicamente:
+Si queremos que la construcción se vuelva a realizar usando el mecanismo de **Source-to-Image**, tendremos que indicar la estrategia específicamente:
 
     oc new-app https://github.com/josedom24/osv4_html.git --name=app2 --strategy=source
 

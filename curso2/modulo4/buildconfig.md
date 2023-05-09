@@ -83,7 +83,7 @@ Cuando finalice la construcción de la imagen, podríamos desplegarla ejecutando
 
 ## Definición de los objetos BuildConfig definidos en los ejercicios anteriores
 
-Recordamos que teníamos un **BuildConfig** `app1` que utilizaba la estrategia **Source-to-image (S2I)** y obtenía los ficheros de un repositorio Git, podemos ver su definición ejecutando:
+Recordamos que teníamos un **BuildConfig** `app1` que utilizaba la estrategia **Source-to-Image (S2I)** y obtenía los ficheros de un repositorio Git, podemos ver su definición ejecutando:
 
     oc get bc app1 -o yaml
     ...    

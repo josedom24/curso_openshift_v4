@@ -4,7 +4,7 @@ Como indicábamos en el apartado anterior, ahora vamos a añadir un fichero `Doc
 
 ![dockerweb](img/dockerweb1.png)
 
-Si queremos que la construcción se vuelva a realizar usando el mecanismos de s2i, tendremos que indicar la estrategia específicamente pulsando sobre la opción **Edit Import Strategy**:
+Si queremos que la construcción se vuelva a realizar usando el mecanismos de **Source-to-Image**, tendremos que indicar la estrategia específicamente pulsando sobre la opción **Edit Import Strategy**:
 
 ![dockerweb](img/dockerweb2.png)
 

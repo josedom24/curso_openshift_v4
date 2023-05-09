@@ -12,7 +12,7 @@ Para comprobar los distintos motivos de actualización, vamos a lanzar un nuevo 
 
     oc new-app httpd~https://github.com/josedom24/osv4_html --name=web1 --as-deployment-config=true
 
-Se ha creado un nuevo **BuildConfig** que ha construido la nueva imagen usando **Source-2-Image**, y al finalizar se ha lanzado la aplicación, como veíamos en el apartado anterior:
+Se ha creado un nuevo **BuildConfig** que ha construido la nueva imagen usando **Source-to-Image**, y al finalizar se ha lanzado la aplicación, como veíamos en el apartado anterior:
 
     oc get dc
     NAME   REVISION   DESIRED   CURRENT   TRIGGERED BY

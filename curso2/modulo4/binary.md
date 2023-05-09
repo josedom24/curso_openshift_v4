@@ -2,7 +2,7 @@
 
 A este tipo de construcción de imágenes se la llama **Binary Build**, y nos permite cargar código fuente directamente en un build en lugar de indicar un repositorio Git.
 
-Podemos iniciar una construcción binaria, en cualquier **BuildConfig** que use estrategia Docker o s2i. Para indicar el código fuente que vamos a usar, tenemos varias formas:
+Podemos iniciar una construcción binaria, en cualquier **BuildConfig** que use estrategia Docker o Source-to-Image. Para indicar el código fuente que vamos a usar, tenemos varias formas:
 
 * `from-file`: Se indica un sólo fichero.
 * `from-dir`: Se indica un directorio donde están los ficheros.

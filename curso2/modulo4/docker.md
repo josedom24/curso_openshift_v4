@@ -99,7 +99,7 @@ Si queremos crear la imagen y desplegarla, ejecutamos:
 
     oc new-app https://github.com/josedom24/osv4_php --name=app2-v2
 
-Si queremos, no utilizar el fichero `Dockerfile` para la construcción y volver a usar la estrategia de **Source-2-Image**, hay que indicarlo explícitamente:
+Si queremos, no utilizar el fichero `Dockerfile` para la construcción y volver a usar la estrategia de **Source-to-Image**, hay que indicarlo explícitamente:
 
     oc new-build https://github.com/josedom24/osv4_php --name=app2-v4 --strategy=source
 

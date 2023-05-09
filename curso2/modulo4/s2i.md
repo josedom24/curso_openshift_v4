@@ -1,6 +1,6 @@
-# Construcción de imágenes con estrategia Source-to-image (S2I)
+# Construcción de imágenes con estrategia Source-to-Image (S2I)
 
-En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Source-to-image (S2I)** y como fuente de entrada donde esta nuestro código un **repositorio en GitHub**. 
+En este primer ejercicio vamos a crear una construcción (build) utilizando la estrategia **Source-to-Image (S2I)** y como fuente de entrada donde esta nuestro código un **repositorio en GitHub**. 
 
 En este ejercicio vamos a desplegar la aplicación con `oc new-app` y como ya hemos visto anteriormente, uno de los recursos que se crearán será el **BuildConfig** encargado de construir la imagen que se guardará en el registro interno y se referenciará con un objeto **ImageStream**. En posteriores capítulos utilizaremos el comando `oc new-build` para crear el objeto **BuildConfig** sin necesidad de desplegar la aplicación.
 

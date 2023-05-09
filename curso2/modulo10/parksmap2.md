@@ -2,7 +2,7 @@
 
 En este apartado vamos a desplegar la aplicación escrita en Java **Nationalparks**, es el servicio backend, que expondrá varios endpoints que la aplicación **Parksmap** utilizará para obtener la información de los Parques Nacionales que visualizará en el mapa. Este servicio guarda la información de los Parques Nacionales en una base de datos **MongoDB**. Para hacer las peticiones a este servicio se utilizará una URL proporcionada por el objeto **Route** que crearemos a continuación.
 
-Vamos a usar la estrategia de construcción de imágenes **source-2-image**, utilizando el código de la aplicación que se encuentra en el repositorio `https://github.com/openshift-roadshow/nationalparks.git`.
+Vamos a usar la estrategia de construcción de imágenes **Source-to-Image**, utilizando el código de la aplicación que se encuentra en el repositorio `https://github.com/openshift-roadshow/nationalparks.git`.
 
 Vamos a crear el despliegue desde la terminal, para ello:
 
