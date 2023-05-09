@@ -1,6 +1,6 @@
 # Gestión de las etiquetas en un ImageStream
 
-En el apartado anterior hemos visto como crear objetos **ImageStream** que nos referencian a imágenes externas o internas. Realmente un **ImageStream** es un conjunto de etiquetas, y cada un a de ella puede apuntar a una imagen distinta o a la misma imagen.
+En el apartado anterior hemos visto como crear objetos **ImageStream** que nos referencian a imágenes externas o internas. Realmente un **ImageStream** es un conjunto de etiquetas, y cada una de ellas puede apuntar a una imagen distinta o a la misma imagen.
 
 En este apartado vamos a trabajar con la gestión de etiquetas de los **ImageStream**.
 
@@ -102,7 +102,7 @@ Y comprobamos que hemos desplegado la versión 1 de la aplicación:
     curl http://app-citas-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/version
     v1
 
-¿Qué ocurrirá si hacemos que la etiqueta `prod` del **ImageStream** referencia a la segunda versión de la imagen?. Habrá un cambio en la imagen que se ha utilizado en el despliegue, y esto hará que se actualice el despliegue creando un nuevo **ReplicaSet** que creará un nuevo Pod con la nueva versión de la imagen:
+¿Qué ocurrirá si hacemos que la etiqueta `prod` del **ImageStream** referencie a la segunda versión de la imagen?. Habrá un cambio en la imagen que se ha utilizado en el despliegue, y esto hará que se actualice el despliegue creando un nuevo **ReplicaSet** que creará un nuevo Pod con la nueva versión de la imagen:
 
     oc tag citas:prod -d
     oc tag citas:v2 citas:prod

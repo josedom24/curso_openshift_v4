@@ -47,11 +47,11 @@ Finalmente podemos comprobar que tenemos la imagen en nuestro registro interno:
 
 ## Creación de ImageStream con import-image
 
-Otra manera de crear recursos **ImageStream** es usando el comando `import-image`. En este caso indicamos el nombre de la **ImageStream** y la imagen a la que apunta. En este ejemplo vamos a utilizar el mismo nombre y vamos a apuntar a otra image indicando otra etiqueta:
+Otra manera de crear recursos **ImageStream** es usando el comando `import-image`. En este caso indicamos el nombre de la **ImageStream** y la imagen a la que apunta. En este ejemplo vamos a utilizar el mismo nombre y vamos a apuntar a otra imagen indicando otra etiqueta:
 
     oc import-image web4:latest --from=docker.io/bitnami/apache --confirm
 
-Es necesario poner la opción `--confirm` cuando creamos por primera ver una objeto **ImageStream**.
+Es necesario poner la opción `--confirm` cuando creamos por primera vez un objeto **ImageStream**.
 
 Otra forma de hacerlo sería creando antes un nuevo objeto **ImageStream** y luego importando la imagen:
 
@@ -71,7 +71,7 @@ En este caso hemos creado el **ImageStream** `web4:latest`:
       * docker.io/bitnami/apache@sha256:275637c0d0d82c0f87b2269d1871d6a7ad1e81e8960f5ec23fe599e456618b1a
           About a minute ago
 
-Si miramos los ID de las imágenes `bitnami/apache` en Docker Hub podemos comprobar que hemos apuntado la versión `latest`. Además vemos que la versión `2.4.57` es la misma imagen:
+Si miramos los ID de las imágenes `bitnami/apache` en [Docker Hub](https://hub.docker.com/r/bitnami/apache) podemos comprobar que hemos apuntado la versión `latest`. Además vemos que la versión `2.4.57` es la misma imagen:
 
 ![apache](img/apache_docker.png)
 
@@ -96,7 +96,7 @@ Podríamos crear un nuevo tag apuntando a la misma imagen dentro de la **ImageSt
       * docker.io/bitnami/apache@sha256:275637c0d0d82c0f87b2269d1871d6a7ad1e81e8960f5ec23fe599e456618b1a
           1 second ago
 
-Y también podríamos crear un tag a apuntando a otra versión que corresponde a una imagen diferente:
+Y también podríamos crear un tag apuntando a otra versión que corresponde a una imagen diferente:
 
     oc import-image web4:2.4.56 --from=docker.io/bitnami/apache:2.4.56
 

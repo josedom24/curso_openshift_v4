@@ -2,7 +2,7 @@
 
 Cuando creamos un nuevo **ImageStream** que apunta a una imagen, podemos activar una funcionalidad que periódicamente comprueba si la imagen ha cambiado, y en caso afirmativo, actualiza el **ImageStream** para que apunte a la nueva imagen. Por defecto, el periodo de comprobación es de 15 minutos.
 
-En primer lugar, vamos a crear una imagen docker y la voy a subir a mi cuenta de Docker Hub. Para ello vamos a usar el fichero `Dockerfile`:
+En primer lugar, vamos a crear una imagen Docker y la voy a subir a mi cuenta de Docker Hub. Para ello vamos a usar el fichero `Dockerfile`:
 
 ```
 FROM centos:centos7
@@ -15,7 +15,7 @@ Para crear la imagen y subirla ejecuto las siguientes instrucciones:
     docker build -t josedom24/imagen-prueba .
     docker pull josedom24/image-prueba
 
-A continuación creamos el **ImageStream** apuntando a dicha image, con la opción `--scheduled=true` que es la responsable de monitorizar la imagen original:
+A continuación creamos el **ImageStream** apuntando a dicha image, con la opción `--scheduled=true` que es el parámetro que nos permite monitorizar la imagen original:
 
     oc import-image imagen-prueba:latest --from=docker.io/josedom24/imagen-prueba:latest --scheduled=true --confirm
 

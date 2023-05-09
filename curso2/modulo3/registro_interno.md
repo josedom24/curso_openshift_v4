@@ -2,7 +2,7 @@
 
 OpenShift posee un registro interno con imágenes precargadas. Como hemos indicado no trabajamos directamente con esas imágenes, sino que tenemos a nuestra disposición el recurso **ImageStream** que apunta a estas imágenes, y serán las que utilicemos para crear nuevos despliegues o para construir nuevas imágenes.
 
-Las **ImageStreams** que apuntan a imágenes internas, la podemos encontrar en el catálogo, por ejemple si buscamos por la palabra "httpd", podemos encontrar:
+Las **ImageStreams** que apuntan a imágenes internas, la podemos encontrar en el catálogo, por ejemplo si buscamos por la palabra "httpd", podemos encontrar:
 
     oc new-app -S httpd
     ...
@@ -30,7 +30,7 @@ Tenemos además los recursos **ImageStreamTags** que representan las etiquetas d
     NAME        IMAGE REFERENCE                                                                                                                            UPDATED
     httpd:2.4   image-registry.openshift-image-registry.svc:5000/openshift/httpd@sha256:212f61a91651b44e8beb9635885deaae57c8b15a8a50716dd7cebb9a6457b4be   6 weeks ago
 
-Vemos como la etiqueta `2.4` de la **ImageStream** `httpd` esta apuntado a una imagen en el registro interno (`image-registry.openshift-image-registry.svc:5000`) con un nombre y un determinado identificador. Esto me asegura que cada vez que use `httpd:2.4` estaré usando la misma imagen.
+Vemos como la etiqueta `2.4` de la **ImageStream** `httpd` está apuntado a una imagen en el registro interno (`image-registry.openshift-image-registry.svc:5000`) con un nombre y un determinado identificador. Esto me asegura que cada vez que use `httpd:2.4` estaré usando la misma imagen.
 
 Finalmente indicar que con el comando `oc get images` ejecutado como administrador del clúster puedo acceder a las imágenes del registro interno, por ejemplo vamos a buscar la imagen anterior en el registro:
 
