@@ -8,9 +8,9 @@ Los **Templates** que nos ofrece OpenShift y que están guardados en el **catál
 
     oc get templates -n openshift
 
-Por ejemplo, vamos a desplegar una base de datos mariadb sin almacenamiento persistente, por lo tantom, vamos a usar el template `mariadb-ephemeral`.
+Por ejemplo, vamos a desplegar una base de datos mariadb sin almacenamiento persistente, por lo tanto, vamos a usar el **Template** `mariadb-ephemeral`.
 
-Los **Templates** tienen definido una serie de parámetros que podemos utilizar para configurar el despliegue. Al instanciar un **Template** algunos parámetros hay que indicarlos de forma obligatoria, y otros, si no se ponen, se inicializan con valores por defecto.
+Los **Templates** tienen definidos una serie de parámetros que podemos utilizar para configurar el despliegue. Al instanciar un **Template** algunos parámetros hay que indicarlos de forma obligatoria, y otros, si no se ponen, se inicializan con valores por defecto.
 
 Para ver todas las características de un **Template**, incluso los parámetros podemos ejecutar:
 
@@ -64,7 +64,7 @@ Para crear la aplicación desde el **Template** ejecutamos:
         deploymentconfig.apps.openshift.io "mariadb" created
     ...
 
-como vemos se han creado tres recursos: un **Secret**, un **Service** y un **DeploymentConfig**, con los valores de configuración que hemos indicado:
+Como vemos se han creado tres recursos: un **Secret**, un **Service** y un **DeploymentConfig**, con los valores de configuración que hemos indicado:
 
     oc get secret,service,dc,rc,pod
     NAME                              TYPE                                  DATA   AGE

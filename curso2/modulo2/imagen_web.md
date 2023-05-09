@@ -43,6 +43,6 @@ Al acceder a la URL de la ruta accedemos a la aplicación:
 
 ![imagenweb](img/imagenweb7.png)
 
-Por último podemos borrar todos los recursos creado, eliminando la aplicación:
+Por último podemos borrar todos los recursos creados, eliminando la aplicación:
 
 ![imagenweb](img/imagenweb8.png)

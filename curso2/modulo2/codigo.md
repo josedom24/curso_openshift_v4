@@ -19,7 +19,7 @@ Queremos construir una imagen con un servidor web a partir de un repositorio don
     oc new-app https://github.com/josedom24/osv4_html.git --name=app1
     error: No language matched the source repository
 
-Vemos que no es posible averiguar el lenguaje con el que está escrito, por lo que tendremos nosotros que indicar la **Builder Image** que vamos a utilizar. 
+Vemos que no es posible averiguar el lenguaje con el que está escrito, por lo que tendremos que indicar la **Builder Image** que vamos a utilizar. 
 
 Las **Builder Image** están referenciadas por una **Image Stream**, por ejemplo, podemos buscar las **Builder Image** con el servidor web apache:
 

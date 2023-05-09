@@ -6,11 +6,11 @@ Vamos a realizar el mismo ejercicio pero desde la consola web. Para ello accedem
 
 ## Despliegue de una página estática con un servidor apache2
 
-Queremos construir una imagen con un servidor web a parir de un repositorio donde tenemos una página web estática, para ello vamos a configurar el despliegue:
+Queremos construir una imagen con un servidor web a partir de un repositorio donde tenemos una página web estática, para ello vamos a configurar el despliegue:
 
 ![codigoweb](img/codigoweb2.png)
 
-Indicamos el repositorio donde se encuentra la aplicación (`https://github.com/josedom24/osv4_html.git`). Y vemos que nos detecta una **Builder Image** para construir la nueva imagen, pero no nos muestra la que nos recomienda. Como pasaba en el apartado anterior, OpenShift no puede determinar el lenguaje con el que está escrita la aplicación, por lo que tendremos que indicar la **Builder Image** que vamos a utilizar. Para ello pulsamos sobre ela opción **Edit Import Strategy**:
+Indicamos el repositorio donde se encuentra la aplicación (`https://github.com/josedom24/osv4_html.git`). Y vemos que nos detecta una **Builder Image** para construir la nueva imagen, pero no nos muestra la que nos recomienda. Como pasaba en el apartado anterior, OpenShift no puede determinar el lenguaje con el que está escrita la aplicación, por lo que tendremos que indicar la **Builder Image** que vamos a utilizar. Para ello pulsamos sobre la opción **Edit Import Strategy**:
 
 ![codigoweb](img/codigoweb3.png)
 
@@ -42,7 +42,7 @@ Podemos ver que tenemos varias secciones en el icono que representa el despliegu
 3. Si pulsamos sobre "la flechita" se abrirá una nueva página web con la URL del objeto **Route** que nos permitirá el acceso a la aplicación.
 4. El estado de la construcción (**Build**), podemos ver si se está produciendo una construcción, o si ha finalizado con éxito.
 
-En la pantalla lateral, ahora tenemos una sección de **Builds** donde tenemos la lista de las últimas construcciones y un botón que nos permite iniciar una nueva construcción de imagen:
+En la pantalla lateral, ahora tenemos una sección de **Builds** donde tenemos la lista de las últimas construcciones y un botón que nos permite iniciar una nueva construcción de imagen.
 
 Se ha creado un objeto **ImageStream** Y un objeto **BuildConfig**:
 
@@ -55,7 +55,7 @@ Al acceder a la URL de la ruta accedemos a la aplicación:
 
 ## Despliegue de una página estática con un servidor nginx
 
-En este caso al escoger la ***Builder Image** elegimos la imagen de *nginx*:
+En este caso al escoger la **Builder Image** elegimos la imagen de *nginx*:
 
 ![codigoweb](img/codigoweb10.png)
 
@@ -69,7 +69,7 @@ Podríamos pulsar sobre la opción **Edit Import Strategy** para cambiar la **Bu
 
 ## Eliminar la aplicación
 
-Finalmente hemos hecho tres despliegues agrupados en la aplicación `aplicacion1`.
+Finalmente, hemos hecho tres despliegues agrupados en la aplicación `aplicacion1`.
 
 ![codigoweb](img/codigoweb12.png)
 

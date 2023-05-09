@@ -73,7 +73,7 @@ Veamos algunos aspectos con detalle:
 
         oc describe is test-web
 
-3. El recurso **Deployment** que se ha creado hace referencia al recurso **ImageStream** en la definición del contenedor que se ha creado:
+3. El recurso **Deployment** hace referencia en su definición al recurso **ImageStream**:
 
         oc describe deploy test-web
         ...
