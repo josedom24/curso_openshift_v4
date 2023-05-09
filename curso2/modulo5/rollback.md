@@ -1,6 +1,6 @@
 # Rollback de un DeploymentConfig
 
-Tenemos la posibilidad de volver al estado del despliegue que teníamos en una revisión anterior (**Rollback**). Para realizar este ejercicio vamos a desplegar una nueva aplicación a partir de una imagen que tenemos en DockerHub. La imagen `josedom24/test_web` tiene tres versiones, identificadas por etiquetas.
+Tenemos la posibilidad de volver al estado del despliegue que teníamos en una revisión anterior (**Rollback**). Para realizar este ejercicio vamos a desplegar una nueva aplicación a partir de una imagen que tenemos en Docker Hub. La imagen `josedom24/test_web` tiene tres versiones, identificadas por etiquetas.
 
 En este ejercicio, vamos a crear un **ImageStream** antes de desplegar la aplicación, que nos permitirá ir cambiando de imagen con el uso de un tag, para ello:
 

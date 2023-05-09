@@ -43,7 +43,7 @@ Podemos ver la descripción de los recursos creados:
     oc describe dc/test-web
     oc describe rc/test-web-1
 
-Por último creamos el recurso **Route** y comprobamos el acceso a la aplicación:
+Por último, creamos el recurso **Route** y comprobamos el acceso a la aplicación:
 
     oc expose service/test-web
 

@@ -34,7 +34,7 @@ strategy:
 
 * `intervalSeconds`: El tiempo de espera entre la comprobación del estado de despliegue después de la actualización.
 * `timeoutSeconds`: El tiempo de espera máximo para cada actualización de Pod.
-* `updatePeriodSeconds`: El tiempo de espera entre actualizaciones de Pods individuales.Por defecto, 1 segundo.
+* `updatePeriodSeconds`: El tiempo de espera entre actualizaciones de Pods individuales.Por defecto, un segundo.
 * `maxSurge`: El número máximo de Pods nuevos que se pueden crear por encima del número deseado de replicas.
 * `maxUnavailable`: El número máximo de Pods que se pueden eliminar simultáneamente.
 

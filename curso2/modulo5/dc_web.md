@@ -37,7 +37,7 @@ En esta pantalla encontramos varias pestañas:
 
 ## Objetos ReplicationController
 
-Como hemos indicados, podemos ver la lista de objetos **ReplicationControllers** de un **DeploymentConfig**, accediendo a la pestaña **ReplicationControllers**:
+Como hemos indicado, podemos ver la lista de objetos **ReplicationControllers** de un **DeploymentConfig**, accediendo a la pestaña **ReplicationControllers**:
 
 ![dc](img/dc_web7.png)
 
@@ -63,7 +63,7 @@ Podemos observar en la lista de **ReplicationController**  que se ha creado un n
 
 ![dc](img/dc_web10.png)
 
-Efectivamente hemos tenido otro **deploy pod** que ha creado un nuevo pod:
+Efectivamente hemos tenido otro **Deploy Pod** que ha creado un nuevo pod:
 
 ![dc](img/dc_web11.png)
 
