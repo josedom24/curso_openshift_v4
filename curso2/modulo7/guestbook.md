@@ -10,7 +10,7 @@ Por lo tanto para desplegar las aplicaciones vamos a ejecutar los siguientes com
     oc new-app https://github.com/josedom24/osv4_guestbook.git --name=guestbook
     oc new-app bitnami/redis  -e REDIS_PASSWORD=mypass --name=redis
 
-**Nota**: No hay que indicar la contraseña de la base de datos en el despliegue de la aplicación Guestbook, porque por defecto coincide con la que hemos establecido en el despliegue de Redis.
+**Nota**: No hay que indicar la contraseña de la base de datos en el despliegue de la aplicación GuestBook, porque por defecto coincide con la que hemos establecido en el despliegue de Redis.
 
 A continuación, creamos la ruta para acceder a GuestBook y comprobamos que funciona:
 
@@ -20,7 +20,7 @@ A continuación, creamos la ruta para acceder a GuestBook y comprobamos que func
 
 ## Persistencia de la información
 
-La aplicación funciona de forma correcta, pero tenemos que tener en cuenta que **los Pods son efímeros**, es decir, cuando se eliminan pierden la información. en nuestro caso si eliminamos el Pod del despliegue redis (por alguna actualización, escalado, ...) se perderá la información de la base de datos.
+La aplicación funciona de forma correcta, pero tenemos que tener en cuenta que **los Pods son efímeros**, es decir, cuando se eliminan pierden la información. En nuestro caso si eliminamos el Pod del despliegue redis (por alguna actualización, escalado, ...) se perderá la información de la base de datos.
 
 Si estudiamos la documentación de la imagen `bitnami/redis` en [Docker Hub](https://hub.docker.com/r/bitnami/redis/), para que la información de la base de datos sea persistente, tenemos que asociar un volumen al directorio `/bitnami/redis/data`.
 
@@ -74,7 +74,7 @@ A continuación tenemos que modificar el despliegue de la aplicación GuestBook,
             persistentVolumeClaim:
               claimName: my-pvc-redis
 
-Cuando modificamos el **Deployment**, se produce una actualización: se creará un nuevo **ReplicaSet** que creará un nuevo pod con la nueva configuración.
+Cuando modificamos el **Deployment**, se produce una actualización: se creará un nuevo **ReplicaSet** que creará un nuevo Pod con la nueva configuración.
 
     oc get rs
     NAME                   DESIRED   CURRENT   READY   AGE
@@ -88,14 +88,14 @@ Cuando modificamos el **Deployment**, se produce una actualización: se creará 
     NAME                        READY   STATUS      RESTARTS      
     redis-7f59bf9479-mm76b      1/1     Running     0          10s
 
-Puedes ver las características del pod, ejecutando:
+Puedes ver las características del Pod, ejecutando:
 
     oc describe pod/redis-7f59bf9479-mm76b
 
-Accede de nuevo a la aplicación, introduce algunos mensajes, y vamos a simular la eliminación del pod:
+Accede de nuevo a la aplicación, introduce algunos mensajes, y vamos a simular la eliminación del Pod:
 
     oc delete pod/redis-7f59bf9479-mm76b
 
-Inmediatamente se creará un nuevo pod, volvemos acceder y comprobar que la información no se ha perdido:
+Inmediatamente se creará un nuevo Pod, volvemos acceder y comprobar que la información no se ha perdido:
 
 ![guestbook](img/guestbook2.png)

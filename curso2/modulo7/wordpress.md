@@ -45,11 +45,11 @@ Y que efectivamente está montado en un directorio de los Pods:
       ClaimName:	mariadb
       ReadOnly:	false
 
-## WordPress persistente
+## Wordpress persistente
 
-Vamos a desplegar WordPress y posteriormente, crearemos un nuevo volumen para guardar los datos del blog. Este volumen habrá que montarlo en el directorio `/bitnami/wordpress`.
+Vamos a desplegar Wordpress y posteriormente, crearemos un nuevo volumen para guardar los datos del blog. Este volumen habrá que montarlo en el directorio `/bitnami/wordpress`.
 
-Para desplegar el WordPress usando un **DeploymentConfig**:
+Para desplegar el Wordpress usando un **DeploymentConfig**:
 
     oc new-app bitnami/wordpress -e WORDPRESS_DATABASE_NAME=wordpress -e  WORDPRESS_DATABASE_HOST=mariadb -e WORDPRESS_DATABASE_USER=usuario -e WORDPRESS_DATABASE_PASSWORD=asdasd --name wordpress --as-deployment-config=true
 
