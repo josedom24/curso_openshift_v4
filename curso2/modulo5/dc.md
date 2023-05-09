@@ -3,7 +3,7 @@
 Los recursos **Deployment** y **DeploymentConfig** de OpenShift nos proporcionan la funcionalidad de desplegar aplicaciones. Son dos métodos similares pero diferentes para la gestión del despliegue de aplicaciones.
 
 * Estos recursos describen **el estado deseado de una aplicación** y lo usamos como plantillas para la creación de Pods.
-* El objeto **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los Pods de la aplicación. Para ello se utiliza un **Deploy Pod**, responsable de la creación de los Pods.
+* Los objetos **DeploymentConfig**, son propios de la API de OpenShift y utilizan recursos **ReplicationController** para gestionar los Pods de la aplicación. Para ello se utiliza un **Deploy Pod**, responsable de la creación de los Pods.
 
     ![dc](img/deploymentconfig.png)
 
