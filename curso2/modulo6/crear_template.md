@@ -1,6 +1,6 @@
 # Crear objetos desde un Template
 
-Una vez que tenemos nuestro objeto **Template**, podemos utilizarlo para crear de manera muy sencilla los objetos que tiene definido. A ese proceso se le llama "instanciar" una plantilla y para ello utilizamos el comando `process`. Veamos algunos ejemplos de como usarlo.
+Una vez que tenemos nuestro objeto **Template**, podemos utilizarlo crear los objetos que tiene definido. A ese proceso se le llama "instanciar" una plantilla y para ello utilizamos el comando `process`. Veamos algunos ejemplos de cómo usarlo.
 
 Si queremos ver los parámetros que podemos configurar en la plantilla, ejecutamos:
 

@@ -21,8 +21,8 @@ Vamos a imaginar que hemos desplegado una aplicación PHP que tenemos guardada e
 
 Como ya sabemos estas dos instrucciones han creado varios tipos de objetos: **DeploymentConfig**, **BuildConfig**, **ImageStream**, **Service** y **Route**.
 
-Ahora queremos diseñar un **Template** que nos permita desplegar aplicaciones PHP que estén guardadas en repositorios GitHub, podemos partir de la definición de los objetos que hemos creado para posteriormente realizar modificaciones, establecer parámetros y convertirla en la definición de un objeto **Template**. Para ello podemos ejecutar la instrucción:
+Ahora queremos diseñar un **Template** que nos permita desplegar aplicaciones PHP que estén guardadas en repositorios GitHub. A partir de la definición de los objetos que hemos creado, podemos crear la definición de un **Tempalate**, estableciendo los parámetros que queramos configurar posteriormente. Para ello podemos ejecutar la instrucción:
 
     oc get -o yaml all > php-plantilla.yaml
 
-En el fichero `php-plantilla.yaml` tendremos la lista de las definiciones de los objetos, en el próximo apartado veremos cómo lo convertimos en una definición de un **Template**.
+En el fichero `php-plantilla.yaml` tendremos la lista de las definiciones de los objetos, en el próximo apartado veremos cómo lo convertimos en la definición de un **Template**.
