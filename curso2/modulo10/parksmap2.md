@@ -21,7 +21,7 @@ Para comprobar que la aplicación está funcionando podemos acceder a la URL `/w
 
 ## Conexión a la base de datos
 
-Es el momento de desplegar una base de datos MongoDB para guardar la información de los parques naturales. Para realizar la instalación de MongoDB vamos a usar un **Template** que vamos a crear en nuestro proyecto:
+Es el momento de desplegar una base de datos MongoDB para guardar la información de los Parques Naturales. Para realizar la instalación de MongoDB vamos a usar un **Template** que vamos a crear en nuestro proyecto:
 
     oc create -f https://raw.githubusercontent.com/openshift-labs/starter-guides/ocp-4.8/mongodb-template.yaml
 
@@ -37,7 +37,7 @@ Y realizamos la siguiente configuración:
 
 ![nationalparks](img/nationalparks3.png)
 
-* Indicamos como **Namespace** donde tiene que buscar el **ImageStream** con el que estamos trabajando.
+* Indicamos nuestro proyecto como  **namespace**, para que busque de manera adecuada el **ImageStream** con el que estamos trabajando.
 * El nombre del servicio lo configuramos como `mongodb-nationalparks`.
 * Las credenciales de la base de datos, usuario, contraseña, base de datos, contraseña del administrador lo configuramos com `mongodb`.
 * Y la versión de la imagen dejamos la `3.6`.
@@ -50,7 +50,7 @@ Ahora tenemos que configurar la aplicación **Nationalparks** con las credencial
 
 ![nationalparks](img/nationalparks5.png)
 
-A continuación vamos a usarlo para configurar el despliegue de **Nationalparks**, para ello pulsa sobre el botón **Add Secret to workload**:
+A continuación, vamos a usarlo para configurar el despliegue de **Nationalparks**, para ello pulsa sobre el botón **Add Secret to workload**:
 
 ![nationalparks](img/nationalparks6.png)
 
