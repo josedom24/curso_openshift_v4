@@ -8,7 +8,7 @@ En estos ejemplos, vamos a usar la herramienta de línea de comando `kn` para ma
 
 También lo puedes bajar en la página de la [documentación oficial](https://docs.openshift.com/container-platform/4.12/serverless/install/installing-kn.html).
 
-Para la instalación, descomprimimos y copiamos a un directorio que tengamos en el path:
+Para la instalación en Linux Debian/Ubuntu, descomprimimos y copiamos a un directorio que tengamos en el PATH:
 
     tar -xf kn-linux-amd64.tar.gz
     sudo install kn /usr/local/bin
@@ -87,7 +87,6 @@ Puedes ver estos recursos también con la herramienta `kn`:
     kn revision list
     kn route list
 
-
 Veamos los recursos que se han creado, propios de las aplicaciones Serverless:
 
 * **Service**: El objeto **service.serving.knative.dev** gestiona automáticamente el ciclo de vida de su carga de trabajo para garantizar que la aplicación se despliega y es accesible a través de la red. Crea una ruta, una configuración y una nueva revisión para cada cambio en un servicio creado por el usuario, o recurso personalizado.
@@ -138,7 +137,7 @@ Puedes ejecutar la instrucción `watch oc get pod` y comprobar como se crean y e
 
 ## Distribución de tráfico hacía una aplicación Serverless
 
-Esta característica la podemos usar para realizar distintas estrategias de despliegues, por ejemplo una estrategia Blue/Green. Para ello vamos a crear una nueva revisión, creando un nuevo objeto **Revision** modificando la configuración del servicio, por ejemplo cambiando la variable de entorno. Para ello podemos realizar la modificación como hemos visto con otros objetos de OpenShift:
+Esta característica la podemos usar para realizar distintas estrategias de despliegue, por ejemplo una estrategia Blue/Green. Para ello vamos a crear una nueva revisión, creando un nuevo objeto **Revision** modificando la configuración del servicio, por ejemplo cambiando la variable de entorno. Para ello podemos realizar la modificación como hemos visto con otros objetos de OpenShift:
 
     oc edit ksvc/hello
     ...
@@ -164,7 +163,7 @@ Si accedemos ahora a la ruta de la aplicación, veremos que nos redirige a los P
     curl https://hello-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
     Hello Serverless! v2!
 
-Sin embargo, de una manera muy sencilla podemos redistribuir el tráfico entre cualquier revisión del despliegue, asignando pesos a cada uno de ellos y de está manera podemos implementar una estrategia de despliegue Blue/Green.
+Sin embargo, de una manera muy sencilla podemos redistribuir el tráfico entre cualquier revisión del despliegue, asignando pesos a cada uno de ellos y de esta manera podemos implementar una estrategia de despliegue Blue/Green.
 
 Por ejemplo, desde la consola web, elegimos la opción **Set traffic distribution**:
 
