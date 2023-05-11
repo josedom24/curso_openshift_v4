@@ -81,9 +81,9 @@ Y ahora si accedemos a la URL de **Parksmap**, veremos la visualización de los 
 
 ## Pruebas de disponibilidad de los Pods
 
-Tenemos a nuestra disponibilidad mecanismos para comprobar si nuestros pods están "vivos" y están "respondiendo". Estos mecanismos son los siguientes:
+Tenemos a nuestra disponibilidad mecanismos para comprobar si nuestros Pods están "vivos" y están "respondiendo". Estos mecanismos son los siguientes:
 
 * **Liveness Probe**: Nos permite comprobar si un Pod está en estado *running*. Si falla, se reiniciará el Pod, porque se considera que no está funcionando.
 * **Readiness Probe**: Nos permite comprobar si un Pod está listo para recibir peticiones. Si falla, no se le enviarán peticiones a este Pod.
 
-Vamos a añadir estos dos mecanismos a nuestra aplicación **Nationalparks**, para asegurarnos que ningún Pod que no este preparado va a recibir una petición y que se reinciarán aquellos que no se estén ejecutando. Para ello, desde la **Toopología** escogemos 
+Vamos a añadir estos dos mecanismos a nuestra aplicación **Nationalparks**, para asegurarnos que ningún Pod que no este preparado va a recibir una petición y que se reiniciarán aquellos que no se estén ejecutando. Para ello, desde la **Toopología** escogemos 
