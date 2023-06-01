@@ -42,7 +42,7 @@ En este ejemplo, hemos indicado los recursos que necesita el contenedor:
 * **requests**: Es la cantidad mínima de recursos que un contenedor necesita para poder funcionar correctamente. Kubernetes / OpenShift garantiza que los nodos en los que se ejecuten los Pods reserven al menos los recursos solicitados. Si no hay suficientes recursos disponibles, Kubernetes / OpenShift no planificará el Pod en ese nodo.
 * **limits**: Es la cantidad máxima de recursos que un contenedor puede utilizar. Kubernetes / OpenShift impone estos límites para evitar que un contenedor utilice más recursos de los que realmente necesita. Si un contenedor intenta utilizar más recursos que los límites especificados, Kubernetes limitará su uso de recursos.
 
-Vemos que hemos reservado para cada Pod 200m (**200 milicpus**). En Kubernetes / PpenShift, la unidad de CPU se llama "CPU" o "core", y se expresa como una fracción de un núcleo de CPU completo.  La unidad de medida "milicpu" (mCPU) es una fracción de una CPU. Si un contenedor necesita 200 milicpus, solicita 0.2 CPU o 1/5 de un núcleo de CPU. 
+Vemos que hemos reservado para cada Pod 200m (**200 milicpus**). En Kubernetes / OpenShift, la unidad de CPU se llama "CPU" o "core", y se expresa como una fracción de un núcleo de CPU completo.  La unidad de medida "milicpu" (mCPU) es una fracción de una CPU. Si un contenedor necesita 200 milicpus, solicita 0.2 CPU o 1/5 de un núcleo de CPU. 
 
 Ahora asignamos el recurso **Horizontal Pod AutoScaler**, que tenemos definido en el fichero `hpa.yaml`:
 
