@@ -76,10 +76,10 @@ Veamos cada uno de los apartados que tiene la configuración:
 * `metadata`: Tiene las secciones que normalmente tiene esta sección en la definición de cualquier objeto. En este caso nos vamos a fijar en las anotaciones (`annotations`):
     * `description`: Definimos una descripción de lo que hace la plantilla.
     * `iconClass`: Indicamos el icono que se mostrará en el catálogo de aplicaciones. [Más iconos](https://rawgit.com/openshift/openshift-logos-icon/master/demo.html).
-    * `tags`: Etiquetas asignadas a la plantilla, que facilita su búsqueda en el catálogo.
+    * `tags`: Etiquetas asignadas a la plantilla, que facilitan su búsqueda en el catálogo.
     * Hay más posibles anotaciones que puedes estudiar en la [documentación](https://docs.openshift.com/container-platform/4.12/openshift_images/using-templates.html).
 * `objects`: Definimos los objetos que se van a crear al instanciar la plantilla.
-* `parameters`: Define los parámetros que hemos indicado en la definición de los objetos. A la hora de instanciar la plantilla estos parámetros se pueden sobreescribir. Algunos de los atributos que podemos poner de cada parámetro:
+* `parameters`: Definimos los parámetros que hemos indicado en la definición de los objetos. A la hora de instanciar la plantilla estos parámetros se pueden sobreescribir. Algunos de los atributos que podemos poner de cada parámetro:
     * `name`: Nombre del parámetro.
     * `description`: Descripción del parámetro.
     * `value`: Valor por defecto. Si no indico el parámetro al crear los objetos del **Template** tomará el valor por defecto.
@@ -89,7 +89,6 @@ Como vemos los parámetros se pueden indicar de dos formas:
 
 * `${NOMBRE_PARÁMETRO}`: El valor se proporciona como una cadena de caracteres. Normalmente usamos esta forma.
 * `${{NOMBRE_PARÁMETRO}}`: El valor se puede proporcionar como un valor que no sea una cadena de caracteres. Lo hemos usado para indicar el número de replicas, que en la definición tiene que ser un número entero (no se entrecomilla).
-
 
 Por último para crear el objeto **Template** a partir de su definición, ejecutamos:
 

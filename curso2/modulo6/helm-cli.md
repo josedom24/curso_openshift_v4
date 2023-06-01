@@ -4,7 +4,7 @@ Podemos instalar el cliente de Helm, para realizar la gestión de charts de Helm
 
 ## Instalación de Helm chart
 
-Si accedemos a la consola web, en la parte superior derecha lel botón **?** y la opción **Command line tools**, nos parece la página web de descargar del Helm CLI: [Download Helm](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/).
+Si accedemos a la consola web, en la parte superior derecha lel botón **?** y la opción **Command line tools**, nos aparece la página web de descarga del Helm CLI: [Download Helm](https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/).
 
 Podemos descargarnos la versión que necesitemos y copiar el binario en un directorio del PATH, por ejemplo en Linux:
 
@@ -14,7 +14,7 @@ Podemos descargarnos la versión que necesitemos y copiar el binario en un direc
     helm version
     version.BuildInfo{Version:"v3.10.1+2.el8", GitCommit:"add6b4d0bfd122afc3ec403812efb2079ee5a2f0", GitTreeState:"clean", GoVersion:"go1.18.4"}
 
-Aunque desde el cliente `helm` podemos gestionar el ciclo de vida de las aplicaciones instaladas en nuestro clúster:
+Desde el cliente `helm` podemos gestionar el ciclo de vida de las aplicaciones instaladas en nuestro clúster:
 
     helm ls
     NAME   	NAMESPACE    	REVISION	UPDATED                                	STATUS  	CHART        	APP VERSION
@@ -47,7 +47,7 @@ Y para buscar información acerca de ese chart:
 
 ## Instalación de un chart helm desde la línea de comandos
 
-Podemos buscar más repositorios de charts buscando en la página [Artifact Hub](https://artifacthub.io/), por ejemplo podemos añadir el repositorio de charts de Bitnami de la siguiente manera:
+Podemos buscar más repositorios de charts explorando la página [Artifact Hub](https://artifacthub.io/), por ejemplo podemos añadir el repositorio de charts de Bitnami de la siguiente manera:
 
     helm repo add bitnami https://charts.bitnami.com/bitnami
     "bitnami" has been added to your repositories

@@ -17,7 +17,7 @@ Y podemos acceder a la aplicación:
 
 ## Modificación de la aplicación
 
-A continuación vamos a entrar en la zona de administración,en la URL `/cms`, y con el usuario y contraseña: `admin` - `admin` vamos a realizar un cambio (por ejemplo el nombre de la página) que se guardará en la base de datos SQLite.
+A continuación, vamos a entrar en la zona de administración, en la URL `/cms`, y con el usuario y contraseña: `admin` - `admin` vamos a realizar un cambio (por ejemplo el nombre de la página) que se guardará en la base de datos SQLite.
 
 ![phpsqlitecms](img/phpsqlitecms3.png)
 
@@ -30,7 +30,7 @@ A continuación vamos a entrar en la zona de administración,en la URL `/cms`, y
 
 ## Volúmenes persistentes
 
-Necesitamos un volumen para guardar los datos de la base de datos. Vamos a crear un volumen y lo vamos a montar en le directorio `/opt/app-root/src/cms/data` que es donde se encuentra la base de datos. Para ello vamos a crear un objeto **PersistentVolumenClaim** que nos permitirá crear un **PersistentVolumen** que asociaremos al **Deployment**. Lo vamos a hacer desde la consola web, desde la vista **Administrator**, escogemos la opción **Storage -> PersistentVolumenClaims** y creamos un nuevo objeto:
+Necesitamos un volumen para guardar los datos de la base de datos. Vamos a crear un volumen y lo vamos a montar en le directorio `/opt/app-root/src/cms/data`, que es donde se encuentra la base de datos. Para ello vamos a crear un objeto **PersistentVolumenClaim** que nos permitirá crear un **PersistentVolumen** que asociaremos al **Deployment**. Lo vamos a hacer desde la consola web, desde la vista **Administrator**, escogemos la opción **Storage -> PersistentVolumenClaims** y creamos un nuevo objeto:
 
 ![phpsqlitecms](img/phpsqlitecms4.png)
 
@@ -84,8 +84,8 @@ Si vemos los eventos del pod, nos aclara el problema que ha existido:
 
 El problema es el siguiente:
 
-* El volumen que se ha creado no permite que dos Pods estén conectados simultáneamente a él.
-* La estrategia de despliegue **RolligUpdate** crea el nuevo pod, comprueba que funciona para posteriormente eliminar el viejo. Pero en este caso, no puede terminar de crear el nuevo pod, porque no se puede conectar al volumen mientras el antiguo Pod este conectado a él.
+* El volumen que se ha creado no permite que dos Pods estén conectados simultáneamente a él Esto es debido al tipo de volumen, en nuestro caso: **AWS Elastic Block Store (EBS)**.
+* La estrategia de despliegue **RolligUpdate** crea el nuevo Pod, comprueba que funciona para posteriormente eliminar el viejo. Pero en este caso, no puede terminar de crear el nuevo Pod, porque no se puede conectar al volumen mientras el antiguo Pod este conectado a él.
 
 La solución es configurar la estrategia de despliegue a **Recreate**, al eliminar el Pod antiguo, el Pod nuevo se puede conectar al volumen sin problemas. Para ello:
 
@@ -121,9 +121,9 @@ Esto tiene otra consecuencia, además de la estudiada en el punto anterior. Veam
     phpsqlitecms-6bc4dd8f58-74h49   0/1     ContainerCreating   0          11s
     phpsqlitecms-6bc4dd8f58-ld6bf   1/1     Running             0          3m47s
 
-De la misma manera, el nuevo Pod que se está creando no termina de crearse por que no se puede conectar al volumen, que ya está conectado al primer pod.
+De la misma manera, el nuevo Pod que se está creando no termina de crearse por que no se puede conectar al volumen, que ya está conectado al primer Pod.
 
-Podríamos ver los detalles del pod, para ver el problema que tiene:
+Podríamos ver los detalles del Pod, para ver el problema que tiene:
 
     oc describe pod/phpsqlitecms-6bc4dd8f58-74h49
     ...

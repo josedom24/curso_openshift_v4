@@ -1,6 +1,6 @@
 # Introducción a los Templates
 
-Un **template** o plantilla describe un conjunto de objetos que pueden ser parametrizados y procesados para producir una lista de recursos para su creación en OpenShift.
+Un **Template** o plantilla describe un conjunto de objetos que pueden ser parametrizados y procesados para producir una lista de recursos para su creación en OpenShift.
 
 Tenemos un conjunto de **Templates** ya definidos que podemos ver en el **catálogo de aplicaciones**:
 
@@ -10,7 +10,7 @@ También podemos obtener la lista de templates que se encuentran en el proyecto 
 
     oc get templates -n openshift
 
-Si queremos desplegar la aplicación ejemplo nodejs podemos usar la plantilla `nodejs-postgresql-example`. Para ver los parámetros que podemos configurar, ejecutamos:
+Si queremos desplegar la aplicación ejemplo *nodejs* podemos usar la plantilla `nodejs-postgresql-example`. Para ver los parámetros que podemos configurar, ejecutamos:
 
     oc process --parameters nodejs-postgresql-example -n openshift
 
@@ -43,4 +43,4 @@ Esperamos a que la imagen se construya, y accedemos a la aplicación:
 
 ![nodejs](img/nodejs.png)
 
-En este módulo, vamos a introducir la metodología para crear nuestras propios **Templates** y como gestionar su ciclo de vida para la creación de recursos en OpenShift.
+En este módulo, vamos a introducir la metodología para crear nuestros propios **Templates** y como gestionar su ciclo de vida para la creación de recursos en OpenShift.

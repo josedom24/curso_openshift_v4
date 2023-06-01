@@ -30,7 +30,7 @@ Y comprobamos los recursos que hemos creado:
 
 ![mysql](img/mysql1.png)
 
-A continuación nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del Pod en una variable de entorno:
+A continuación, nos queda inicializar la base de datos, para ello vamos a copiar el fichero `citas.sql` al Pod. Para facilitar el copiado de ficheros vamos a guardar el nombre del Pod en una variable de entorno:
 
     export PODNAME="mysql-2-wzqv4"
 
@@ -42,7 +42,7 @@ Y finalmente ejecutamos el fichero sql:
 
     oc exec dc/mysql -- bash -c "mysql -uroot -pasdasd -h 127.0.0.1 < /tmp/citas.sql"
 
-finalmente comprobamos que hemos guardado las citas en la tabla `quotes`:
+Finalmente comprobamos que hemos guardado las citas en la tabla `quotes`:
 
     oc exec -it dc/mysql -- bash -c "mysql -u root -padmin -h 127.0.0.1 citas"
     ...
@@ -68,7 +68,7 @@ Y configuramos el objeto **Deployment** `citas-backend` con las variables que he
 
     oc set env deploy/citas-backend --from=cm/citas-mysql
 
-Por último actualizamos la etiqueta del **ImageStream** para que `prod` apunte a `v2`:
+Por último, actualizamos la etiqueta del **ImageStream** para que `prod` apunte a `v2`:
 
     oc tag -d citas-backend:prod
     oc tag citas-backend:v2 citas-backend:prod

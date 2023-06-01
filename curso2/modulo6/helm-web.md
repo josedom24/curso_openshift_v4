@@ -2,7 +2,7 @@
 
 [Helm](https://helm.sh/) es un software que nos permite empaquetar aplicaciones completas y gestionar el ciclo completo de despliegue de dicha aplicación. Helm usa un formato de empaquetado llamado **charts**. Un chart es una colección de archivos que describen un conjunto de recursos que nos permite desplegar una aplicación en Kubernetes o en OpenShift.
 
-Tenemos diversos repositorios de Helm que nos permiten instalar un conjunto de charts. Por defecto en la consola web de OpenShift v4 tenemos instalado el repositorio de Helm de OpenShift: `https://charts.openshift.io/`. Para ver los charts que podemos instalar, tenemos que acceder al **catálogo de aplicaciones**:
+Tenemos diversos repositorios de Helm que nos permiten instalar un conjunto de charts. Por defecto, en la consola web de OpenShift v4 tenemos instalado el repositorio de Helm de OpenShift: `https://charts.openshift.io/`. Para ver los charts que podemos instalar, tenemos que acceder al **catálogo de aplicaciones**:
 
 ![helm](img/helm1.png)
 

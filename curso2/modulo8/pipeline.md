@@ -18,7 +18,7 @@ En el directorio `k8s` del repositorio se encuentran los ficheros YAML que posib
 
 ## Instalación de Tasks
 
-Las **Tasks** consisten en una serie de pasos que se ejecutan de forma secuencial. Las tareas se ejecutan mediante la creación de **TaskRuns**. Un **TaskRun** creará un Pod y cada paso se ejecuta en un contenedor independiente dentro del mismo pod. Podemos definir entradas y salidas para interactuar con otras tareas en el pipeline.
+Las **Tasks** consisten en una serie de pasos que se ejecutan de forma secuencial. Las tareas se ejecutan mediante la creación de **TaskRuns**. Un **TaskRun** creará un Pod y cada paso se ejecuta en un contenedor independiente dentro del mismo Pod. Podemos definir entradas y salidas para interactuar con otras tareas en el pipeline.
 
 Vamos a instalar dos tareas:
 
@@ -129,7 +129,7 @@ Veamos las diferentes tareas que se ejecutan en el pipeline:
 * La imagen de la aplicación se envía a un registro de imágenes (parámetro `image`).
 * La nueva imagen de la aplicación se despliega en OpenShift utilizando las tareas `apply-manifests` y `update-deployment`.
 
-Es posible que haya notado que no hay referencias al repositorio git o el registro de imágenes que se utiliza en el pipeline. Esto se debe a que los pipelines en Tekton están diseñados para ser genéricos y reutilizables. Al activar un pipeline, puedes proporcionar diferentes repositorios git y registros de imágenes para ser utilizados durante la ejecución del pipeline. 
+Es posible que haya notado que no hay referencias al repositorio git o al registro de imágenes que se utiliza en el pipeline. Esto se debe a que los pipelines en Tekton están diseñados para ser genéricos y reutilizables. Al activar un pipeline, puedes proporcionar diferentes repositorios git y registros de imágenes para ser utilizados durante la ejecución del pipeline. 
 
 En concreto los parámetros que hay que proporcionar son:
 

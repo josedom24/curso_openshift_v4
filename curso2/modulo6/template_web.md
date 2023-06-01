@@ -8,7 +8,7 @@ Para crear una nueva aplicación desde esta plantilla, pulsamos en el botón **I
 
 ![template_web](img/template_web1.png)
 
-Ahora podemos comprobar que nos aparece un formulario con los parámetros que hemos configurado en la plantilla, vamos a poner los mimos datos que en el apartado anterior:
+Ahora podemos comprobar que nos aparece un formulario con los parámetros que hemos configurado en la plantilla, vamos a poner los mismos datos que en el apartado anterior:
 
 ![template_web](img/template_web2.png)
 

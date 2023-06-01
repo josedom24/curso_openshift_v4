@@ -2,8 +2,8 @@
 
 Continuamos creando nuestra nueva plantilla que nos va a permitir desplegar aplicaciones PHP guardadas en un repositorio GitHub. Partimos de un fichero `php-plantilla.yaml` con la lista de la definición de los objetos que habíamos creado en el punto anterior. Para convertir este fichero en la definición de un **Template** sigamos los siguientes pasos:
 
-1. Vamos a limpiar la definición de los objetos que tenemos guardado. Elimina, los parámetros que nos ofrecen valores por defecto, elimina las anotaciones de los metadatos (`annotations`), elimina el estado de los objetos (`status`).
-2. Escribe la estructura de una definición de un **Template**:
+1. Vamos a limpiar la definición de los objetos que tenemos guardado. Eliminamos los parámetros que nos ofrecen valores por defecto, las anotaciones de los metadatos (`annotations`) y el estado de los objetos (`status`).
+2. Escribimos la estructura de una definición de un **Template**:
 
     ```yaml
     apiVersion: template.openshift.io/v1
@@ -21,14 +21,14 @@ Continuamos creando nuestra nueva plantilla que nos va a permitir desplegar apli
 
     La sección `labels`: etiquetas que se asignarán a todos los objetos creados, `metadata`, información del objeto, `objects`, la lista de definición de los objetos que vamos a crear (el contenido que hemos generado en el punto anterior) y `parameters`, la lista de parámetros.
 
-3. Determina los parámetros que vamos a crear, en nuestro caso:
+3. Determinamos los parámetros que vamos a crear, en nuestro caso:
 
     * `NOMBRE`: Nombre de la aplicación.
     * `PHP_VERSION`: Versión de PHP que vamos a usar para crear la imagen.
     * `REPOSITORIO_GIT`: URL del repositorio GitHub que se va a utilizar para el despliegue.
     * `GITHUB_WEBHOOK_SECRET`: Token para configurar el webhook en GitHub.
 
-    Modifica la definición de los objetos, para ir introduciendo los parámetros en los campos necesarios.
+    Modificamos la definición de los objetos, para ir introduciendo los parámetros en los campos necesarios.
 4. Alguna cosas a tener en cuenta:
 
     * El objeto **DeploymentConfig** tiene que desplegar la aplicación, una vez exista la **ImageStream** que apunta a la imagen que estamos generando. Para ello en la definición del contenedor del **DeploymentConfig** no se va a indicar ninguna imagen (`image: ' '`) y se le va a configurar un trigger de tipo `ImageChange` apuntando al **ImageStream**. De esta manera el **DeploymentConfig** no creará un **ReplicationController** hasta que la imagen no se haya creado.

@@ -21,7 +21,7 @@ Para comprobar que la aplicación está funcionando podemos acceder a la URL `/w
 
 ## Conexión a la base de datos
 
-Es el momento de desplegar una base de datos MongoDB para guardar la información de los parques naturales. Para realizar la instalación de MongoDB vamos a usar un **Template** que vamos a crear en nuestro proyecto:
+Es el momento de desplegar una base de datos MongoDB para guardar la información de los Parques Naturales. Para realizar la instalación de MongoDB vamos a usar un **Template** que vamos a crear en nuestro proyecto:
 
     oc create -f https://raw.githubusercontent.com/openshift-labs/starter-guides/ocp-4.8/mongodb-template.yaml
 
@@ -37,7 +37,7 @@ Y realizamos la siguiente configuración:
 
 ![nationalparks](img/nationalparks3.png)
 
-* Indicamos como **Namespace** donde tiene que buscar el **ImageStream** con el que estamos trabajando.
+* Indicamos nuestro proyecto como  **namespace**, para que busque de manera adecuada el **ImageStream** con el que estamos trabajando.
 * El nombre del servicio lo configuramos como `mongodb-nationalparks`.
 * Las credenciales de la base de datos, usuario, contraseña, base de datos, contraseña del administrador lo configuramos com `mongodb`.
 * Y la versión de la imagen dejamos la `3.6`.
@@ -50,7 +50,7 @@ Ahora tenemos que configurar la aplicación **Nationalparks** con las credencial
 
 ![nationalparks](img/nationalparks5.png)
 
-A continuación vamos a usarlo para configurar el despliegue de **Nationalparks**, para ello pulsa sobre el botón **Add Secret to workload**:
+A continuación, vamos a usarlo para configurar el despliegue de **Nationalparks**, para ello pulsa sobre el botón **Add Secret to workload**:
 
 ![nationalparks](img/nationalparks6.png)
 
@@ -78,3 +78,52 @@ En este caso, **Parksmap** está consultando la API de OpenShift y preguntando p
 Y ahora si accedemos a la URL de **Parksmap**, veremos la visualización de los Parques Nacionales:
 
 ![nationalparks](img/nationalparks8.png)
+
+## Pruebas de disponibilidad de los Pods
+
+Tenemos a nuestra disponibilidad mecanismos para comprobar si nuestros Pods están "vivos" y están "respondiendo". Estos mecanismos son los siguientes:
+
+* **Liveness Probe**: Nos permite comprobar si un Pod está en estado *running*. Si falla, se reiniciará el Pod, porque se considera que no está funcionando.
+* **Readiness Probe**: Nos permite comprobar si un Pod está listo para recibir peticiones. Si falla, no se le enviarán peticiones a este Pod.
+
+Vamos a añadir estos dos mecanismos a nuestra aplicación **Nationalparks**, para asegurarnos que ningún Pod que no este preparado va a recibir una petición y que se reiniciarán aquellos que no se estén ejecutando. Para ello, desde la **Toopología** escogemos el despliegue de **Nationalparks** y en el desplegable **Actions** escogemos la opción **Add Health Checks**:
+
+![probe](img/probe1.png)
+
+En nuestro caso para los dos tipos de comprobación vamos a realizar una petición HTTP a la URL `/ws/healthz/`, si la respuesta es OK (código 200) significará que el Pod está en ejecución y que está preparado para recibir peticiones. Por lo tanto en los dos tipos de comprobación (pulsando sobre los enlaces **Add Readinnes probe** y **Add Liveness probe**) ponemos la URL en el campo **Path** y dejamos las demás opciones por defecto:
+
+![probe](img/probe2.png)
+
+![probe](img/probe3.png)
+
+Hemos cambiado la configuración del despliegue, por lo que hay una actualización y se creará un nuevo conjunto de Pods.
+
+Podemos ver el cambio que hemos hecho en la definición del **Deployment**:
+
+    oc get deploy/nationalparks -o yaml
+    ...
+    spec:
+      containers:
+      ...
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /ws/healthz/
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /ws/healthz/
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+      ...
+
+
+

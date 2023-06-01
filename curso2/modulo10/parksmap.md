@@ -1,6 +1,6 @@
 # Despliegue de aplicación Parksmap en OpenShift v4 (1ª parte)
 
-Este ejercicio esta basado y es una adaptación al ejemplo que se muestra en la guía [OpenShift Starter Guides](https://redhat-scholars.github.io/openshift-starter-guides/rhs-openshift-starter-guides/4.9/index.html).
+Este ejercicio esta basado y es una adaptación del ejemplo que se muestra en la guía [OpenShift Starter Guides](https://redhat-scholars.github.io/openshift-starter-guides/rhs-openshift-starter-guides/4.9/index.html).
 
 ## Arquitectura de la aplicación
 
@@ -8,9 +8,7 @@ Este ejercicio esta basado y es una adaptación al ejemplo que se muestra en la 
 
 ## Despliegue de Parksmap
 
-**Parksmap** es la aplicación frontend que visualizará en un mapa las coordenados de los parques nacionales. Esta aplicación está escrita con el framework de Java **Spring-boot** y vamos a desplegarla usando la imagen `quay.io/openshiftroadshow/parksmap:latest` desde la consola web:
-
-Hemos escogido en la vista **Developer**, la opción **+Add -> Conatiner Images**, e indicamos la imagen y el icono de **spring-boot**:
+**Parksmap** es la aplicación frontend que visualizará en un mapa las coordenados de los Parques Nacionales. Esta aplicación está escrita con el framework de Java **Spring-boot** y vamos a desplegarla usando la imagen `quay.io/openshiftroadshow/parksmap:latest` desde la consola web. Hemos escogido en la vista **Developer**, la opción **+Add -> Conatiner Images**, e indicamos la imagen y el icono de **spring-boot**:
 
 ![parksmap](img/parksmap1.png)
 
@@ -48,7 +46,7 @@ Puede ver los permisos actuales en la consola web: en la vista **Administrator**
 
 Más adelante, veremos que la aplicación Parksmap necesita hacer una petición a la API OpenShift para preguntar sobre la configuración de otros recursos.
 
-Por lo tanto, tenemos que otorgar el permiso **view** al **Service Account default**, para que l Pod pueda consultar sobre los recursos que se encuentran dentro del proyecto. Para ello, pulsamos sobre le botón **Create binding** de la pantalla anterior y configuramos el permiso indicando el nombre del permiso, el proyecto y el **Role** `view` que se va a asignar a un **Service Account** llamado **default** en nuestro proyecto.
+Por lo tanto, tenemos que otorgar el permiso **view** al **Service Account default**, para que el Pod pueda consultar sobre los recursos que se encuentran dentro del proyecto. Para ello, pulsamos sobre le botón **Create binding** de la pantalla anterior y configuramos el permiso indicando el nombre del permiso, el proyecto y el **Role** `view` que se va a asignar a un **Service Account** llamado **default** en nuestro proyecto.
 
 ![parksmap](img/parksmap7.png)
 ![parksmap](img/parksmap8.png)

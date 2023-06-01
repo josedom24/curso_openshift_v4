@@ -46,3 +46,28 @@ Te avisa que no tienes asignado ningún proyecto y que tienes que crear uno para
 
     oc get nodes
     Error from server (Forbidden): nodes is forbidden: User "developer" cannot list resource "nodes" in API group "" at the cluster scope
+
+## Terminal desde la consola web
+
+Por defecto la instalación de OpenShift en local no tiene ningún Operador instalado. Los Operadores nos permiten instalar componentes internos de OpenShift que añaden funcionalidades extras a nuestro clúster.
+
+Para poder conectarnos a un terminal desde la consola web y tener a nuestra disposición la herramienta `oc` tenemos que instalar el operador **WebTerminal** (por dependencias se instará también el operador **DevWorkspace Operator**). Nos tenemos que conectar con el usuario administrador `kubeadmin` y en la vista **Administrator** accedemos a la opción **Operators->OperatorHub** y filtramos con el nombre del operador "WebTerminal":
+
+![terminal](img/terminal1.png)
+
+Nos aparece una ventana con información del operador y pulsamos sobre el botón **Install** para comenzar la instalación, dejamos los valores por defecto, realizamos la instalación y comprobamos los operadores que hemos instalados en la opción **Operators->Installed Operators**:
+
+![terminal](img/terminal2.png)
+
+A continuación, accedemos con el usuario `developer` y ya encontramos en la parte superior derecha de la consola web el icono que nos permite el acceso a la terminal:
+
+![terminal](img/terminal3.png)
+
+Pulsamos sobre el icono, y nos pedirá que creemos un proyecto o elijamos uno, para crear los recursos necesarios para que podamos tener acceso al terminal (el recurso **DevWorkspace** donde se crea el **Deployment** que crea el Pod donde se ejecuta el terminal). Yo lo he llamado `webterminal`:
+
+![terminal](img/terminal4.png)
+
+Y después de pulsar el botón **Start** y esperar unos segundos, ya tenemos a nuestra disposición la terminal donde podemos ejecutar la herramienta `oc`:
+
+![terminal](img/terminal5.png)
+

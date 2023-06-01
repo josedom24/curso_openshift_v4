@@ -1,0 +1,43 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: test-web
+    app.kubernetes.io/component: test-web
+    app.kubernetes.io/instance: test-web
+  name: test-web
+  namespace: test-web
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    deploymentconfig: test-web
+  strategy:
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        deploymentconfig: test-web
+    spec:
+      containers:
+      - image: josedom24/test_web@sha256:99db6f7fdcd6aa338d80b5cd926dff8bae50062c49f82c79a3d67d048efb13a4
+        imagePullPolicy: IfNotPresent
+        name: test-web
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        resources: {}
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - test-web
+      from:
+        kind: ImageStreamTag
+        name: test-web:v1
+        namespace: test-web
+      lastTriggeredImage: josedom24/test_web@sha256:99db6f7fdcd6aa338d80b5cd926dff8bae50062c49f82c79a3d67d048efb13a4
+    type: ImageChange

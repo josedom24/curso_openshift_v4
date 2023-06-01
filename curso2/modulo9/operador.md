@@ -12,7 +12,7 @@ Nos aparece una ventana con información del operador y pulsamos sobre el botón
 
 * Instalamos la última versión del operador etiquetada con `latest`.
 * Al escoger la opción `All namespaces on the cluster (default)` hacemos que el operador se pueda usar en todos los proyectos.
-* Se va a crear un namespace llamado `openshift-serverless` donde se crearán los recursos que va a instalar el operador.
+* Se va a crear un **namespace** llamado `openshift-serverless` donde se crearán los recursos que va a instalar el operador.
 * Se activa la opción de actualizaciones automáticas.
 
 Una vez instalado podemos comprobar que lo tenemos instalado en la opción **Operators->Installed Operators**:
@@ -29,7 +29,7 @@ Y pulsamos sobre el botón **Create KnativeServing**:
 
 ![operador](img/operador5.png)
 
-Y dejamos todas las opciones por defecto, pero en la vista YAML nos aseguramos de configurar el `namespace` con el valor `knative-serving`, que es el valor esperado y es el proyecto donde se crearan los recurso del operador.
+Y dejamos todas las opciones por defecto, pero en la vista YAML nos aseguramos de configurar el **namespace** con el valor `knative-serving`, que es el valor esperado y es el proyecto donde se crearan los recurso del operador.
 
 ![operador](img/operador6.png)
 
@@ -43,7 +43,7 @@ Y pulsamos sobre el botón **Create KnativeEventing**:
 
 ![operador](img/operador8.png)
 
-Y dejamos todas las opciones por defecto, pero en la vista YAML nos aseguramos de configurar el `namespace` con el valor `knative-eventing`, que es el valor esperado y es el proyecto donde se crearan los recurso del operador.
+Y dejamos todas las opciones por defecto, pero en la vista YAML nos aseguramos de configurar el **namespace** con el valor `knative-eventing`, que es el valor esperado y es el proyecto donde se crearan los recurso del operador.
 
 ![operador](img/operador9.png)
 

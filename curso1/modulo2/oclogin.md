@@ -58,3 +58,16 @@ Como hemos indicado anteriormente el proyecto que estamos usando se corresponde 
     oc get namespace
     Error from server (Forbidden): namespaces is forbidden: User "josedom24" cannot list resource "namespaces" in API group "" at the cluster scope
 
+## Terminal desde la consola web
+
+Si pulsamos sobre el siguiente icono en la parte superior derecha de la consola web:
+
+![oclogin](img/oclogin3.png)
+
+Nos permitirá abrir eun terminal en la consola web:
+
+![oclogin](img/oclogin4.png)
+
+Debemos indicar el proyecto donde se creará un recurso **DevWorkspace** donde se creará un **Deployment** que creará un Pod donde se ejecutará el terminal que estamos usando:
+
+![oclogin](img/oclogin5.png)

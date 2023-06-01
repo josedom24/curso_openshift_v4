@@ -7,12 +7,12 @@ Podemos crear funciones Serverless en distintos lenguajes y framework: Qurakus, 
 
 ## Ejemplo de función Serverless escrita en Python
 
-Lo primero que vamos a hacer es crear una aplicación en nuestro entrono de desarrollo basada en python, para ello ejecutamos:
+Lo primero que vamos a hacer es crear una aplicación en nuestro entorno de desarrollo basada en python, para ello ejecutamos:
 
     cd python
     kn func create -l python
 
-No has creado un esqueleto de aplicación python. Los ficheros que se han creado son los siguientes:
+Nos ha creado un esqueleto de aplicación python. Los ficheros que se han creado son los siguientes:
 
     ls
     app.sh  func.py  func.yaml  Procfile  README.md  requirements.txt  test_func.py
@@ -26,7 +26,7 @@ def main(context: Context):
     return body, 200, headers
 ```
 
-A continuación debemos crear una imagen con el código que hemos desarrollado, está imagen se guardará en el registro interno de OpenShift, para ello ejecutamos:
+A continuación, debemos crear una imagen con el código que hemos desarrollado, está imagen se guardará en el registro interno de OpenShift, para ello ejecutamos:
 
     kn func build
 
@@ -54,7 +54,7 @@ Y comprobamos que hemos creado un servicio Knative:
     NAME     URL                                                                      LATEST         AGE   CONDITIONS   READY   REASON
     python   https://python-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com   python-00001   74s   3 OK / 3     True    
 
-Finalmente si accedemos a la aplicación, comprobamos que funciona de manera adecuada:
+Finalmente, si accedemos a la aplicación, comprobamos que funciona de manera adecuada:
 
     curl https://python-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
     {"mensaje":"Funcion Serverless"}

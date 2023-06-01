@@ -12,7 +12,7 @@ Como vemos tenemos varias opciones, por ejemplo **Start last run**, ejecutaría 
 
 ![pipeline](img/pipeline8.png)
 
-En la pestaña **PipelineRun** obtenemos las lista de ejecuciones:
+En la pestaña **PipelineRun** obtenemos la lista de ejecuciones:
 
 ![pipeline](img/pipeline7.png)
 
