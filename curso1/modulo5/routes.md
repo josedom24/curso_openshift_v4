@@ -69,11 +69,11 @@ Y obtener información de la ruta creada con el comando:
 
     oc describe route/test-web
     Name:			test-web
-    Namespace:		josedom24-dev
+    Namespace:		test-web
     Created:		About a minute ago
     Labels:			app=test-web
     Annotations:		openshift.io/host.generated=true
-    Requested Host:		test-web-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
+    Requested Host:		test-web-test-web.apps.sandbox-m3.1530.p1.openshiftapps.com
 
     ...
     Service:	test-web

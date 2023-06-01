@@ -83,7 +83,7 @@ Podríamos editar el Pod y ver todos los atributos que definen el objeto, la may
 Normalmente no se interactúa directamente con el Pod a través de una shell, pero sí se obtienen directamente los logs al igual que se hace
 en docker:
 
-    oc logs pod-nginx
+    oc logs pod/pod-nginx
 
 En el caso poco habitual de que queramos ejecutar alguna orden adicional en el Pod, podemos utilizar el comando `exec`, por ejemplo, en el caso particular de que queremos abrir una shell de forma interactiva:
 
