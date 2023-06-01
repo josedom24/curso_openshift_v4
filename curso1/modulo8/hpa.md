@@ -81,7 +81,7 @@ Creamos el despliegue, creamos el recurso **Horizontal Pod AutoScaler** y creamo
     oc expose deploy/nginx
     oc expose service/nginx
 
-Vamos a comprobar si funciona el HPA, para ello vamos a usar la herramienta Apache Benchmark (`ab`) (en sistemas operativos Debian/ubuntu esta herramienta se encuentra en el paquete `apache2-utils`) para realizar peticiones al servidor web. 
+Vamos a comprobar si funciona el HPA, para ello vamos a usar la herramienta Apache Benchmark (`ab`) (en sistemas operativos Debian/Ubuntu esta herramienta se encuentra en el paquete `apache2-utils`) para realizar peticiones al servidor web. 
 
 En una terminal, podemos monitorizar la creación de Pods:
 
