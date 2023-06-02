@@ -77,13 +77,13 @@ spec:
          │ │ │ │ │
          * * * * *
     
-      También podemos indicar el periodo con valores específicos: 
+  También podemos indicar el periodo con valores específicos: 
       
-      * `@yearly`: El 1 de enero a medianoche. (0 0 1 1 *)
-      * `@monthly`: Una vez al mes, el primer día del mes. (0 0 1 * *)
-      * `@weekly`: Una vez a la semana. (0 0 * * 0)
-      * `@daily`: una vez al día a las 12 de la noche. (0 0 * * *)
-      * `@hourly`: Cada hora. (0 * * * *)
+  * `@yearly`: El 1 de enero a medianoche. (0 0 1 1 *)
+  * `@monthly`: Una vez al mes, el primer día del mes. (0 0 1 * *)
+  * `@weekly`: Una vez a la semana. (0 0 * * 0)
+  * `@daily`: una vez al día a las 12 de la noche. (0 0 * * *)
+  * `@hourly`: Cada hora. (0 * * * *)
 
 Ejecutamos el **CronJob**, esperamos varios minutos y vemos cómo se han creado varios recursos cada minuto:
 
