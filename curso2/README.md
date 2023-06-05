@@ -10,8 +10,8 @@
 	* [Introducción al despliegue de aplicaciones en OpenShift v4 (P)](modulo2/introduccion.md)
 	* [Despliegue de aplicaciones desde imágenes con oc](modulo2/imagen.md)
 	* [Despliegue de aplicaciones desde imágenes desde la consola web](modulo2/imagen_web.md)
-	* [Despliegue de aplicaciones desde código fuente con oc](modulo2/codigo.md	
-	* [Despliegue de aplicaciones desde código fuente con oc (2ª parte)](modulo2/codigo2.md	)
+	* [Despliegue de aplicaciones desde código fuente con oc](modulo2/codigo.md)	
+	* [Despliegue de aplicaciones desde código fuente con oc (2ª parte)](modulo2/codigo2.md)
 	* [Despliegue de aplicaciones desde código fuente desde la consola web](modulo2/codigo_web.md)
 	* [Despliegue de aplicaciones desde Dockerfile con oc](modulo2/docker.md)
 	* [Despliegue de aplicaciones desde Dockerfile desde la consola web](modulo2/docker_web.md)
