@@ -47,7 +47,6 @@ Creamos el objeto **BuildConfig**, creando en primer lugar la **ImageStream** qu
     app7   Docker   Dockerfile   1
 
     oc get build
-    NAME     TYPE     FROM             STATUS                         STARTED          DURATION
     NAME     TYPE     FROM             STATUS     STARTED          DURATION
     app7-1   Docker   Dockerfile       Running    24 seconds ago   
 
