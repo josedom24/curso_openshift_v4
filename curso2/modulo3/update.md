@@ -49,7 +49,7 @@ Cuando se ha subido la imagen ya vemos que se le ha asignado otro id:
 
 Y podemos comprobar que el **ImageStream** se ha actualizado:
 
-oc describe is imagen-prueba
+    oc describe is imagen-prueba
     ...
     latest
       updates automatically from registry docker.io/josedom24/imagen-prueba:latest
