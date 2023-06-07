@@ -46,7 +46,6 @@ Como hemos indicado, usaremos las **ImageStream** para la creación de nuevas ap
 
 Por ejemplo, podríamos desplegar una nueva aplicación a partir de la **ImageStream** `httpd:2.4`:
 
-    oc new-project httpd
     oc new-app httpd:2.4 --name=web1
     ...
     --> Found image 2ffb964 (2 months old) in image stream "openshift/httpd" under tag "2.4" for "httpd:2.4"
