@@ -13,7 +13,7 @@ Para crear la imagen y subirla ejecuto las siguientes instrucciones:
 
     docker login
     docker build -t josedom24/imagen-prueba .
-    docker pull josedom24/image-prueba
+    docker push josedom24/image-prueba
 
 A continuación creamos el **ImageStream** apuntando a dicha image, con la opción `--scheduled=true` que es el parámetro que nos permite monitorizar la imagen original:
 

@@ -1,6 +1,6 @@
 # Actualización automática de un build
 
-Vamos a crear un nuevo objeto **BuildCondig** y nos vamos a centrar en su definición en la sección de **triggers**, donde se definen los distintos eventos que disparan la construcción de forma automática.
+Vamos a crear un nuevo objeto **BuildConfig** y nos vamos a centrar en su definición en la sección de **triggers**, donde se definen los distintos eventos que disparan la construcción de forma automática.
 
 En primer lugar vamos a crear un objeto **ImageStream** que apuntará a una imagen constructora de PHP, que luego utilizaremos para explicar el trigger `ImageChange`.
 
