@@ -32,7 +32,7 @@ Para ayudarnos a elegir que recurso usar, veamos algunas características de cad
 
 1. El **diseño** de los dos recursos es distintos: los objetos **DeploymentConfig** prefieren la **consistencia**, mientras que los objetos **Deployments** toman la **disponibilidad** por encima de la consistencia.
 2. Los **DeploymentConfig** permiten volver automáticamente a la última versión operativa en caso de fallo.
-3. Los objetos **Deployment** de forma implícita desencadenan un nuevo despliegue si hay un cambio en la configuración del recurso o cambia la imagen. Sin embargo, en los objetos **DeploymentConfig**, podemos configurar las distintas causas para desencadenar un despliegue de forma automática, por medio de **triggers** (disparadores).
+3. Los objetos **Deployment** de forma implícita desencadenan un nuevo despliegue si hay un cambio en la configuración del recurso. Sin embargo, en los objetos **DeploymentConfig**, se actualizan por varios motivos: cambio de configuración, cambio de imagen,... además, podemos configurar su uso por medio de **triggers** (disparadores).
 4. Los **DeploymentConfig** tiene la posibilidad de ejecutar ciertos procesos en su ciclo de vida con los **lifecycle hooks**.
 5. Los **DeploymentConfig** tiene la posibilidad de configurar estrategias personalizadas de despliegues.
 6. Los recursos **Deployment** no utilizan un **Pod Deploy**, por lo que pueden tener varios **ReplicaSet** activos, sin embargo los **DeploymentConfig**, pueden tener como máximo un **Pod Deploy** en ejecución, por lo que sólo dos **ReplicationController** pueden estar activos al mismo tiempo. Esto se traduce que los **Deployment** pueden hacer despliegues más rápidos.
