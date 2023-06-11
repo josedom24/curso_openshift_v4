@@ -19,7 +19,7 @@ OpenShift Serverless se basa en el proyecto de código abierto **Knative**, que 
 * **Servicio**: Componente encargado del despliegue y escalado automático de aplicaciones.
 * **Eventos**: Infraestructura para consumir y producir eventos que nos permite crear aplicaciones usando **Arquitectura dirigida por eventos**: desplegar aplicaciones distribuidas cuyos componentes intercambian **eventos** para la comunicación entre ellos.
 
-### Knative Servig
+### Knative Serving
 
 Knative Serving es el componente responsable de:
 
