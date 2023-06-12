@@ -15,7 +15,6 @@ metadata:
     app.kubernetes.io/component: test-web
     app.kubernetes.io/instance: test-web
   name: test-web
-  namespace: test-web
 spec:
   replicas: 1
   revisionHistoryLimit: 10
