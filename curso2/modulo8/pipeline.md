@@ -25,7 +25,7 @@ Vamos a instalar dos tareas:
 1. `apply-manifests`: responsable de ejecutar los ficheros YAML que se encuentran en el directorio`k8s` y por lo tanto aplicar los posibles cambios en los recurso que estamos creando.
 2. `update-deployment`: responsable de actualizar el objeto **Deployment**, en concreto cambiar el nombre y la imagen.
 
-Todos los ficheros que vamos a usar están en el repositorio [pipelines-tutoria](https://github.com/josedom24/pipelines-tutorial).
+Todos los ficheros que vamos a usar están en el repositorio [pipelines-tutorial](https://github.com/josedom24/pipelines-tutorial).
 
 Para ello tenemos el fichero `01_apply_manifest_task.yaml` con el siguiente [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/01_apply_manifest_task.yaml) y el fichero `02_update_deployment_task.yaml` con este [contenido](https://raw.githubusercontent.com/josedom24/pipelines-tutorial/master/01_pipeline/02_update_deployment_task.yaml).
 
