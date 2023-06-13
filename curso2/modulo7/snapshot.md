@@ -55,9 +55,9 @@ Indicando las propiedades del recurso **PersistentVolumeClaim**:
 
 Volvemos a crear un nuevo **Deployment**:
 
-oc new-app bitnami/nginx --name nginx2
-oc expose service/nginx2
-oc set volumes deploy/nginx2 --add -m /app --name=my-vol -t pvc --claim-name=my-pvc2 --overwrite
+    oc new-app bitnami/nginx --name nginx2
+    oc expose service/nginx2
+    oc set volumes deploy/nginx2 --add -m /app --name=my-vol -t pvc --claim-name=my-pvc2 --overwrite
 
 Y comprobamos que podemos acceder al fichero `index.html`, que en esta ocasión no hemos tenido que crear porque se ha restaurado desde la instantánea de volumen.
 
