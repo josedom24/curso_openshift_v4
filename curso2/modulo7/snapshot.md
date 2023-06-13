@@ -47,10 +47,14 @@ Y transcurridos unos segundos, podremos ver la lista de las instantáneas de vol
 
 Podemos eliminar el despliegue del servidor web y el volumen que hemos creado:
 
-    oc delete deploy/nginx
-    oc delete service/nginx
-    oc delete is/nginx
-    oc delete pvc/my-pvc
+oc delete deploy/nginx
+oc delete service/nginx
+oc delete is/nginx
+oc deplete pvc/my-pvc
+
+![snapshot](img/snapshot5.png)
+
+![snapshot](img/snapshot6.png)
 
 A partir de la instantánea podemos crear un nuevo volumen con la misma información, para ello escogemos la opción:
 
@@ -61,8 +65,5 @@ Indicando las propiedades del recurso **PersistentVolumeClaim**:
 ![snapshot](img/snapshot8.png)
 
 Volvemos a crear el **Deployment**, y comprobamos que podemos acceder al fichero `index.html`, que en esta ocasión no hemos tenido que crear porque se ha restaurado desde la instantánea de volumen.
-
-    oc new-app bitnami/nginx --name nginx
-    oc set volumes deploy/nginx --add -m /app --name=my-vol -t pvc --claim-name=my-pvc --overwrite
 
 ![snapshot](img/snapshot9.png)
