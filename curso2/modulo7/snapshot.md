@@ -47,11 +47,6 @@ Y transcurridos unos segundos, podremos ver la lista de las instantáneas de vol
 
 Podemos eliminar el despliegue del servidor web y el volumen que hemos creado:
 
-oc delete deploy/nginx
-oc delete service/nginx
-oc delete is/nginx
-oc deplete pvc/my-pvc
-
 ![snapshot](img/snapshot5.png)
 
 ![snapshot](img/snapshot6.png)
