@@ -12,6 +12,14 @@ Como vemos tenemos varias opciones, por ejemplo **Start last run**, ejecutaría 
 
 ![pipeline](img/pipeline8.png)
 
+Los datos que hemos indicado son los siguientes:
+
+* deployment-name: `pipelines-vote-ui`
+* git-url: `https://github.com/josedom24/pipelines-vote-ui.git`
+* git-revision: `master`
+* image: `image-registry.openshift-image-registry.svc:5000/josedom24-dev/pipelines-vote-ui`
+* shared-workspace: `PersistentVolumenClaim`
+
 En la pestaña **PipelineRun** obtenemos la lista de ejecuciones:
 
 ![pipeline](img/pipeline7.png)
@@ -24,13 +32,6 @@ Si pulsamos sobre alguna de las tareas podemos acceder a los logs de la misma:
 
 ![pipeline](img/pipeline10.png)
 
-Los datos que hemos indicado son los siguientes:
-
-* deployment-name: `pipelines-vote-ui`
-* git-url: `https://github.com/josedom24/pipelines-vote-ui.git`
-* git-revision: `master`
-* image: `image-registry.openshift-image-registry.svc:5000/josedom24-dev/pipelines-vote-ui`
-* shared-workspace: `PersistentVolumenClaim`
 
 
 ## Ejecución del Pipeline
