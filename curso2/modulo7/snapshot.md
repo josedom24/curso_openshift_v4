@@ -17,7 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
     name: my-pvc
 spec:
-  storageClassName: gp3-csi
+  storageClassName: gp2-csi
   accessModes:
     - ReadWriteOnce
   resources:
@@ -25,7 +25,7 @@ spec:
       storage: 1Gi
 ```
 
-Nos aseguramos con el parámetro `storageClassName` que se utilicen volúmenes del tipo `gp3-sci` para que el **VolumeSnapshotClasses** pueda realizar de manera adecuada los snpashots. Ahora, ejecutamos las siguientes instrucciones:
+Nos aseguramos con el parámetro `storageClassName` que se utilicen volúmenes del tipo `gp2-sci` para que el **VolumeSnapshotClasses** pueda realizar de manera adecuada los snpashots. Ahora, ejecutamos las siguientes instrucciones:
 
     oc apply -f pvc.yaml
     oc new-app bitnami/nginx --name nginx
@@ -45,12 +45,6 @@ Y transcurridos unos segundos, podremos ver la lista de las instantáneas de vol
 
 ![snapshot](img/snapshot4.png)
 
-Podemos eliminar el despliegue del servidor web y el volumen que hemos creado:
-
-![snapshot](img/snapshot5.png)
-
-![snapshot](img/snapshot6.png)
-
 A partir de la instantánea podemos crear un nuevo volumen con la misma información, para ello escogemos la opción:
 
 ![snapshot](img/snapshot7.png)
@@ -59,6 +53,12 @@ Indicando las propiedades del recurso **PersistentVolumeClaim**:
 
 ![snapshot](img/snapshot8.png)
 
-Volvemos a crear el **Deployment**, y comprobamos que podemos acceder al fichero `index.html`, que en esta ocasión no hemos tenido que crear porque se ha restaurado desde la instantánea de volumen.
+Volvemos a crear un nuevo **Deployment**:
+
+oc new-app bitnami/nginx --name nginx2
+oc expose service/nginx2
+oc set volumes deploy/nginx2 --add -m /app --name=my-vol -t pvc --claim-name=my-pvc2 --overwrite
+
+Y comprobamos que podemos acceder al fichero `index.html`, que en esta ocasión no hemos tenido que crear porque se ha restaurado desde la instantánea de volumen.
 
 ![snapshot](img/snapshot9.png)
