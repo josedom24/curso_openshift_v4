@@ -24,6 +24,15 @@ Si pulsamos sobre alguna de las tareas podemos acceder a los logs de la misma:
 
 ![pipeline](img/pipeline10.png)
 
+Los datos que hemos indicado son los siguientes:
+
+* deployment-name: `pipelines-vote-ui`
+* git-url: `https://github.com/josedom24/pipelines-vote-ui.git`
+* git-revision: `master`
+* image: `image-registry.openshift-image-registry.svc:5000/josedom24-dev/pipelines-vote-ui`
+* shared-workspace: `PersistentVolumenClaim`
+
+
 ## Ejecución del Pipeline
 
 Podríamos hacer un cambio en el repositorio `pipelines-vote-ui` y volver a ejecutar el **Pipeline** para desplegar el cambio. Para ello, nos vamos al detalle de nuestro **Pipeline** y escogemos la opción **Start last run** (ya que la última ejecución se había hecho sobre este repositorio, si quisiéramos estar seguro elegiríamos la opción **Start** e indicaríamos los parámetros de forma adecuada).

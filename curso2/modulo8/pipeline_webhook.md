@@ -8,6 +8,14 @@ La forma más sencilla de hacerlo es desde la consola web, posteriormente examin
 
 ![triger](img/trigger1.png)
 
+Los datos que hemos indicado son los siguientes:
+
+* deployment-name: `pipelines-vote-ui`
+* git-url: `https://github.com/josedom24/pipelines-vote-ui.git`
+* git-revision: `master`
+* image: `image-registry.openshift-image-registry.svc:5000/josedom24-dev/pipelines-vote-ui`
+* shared-workspace: `PersistentVolumenClaim`
+
 Como vemos indicamos el evento que producirá la ejecución (**github-push**) y los parámetros necesarios. En los detalles del pipeline, encontramos la URL del webhook:
 
 ![triger](img/trigger2.png)
