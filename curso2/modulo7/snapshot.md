@@ -8,11 +8,28 @@ En la consola web, en la vista de **Administrator**, en el apartado **Storage ->
 
 ![snapshot](img/snapshot1.png)
 
-Para realizar el ejercicio, vamos a desplegar un servidor web *nginx* asociado a un volumen, para ello:
+Para realizar el ejercicio, vamos a desplegar un servidor web *nginx* asociado a un volumen.
+La definción de la solicutd del volumen la encontramos en el fichero `pvc.yaml` con el siguiente contenido:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: my-pvc
+spec:
+  storageClassName: gp3-csi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
+
+Nos aseguramos con el parámetro `storageClassName` que se utilicen volúmenes del tipo `gp3-sci` para que el **VolumeSnapshotClasses** pueda realizar de manera adecuada los snpashots. Ahora, ejecutamos las siguientes instrucciones:
 
     oc apply -f pvc.yaml
     oc new-app bitnami/nginx --name nginx
-    oc expose deploy/nginx
+    oc expose service/nginx
     oc set volumes deploy/nginx --add -m /app --name=my-vol -t pvc --claim-name=my-pvc --overwrite
     oc exec deploy/nginx -- bash -c "echo '<h1>Probando los SnapShots</h1>' > /app/index.html"
 
@@ -30,9 +47,10 @@ Y transcurridos unos segundos, podremos ver la lista de las instantáneas de vol
 
 Podemos eliminar el despliegue del servidor web y el volumen que hemos creado:
 
-![snapshot](img/snapshot5.png)
-
-![snapshot](img/snapshot6.png)
+    oc delete deploy/nginx
+    oc delete service/nginx
+    oc delete is/nginx
+    oc deplete pvc/my-pvc
 
 A partir de la instantánea podemos crear un nuevo volumen con la misma información, para ello escogemos la opción:
 
@@ -43,5 +61,8 @@ Indicando las propiedades del recurso **PersistentVolumeClaim**:
 ![snapshot](img/snapshot8.png)
 
 Volvemos a crear el **Deployment**, y comprobamos que podemos acceder al fichero `index.html`, que en esta ocasión no hemos tenido que crear porque se ha restaurado desde la instantánea de volumen.
+
+    oc new-app bitnami/nginx --name nginx
+    oc set volumes deploy/nginx --add -m /app --name=my-vol -t pvc --claim-name=my-pvc --overwrite
 
 ![snapshot](img/snapshot9.png)
