@@ -44,7 +44,7 @@ Y finalmente ejecutamos el fichero sql:
 
 Finalmente comprobamos que hemos guardado las citas en la tabla `quotes`:
 
-    oc exec -it dc/mysql -- bash -c "mysql -u root -padmin -h 127.0.0.1 citas"
+    oc exec -it dc/mysql -- bash -c "mysql -u usuario -pasdasd -h 127.0.0.1 citas"
     ...
     mysql> select * from quotes;
     +----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
