@@ -50,7 +50,7 @@ Podemos eliminar el despliegue del servidor web y el volumen que hemos creado:
     oc delete deploy/nginx
     oc delete service/nginx
     oc delete is/nginx
-    oc deplete pvc/my-pvc
+    oc delete pvc/my-pvc
 
 A partir de la instantánea podemos crear un nuevo volumen con la misma información, para ello escogemos la opción:
 
