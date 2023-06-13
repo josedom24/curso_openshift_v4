@@ -55,4 +55,6 @@ Si queremos hacerlo desde la terminal, ejecutamos:
 
     oc policy add-role-to-user view -z default
 
+Finalmente actualizamos el despliegue:
 
+    oc rollout restart deployment/parksmap

@@ -64,7 +64,7 @@ A continuación etiquetamos los recursos de MongoDB de forma adecuada:
 
 Para cargar los datos sobre los Parques Nacionales a la base de datos, tenemos que ejecutar la URL `/ws/data/load` de la aplicación **Nationalparks**, para ello:
 
-    curl http://nationalparks-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/ws/load
+    curl http://nationalparks-josedom24-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/ws/data/load
     Items inserted in database: 2893
 
 Ahora si accedemos a la URL `/ws/data/all` veremos un JSON con todos los datos de los Parques Nacionales, que esta leyendo de la base de datos.
@@ -78,52 +78,4 @@ En este caso, **Parksmap** está consultando la API de OpenShift y preguntando p
 Y ahora si accedemos a la URL de **Parksmap**, veremos la visualización de los Parques Nacionales:
 
 ![nationalparks](img/nationalparks8.png)
-
-## Pruebas de disponibilidad de los Pods
-
-Tenemos a nuestra disponibilidad mecanismos para comprobar si nuestros Pods están "vivos" y están "respondiendo". Estos mecanismos son los siguientes:
-
-* **Liveness Probe**: Nos permite comprobar si un Pod está en estado *running*. Si falla, se reiniciará el Pod, porque se considera que no está funcionando.
-* **Readiness Probe**: Nos permite comprobar si un Pod está listo para recibir peticiones. Si falla, no se le enviarán peticiones a este Pod.
-
-Vamos a añadir estos dos mecanismos a nuestra aplicación **Nationalparks**, para asegurarnos que ningún Pod que no este preparado va a recibir una petición y que se reiniciarán aquellos que no se estén ejecutando. Para ello, desde la **Toopología** escogemos el despliegue de **Nationalparks** y en el desplegable **Actions** escogemos la opción **Add Health Checks**:
-
-![probe](img/probe1.png)
-
-En nuestro caso para los dos tipos de comprobación vamos a realizar una petición HTTP a la URL `/ws/healthz/`, si la respuesta es OK (código 200) significará que el Pod está en ejecución y que está preparado para recibir peticiones. Por lo tanto en los dos tipos de comprobación (pulsando sobre los enlaces **Add Readinnes probe** y **Add Liveness probe**) ponemos la URL en el campo **Path** y dejamos las demás opciones por defecto:
-
-![probe](img/probe2.png)
-
-![probe](img/probe3.png)
-
-Hemos cambiado la configuración del despliegue, por lo que hay una actualización y se creará un nuevo conjunto de Pods.
-
-Podemos ver el cambio que hemos hecho en la definición del **Deployment**:
-
-    oc get deploy/nationalparks -o yaml
-    ...
-    spec:
-      containers:
-      ...
-        livenessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /ws/healthz/
-            port: 8080
-            scheme: HTTP
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
-        readinessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /ws/healthz/
-            port: 8080
-            scheme: HTTP
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
-      ...
-
-
 
