@@ -15,8 +15,7 @@ En resumen, para crear un Pipeline, se hace lo siguiente:
 
 * Crear tareas (**Task**) personalizadas o instalar tareas reutilizables existentes.
 * Crear un **Pipeline**  para definir el conjunto de tareas que se tienen que ejecutar.
-* Crear un **PersistentVolumeClaim** para proporcionar el volumen/sistema de archivos para la ejecución del pipeline.
+* Crear un **PersistentVolumeClaim** para proporcionar el volumen/sistema de archivos para la ejecución del pipeline. Para que las distintas tareas del pipeline compartan información es necesario tener un almacenamiento compartido que llamamos **Workspaces**.
 * Crear un **PipelineRun** para instanciar e invocar el pipeline.
-* Para que las distintas tareas del pipeline compartan información es necesario tener un almacenamiento compartido que llamamos **Workspaces**.
 * Podemos crear distintos disparadores (triggers) que ejecutan el Pipeline con algún evento determinado.
 
