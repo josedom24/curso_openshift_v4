@@ -71,6 +71,7 @@
 	
 	* [Introducción a OpenShift Pipelines (P)](modulo8/introduccion_pipeline.md)
 	* [Despliegue de una aplicación con OpenShift Pipeline](modulo8/pipeline.md)
+	* [Gestión de OpenShift Pipeline desde el terminal](modulo8/pipeline_terminal.md)
 	* [Gestión de OpenShift Pipeline desde la consola web](modulo8/pipeline_web.md)
 	* [Instalación de OpenShift Pipeline en CRC](modulo8/operador.md)
 
