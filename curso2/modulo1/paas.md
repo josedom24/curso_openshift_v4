@@ -18,7 +18,7 @@ Este nuevo paradigma de consumir servicios informáticos tiene varias caracterí
 A esta manera de ofrecer servicios se le suele llamar **... as a service**, y según el servicio que se esté ofreciendo tenemos varias capas:
 
 * **Infraestructura como servicio (IaaS)**: El servicio ofrecido es infraestructura: capacidad de cómputo, redes, almacenamiento,... Enfocada para administradores.
-* **Plataforma como servicio (PaaS)**: El servicio proporcionado es una plataforma de desarrollo y despliegue de aplicaciones. enfocada para desarrolladores.
+* **Plataforma como servicio (PaaS)**: El servicio proporcionado es una plataforma de desarrollo y despliegue de aplicaciones. Enfocada para desarrolladores.
 * **Software como servicio (SaaS)**: El servicio ofrecido es una aplicación que cualquier usuario utiliza a través de internet.
 
 ![ass](img/aas.png)
