@@ -11,8 +11,8 @@ Podríamos crear un recurso **Service** desde la línea de comandos:
 También podemos describir las características del **Service** en un fichero YAML `service.yaml`:
 
 ```yaml
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: test-web
   labels:
@@ -61,8 +61,8 @@ Podemos ver la información más detallada del **Service** que acabamos de crear
 La definición de un **Service** de tipo `NodePort` sería exactamente igual, pero cambiando el parámetro `type`. Por ejemplo, lo tenemos definido en el fichero `service-np.yaml`:
 
 ```yaml
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: test-web-np
   labels:
