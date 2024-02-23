@@ -24,6 +24,7 @@ Con el usuario `developer` creamos un nuevo proyecto:
 Vamos a partir del fichero `deployment.yaml`:
 
 ```yaml
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-web
